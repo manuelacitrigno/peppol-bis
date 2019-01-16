@@ -1774,20 +1774,20 @@
       <xsl:apply-templates select="@*|*" mode="M9"/>
    </xsl:template>
 
-   <xsl:template match="//cac:PartyTaxScheme/cbc:CompanyID[@schemeID='IT:CF' and ../../cac:PartyIdentification/cbc:ID='CODDEST:0000000' and ../../cac:Person[cbc:ID/@schemeID='IT:CF']]" priority="1031" mode="M9">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="//cac:PartyTaxScheme/cbc:CompanyID[@schemeID='IT:CF' and ../../cac:PartyIdentification/cbc:ID='CODDEST:0000000' and ../../cac:Person[cbc:ID/@schemeID='IT:CF']]"/>
+   <xsl:template match="//cac:PartyTaxScheme/cbc:CompanyID[@schemeID='IT:CF' and ../../cac:PartyIdentification/cbc:ID='CODDEST:0000000']" priority="1031" mode="M9">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="//cac:PartyTaxScheme/cbc:CompanyID[@schemeID='IT:CF' and ../../cac:PartyIdentification/cbc:ID='CODDEST:0000000']"/>
 
 		<!--ASSERT -->
 
       <xsl:choose>
-         <xsl:when test="string-length(translate(.,$vBasicLatin,'')) = 0 and string-length() = 16"/>
+         <xsl:when test="(string-length(translate(.,$vBasicLatin,'')) = 0 and string-length() = 16) or not(../../cac:Person[cbc:ID/@schemeID='IT:CF'])"/>
          <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="string-length(translate(.,$vBasicLatin,'')) = 0 and string-length() = 16">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(string-length(translate(.,$vBasicLatin,'')) = 0 and string-length() = 16) or not(../../cac:Person[cbc:ID/@schemeID='IT:CF'])">
                <xsl:attribute name="flag">fatal</xsl:attribute>
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-get-full-path"/>
                </xsl:attribute>
-               <svrl:text>[SDI-T10-R044] - Il codice fiscale di una persona fisica DEVE essere composto da 16 caratteri alfanumerici.</svrl:text>
+               <svrl:text>[SDI-T10-R044] - Il codice fiscale di una persona fisica DEVE essere fornito sia nel PartyTaxScheme/CompanyID che nell'entità Person e deve essere composto da 16 caratteri alfanumerici.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
