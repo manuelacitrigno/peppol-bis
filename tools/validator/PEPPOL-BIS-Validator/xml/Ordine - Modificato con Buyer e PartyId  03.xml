@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2"
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns001:ver2.0:extended:urn:www.peppol.eu:bis:peppol3a:ver2.0:extended:urn:www.ubl-italia.org:spec:ordine:ver2.1</cbc:CustomizationID>
+	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii03:ver2.0</cbc:ProfileID>
+	<cbc:ID>2015/10021125</cbc:ID>
+	<cbc:IssueDate>2015-07-21</cbc:IssueDate>
+	<cbc:OrderTypeCode listID="UNCL1001">227</cbc:OrderTypeCode>
+	<cbc:Note>Per fornitori Italia - Codice Univoco: ufr9wk</cbc:Note>
+	<cbc:DocumentCurrencyCode listID="ISO4217">EUR</cbc:DocumentCurrencyCode>
+	<cac:ValidityPeriod>
+		<cbc:EndDate>2015-12-31</cbc:EndDate>
+	</cac:ValidityPeriod>
+	<cac:OrderDocumentReference>
+		<cbc:ID>1111</cbc:ID>
+		<cbc:IssueDate>2015-04-30</cbc:IssueDate>
+		<cbc:DocumentTypeCode listID="UNCL1001">220</cbc:DocumentTypeCode>
+		<!--<cbc:DocumentStatusCode listID="DocumentStatusCode">Cancelled</cbc:DocumentStatusCode>-->
+		<cbc:DocumentStatusCode>Revised</cbc:DocumentStatusCode>
+		<cac:IssuerParty>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="IT:IPA">ufr9wk</cbc:ID>
+			</cac:PartyIdentification>
+		</cac:IssuerParty>
+	</cac:OrderDocumentReference>
+	<cac:OriginatorDocumentReference>
+		<cbc:ID>2011/1685.SAV</cbc:ID>
+		<cbc:IssueDate>2011-09-19</cbc:IssueDate>
+		<cbc:DocumentType>DELIBERA</cbc:DocumentType>
+	</cac:OriginatorDocumentReference>
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>2902205F50 2011/54.1</cbc:ID>
+		<cbc:DocumentType>CIG</cbc:DocumentType>
+	</cac:AdditionalDocumentReference>
+	<cac:Contract>
+		<cbc:ID>2011/54.1</cbc:ID>
+		<cbc:ContractType>CONTRATTO</cbc:ContractType>
+	</cac:Contract>
+	<cac:BuyerCustomerParty>
+		<cac:Party>
+			<!--Inserire sempre l'Endpoint con IdPeppol del Mittente-->
+			<cbc:EndpointID schemeID="IT:IPA">UFR9WK</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="IT:IPA">UFR9WK</cbc:ID>
+			</cac:PartyIdentification>
+			<!--<cac:PartyIdentification>
+				<cbc:ID schemeID="ZZZ">prova@mailPEC.it</cbc:ID>
+			</cac:PartyIdentification>-->
+			<cac:PartyName>
+				<cbc:Name>Azienda Ospedaliero - Universitaria di Bologna Policlinico S.Orsola - Malpighi</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Via Albertoni, 15</cbc:StreetName>
+				<cbc:CityName>Bologna</cbc:CityName>
+				<cbc:PostalZone>40138</cbc:PostalZone>
+				<cbc:CountrySubentity>BO</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">IT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeID="IT:CF">92038610371</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Azienda Acquirente</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="ZZZ">00000</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<cbc:CityName>Bologna</cbc:CityName>
+					<cac:Country>
+						<cbc:IdentificationCode listID="ISO3166-1:Alpha2">IT</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:ID>NAN</cbc:ID>
+			</cac:Contact>
+		</cac:Party>
+	</cac:BuyerCustomerParty>
+	<cac:SellerSupplierParty>
+		<cac:Party>
+			<!--Inserire sempre l'Endpoint con IdPeppol del Fornitore-->
+			<cbc:EndpointID schemeID="IT:VAT">IT00495451205</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="IT:VAT">IT00495451205</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>ARS CHIRURIGICA SRL</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Via della Colombaia, 12</cbc:StreetName>
+				<cbc:AdditionalStreetName>Deposito Consegnatario: ARS CHIRURGICA SRL (PMC), 05191815</cbc:AdditionalStreetName>
+				<cbc:CityName>San Giovanni in Persiceto</cbc:CityName>
+				<cbc:PostalZone>40017</cbc:PostalZone>
+				<cbc:CountrySubentity>BO</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">IT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:Contact>
+				<cbc:Telephone>051951811</cbc:Telephone>
+				<cbc:Telefax>051951818</cbc:Telefax>
+			</cac:Contact>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+	<!--<cac:OriginatorCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="IT:CF">92038610371</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name></cbc:Name>
+			</cac:PartyName>
+			<cac:Contact>
+				<cbc:Name></cbc:Name>
+				<cbc:Telephone></cbc:Telephone>
+				<cbc:Telefax></cbc:Telefax>
+				<cbc:ElectronicMail></cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:OriginatorCustomerParty>-->
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<!--Codice IPA dell'ufficio per la fatturazione-->
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="IT:IPA">UFR9WK</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Azienda Ospedaliero - Universitaria di Bologna Policlinico S.Orsola - Malpighi</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Via Albertoni, 15</cbc:StreetName>
+				<cbc:AdditionalStreetName>Risorse Economiche e Finanziarie</cbc:AdditionalStreetName>
+				<cbc:CityName>Bologna</cbc:CityName>
+				<cbc:PostalZone>40138</cbc:PostalZone>
+				<cbc:CountrySubentity>BO</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">IT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:Contact>
+				<!--Riferimento Amministrativo-->
+				<cbc:ID>XY01</cbc:ID>
+				<cbc:ElectronicMail>fatturazione@aosp.bo.it</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:Delivery>
+		<cac:DeliveryLocation>
+			<cac:Address>
+				<cbc:ID>C34</cbc:ID>
+				<cbc:StreetName>Viale Ercolani, 4</cbc:StreetName>
+				<cbc:CityName>Bologna</cbc:CityName>
+				<cbc:PostalZone>40138</cbc:PostalZone>
+				<cbc:CountrySubentity>BO</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">IT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:DeliveryLocation>
+		<cac:DeliveryParty>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="IT:CF">92038610371</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Centro Logistico Beni Sanit-Ecom Area 2</cbc:Name>
+			</cac:PartyName>
+			<cac:Contact>
+				<cbc:Telephone>0516361509</cbc:Telephone>
+				<cbc:Telefax>0516361511</cbc:Telefax>
+			</cac:Contact>
+		</cac:DeliveryParty>
+	</cac:Delivery>
+	<cac:DeliveryTerms>
+		<cbc:SpecialTerms>PORTO FRANCO</cbc:SpecialTerms>
+	</cac:DeliveryTerms>
+	<cac:PaymentTerms>
+		<cbc:Note>MOLTO IMPORTANTE</cbc:Note>
+	</cac:PaymentTerms>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">50.00</cbc:TaxAmount>
+	</cac:TaxTotal>
+	<cac:AnticipatedMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">500.00</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">500.00</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">550.00</cbc:TaxInclusiveAmount>
+		<cbc:PayableAmount currencyID="EUR">550.00</cbc:PayableAmount>
+	</cac:AnticipatedMonetaryTotal>
+	<cac:OrderLine>
+		<!--Articolo ordinato per singola unità-->
+		<cac:LineItem>
+			<cbc:ID>1</cbc:ID>
+			<!--5000 guanti -->
+			<cbc:Quantity unitCode="PK" unitCodeListID="UNECERec20">5000</cbc:Quantity>
+			<cbc:LineExtensionAmount currencyID="EUR">500.00</cbc:LineExtensionAmount>
+			<cbc:TotalTaxAmount currencyID="EUR">50.00</cbc:TotalTaxAmount>
+			<cac:Price>
+				<!--Prezzo singolo guanto -->
+				<cbc:PriceAmount currencyID="EUR">0.10</cbc:PriceAmount> 
+			</cac:Price>
+			<cac:Item>
+				<!-- Una confezione contiene 500 guanti -->
+				<cbc:Name>GUANTI</cbc:Name> 
+				<cac:SellersItemIdentification>  
+					<cbc:ID>XYZ</cbc:ID> 
+				</cac:SellersItemIdentification>
+				<cac:ClassifiedTaxCategory>
+					<cbc:ID schemeID="UNCL5305">AA</cbc:ID>
+					<cbc:Percent>10</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID>VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:ClassifiedTaxCategory>
+				<cac:AdditionalItemProperty>
+					<!--Lotto--> 
+					<cbc:Name>LOTTO</cbc:Name>  
+					<cbc:Value>AB123WE</cbc:Value> 
+				</cac:AdditionalItemProperty>
+				<cac:AdditionalItemProperty>
+					<!--Seriale--> 
+					<cbc:Name>SERIALE</cbc:Name>  
+					<cbc:Value>23456TY</cbc:Value> 
+				</cac:AdditionalItemProperty>
+			</cac:Item>
+		</cac:LineItem>
+	</cac:OrderLine>
+</Order>

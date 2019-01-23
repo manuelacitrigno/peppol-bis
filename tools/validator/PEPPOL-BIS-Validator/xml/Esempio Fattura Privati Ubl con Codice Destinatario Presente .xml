@@ -1,0 +1,155 @@
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cr="http://www.ubl-italia.org/ns/CrossReference" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 UBL-Invoice-2.1.xsd">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionURI>urn:www.ubl-italia.org:spec:fatturapa:esigibilita_iva</ext:ExtensionURI>
+			<ext:ExtensionContent>
+				<cbc:TaxTypeCode>S</cbc:TaxTypeCode>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+		<ext:UBLExtension>
+			<ext:ExtensionURI>urn:www.ubl-italia.org:spec:fatturapa:xref:modalita_pagamento</ext:ExtensionURI>
+			<ext:ExtensionContent>
+				<cr:XCode>MP05</cr:XCode>
+			</ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0:extended:urn:www.ubl-italia.org:spec:fatturapa:ver2.0</cbc:CustomizationID>
+	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ProfileID>
+	<cbc:ID>1316/85</cbc:ID>
+	<cbc:IssueDate>2016-12-31</cbc:IssueDate>
+	<cbc:InvoiceTypeCode listID="UNCL1001" listAgencyID="6">380</cbc:InvoiceTypeCode>
+	<cbc:Note>Scissione Pagamenti</cbc:Note>
+	<cbc:DocumentCurrencyCode listID="ISO4217" listAgencyID="6">EUR</cbc:DocumentCurrencyCode>
+	<cac:AccountingSupplierParty>
+		<cbc:CustomerAssignedAccountID>E00_AVEN</cbc:CustomerAssignedAccountID>
+		<cac:Party>
+			<cac:PartyName>
+				<cbc:Name>Azienda USL di Reggio Emilia</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Via Amendola,2</cbc:StreetName>
+				<cbc:CityName>REGGIO EMILIA</cbc:CityName>
+				<cbc:PostalZone>42100</cbc:PostalZone>
+				<cbc:CountrySubentity>RE</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">IT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeID="IT:VAT">IT01598570354</cbc:CompanyID>
+				<cbc:ExemptionReason>RF01</cbc:ExemptionReason>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:CompanyID schemeID="IT:VAT">IT01598570354</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="IT:VAT">IT01789031208</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="IT:IPA">CODDEST:L0U7KO4</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Montecatone Rehabilitation Institute S.p.A</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Via Montecatone, 37</cbc:StreetName>
+				<cbc:CityName>Imola</cbc:CityName>
+				<cbc:PostalZone>40026</cbc:PostalZone>
+				<cbc:CountrySubentity>BO</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">IT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeID="IT:VAT">IT01789031208</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:CompanyID schemeID="IT:VAT">IT01789031208</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Telephone>0542632811</cbc:Telephone>
+				<cbc:Telefax>0542632805</cbc:Telefax>
+				<cbc:ElectronicMail>pec:segreteria@montecatone.postecert.it</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:PaymentMeans>
+		<cbc:PaymentMeansCode listID="UNCL4461">30</cbc:PaymentMeansCode>
+		<cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+		<cac:PayeeFinancialAccount>
+			<cbc:ID schemeID="IBAN">IT64W0100003245243300306301</cbc:ID>
+			<cac:FinancialInstitutionBranch>
+				<cbc:ID>01820</cbc:ID>
+				<cac:FinancialInstitution>
+					<cbc:ID schemeID="BIC">XXXXITX0</cbc:ID>
+					<cbc:Name>UNICREDIT SPA</cbc:Name>
+				</cac:FinancialInstitution>
+			</cac:FinancialInstitutionBranch>
+		</cac:PayeeFinancialAccount>
+	</cac:PaymentMeans>
+	<cac:PaymentTerms>
+		<cbc:Amount currencyID="EUR">1246.00</cbc:Amount>
+	</cac:PaymentTerms>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">124.60</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="EUR">1246.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="EUR">124.60</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">AA</cbc:ID>
+				<cbc:Percent>10</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID schemeID="UNCL5154">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">1246.00</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">1246.00</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">1370.60</cbc:TaxInclusiveAmount>
+		<cbc:PayableAmount currencyID="EUR">1370.60</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="C62" unitCodeListID="UNECERec20">20</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">1246.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>B09.01.068</cbc:AccountingCost>
+		<cac:DespatchLineReference>
+			<cbc:LineID>49847563</cbc:LineID>
+			<cac:DocumentReference>
+				<cbc:ID>229032/B</cbc:ID>
+				<cbc:IssueDate>2016-12-17</cbc:IssueDate>
+				<cbc:DocumentType>DDT</cbc:DocumentType>
+			</cac:DocumentReference>
+		</cac:DespatchLineReference>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">124.60</cbc:TaxAmount>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Name>EBIXA 5MG/EROGAZIONE SOL. ORALE 50 ML</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>689910</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID schemeID="UNCL5305">AA</cbc:ID>
+				<cbc:Percent>10</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">62.30</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+</Invoice>

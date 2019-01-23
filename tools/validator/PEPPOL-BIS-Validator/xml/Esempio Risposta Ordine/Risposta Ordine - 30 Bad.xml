@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OrderResponse xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">           
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns076:ver2.0:extended:urn:www.peppol.eu:bis:peppol28a:ver1.0:extended:urn:www.ubl-italia.org:spec:ordine:ver2.1</cbc:CustomizationID>
+	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii28:ver2.0</cbc:ProfileID>
+	<cbc:ID>2018/10021125</cbc:ID>
+	<cbc:IssueDate>2018-07-31</cbc:IssueDate>
+	<cbc:IssueTime>12:30:00</cbc:IssueTime>
+	<cbc:OrderResponseCode listID="UNCL1225">30</cbc:OrderResponseCode>
+	<!--cbc:Note>Per fornitori Italia - Codice Univoco: ufr9wk</cbc:Note-->
+	<cbc:DocumentCurrencyCode listID="ISO4217">EUR</cbc:DocumentCurrencyCode>
+	<cac:OrderReference>
+		<cbc:ID>123</cbc:ID>
+	</cac:OrderReference>
+	<cac:SellerSupplierParty>
+		<cac:Party>
+			<!--Inserire sempre l'Endpoint con IdPeppol del Fornitore-->
+			<cbc:EndpointID schemeID="IT:VAT">IT00495451205</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="IT:VAT">IT00495451205</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>ARS CHIRURIGICA SRL</cbc:Name>
+			</cac:PartyName>
+			<!--<cac:PostalAddress>
+				<cbc:StreetName>Via della Colombaia, 12</cbc:StreetName>
+				<cbc:AdditionalStreetName>Deposito Consegnatario: ARS CHIRURGICA SRL (PMC), 05191815</cbc:AdditionalStreetName>
+				<cbc:CityName>San Giovanni in Persiceto</cbc:CityName>
+				<cbc:PostalZone>40017</cbc:PostalZone>
+				<cbc:CountrySubentity>BO</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">IT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>-->
+			<!--cac:Contact>
+				<cbc:Name>Pinco Pallino</cbc:Name>
+				<cbc:Telephone>051951811</cbc:Telephone>
+				<cbc:Telefax>051951818</cbc:Telefax>
+				<cbc:ElectronicMail>seller@fornitore.it</cbc:ElectronicMail>
+			</cac:Contact-->
+		</cac:Party>
+	</cac:SellerSupplierParty>
+	<cac:BuyerCustomerParty>
+		<cac:Party>
+			<!--Inserire sempre l'Endpoint con IdPeppol del Mittente-->
+			<cbc:EndpointID schemeID="IT:IPA">ufr9wk</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="IT:CF">92038610371</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Azienda Ospedaliero - Universitaria di Bologna Policlinico S.Orsola - Malpighi</cbc:Name>
+			</cac:PartyName>
+			<!--<cac:PostalAddress>
+				<cbc:StreetName>Via Albertoni, 15</cbc:StreetName>
+				<cbc:CityName>Bologna</cbc:CityName>
+				<cbc:PostalZone>40138</cbc:PostalZone>
+				<cbc:CountrySubentity>BO</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">IT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>-->
+		</cac:Party>
+	</cac:BuyerCustomerParty>
+	<cac:Delivery>
+		<cac:PromisedDeliveryPeriod>
+			<cbc:StartDate>2018-07-31</cbc:StartDate>
+			<cbc:EndDate>2018-08-10</cbc:EndDate>
+		</cac:PromisedDeliveryPeriod>
+	</cac:Delivery>
+	<cac:OrderLine>
+		<cac:LineItem>
+			<cbc:ID>1</cbc:ID>
+			<cbc:Note>Inserire Note</cbc:Note>
+			<cbc:LineStatusCode listID="UNCL1225">27</cbc:LineStatusCode>
+			<cbc:Quantity unitCode="NAR" unitCodeListID="UNECERec20">10</cbc:Quantity>
+			<cac:Delivery>
+				<cac:PromisedDeliveryPeriod>
+					<cbc:StartDate>2018-07-31</cbc:StartDate>
+					<cbc:EndDate>2018-08-10</cbc:EndDate>
+				</cac:PromisedDeliveryPeriod>
+			</cac:Delivery>
+			<cac:Price>
+				<cbc:PriceAmount currencyID="EUR">230.00</cbc:PriceAmount>
+				<cbc:BaseQuantity>100</cbc:BaseQuantity>
+			</cac:Price>
+			<cac:Item>
+				<cbc:Name>Radiofarmaco</cbc:Name> 
+				<cac:SellersItemIdentification>  
+					<cbc:ID>XYZ</cbc:ID> 
+				</cac:SellersItemIdentification>
+				<cac:StandardItemIdentification>  
+					<cbc:ID>abc</cbc:ID> 
+				</cac:StandardItemIdentification>
+			</cac:Item>
+		</cac:LineItem>
+		<cac:SellerSubstitutedLineItem>
+			<cbc:ID>1</cbc:ID> 
+			<cac:Item>
+				<cbc:Name>Radiofarmaco 2</cbc:Name> 
+				<cac:SellersItemIdentification>  
+					<cbc:ID>XYZZZ</cbc:ID> 
+				</cac:SellersItemIdentification>
+				<cac:StandardItemIdentification>  
+					<cbc:ID>ab</cbc:ID> 
+				</cac:StandardItemIdentification>
+				<cac:CommodityClassification>
+					<cbc:ItemClassificationCode listID="UNSPSC">675634</cbc:ItemClassificationCode>
+				</cac:CommodityClassification>
+				<cac:ClassifiedTaxCategory>
+					<cbc:ID schemeID="UNCL5305">AA</cbc:ID>
+					<cbc:Percent>10</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID>VAT</cbc:ID>
+					</cac:TaxScheme>
+				</cac:ClassifiedTaxCategory>
+				<cac:AdditionalItemProperty>
+					<cbc:Name>Marcatura</cbc:Name>  
+					<cbc:Value>25/10/2017</cbc:Value>
+				</cac:AdditionalItemProperty>
+			</cac:Item>
+		</cac:SellerSubstitutedLineItem>
+		<cac:OrderLineReference>
+			<cbc:LineID>3</cbc:LineID>
+		</cac:OrderLineReference>
+	</cac:OrderLine>
+</OrderResponse>
