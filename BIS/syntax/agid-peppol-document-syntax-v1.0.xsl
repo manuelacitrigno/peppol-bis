@@ -151,7 +151,7 @@
 	<xsl:template name="dots">
 		<xsl:param name="count" select="1"/>
 		<xsl:if test="$count > 0">
-			<span style="margin-right:10px;display:inline-block"><xsl:text>•</xsl:text></span>
+			<span style="margin-right:10px;display:inline-block">&#8226;</span>
 			<xsl:call-template name="dots">
 				<xsl:with-param name="count" select="$count - 1"/>
 			</xsl:call-template>
