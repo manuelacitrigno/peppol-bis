@@ -8,8 +8,8 @@
               doctype-system="about:legacy-compat"
               encoding="UTF-8"
               indent="yes" />
-	<xs:import namespace="urn:fdc:difi.no:2017:vefa:structure-1" schemaLocation="../../xsd/structure-1.xsd"/>
-	<xs:import namespace="urn:fdc:agid.gov.it:peppol:customization" schemaLocation="../../xsd/agid-peppol-customization-1.0.xsd"/>
+	<xs:import namespace="urn:fdc:difi.no:2017:vefa:structure-1" schemaLocation="../xsd/structure-1.xsd"/>
+	<xs:import namespace="urn:fdc:agid.gov.it:peppol:customization" schemaLocation="../xsd/agid-peppol-customization-1.0.xsd"/>
 	<xsl:variable name="transaction" select="/stx:Structure/cus:Extension/cus:Name/text()"/>
 
 	<xsl:template match="/">
@@ -20,17 +20,17 @@
 				<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-				<link rel="stylesheet" href="../../css/bootstrap.css"/>
-				<link rel="stylesheet" href="../../css/structure.css"/>
+				<link rel="stylesheet" href="../frontend/css/bootstrap.css"/>
+				<link rel="stylesheet" href="../frontend/css/structure.css"/>
 				<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
-				<link rel="stylesheet" href="../../css/agid-custom.css"/>
+				<link rel="stylesheet" href="../frontend/css/agid-custom.css"/>
 
 				<!--[if lt IE 9]>
 					<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 					<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 				<![endif]-->
-				<script src="../../js/jquery.js"/>
-				<script src="../../js/bootstrap.js"/>
+				<script src="../frontend/javascript/jquery.js"/>
+				<script src="../frontend/javascript/bootstrap.js"/>
 				<script type="text/javascript">
 					//<![CDATA[
 					debugger;//@ sourceURL=agid.js
@@ -92,6 +92,11 @@
 							<xsl:value-of select="$transaction"/>
 						</h1>
 					</div>
+					
+					<div class="page-header" style="margin-top:0;padding-top:10px">
+						<img style="width: 255px; height: 68px;margin-left:5%;" alt="AGID"	src="../frontend/images/IMG_PEPPOL/logo_AgID.jpg"/>
+						<img style="width: 225px; height: 103px;margin-left:40%;" alt="Intercent-ER" src="../frontend/images/IMG_PEPPOL/logo_INTERCENT-ER.jpg"/>
+					</div>
 
 					<div class="table-responsive">
 						<table class="table table-striped">
@@ -146,7 +151,7 @@
 	<xsl:template name="dots">
 		<xsl:param name="count" select="1"/>
 		<xsl:if test="$count > 0">
-			<xsl:text>• &#160; </xsl:text>
+			<span style="margin-right:10px;display:inline-block"><xsl:text>•</xsl:text></span>
 			<xsl:call-template name="dots">
 				<xsl:with-param name="count" select="$count - 1"/>
 			</xsl:call-template>
