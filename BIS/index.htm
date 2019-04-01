@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PEPPOL . 3.0 Release</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="./frontend/css/bootstrap.css"/>
+    <link rel="stylesheet" href="./frontend/css/structure.css"/>
+    
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">PEPPOL . 3.0 Release</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Syntax <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                            <li><a href="./syntax/agid-ubl-order.htm">PEPPOL Order transaction 3.0 (T01)</a></li>
+                        
+                            <!-- <li><a href="./syntax/OrderResponse/tree/">PEPPOL Order Response transaction 3.0 (T79)</a></li> -->
+                            <li><a href="#" style="color:#c60000;">PEPPOL Order Response transaction 3.0 (T79)</a></li>
+                        
+                            <!-- <li><a href="./syntax/OrderAgreement/tree/">PEPPOL Order Agreement transaction 3.0 (T110)</a></li> -->
+                            <li><a href="#" style="color:#c60000;">PEPPOL Order Agreement transaction 3.0 (T110)</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rules <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                            <!-- <li><a href="./rules/common/">Common rules</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Common rules</a></li> -->
+                        
+                            <li><a href="./rules/T01/PEPPOL Order transaction 3.0_Rules.htm">Business rules for PEPPOL Order transaction 3.0 </a></li>
+                        	
+                            <!-- <li><a href="./rules/T76/">Business rules for PEPPOL Order Response transaction 3.0</a></li> -->
+                        	<li><a href="#" style="color:#c60000;">Business rules for PEPPOL Order Response transaction 3.0</a></li>
+                        
+                        	<!-- <li><a href="./rules/T110/">Business rules for PEPPOL Order Agreement transaction 3.0</a></li> -->
+                            <li><a href="#" style="color:#c60000;">Business rules for PEPPOL Order Agreement transaction 3.0</a></li>
+                            
+                            <!-- <li><a href="./rules/T01-basic/">Basic rules for PEPPOL Order transaction 3.0 (T01)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Basic rules for PEPPOL Order transaction 3.0 (T01)</a></li> -->
+                        
+                        	<!-- <li><a href="./rules/T76-basic/">Basic rules for PEPPOL Order Response transaction 3.0 (T79)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Basic rules for PEPPOL Order Response transaction 3.0 (T79)</a></li> -->
+                        
+                        	<!-- <li><a href="./rules/T110-basic/">Basic rules for PEPPOL Order Agreement transaction 3.0 (T110)</a></li> -->
+                            <li><a href="#" style="color:#c60000;">Basic rules for PEPPOL Order Agreement transaction 3.0 (T110)</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Code lists <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                           <li><a href="./attachments/Intercent-ER-Code Lists Peppol 3 v.2.1.xls">CodeList</a></li>
+					
+                        
+                        	<!-- <li><a href="./codelist/UNCL1229/">Action code (UNCL1229)</a></li> -->
+                           <!--  <li><a href="#" style="color:#c60000;">Action code (UNCL1229)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL5189/">Allowance reason codes (UNCL5189 subset)</a></li> -->
+                           <!--  <li><a href="#" style="color:#c60000;">Allowance reason codes (UNCL5189 subset)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL4343/">Application Response type code (UNCL4343 Subset)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Application Response type code (UNCL4343 Subset)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/TrueFalse/">Boolean indicator (openPEPPOL)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Boolean indicator (openPEPPOL)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/ActionCode_header/">Catalogue Action code, header level (openPEPPOL)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Catalogue Action code, header level (openPEPPOL)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/ActionCode_line/">Catalogue Action code, line level (openPEPPOL)</a></li> -->
+                           <!--  <li><a href="#" style="color:#c60000;">Catalogue Action code, line level (openPEPPOL)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL7161/">Charge reason code (UNCL7161)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Charge reason code (UNCL7161)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/ClarificationListID/">Clarification list identifier (openPEPPOL)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Clarification list identifier (openPEPPOL)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/ISO3166/">Country codes (ISO 3166-1:Alpha2)</a></li> -->
+                           <!--  <li><a href="#" style="color:#c60000;">Country codes (ISO 3166-1:Alpha2)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/ISO4217/">Currency codes (ISO 4217)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Currency codes (ISO 4217)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL8273/">Dangerous goods regulations code (UNCL8273)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Dangerous goods regulations code (UNCL8273)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL1001/">Document name code, full list (UNCL1001)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Document name code, full list (UNCL1001)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL5305/">Duty or tax or fee category code (UNCL5305)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Duty or tax or fee category code (UNCL5305)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/eas/">Electronic Address Scheme (EAS)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Electronic Address Scheme (EAS)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/ICD/">ICD list (ISO 6523) </a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">ICD list (ISO 6523) </a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/Image/">Image code (openPEPPOL)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Image code (openPEPPOL)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL4343-T111/">Invoice status code (UNCL4343 Subset)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Invoice status code (UNCL4343 Subset)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL7143/">Item type identification code (UNCL7143)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Item type identification code (UNCL7143)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL6313/">Measured attribute code (UNCL6313)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Measured attribute code (UNCL6313)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL6313-T16/">Measured attribute code for despatch advice (UNCL6313 Subset)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Measured attribute code for despatch advice (UNCL6313 Subset)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/MimeCode/">Mime code (IANA Subset)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Mime code (IANA Subset)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL4343-T76/">Order Response type code (UNCL4343 Subset)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Order Response type code (UNCL4343 Subset)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL1001_T01/">Order type code (UNCL1001 subset)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Order type code (UNCL1001 subset)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/GS17009/">Packaging level code (GS1 7009)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Packaging level code (GS1 7009)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNCL5387/">Price type codes (UNCL5387)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Price type codes (UNCL5387)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNECERec20/">Recommandation 20, including Recommondation 21 codes - prefixed with X (UN/ECE)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Recommandation 20, including Recommondation 21 codes - prefixed with X (UN/ECE)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/UNECERec21/">Recommandation 21 (UN/ECE)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Recommandation 21 (UN/ECE)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/OPStatusAction/">Status Clarification Action (OpenPEPPOL)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Status Clarification Action (OpenPEPPOL)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/OPStatusReason/">Status Clarification Reason (OpenPEPPOL)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Status Clarification Reason (OpenPEPPOL)</a></li> -->
+                        
+                        	<!-- <li><a href="./codelist/StatusReason/">Status reason code (openPEPPOL)</a></li> -->
+                            <!-- <li><a href="#" style="color:#c60000;">Status reason code (openPEPPOL)</a></li> -->
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="main" class="container">
+
+    <div class="page-header">
+        <h1>Home</h1>
+    </div>
+
+    <dl class="dl-horizontal">
+        
+        <dt>Documentation</dt>
+        <dd>
+            <div class="list-group">
+                
+					<!-- Inserito in data 08/02/2019 -->
+                    <a href="./profiles/3-order-only/BIS_OrderOnly_3A.htm" class="list-group-item">
+                        <h4 class="list-group-item-heading">PEPPOL Order only 3.0</h4>
+                        
+                    </a>
+                
+                	<!-- Inserito in data 08/02/2019 -->
+                    <a href="./profiles/28-ordering/BIS_Ordering_28A.htm" class="list-group-item">
+                        <h4 class="list-group-item-heading">PEPPOL Ordering 3.0</h4>
+                        
+                    </a>
+                
+                    <!-- <a href="./profiles/42-orderagreement/" class="list-group-item">
+                        <h4 class="list-group-item-heading">PEPPOL Order Agreement 3.0</h4>
+                        
+                    </a> -->
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">PEPPOL Order Agreement 3.0</h4>
+                        <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                    </a>
+                
+            </div>
+        </dd>
+        
+
+        
+            <dt>Syntax</dt>
+            <dd>
+                <div class="list-group">
+                    
+                    	<!-- <a href="./syntax/Order/tree/" class="list-group-item">
+                            <h4 class="list-group-item-heading">PEPPOL Order transaction 3.0 (T01)</h4>
+                            
+                        </a> -->
+                        
+                        <a href="./syntax/agid-ubl-order.htm" class="list-group-item">
+                            <h4 class="list-group-item-heading">PEPPOL Order transaction 3.0 (T01)</h4>
+                        </a>
+                        
+                        <!-- <a href="./syntax/OrderResponse/tree/" class="list-group-item">
+                            <h4 class="list-group-item-heading">PEPPOL Order Response transaction 3.0 (T79)</h4>
+                            
+                        </a> -->
+                    
+                    	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">PEPPOL Order Response transaction 3.0 (T79)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a>
+                    
+                        <!-- <a href="./syntax/OrderAgreement/tree/" class="list-group-item">
+                            <h4 class="list-group-item-heading">PEPPOL Order Agreement transaction 3.0 (T110)</h4>
+                            
+                        </a> -->
+                        
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">PEPPOL Order Agreement transaction 3.0 (T110)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a>
+                    
+                </div>
+            </dd>
+        
+
+        
+            <dt>Rules</dt>
+            <dd>
+                <div class="list-group">
+                    
+                        <!-- <a href="./rules/common/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Common rules</h4>
+                            
+                        </a> -->
+                        
+                        <!-- <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Common rules</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                        
+                        <a href="./rules/T01/PEPPOL Order transaction 3.0_Rules.htm" class="list-group-item">
+                            <h4 class="list-group-item-heading">Business rules for PEPPOL Order transaction 3.0 </h4>
+                        </a>
+
+                        <!-- <a href="./rules/T76/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Business rules for PEPPOL Order Response transaction 3.0</h4>
+                            
+                        </a> -->
+                    
+                    	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Business rules for PEPPOL Order Response transaction 3.0</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a>
+                    
+                        <!-- <a href="./rules/T110/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Business rules for PEPPOL Order Agreement transaction 3.0</h4>
+                            
+                        </a> -->
+                    
+                    	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Business rules for PEPPOL Order Agreement transaction 3.0</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a>
+                    
+                        <!-- <a href="./rules/T01-basic/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Basic rules for PEPPOL Order transaction 3.0 (T01)</h4>
+                            <p class="list-group-item-text">Automatically generated rules to validate document instances of PEPPOL Order transaction 3.0 (T01).</p>
+                        </a> -->
+                        
+                        <!-- <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Basic rules for PEPPOL Order transaction 3.0 (T01)</h4>
+                            <p class="list-group-item-text">Automatically generated rules to validate document instances of PEPPOL Order transaction 3.0 (T01).</p>
+                        	<h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./rules/T76-basic/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Basic rules for PEPPOL Order Response transaction 3.0 (T79)</h4>
+                            <p class="list-group-item-text">Automatically generated rules to validate document instances of PEPPOL Order Response transaction 3.0 (T79).</p>
+                        </a> -->
+                        
+                        <!-- <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Basic rules for PEPPOL Order Response transaction 3.0 (T79)</h4>
+                            <p class="list-group-item-text">Automatically generated rules to validate document instances of PEPPOL Order Response transaction 3.0 (T79).</p>
+                        	<h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./rules/T110-basic/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Basic rules for PEPPOL Order Agreement transaction 3.0 (T110)</h4>
+                            <p class="list-group-item-text">Automatically generated rules to validate document instances of PEPPOL Order Agreement transaction 3.0 (T110).</p>
+                        </a> -->
+                        
+                        <!-- <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Basic rules for PEPPOL Order Agreement transaction 3.0 (T110)</h4>
+                            <p class="list-group-item-text">Automatically generated rules to validate document instances of PEPPOL Order Agreement transaction 3.0 (T110).</p>
+                        	<h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                </div>
+            </dd>
+        
+            <dt>Code lists</dt>
+            <dd>
+                <div class="list-group">
+                    
+						<a href="./attachments/Intercent-ER-Code Lists Peppol 3 v.2.1.xls" class="list-group-item">
+                            <h4 class="list-group-item-heading">Codelist</h4>
+                            
+                        </a>
+                        <!-- <a href="./codelist/UNCL1229/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Action code (UNCL1229)</h4>
+                            
+                        </a> -->
+                    
+                    <!-- 	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Action code (UNCL1229)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL5189/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Allowance reason codes (UNCL5189 subset)</h4>
+                            
+                        </a> -->
+                        
+                    <!--     <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Allowance reason codes (UNCL5189 subset)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL4343/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Application Response type code (UNCL4343 Subset)</h4>
+                            
+                        </a> -->
+                    
+                   <!--  	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Application Response type code (UNCL4343 Subset)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/TrueFalse/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Boolean indicator (openPEPPOL)</h4>
+                            
+                        </a> -->
+                        
+                    <!--     <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Boolean indicator (openPEPPOL)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a>
+                    
+                        <!-- <a href="./codelist/ActionCode_header/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Catalogue Action code, header level (openPEPPOL)</h4>
+                            
+                        </a> -->
+                        
+                     <!--    <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Catalogue Action code, header level (openPEPPOL)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/ActionCode_line/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Catalogue Action code, line level (openPEPPOL)</h4>
+                            
+                        </a> -->
+                    	
+                    <!-- 	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Catalogue Action code, line level (openPEPPOL)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    	
+                        <!-- <a href="./codelist/UNCL7161/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Charge reason code (UNCL7161)</h4>
+                            
+                        </a> -->
+                        
+                      <!--   <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Charge reason code (UNCL7161)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/ClarificationListID/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Clarification list identifier (openPEPPOL)</h4>
+                            
+                        </a> -->
+                    
+                    <!-- 	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Clarification list identifier (openPEPPOL)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/ISO3166/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Country codes (ISO 3166-1:Alpha2)</h4>
+                            
+                        </a> -->
+                    
+                    <!-- 	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Country codes (ISO 3166-1:Alpha2)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/ISO4217/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Currency codes (ISO 4217)</h4>
+                            
+                        </a> -->
+                    
+                    <!-- 	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Currency codes (ISO 4217)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL8273/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Dangerous goods regulations code (UNCL8273)</h4>
+                            
+                        </a> -->
+                        
+                    <!--     <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Dangerous goods regulations code (UNCL8273)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL1001/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Document name code, full list (UNCL1001)</h4>
+                            
+                        </a> -->
+                        
+                    <!--     <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Document name code, full list (UNCL1001)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL5305/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Duty or tax or fee category code (UNCL5305)</h4>
+                            
+                        </a> -->
+                        
+                     <!--    <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Duty or tax or fee category code (UNCL5305)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/eas/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Electronic Address Scheme (EAS)</h4>
+                            
+                        </a> -->
+                        
+                     <!--    <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Electronic Address Scheme (EAS)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/ICD/" class="list-group-item">
+                            <h4 class="list-group-item-heading">ICD list (ISO 6523) </h4>
+                            
+                        </a> -->
+                    
+                    <!-- 	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">ICD list (ISO 6523) </h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/Image/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Image code (openPEPPOL)</h4>
+                            
+                        </a> -->
+                    
+                    <!-- 	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Image code (openPEPPOL)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL4343-T111/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Invoice status code (UNCL4343 Subset)</h4>
+                            
+                        </a> -->
+                        
+                    <!--     <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Invoice status code (UNCL4343 Subset)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL7143/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Item type identification code (UNCL7143)</h4>
+                            
+                        </a> -->
+                        
+                    <!--     <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Item type identification code (UNCL7143)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL6313/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Measured attribute code (UNCL6313)</h4>
+                            
+                        </a> -->
+                        
+                    <!--     <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Measured attribute code (UNCL6313)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL6313-T16/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Measured attribute code for despatch advice (UNCL6313 Subset)</h4>
+                            
+                        </a> -->
+                        
+                     <!--    <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Measured attribute code for despatch advice (UNCL6313 Subset)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/MimeCode/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Mime code (IANA Subset)</h4>
+                            
+                        </a> -->
+                        
+                     <!--    <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Mime code (IANA Subset)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL4343-T76/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Order Response type code (UNCL4343 Subset)</h4>
+                            
+                        </a> -->
+                    
+                    <!-- 	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Order Response type code (UNCL4343 Subset)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL1001_T01/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Order type code (UNCL1001 subset)</h4>
+                            
+                        </a> -->
+                        
+                     <!--    <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Order type code (UNCL1001 subset)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/GS17009/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Packaging level code (GS1 7009)</h4>
+                            
+                        </a> -->
+                    
+                    <!-- 	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Packaging level code (GS1 7009)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNCL5387/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Price type codes (UNCL5387)</h4>
+                            
+                        </a> -->
+                    
+                    <!-- 	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Price type codes (UNCL5387)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNECERec20/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Recommandation 20, including Recommondation 21 codes - prefixed with X (UN/ECE)</h4>
+                            
+                        </a> -->
+                        
+                     <!--    <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Recommandation 20, including Recommondation 21 codes - prefixed with X (UN/ECE)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/UNECERec21/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Recommandation 21 (UN/ECE)</h4>
+                            
+                        </a> -->
+                    
+                    <!-- 	<a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Recommandation 21 (UN/ECE)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/OPStatusAction/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Status Clarification Action (OpenPEPPOL)</h4>
+                            
+                        </a> -->
+                        
+                     <!--    <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Status Clarification Action (OpenPEPPOL)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/OPStatusReason/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Status Clarification Reason (OpenPEPPOL)</h4>
+                            
+                        </a> -->
+                        
+                     <!--    <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Status Clarification Reason (OpenPEPPOL)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                        <!-- <a href="./codelist/StatusReason/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Status reason code (openPEPPOL)</h4>
+                            
+                        </a> -->
+                        
+                    <!--     <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">Status reason code (openPEPPOL)</h4>
+                            <h5 class="list-group-item-heading" style="color:#c60000;"><i>Content to be defined.</i></h5>
+                        </a> -->
+                    
+                </div>
+            </dd>
+        
+
+        
+            <dt>Downloads</dt>
+            <dd>
+                <div class="list-group">
+                    
+                        <!-- <a href="./files/PEPPOL.-Examples.zip" class="list-group-item" download="PEPPOL.-Examples.zip">
+                            <h4 class="list-group-item-heading">Example files</h4>
+                            
+                        </a> -->
+                        
+                        <a href="./attachments/Intercent-ER-Esempi-Xml-OrderOnly- PEPPOL BIS 3.0 v1.2.zip" class="list-group-item">
+                            <h4 class="list-group-item-heading">File di esempio</h4>
+                        </a>
+                    
+                        <!-- <a href="./files/PEPPOL.-Upgrade-Schematron.zip" class="list-group-item" download="PEPPOL.-Upgrade-Schematron.zip">
+                            <h4 class="list-group-item-heading">Schematron files</h4>
+                            
+                        </a> -->
+                        
+                        <a href="./attachments/Schematron.zip" class="list-group-item">
+                            <h4 class="list-group-item-heading">File schematron</h4>
+                        </a>
+                    
+                </div>
+            </dd>
+        
+    </dl>
+
+</div>
+
+<script src="./frontend/javascript/jquery.js"></script>
+<script src="./frontend/javascript/bootstrap.js"></script>
+
+</body>
+</html>
