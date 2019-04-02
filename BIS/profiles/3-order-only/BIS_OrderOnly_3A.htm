@@ -2189,7 +2189,7 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
 <div class="sect3">
 <h4 id="truecommittente-originatorcustomerparty"><a class="anchor" href="#truecommittente-originatorcustomerparty"></a>9.1.3. Committente (OriginatorCustomerParty)</h4>
 <div class="paragraph">
-<p>La parte che emette l’Ordine. Di solito è l’utente finale. Le informazioni sul committente sono opzionali nel messaggio dell’ordine PEPPOL.</p>
+<p>Generalmente, il committente è l&#8217;utente finale che emette l’ordine. Le informazioni presenti nel messaggio dell&#8217;ordine inerenti al committente sono facoltative.</p>
 </div>
 <div class="listingblock">
 <div class="title">Esempio di informazioni del committente</div>
@@ -2310,7 +2310,7 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
 <p>“IssueDate”, valorizzato con la data dell’Ordine che si intende aggiornare;</p>
 </li>
 <li>
-<p>“IssuerParty”, al cui interno dovrà essere indicato il campo “PartyIdendification/ID” con il corrispondente valore presente nel documento che si intende aggiornare.</p>
+<p>“IssuerParty”, al cui interno dovrà essere indicato il campo “EndpointID” con il corrispondente valore presente nel documento che si intende aggiornare.</p>
 </li>
 </ol>
 </div>
@@ -2804,7 +2804,7 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 <div class="sect2">
 <h3 id="truequantit-e-unit-di-misura"><a class="anchor" href="#truequantit-e-unit-di-misura"></a>9.9. Quantità e unità di misura</h3>
 <div class="paragraph">
-<p>Nell’Ordine PEPPOL possono essere fornite diverse Quantità e le relative Unità di misura. Esse sono relazionate sia al processo dell’ordine che a quello della logistica. La tabella seguente elenca le quantità e le relative unità di misura previste. Ogni quantità deve avere la sua unità di misura espresso secondo la codifica di riferimento.</p>
+<p>Nell’Ordine PEPPOL possono essere fornite diverse Quantità e le relative Unità di misura. Esse sono relazionate sia al processo dell’ordine che a quello della logistica. La tabella seguente elenca le quantità e le relative unità di misura previste. Ogni quantità deve avere la sua unità di misura espressa secondo le <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -3780,7 +3780,7 @@ L’Endpoint ID non è obbligatorio nel documento ma è consigliato perché mant
 <p><strong>9907</strong> per IT:CF	(codice fiscale persona fisica o giuridica)</p>
 </li>
 <li>
-<p><strong>9921</strong> IT:IPA	(Indice Pubbliche Amministrazioni)</p>
+<p><strong>9921</strong> per IT:IPA	(Indice Pubbliche Amministrazioni)</p>
 </li>
 </ul>
 </div>
@@ -3863,7 +3863,7 @@ Per esempio l’identificativo di processo seguente è utilizzato per il profilo
 <div class="sect2">
 <h3 id="trueid-customizzazione"><a class="anchor" href="#trueid-customizzazione"></a>10.6. ID Customizzazione</h3>
 <div class="paragraph">
-<p><strong>N.B</strong> <mark>Gli urn sono in corso di aggiornamento.</mark></p>
+<p><strong>N.B. In giallo, i contenuti in corso di aggiornamento.</strong></p>
 </div>
 <div class="paragraph">
 <p>L’ID di customizzazione di PEPPOL identifica la specifica dei contenuti e delle regole che si applicano alla transazione. Questo BIS ha richiesto alcune aggiunte minori e modifiche alla transazione CEN BII. In base alla metodologia CENBII ogni estensione deve essere comunicata aggiungendo un ID di estensione alla stringa del CustomizationID. La sintassi completa è:</p>
@@ -3877,10 +3877,10 @@ Per esempio l’identificativo di processo seguente è utilizzato per il profilo
 <p>Dove:</p>
 </div>
 <div class="paragraph">
-<p><mark><strong>*</strong> Transaction ID: urn:www.cenbii.eu:transaction:biitrns001:ver2.0</mark></p>
+<p><mark>1. Transaction ID: urn:www.cenbii.eu:transaction:biitrns001:ver2.0</mark></p>
 </div>
 <div class="paragraph">
-<p><mark><strong>*</strong> Extension ID:   urn:www.peppol.eu:bis:peppol3a:ver2.0</mark></p>
+<p><mark>2. Extension ID:   urn:www.peppol.eu:bis:peppol3a:ver2.0</mark></p>
 </div>
 <div class="paragraph">
 <p>CustomizationID da utilizzare se non vi sono altre estensioni:</p>
@@ -3899,7 +3899,7 @@ Per esempio l’identificativo di processo seguente è utilizzato per il profilo
 </div>
 </div>
 <div class="paragraph">
-<p><mark>.Esempio di utilizzo:</mark></p>
+<p><mark>Esempio di utilizzo:</mark></p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3937,7 +3937,7 @@ Per esempio l’identificativo di processo seguente è utilizzato per il profilo
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-02 14:14:09 WEDT
+Last updated 2019-04-02 14:56:03 WEDT
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
