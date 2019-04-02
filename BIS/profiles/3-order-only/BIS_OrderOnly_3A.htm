@@ -2081,7 +2081,7 @@ Quando si utilizza un documento d’istanza, ciascun elemento di dati contiene i
 <div class="sect3">
 <h4 id="truevenditore-sellersupplierparty"><a class="anchor" href="#truevenditore-sellersupplierparty"></a>9.1.1. Venditore (SellerSupplierParty)</h4>
 <div class="paragraph">
-<p>Il venditore è la persona giuridica che agisce per conto del fornitore e che vende la merce o i servizi all’acquirente. Il venditore è obbligatorio in quanto destinatario dell’ordine PEPPOL, pertanto si raccomanda di includere l’EndpointID (ID partecipante) con il quale è registrato in PEPPOL.</p>
+<p>Il venditore è la persona giuridica che agisce per conto del fornitore e che vende la merce o i servizi all’acquirente. Il venditore è obbligatorio in quanto destinatario dell’ordine PEPPOL, pertanto si raccomanda di includere l’EndpointID (ID partecipante) con il quale è registrato su PEPPOL.</p>
 </div>
 <div class="listingblock">
 <div class="title">Esempio di Informazioni del venditore</div>
@@ -2133,7 +2133,7 @@ Quando si utilizza un documento d’istanza, ciascun elemento di dati contiene i
 <div class="paragraph">
 <p>L’acquirente è la persona giuridica che agisce per conto del cliente e che acquista la merce o i servizi. L’acquirente è obbligatorio in quanto mittente del messaggio dell’ordine PEPPOL, pertanto si raccomanda di includere l’EndpointID (ID partecipante) con il quale è registrato in PEPPOL.
 Il nome e l’identificativo fiscale dell’acquirente sono inoltre un requisito di questa implementazione per permettere all’access point di identificare ed autorizzare il mittente all’inoltro dell’ordine sulla rete (INT-T01-R002).
-Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con una sola istanza (molteplicità = 1), in quanto si tratta di uno dei tre elementi che identificano univocamente il Messaggio in NSO.</p>
+Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con una sola istanza (molteplicità = 1), in quanto si tratta di uno dei tre elementi che identificano univocamente il Messaggio nel NSO.</p>
 </div>
 <div class="listingblock">
 <div class="title">Esempio di informazioni dell&#8217;acquirente</div>
@@ -2215,7 +2215,7 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
 <div class="sect3">
 <h4 id="trueintestatario-fattura-accountingcustomerparty"><a class="anchor" href="#trueintestatario-fattura-accountingcustomerparty"></a>9.1.4. Intestatario fattura (AccountingCustomerParty)</h4>
 <div class="paragraph">
-<p>L’intestatario della fattura è la persona giuridica che agisce per conto del Cliente e che riceve la fattura relativa all’ordine. Le informazioni sull’intestatario della fattura sono opzionali nel messaggio dell’Ordine PEPPOL. (Vedi regola INT-T01-R002).</p>
+<p>L’intestatario della fattura è la persona giuridica che agisce per conto del Cliente e che riceve la fattura relativa all’ordine. Le informazioni sull’intestatario della fattura sono opzionali nel messaggio dell’Ordine PEPPOL. Vedi regola INT-T01-R002, su <a href="#trueregole-di-business-italiane">Regole di business italiane</a>.</p>
 </div>
 <div class="listingblock">
 <div class="title">Esempio di informazioni dell&#8217;intestatario fattura</div>
@@ -3937,7 +3937,7 @@ Per esempio l’identificativo di processo seguente è utilizzato per il profilo
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-02 14:56:03 WEDT
+Last updated 2019-04-02 15:00:14 WEDT
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
