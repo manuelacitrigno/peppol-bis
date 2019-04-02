@@ -160,7 +160,7 @@
 				<Value type="EXAMPLE">1232424</Value>
 			</Element>
 		</Element>
-		<Element cardinality="0..n" agid:custom="cardinality">
+		<Element cardinality="0..1" agid:custom="cardinality">
 			<Term>cac:OrderDocumentReference</Term>
 			<Name>Order reference</Name>
 			<Element>
