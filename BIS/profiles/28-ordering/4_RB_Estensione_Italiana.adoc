@@ -10,9 +10,9 @@
 | INT-T01-R002 |	L'ordine DEVE contenere il nome, il paese e l'identificativo fiscale della parte ordinane (Acquirente).	| Fatal
 | INT-T01-R003 |	La versione dell’Ordine DEVE corrispondere alle seguenti 2 dimensioni:
 
-CustomizationID = 'urn:www.cenbii.eu:transaction:biitrns001:ver2.0: extended:urn:www.peppol.eu:bis:peppol3a:ver2.0:
-extended:urn:www.ubl-italia.org:spec:ordine:ver2.1', 
-ProfileID = 'urn:www.cenbii.eu:profile:bii03:ver2.0'	| Fatal
+CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1', 
+ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.
+	| Fatal
 | INT-T01-R004 |	Se il prezzo e il totale riga d'ordine sono presenti, il totale riga DEVE essere ottenuto moltiplicando il prezzo per la quantità diviso la quantità base a cui si riferisce il prezzo e includendo l'eventuale sconto o maggiorazione indicati.	| Fatal
 | INT-T01-R026 |	Se l'identificatore di endpoint si basa sullo schema di identificatori IT:IPA (ICD: 9921), questo dovrà seguire la sintassi [A-Z0-9]{6,7}.	| Fatal
 | INT-T01-R027 |	Se l'identificatore di endpoint si basa sullo schema di identificatori IT:VAT (ICD: 9906), questo dovrà seguire la sintassi (IT)?[0-9]{11}.	| Fatal
@@ -39,11 +39,9 @@ ProfileID = 'urn:www.cenbii.eu:profile:bii03:ver2.0'	| Fatal
 |INT-T76-R002	| Le informazioni di contatto del fornitore sono obbligatorie in caso di rigetto o modifica dell’Ordine.	| Fatal
 |#INT-T76-R003#	| La versione della Risposta d'Ordine DEVE corrispondere alle seguenti 2 dimensioni: 
 
-CustomizationID = 'urn:www.cenbii.eu:transaction:biitrns076:ver2.0:extended:
-urn:www.peppol.eu:bis:peppol28a:ver1.0:extended:
-urn:www.ubl-italia.org:spec:ordine:ver2.1'
-
-ProfileID = 'urn:www.cenbii.eu:profile:bii28:ver2.0'.	| Fatal
+CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1', 
+ProfileID = 'urn:fdc:peppol.eu:poacc:bis:ordering:3'.
+	| Fatal
 |INT-T76-R004	| Se il codice di risposta in testata è 27 (rifiutato) non deve essere fornita alcuna riga di dettaglio.	| Fatal
 |INT-T76-R005	| Se il codice di risposta in testata è 29 (accettato) non deve essere fornita alcuna riga di dettaglio.	| Fatal
 |INT-T76-R006	| Se il codice di risposta in testata è 30 (accettato con modifiche) e necessario fornire tutte le righe dell'ordine con il relativo stato.	| Fatal
