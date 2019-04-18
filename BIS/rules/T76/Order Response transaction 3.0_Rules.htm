@@ -48,7 +48,8 @@
 						}
 						});
 					//
-				</script></head><body>
+				</script></head>
+   <body>
       <div id="main" class="container">
          <ol id="path" class="breadcrumb">
             <li class="active">Regole di business - Ordine di Fornitura Elettronico con risposta 3.0</li>
@@ -60,9 +61,7 @@
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; <img style="width: 225px; height: 103px;" alt="Intercent-ER" src="../../frontend/images/IMG_PEPPOL/logo_INTERCENT-ER.jpg"><br>
 <br>
-
          </div>
-		 
          <div id="rules" class="table-responsive">
             <table class="table table-striped">
                <thead>
@@ -425,7 +424,7 @@
                      <td><a href="#">INT-T76-R011</a><br><span class="message">INT-T76-R011 - Nel riferimento all'ordine a cui si risponde (OrderReference) l'ID deve corrispondere al DocumentReference/ID.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
-                  <tr id="INT-T76-R013" data-context="//cac:OrderReference" data-test="xs:date(cbc:IssueDate) &gt;= xs:date(/*/cbc:IssueDate)">
+                  <tr id="INT-T76-R013" data-context="//cac:OrderReference" data-test="xs:date(cbc:IssueDate) <= xs:date(/*/cbc:IssueDate)">
                      <td><a href="#">INT-T76-R013</a><br><span class="message">INT-T76-R013 - Nel riferimento all'ordine a cui si risponde (OrderReference) la data di emissione indicata DEVE essere minore
                            o uguale a quella della risposta d'ordine.</span></td>
                      <td style="width: 5%;">fatal</td>

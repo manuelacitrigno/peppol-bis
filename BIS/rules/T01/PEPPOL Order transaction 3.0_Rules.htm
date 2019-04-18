@@ -2,10 +2,10 @@
 <html data-transaction="Rules for PEPPOL Order transaction 3.0"><head><!-- saved from url=(0168) -->
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Rules for PEPPOL Order transaction 3.0</title>
-      
-   
-      
-      
+	  
+	  
+	  
+	  
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="../../frontend/css/bootstrap.css">
@@ -49,8 +49,9 @@
 						}
 						});
 					//
-				</script></head><body>
-      <div id="main" class="container">
+				</script></head>
+   <body>
+   <div id="main" class="container">
          <ol id="path" class="breadcrumb">
             <li class="active">Regole di business - Ordine di Fornitura Elettronico 3.0</li>
          </ol>
@@ -61,14 +62,12 @@
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; <img style="width: 225px; height: 103px;" alt="Intercent-ER" src="../../frontend/images/IMG_PEPPOL/logo_INTERCENT-ER.jpg"><br>
 <br>
-
-         </div>
          <div id="rules" class="table-responsive">
             <table class="table table-striped">
                <thead>
                   <tr>
                      <th>Identifier/Error message</th>
-                     <th style="width: 5%;">Flag</th>
+                     <th style="width: 5%">Flag</th>
                   </tr>
                </thead>
                <tbody id="rules">
@@ -821,7 +820,7 @@
                      <td><a href="#">PEPPOL-T01-R003</a><br><span class="message">An order SHALL be stated in a single currency</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
-                  <tr id="PEPPOL-T01-R028" data-context="cbc:Amount | cbc:TaxAmount | cbc:LineExtensionAmount | cbc:PriceAmount | cbc:BaseAmount | cac:AnticipatedMonetaryTotal/cbc:*" data-test="ancestor::node()/local-name() = 'Price' or string-length(substring-after(., '.')) &lt;= 2">
+                  <tr id="PEPPOL-T01-R028" data-context="cbc:Amount | cbc:TaxAmount | cbc:LineExtensionAmount | cbc:PriceAmount | cbc:BaseAmount | cac:AnticipatedMonetaryTotal/cbc:*" data-test="ancestor::node()/local-name() = 'Price' or string-length(substring-after(., '.')) <= 2">
                      <td><a href="#">PEPPOL-T01-R028</a><br><span class="message">Elements of data type amount cannot have more than 2 decimals (I.e. all amounts except unit price amounts)</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
@@ -835,7 +834,7 @@
                   </tr>
                   <tr id="PEPPOL-T01-R026" data-context="cac:PartyTaxScheme[cac:TaxScheme/cbc:ID='VAT']" data-test="( contains( 'AD AE AF AG AI AL AM AN AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BL BJ BM BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH EL ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW',substring(cbc:CompanyID,1,2) ) or cbc:CompanyID/@schemeID='9907')">
                      <td><a href="#">PEPPOL-T01-R026</a><br><span class="message">Party VAT identifiers SHALL have a prefix in accordance with ISO code ISO 3166-1 alpha-2 by which the country of issue may
-                           be identified. Nevertheless, Greece may use the prefix ‘EL’.</span></td>
+                           be identified. Nevertheless, Greece may use the prefix &#8216;EL&#8217;.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="PEPPOL-T01-R006" data-context="cac:AnticipatedMonetaryTotal" data-test="$payableAmount &gt;=0">
@@ -956,28 +955,23 @@
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T01-R028" data-context="//cbc:EndpointID" data-test="(@schemeID='9907' and matches(.,'^[0-9]{11}$|^[A-Z]{6}\d{2}[ABCDEHLMPRST]{1}\d{2}[A-Z]{1}\d{3}[A-Z]{1}$')) or @schemeID!='9907'">
-                     <td><a href="#">INT-T01-R028</a><br><span class="message">[INT-T01-R028]
-- Se l'identificatore di endpoint si basa sullo schema di
-identificatori IT:CF (ICD: 9907), questo dovr&agrave; seguire la sintassi
-[0-9]{11} per le persone giuridiche e la sintassi
-[A-Z]{6}\d{2}[ABCDEHLMPRST]{1}\d{2}[A-Z]{1}\d{3}[A-Z]{1} per quelle
-fisiche.</span></td>
+                     <td><a href="#">INT-T01-R028</a><br><span class="message">[INT-T01-R028] - Se l'identificatore di endpoint si basa sullo schema di identificatori IT:CF (ICD: 9907), questo dovr&agrave; seguire
+                           la sintassi [0-9]{11} per le persone giuridiche e la sintassi [A-Z]{6}\d{2}[ABCDEHLMPRST]{1}\d{2}[A-Z]{1}\d{3}[A-Z]{1} per
+                           quelle fisiche.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T01-R004" data-context="//cac:OrderLine/cac:LineItem" data-test="(not(cac:Price/cbc:PriceAmount) or not(cbc:LineExtensionAmount)) or (cac:Price/cbc:PriceAmount and not(cac:Price/cbc:BaseQuantity) and cbc:LineExtensionAmount and cac:AllowanceCharge[cbc:ChargeIndicator='false']/cbc:Amount and xs:decimal(cbc:LineExtensionAmount) = round(((xs:decimal(cac:Price/cbc:PriceAmount) * xs:decimal(cbc:Quantity)) - xs:decimal(cac:AllowanceCharge/cbc:Amount)) * 100) div 100) or (cac:Price/cbc:PriceAmount and not(cac:Price/cbc:BaseQuantity) and cbc:LineExtensionAmount and cac:AllowanceCharge[cbc:ChargeIndicator='true']/cbc:Amount and xs:decimal(cbc:LineExtensionAmount) = round(((xs:decimal(cac:Price/cbc:PriceAmount) * xs:decimal(cbc:Quantity)) + xs:decimal(cac:AllowanceCharge/cbc:Amount)) * 100) div 100) or (cac:Price/cbc:PriceAmount and not(cac:Price/cbc:BaseQuantity) and cbc:LineExtensionAmount and not(cac:AllowanceCharge/cbc:Amount) and xs:decimal(cbc:LineExtensionAmount) = round(xs:decimal(cac:Price/cbc:PriceAmount) * xs:decimal(cbc:Quantity) * 100) div 100) or (cac:Price/cbc:PriceAmount and cac:Price/cbc:BaseQuantity and cbc:LineExtensionAmount and cac:AllowanceCharge[cbc:ChargeIndicator='false']/cbc:Amount and xs:decimal(cbc:LineExtensionAmount) = round(((xs:decimal(cac:Price/cbc:PriceAmount) * xs:decimal(cbc:Quantity) div xs:decimal(cac:Price/cbc:BaseQuantity)) - xs:decimal(cac:AllowanceCharge/cbc:Amount)) * 100) div 100) or (cac:Price/cbc:PriceAmount and cac:Price/cbc:BaseQuantity and cbc:LineExtensionAmount and cac:AllowanceCharge[cbc:ChargeIndicator='true']/cbc:Amount and xs:decimal(cbc:LineExtensionAmount) = round(((xs:decimal(cac:Price/cbc:PriceAmount) * xs:decimal(cbc:Quantity) div xs:decimal(cac:Price/cbc:BaseQuantity)) + xs:decimal(cac:AllowanceCharge/cbc:Amount)) * 100) div 100) or (cac:Price/cbc:PriceAmount and cac:Price/cbc:BaseQuantity and cbc:LineExtensionAmount and not(cac:AllowanceCharge/cbc:Amount) and xs:decimal(cbc:LineExtensionAmount) = round(xs:decimal(cac:Price/cbc:PriceAmount) * xs:decimal(cbc:Quantity) div xs:decimal(cac:Price/cbc:BaseQuantity) * 100) div 100)">
-                     <td><a href="#">INT-T01-R004</a><br><span class="message">[INT-T01-R004]
-- Se il prezzo e il totale riga d'ordine sono presenti, il totale riga
-DEVE essere ottenuto moltiplicando il prezzo per la quantit&agrave; diviso la
-quantit&agrave; base a cui si riferisce il prezzo e includendo l'eventuale
-sconto o maggiorazione indicati.</span></td>
+                     <td><a href="#">INT-T01-R004</a><br><span class="message">[INT-T01-R004] - Se il prezzo e il totale riga d'ordine sono presenti, il totale riga DEVE essere ottenuto moltiplicando il
+                           prezzo per la quantit&agrave; diviso la quantit&agrave; base a cui si riferisce il prezzo e includendo l'eventuale sconto o maggiorazione
+                           indicati.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T01-R003" data-context="/ubl:Order" data-test="cbc:CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1' and cbc:ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'">
-                     <td><a href="#">INT-T01-R003</a><br><span class="message">[INT-T01-R003]
-- La transazione dell'Ordine DEVE essere identificata dai seguenti
-identificativi: CustomizationID =
-'urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1',
-ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.</span></td>
+                     <td><a href="#">INT-T01-R003</a><br><span class="message">[INT-T01-R003] - La transazione dell'Ordine DEVE essere identificata dai seguenti identificativi: 
+                           
+                           CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1', 
+                           
+                           ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T01-R029" data-context="/ubl:Order" data-test="cac:AdditionalDocumentReference[cbc:DocumentType='CIG'] or cac:OrderLine/cac:DocumentReference[cbc:DocumentType='CIG']">
@@ -986,32 +980,28 @@ ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.</span></td>
                      <td style="width: 5%;">warning</td>
                   </tr>
                   <tr id="INT-T01-R034" data-context="/ubl:Order" data-test="not(cac:OrderDocumentReference) or count(cac:OrderDocumentReference)!=count(cac:OrderDocumentReference[cbc:DocumentStatusCode='Cancelled']) or (count(cac:OrderLine)=1 and cac:OrderLine/cac:LineItem/cbc:ID='NA' and cac:OrderLine/cac:LineItem/cac:Item/cbc:Name='NA' and cac:OrderLine/cac:LineItem/cbc:Quantity=0 and not(cac:TaxTotal) and not(cac:AnticipatedMonetaryTotal))">
-                     <td><a href="#">INT-T01-R034</a><br><span class="message">INT-T01-R034
-- Nel caso in cui l'ordine contenga il riferimento ad un solo ordine
-per comunicarne la sola cancellazione, &egrave; obbligatorio fornire una sola
-riga d'ordine con identificativo e nome articolo valorizzati con 'NA' e
-quantit&agrave; posta a zero.</span></td>
+                     <td><a href="#">INT-T01-R034</a><br><span class="message">INT-T01-R034 - Nel caso in cui l'ordine contenga il riferimento ad un solo ordine per comunicarne la sola cancellazione, &egrave;
+                           obbligatorio fornire una sola riga d'ordine con identificativo e nome articolo valorizzati con 'NA' e quantit&agrave; posta a zero.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T01-R035" data-context="/ubl:Order" data-test="not(cac:OrderDocumentReference) or count(cac:OrderDocumentReference[cbc:DocumentStatusCode='Revised'])=0 or cac:OrderLine/cac:LineItem/cbc:ID!='NA'">
                      <td><a href="#">INT-T01-R035</a><br><span class="message">INT-T01-R035 - Nel caso in cui l'ordine contenga il riferimento ad un solo ordine per comunicarne la revisione &egrave; obbligatorio
-                           fornire una o più righe d'ordine con identificativo diverso da 'NA'.</span></td>
+                           fornire una o pi&ugrave; righe d'ordine con identificativo diverso da 'NA'.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T01-R030" data-context="//cac:OrderDocumentReference" data-test="cac:IssuerParty/cbc:EndpointID or not(contains( ' Cancelled Disputed Revised NotConfirmed Rejected ',concat(' ',normalize-space(cbc:DocumentStatusCode),' ') ))">
-                     <td><a href="#">INT-T01-R030</a><br><span class="message">INT-T01-R030 - Se si intende revocare o modificare un ordine l'endpoint del Buyer &egrave; obbligatorio all’interno della sezione
+                     <td><a href="#">INT-T01-R030</a><br><span class="message">INT-T01-R030 - Se si intende revocare o modificare un ordine l'endpoint del Buyer &egrave; obbligatorio all&#8217;interno della sezione
                            che contiene i riferimenti al documento collegato (OrderDocumentReference).</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T01-R031" data-context="//cac:OrderDocumentReference" data-test="cbc:IssueDate or not(contains( ' Cancelled Disputed Revised NotConfirmed Rejected ',concat(' ',normalize-space(cbc:DocumentStatusCode),' ') ))">
-                     <td><a href="#">INT-T01-R031</a><br><span class="message">INT-T01-R031 - Se si intende revocare o modificare un ordine la data &egrave; obbligatoria all’interno della sezione che contiene
+                     <td><a href="#">INT-T01-R031</a><br><span class="message">INT-T01-R031 - Se si intende revocare o modificare un ordine la data &egrave; obbligatoria all&#8217;interno della sezione che contiene
                            i riferimenti al documento collegato (OrderDocumentReference).</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T01-R002" data-context="//cac:BuyerCustomerParty/cac:Party" data-test="cac:PartyName/cbc:Name and cac:PostalAddress/cac:Country/cbc:IdentificationCode and cac:PartyTaxScheme/cbc:CompanyID">
                      <td><a href="#">INT-T01-R002</a><br><span class="message">[INT-T01-R002] - L'ordine DEVE contenere il nome, il paese e l'identificativo fiscale della parte ordinane (Acquirente).</span></td>
-                     <td style="width: 5%;"><br>
-</td>
+                     <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T01-R032" data-context="//cac:BuyerCustomerParty/cac:Party" data-test="count(cac:PartyIdentification/cbc:ID)=1 and cac:PartyIdentification/cbc:ID/@schemeID='9921'">
                      <td><a href="#">INT-T01-R032</a><br><span class="message">INT-T01-R032 - Un ordine deve riportare obbligatoriamente un solo identificatore della parte di business (party identification)
@@ -1024,38 +1014,37 @@ quantit&agrave; posta a zero.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T01-R036" data-context="//cac:SellerSupplierParty/cac:Party" data-test="cac:PartyIdentification/cbc:ID[(@schemeID='9906' and matches(.,'^(IT)?[0-9]{11}$')) or @schemeID!='9906']">
-                     <td><a href="#">INT-T01-R036</a><br><span class="message">INT-T01-R036
-- Un ordine DEVE contenere Il codice destinatario (CODDEST) del
-fornitore, composto da 7 caratteri ASCII alfanumerici maiuscoli, per un
-periodo di transizione sar&agrave; possibile utilizzare la P.IVA, il C.F. o
-l'IPA.</span></td>
+                     <td><a href="#">INT-T01-R036</a><br><span class="message">INT-T01-R036 - Un ordine DEVE contenere Il codice destinatario (CODDEST) del fornitore, composto da 7 caratteri ASCII alfanumerici
+                           maiuscoli, per un periodo di transizione sar&agrave; possibile utilizzare la P.IVA, il C.F. o l'IPA.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
-                  
-                  
+                  <tr id="INT-T01-R036" data-context="//cac:SellerSupplierParty/cac:Party" data-test="cac:PartyIdentification/cbc:ID[(@schemeID='9907' and matches(.,'^[0-9]{11}$|^[A-Z]{6}\d{2}[ABCDEHLMPRST]{1}\d{2}[A-Z]{1}\d{3}[A-Z]{1}$')) or @schemeID!='9907']">
+                     <td><a href="#">INT-T01-R036</a><br><span class="message">INT-T01-R036 - Un ordine DEVE contenere Il codice destinatario (CODDEST) del fornitore, composto da 7 caratteri ASCII alfanumerici
+                           maiuscoli, per un periodo di transizione sar&agrave; possibile utilizzare la P.IVA, il C.F. o l'IPA.</span></td>
+                     <td style="width: 5%;">fatal</td>
+                  </tr>
+                  <tr id="INT-T01-R036" data-context="//cac:SellerSupplierParty/cac:Party" data-test="cac:PartyIdentification/cbc:ID[(@schemeID='9921' and string-length(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789','')) = 0 and string-length() &gt;= 6 and string-length() <= 7) or @schemeID!='9921']">
+                     <td><a href="#">INT-T01-R036</a><br><span class="message">INT-T01-R036 - Un ordine DEVE contenere Il codice destinatario (CODDEST) del fornitore, composto da 7 caratteri ASCII alfanumerici
+                           maiuscoli, per un periodo di transizione sar&agrave; possibile utilizzare la P.IVA, il C.F. o l'IPA.</span></td>
+                     <td style="width: 5%;">fatal</td>
+                  </tr>
                   <tr id="INT-T01-R001" data-context="//cbc:*" data-test="normalize-space()">
-                     <td><a href="#">INT-T01-R001</a><br><span class="message">[INT-T01-R001] - Un elemento informativo base, se istanziato, non può essere vuoto.</span></td>
+                     <td><a href="#">INT-T01-R001</a><br><span class="message">[INT-T01-R001] - Un elemento informativo base, se istanziato, non pu&ograve; essere vuoto.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                </tbody>
             </table>
          </div>
-         <dl id="rule" class="dl-horizontal" style="display: none;">
-            <dt>Message<br>
-</dt>
+         <dl id="rule" class="dl-horizontal">
+            <dt>Message</dt>
             <dd>
                <p class="message lead"></p>
-            <br>
-</dd>
-            <dt>Context<br>
-</dt>
-            <dd><code class="context"></code><br>
-</dd>
-            <dt>Test<br>
-</dt>
-            <dd><code class="test"></code><br>
-</dd>
+            </dd>
+            <dt>Context</dt>
+            <dd><code class="context"></code></dd>
+            <dt>Test</dt>
+            <dd><code class="test"></code></dd>
          </dl>
       </div>
-   
-</body></html>
+   </body>
+</html>
