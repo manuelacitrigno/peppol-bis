@@ -457,10 +457,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueflusso-del-processo">5.1. Flusso del processo</a></li>
 <li><a href="#truerequisiti-dei-processi-di-business">5.2. Requisiti dei processi di business</a></li>
 <li><a href="#truediagramma-del-processo-di-business">5.3. Diagramma del processo di business</a></li>
-<li><a href="#truecaso-d-uso-1-ordine-di-fornitura-di-articoli-numerati">5.4. Caso d’uso 1 – Ordine di fornitura di articoli numerati</a></li>
-<li><a href="#truecaso-d-uso-2-ordine-di-fornitura-di-articoli-descritti-in-modo-testuale">5.5. Caso d’uso 2 – Ordine di fornitura di articoli descritti in modo testuale</a></li>
-<li><a href="#truecaso-d-uso-3-ordine-di-fornitura-di-servizi">5.6. Caso d’uso 3 – Ordine di fornitura di servizi</a></li>
-<li><a href="#truecaso-d-uso-4-ordine-di-fornitura-complesso">5.7. Caso d’uso 4 – Ordine di fornitura complesso</a></li>
+<li><a href="#truecaso-d-uso-1-risposta-all-ordine-di-fornitura-su-articoli-numerati">5.4. Caso d’uso 1 – Risposta all’ordine di fornitura su articoli numerati</a></li>
+<li><a href="#truecaso-d-uso-2-risposta-all-ordine-di-fornitura-con-articoli-e-un-allegato">5.5. Caso d’uso 2 – Risposta all’ordine di fornitura con articoli e un allegato</a></li>
+<li><a href="#truecaso-d-uso-3-risposta-all-ordine-di-fornitura-per-i-servizi">5.6. Caso d’uso 3 – Risposta all’ordine di fornitura per i servizi</a></li>
+<li><a href="#truecaso-d-uso-4-risposta-ad-un-ordine-di-fornitura-complesso">5.7. Caso d’uso 4 – Risposta ad un ordine di fornitura complesso</a></li>
 </ul>
 </li>
 <li><a href="#truesemantica-della-tipologia-di-dati-semantic-datatype">6. Semantica della tipologia di dati (Semantic datatype)</a>
@@ -1020,9 +1020,8 @@ cac:AccountingCustomerParty</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R003</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">La versione dell’Ordine DEVE corrispondere alle seguenti 2 dimensioni:
-</p><p class="tableblock">CustomizationID = 'urn:www.cenbii.eu:transaction:biitrns001:ver2.0: extended:urn:www.peppol.eu:bis:peppol3a:ver2.0:
-extended:urn:www.ubl-italia.org:spec:ordine:ver2.1',
-ProfileID = 'urn:www.cenbii.eu:profile:bii03:ver2.0'</p></td>
+</p><p class="tableblock">CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1',
+ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
@@ -1108,12 +1107,10 @@ ProfileID = 'urn:www.cenbii.eu:profile:bii03:ver2.0'</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>INT-T76-R003</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T76-R003</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">La versione della Risposta d&#8217;Ordine DEVE corrispondere alle seguenti 2 dimensioni:
-</p><p class="tableblock">CustomizationID = 'urn:www.cenbii.eu:transaction:biitrns076:ver2.0:extended:
-urn:www.peppol.eu:bis:peppol28a:ver1.0:extended:
-urn:www.ubl-italia.org:spec:ordine:ver2.1'
-</p><p class="tableblock">ProfileID = 'urn:www.cenbii.eu:profile:bii28:ver2.0'.</p></td>
+</p><p class="tableblock">CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1',
+ProfileID = 'urn:fdc:peppol.eu:poacc:bis:ordering:3'.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
@@ -1270,9 +1267,9 @@ urn:www.ubl-italia.org:spec:ordine:ver2.1'
 </div>
 </div>
 <div class="sect2">
-<h3 id="truecaso-d-uso-1-ordine-di-fornitura-di-articoli-numerati"><a class="anchor" href="#truecaso-d-uso-1-ordine-di-fornitura-di-articoli-numerati"></a>5.4. Caso d’uso 1 – Ordine di fornitura di articoli numerati</h3>
+<h3 id="truecaso-d-uso-1-risposta-all-ordine-di-fornitura-su-articoli-numerati"><a class="anchor" href="#truecaso-d-uso-1-risposta-all-ordine-di-fornitura-su-articoli-numerati"></a>5.4. Caso d’uso 1 – Risposta all’ordine di fornitura su articoli numerati</h3>
 <div class="paragraph">
-<p>Questo caso d’uso è relativo a un ordine composto da voci/articoli numerati con parziale accettazione.</p>
+<p>Questo caso d’uso è relativo a un ordine composto da voci/articoli numerati con parziale accettazione e sua risposta.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1291,7 +1288,7 @@ urn:www.ubl-italia.org:spec:ordine:ver2.1'
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Descrizione</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Un ordine di articoli numerati.
-</p><p class="tableblock">L’ordine istruisce il venditore sull’indirizzo di consegna. Il venditore può consegnare alcuni degli articoli ma non tutti.
+</p><p class="tableblock">L’ordine indica al venditore l’indirizzo di consegna. Il venditore consegna solo una parte degli articoli richiesti.
 </p><p class="tableblock">Un articolo deve essere sostituito.</p></td>
 </tr>
 <tr>
@@ -1305,10 +1302,11 @@ urn:www.ubl-italia.org:spec:ordine:ver2.1'
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Il flusso</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">L’acquirente crea l’ordine con 3 diverse righe ed articoli.
-Il Venditore:
+Il Venditorericeve l&#8217;ordine.
 </p><p class="tableblock">- Accetta di consegnare un articolo.
 </p><p class="tableblock">- Respinge un articolo.
-</p><p class="tableblock">- Sostituisce un articolo.</p></td>
+</p><p class="tableblock">- Sostituisce un articolo.
+</p><p class="tableblock">La risposta all’ordine deve inviare tutte le righe presenti nell’ordine, inserendo per l’ultima riga la sostituzione dell’articolo. L’articolo respinto deve avere la motivazione di rigetto.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Risultati</strong></p></td>
@@ -1322,9 +1320,9 @@ Il Venditore:
 </table>
 </div>
 <div class="sect2">
-<h3 id="truecaso-d-uso-2-ordine-di-fornitura-di-articoli-descritti-in-modo-testuale"><a class="anchor" href="#truecaso-d-uso-2-ordine-di-fornitura-di-articoli-descritti-in-modo-testuale"></a>5.5. Caso d’uso 2 – Ordine di fornitura di articoli descritti in modo testuale</h3>
+<h3 id="truecaso-d-uso-2-risposta-all-ordine-di-fornitura-con-articoli-e-un-allegato"><a class="anchor" href="#truecaso-d-uso-2-risposta-all-ordine-di-fornitura-con-articoli-e-un-allegato"></a>5.5. Caso d’uso 2 – Risposta all’ordine di fornitura con articoli e un allegato</h3>
 <div class="paragraph">
-<p>Questo caso d’uso è relativo a un ordine composto da articoli descritti in testo libero con piena accettazione.</p>
+<p>Questo caso d’uso è relativo a un ordine composto da articoli e un allegato.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1338,11 +1336,11 @@ Il Venditore:
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nome</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine con articoli descritti in testo libero</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine con articoli e un allegato</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Descrizione</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Un ordine con unità/articoli descritti in testo libero e attributi/coppie di valori.
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un ordine con unità/articoli descritti in modo strutturati. È presente un allegato.
 </p><p class="tableblock">Il venditore risponde con le denominazioni degli articoli appropriate.
 </p><p class="tableblock">Tutte le righe vengono accettate.</p></td>
 </tr>
@@ -1356,9 +1354,9 @@ Il Venditore:
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Il flusso</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">L’acquirente crea l’ordine con 2 diverse righe e articoli. Il venditore:
+<td class="tableblock halign-left valign-top"><p class="tableblock">L’acquirente crea l’ordine con 2 diverse righe e articoli. Il venditore riceve l&#8217;ordine.
 </p><p class="tableblock">- Accetta di consegnare tutti gli articoli;
-</p><p class="tableblock">- Nella risposta d’ordine vengono ritornate informazioni complete sugli articoli.</p></td>
+</p><p class="tableblock">L&#8217;ordine è stato accettato senza modifiche. Nessuna riga deve essere inviata nella risposta all&#8217;ordine.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Risultati</strong></p></td>
@@ -1372,9 +1370,9 @@ Il Venditore:
 </table>
 </div>
 <div class="sect2">
-<h3 id="truecaso-d-uso-3-ordine-di-fornitura-di-servizi"><a class="anchor" href="#truecaso-d-uso-3-ordine-di-fornitura-di-servizi"></a>5.6. Caso d’uso 3 – Ordine di fornitura di servizi</h3>
+<h3 id="truecaso-d-uso-3-risposta-all-ordine-di-fornitura-per-i-servizi"><a class="anchor" href="#truecaso-d-uso-3-risposta-all-ordine-di-fornitura-per-i-servizi"></a>5.6. Caso d’uso 3 – Risposta all’ordine di fornitura per i servizi</h3>
 <div class="paragraph">
-<p>Questo caso d’uso è relativo a un ordine di servizi con rigetto.</p>
+<p>Questo caso d’uso è relativo a un ordine sui servizi e risposta con rigetto.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -1407,7 +1405,7 @@ Il Venditore:
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Il flusso</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">L’acquirente crea l’ordine di una sola riga richiedendo dei servizi di traduzione dallo Svedese allo Spagnolo.
-Il venditore riceve l’ordine.</p></td>
+</p><p class="tableblock">Il venditore rifiuta l’ordine. Nessuna riga deve essere inviata ma deve avere la motivazione del rigetto nella risposta all’ordine.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Risultati</strong></p></td>
@@ -1421,7 +1419,7 @@ Il venditore riceve l’ordine.</p></td>
 </table>
 </div>
 <div class="sect2">
-<h3 id="truecaso-d-uso-4-ordine-di-fornitura-complesso"><a class="anchor" href="#truecaso-d-uso-4-ordine-di-fornitura-complesso"></a>5.7. Caso d’uso 4 – Ordine di fornitura complesso</h3>
+<h3 id="truecaso-d-uso-4-risposta-ad-un-ordine-di-fornitura-complesso"><a class="anchor" href="#truecaso-d-uso-4-risposta-ad-un-ordine-di-fornitura-complesso"></a>5.7. Caso d’uso 4 – Risposta ad un ordine di fornitura complesso</h3>
 <div class="paragraph">
 <p>Questo caso d’uso è relativo a un ordine contenente quasi tutti gli elementi previsti per il messaggio dell’Ordine PEPPOL. L’ordine viene accettato completamente dal venditore.</p>
 </div>
@@ -1445,7 +1443,7 @@ Il venditore riceve l’ordine.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parti coinvolte</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Acquirente e Venditore.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Acquirente, Venditore e Committente.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Assunzioni</strong></p></td>
@@ -1454,7 +1452,8 @@ Il venditore riceve l’ordine.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Il flusso</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">L’acquirente crea l’ordine con 4 diverse righe e articoli.
-Il venditore accetta di consegnare tutti e 4 gli articoli.</p></td>
+Il venditore accetta di consegnare tutti e 4 gli articoli.
+</p><p class="tableblock">L’ordine è stato accettato senza modifiche. Nessuna riga deve essere inviata nella risposta all’ordine.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Risultati</strong></p></td>
@@ -2388,7 +2387,7 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
 <p><strong>tipo 222</strong> (Spot Order - Ordine di "transito" occasionale): corrisponde all’ordine per l’acquisto di prodotti in transito ovvero prodotti che non vengono stoccati.</p>
 </li>
 <li>
-<p><strong>tipo 225</strong> (Repair Order): corrisponde all’ordine per l’invio di apparecchiature in riparazione.</p>
+<p><strong>tipo 225</strong> (Repair Order - Ordine di riparazione): corrisponde all’ordine per l’invio di apparecchiature in riparazione.</p>
 </li>
 <li>
 <p><strong>tipo 227</strong> (Consignment Order - Ordine di apertura conto deposito): corrisponde all’ordine di apertura del Conto Deposito (prima richiesta) e può essere utilizzato in modo opzionale dalle Amministrazioni. Le informazioni per la chiusura del conto deposito, così come per la trasmissione degli inventari periodici, non sono al momento gestite tramite profili PEPPOL.</p>
@@ -4589,9 +4588,6 @@ CustomizationID è una stringa senza spazi. La codifica seguente contiene spazi 
 <div class="sect2">
 <h3 id="trueidentificatori-di-personalizzazione-e-profilo"><a class="anchor" href="#trueidentificatori-di-personalizzazione-e-profilo"></a>10.2. Identificatori di personalizzazione e profilo</h3>
 <div class="paragraph">
-<p><strong>N.B.</strong> In giallo, i contenuti in corso di aggiornamento</p>
-</div>
-<div class="paragraph">
 <p>Nella tabella seguente vengono riportati i valori da utilizzare come identificatori della specifica e della tipologia di processo di business per tale profilo.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
@@ -4607,13 +4603,13 @@ CustomizationID è una stringa senza spazi. La codifica seguente contiene spazi 
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Element</strong> cbc:ProfileID</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark><strong>Ordine (Trdm01)</strong></mark></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">urn:fdc:peppol.eu:poacc:trns01a:order:bis3-1.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">urn:fdc:peppol.eu:poacc:bis28a:ordering:bis3-1.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ordine (Trdm01)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">urn:fdc:peppol.eu:poacc:trns:order:3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">urn:fdc:peppol.eu:poacc:bis:ordering:3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ordine response (Trdm76)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">urn:fdc:peppol.eu:poacc:trns:order_response:3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">urn:fdc:peppol.eu:poacc:bis:ordering:3</p></td>
 </tr>
 </tbody>
@@ -4723,38 +4719,7 @@ L’Endpoint ID non è obbligatorio nel documento ma è consigliato perché mant
 <div class="sect2">
 <h3 id="trueid-customizzazione"><a class="anchor" href="#trueid-customizzazione"></a>10.6. ID Customizzazione</h3>
 <div class="paragraph">
-<p><strong>N.B</strong> In giallo, i contenuti in corso di aggiornamento.</p>
-</div>
-<div class="paragraph">
-<p>L’ID di customizzazione di PEPPOL identifica la specifica dei contenuti e delle regole che si applicano alla transazione. Questo BIS ha richiesto alcune aggiunte minori e modifiche alla transazione CEN BII. In base alla metodologia CENBII ogni estensione deve essere comunicata aggiungendo un ID di estensione alla stringa del CustomizationID. La sintassi completa è:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">    &lt;transactionId&gt;:(restrictive|extended|partly):&lt;extensionId&gt;[(restrictive|extended|partly):&lt;extensionId&gt;].</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Dove:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><mark>Transaction ID</mark>:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">urn:www.cenbii.eu:transaction:biitrns001:ver2.0</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><mark>Extension ID</mark>:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">urn:www.peppol.eu:bis:peppol3a:ver2.0</code></pre>
-</div>
-</div>
-</li>
-</ul>
+<p>L’ID di customizzazione di PEPPOL identifica la specifica dei contenuti e delle regole che si applicano alla transazione.</p>
 </div>
 <div class="paragraph">
 <p>CustomizationID da utilizzare se non vi sono altre estensioni:</p>
@@ -4775,28 +4740,14 @@ L’Endpoint ID non è obbligatorio nel documento ma è consigliato perché mant
 <div class="listingblock">
 <div class="title">Esempio di utilizzo per l’Ordine:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cbc:CustomizationID&gt;urn:www.cenbii.eu:transaction:biitrns001:ver2.0:extended:urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1&lt;/cbc:CustomizationID&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cbc:CustomizationID&gt;urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1&lt;/cbc:CustomizationID&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Esempio di utilizzo per l&#8217;Ordine con risposta:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cbc:CustomizationID&gt;urn:www.cenbii.eu:transaction:biitrns076:ver2.0:extended:urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1&lt;/cbc:CustomizationID&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cbc:CustomizationID&gt;urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1&lt;/cbc:CustomizationID&gt;</code></pre>
 </div>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Non appena possibile verrano indicati gli urn aggiornati della versione corrente</p>
-</div>
-</td>
-</tr>
-</table>
 </div>
 </div>
 <div class="sect2">
@@ -4823,7 +4774,7 @@ L’Endpoint ID non è obbligatorio nel documento ma è consigliato perché mant
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-05 15:13:55 WEDT
+Last updated 2019-04-18 11:35:46 WEDT
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
