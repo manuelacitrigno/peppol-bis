@@ -4,7 +4,7 @@
 	<Term>Order</Term>
 	<agid:Extension>
 		<agid:ID>urn:www.ubl-italia.org:spec:ordine:ver3.1</agid:ID>
-		<agid:Name>Linee guida per lo schema XML - Ordine di Fornitura Elettronico 3.0</agid:Name>
+		<agid:Name>AGID PEPPOL Order transaction 3.0 (T01)</agid:Name>
 		<agid:Version>3.1</agid:Version>
 	</agid:Extension>
 
@@ -22,7 +22,7 @@
 
 	<Document>
 		<Term>ubl:Order</Term>
-		<Element agid:custom="fixed-value">
+		<Element>
 			<Term>cbc:CustomizationID</Term>
 			<Name>Specification identification</Name>
 			<Description>Identifies the specification of content and rules that apply to the
@@ -30,8 +30,8 @@
 			<DataType>Identifier</DataType>
 			<Reference type="BUSINESS_TERM">tir01-001</Reference>
 			<Reference type="RULE">PEPPOL-T01-B00201</Reference>
-			<Reference type="RULE">INT-T01-R003</Reference>
-			<Value type="FIXED">urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1</Value>
+		<!--Reference type="RULE">INT-T01-R003</Reference-->
+			<Value type="FIXED">urn:fdc:peppol.eu:poacc:trns:order:3</Value>
 		</Element>
 		<Element>
 			<Term>cbc:ProfileID</Term>
@@ -160,7 +160,7 @@
 				<Value type="EXAMPLE">1232424</Value>
 			</Element>
 		</Element>
-		<Element cardinality="0..1" agid:custom="cardinality">
+		<Element cardinality="0..1">
 			<Term>cac:OrderDocumentReference</Term>
 			<Name>Order reference</Name>
 			<Element>
@@ -172,7 +172,7 @@
 				<Reference type="BUSINESS_TERM">tir01-011</Reference>
 				<Value type="EXAMPLE">4832423</Value>
 			</Element>
-			<Element agid:custom="extension">
+			<!--Element agid:custom="extension rule">
 				<Term>cbc:IssueDate</Term>
 				<Name>Data Emissione Ordine</Name>
 				<Description>Used to reference the initial order that was rejected and a new order
@@ -181,8 +181,8 @@
 				<Reference type="BUSINESS_TERM">tir01-011</Reference>
 				<Reference type="RULE">INT-T01-R031</Reference>
 				<Value type="EXAMPLE">2018-09-03</Value>
-			</Element>
-			<Element agid:custom="extension">
+			</Element-->
+			<!--Element agid:custom="extension">
 				<Term>cbc:DocumentTypeCode</Term>
 				<Name>Codice Tipo Ordine</Name>
 				<Description>Used to reference the initial order that was rejected and a new order
@@ -190,8 +190,8 @@
 				<DataType>Document reference</DataType>
 				<Reference type="BUSINESS_TERM">tir01-011</Reference>
 				<Value type="EXAMPLE">220</Value>
-			</Element>
-			<Element agid:custom="extension">
+			</Element-->
+			<!--Element agid:custom="extension">
 				<Term>cbc:DocumentStatusCode</Term>
 				<Name>Codice Stato Ordine (es.Cancelled, Revised)</Name>
 				<Description>Used to reference the initial order that was rejected and a new order
@@ -199,8 +199,8 @@
 				<DataType>Document reference</DataType>
 				<Reference type="BUSINESS_TERM">tir01-011</Reference>
 				<Value type="EXAMPLE">4832423</Value>
-			</Element>
-			<Element agid:custom="extension">
+			</Element-->
+			<!--Element agid:custom="extension">
 				<Term>cac:IssuerParty</Term>
 				<Name>Issuer information</Name>
 				<Description>Description of issuer</Description>
@@ -222,7 +222,7 @@
 				<Element cardinality="0..1">
 					<Term>cac:PartyIdentification</Term>
 					<Name>Party identification</Name>
-					<Element>
+					<Element agid:custom="rule">
 						<Term>cbc:ID</Term>
 						<Name>Identificativo della parte emittente</Name>
 						<Description>An identification for the issuer party.</Description>
@@ -237,12 +237,12 @@
 						<Value type="EXAMPLE">7300010000001</Value>
 					</Element>
 				</Element>
-			</Element>
+			</Element-->
 		</Element>
 		<Element cardinality="0..1">
 			<Term>cac:OriginatorDocumentReference</Term>
 			<Name>Originator document </Name>
-			<Element>
+			<Element agid:custom="rule">
 				<Term>cbc:ID</Term>
 				<Name>Originator document reference</Name>
 				<Description>A reference to Originator Document. To be able to give a reference to
@@ -250,29 +250,35 @@
 					based.</Description>
 				<DataType>Document identifier</DataType>
 				<Reference type="BUSINESS_TERM">tir01-012</Reference>
-				<Value type="EXAMPLE">5435235</Value>
+				<Reference type="RULE">INT-T01-R037a</Reference>
+				<Reference type="RULE">INT-T01-R037b</Reference>
+				<Reference type="RULE">INT-T01-R037c</Reference>
+				<Reference type="RULE">INT-T01-R037d</Reference>
+				<Reference type="RULE">INT-T01-R037e</Reference>
+				<Value type="EXAMPLE">ES01</Value>
+				<Value type="EXAMPLE">729544145D</Value>
 			</Element>
-			<Element agid:custom="extension">
+			<!--Element agid:custom="extension">
 				<Term>cbc:IssueDate</Term>
 				<Name>Data di Emissione Documento</Name>
 				<Description>Used to reference the initial order that was rejected and a new order
 					is issued.</Description>
 				<DataType>Date</DataType>
 				<Value type="EXAMPLE">2018-09-03</Value>
-			</Element>
-			<Element agid:custom="extension">
+			</Element-->
+			<!--Element agid:custom="extension">
 				<Term>cbc:DocumentType</Term>
 				<Name>Originator document description</Name>
 				<Description>Used to reference the initial order that was rejected and a new order
 					is issued.</Description>
 				<DataType>Text</DataType>
 				<Value type="EXAMPLE">4832423</Value>
-			</Element>
+			</Element-->
 		</Element>
 		<Element cardinality="0..n">
 			<Term>cac:AdditionalDocumentReference</Term>
 			<Name>Additional documents</Name>
-			<Element>
+			<Element agid:custom="rule">
 				<Term>cbc:ID</Term>
 				<Name>Document identifier</Name>
 				<Description>An identifier for the referenced document.</Description>
@@ -280,15 +286,15 @@
 				<Reference type="RULE">INT-T01-R029</Reference>
 				<Value type="EXAMPLE">doc-34</Value>
 			</Element>
-			<Element agid:custom="extension">
+			<!--Element agid:custom="extension">
 				<Term>cbc:IssueDate</Term>
 				<Name>Data di Emissione Documento</Name>
 				<Description>Used to reference the initial order that was rejected and a new order
 					is issued.</Description>
 				<DataType>Date</DataType>
 				<Value type="EXAMPLE">2018-09-03</Value>
-			</Element>
-			<Element agid:custom="custom-cardinality">
+			</Element-->
+			<Element cardinality="0..1">
 				<Term>cbc:DocumentType</Term>
 				<Name>Document description</Name>
 				<Description>Textual description of the document.</Description>
@@ -350,13 +356,13 @@
 				<DataType>Document reference</DataType>
 				<Reference type="BUSINESS_TERM">tir01-019</Reference>
 			</Element>
-			<Element cardinality="0..1" agid:custom="extension">
+			<!--Element cardinality="0..1" agid:custom="extension">
 				<Term>cbc:ContractType</Term>
 				<Name>Contract type</Name>
 				<Description>The type of this contract, expressed as text, such as "Cost plus award fee" and "Cost plus fixed fee" from UNCEFACT Contract Type code list.</Description>
 				<DataType>Text</DataType>
 				<Value type="EXAMPLE">Contratto base</Value>
-			</Element>
+			</Element-->
 		</Element>
 		<Element>
 			<Term>cac:BuyerCustomerParty</Term>
@@ -365,7 +371,7 @@
 			<Element>
 				<Term>cac:Party</Term>
 				<Name>Party information</Name>
-				<Element>
+				<Element agid:custom="rule">
 					<Term>cbc:EndpointID</Term>
 					<Name>Buyer party electronic address</Name>
 					<Description>Identifies the buyer party's electronic address</Description>
@@ -383,10 +389,10 @@
 					<Reference type="RULE">INT-T01-R028</Reference>
 					<Value type="EXAMPLE">7300010000001</Value>
 				</Element>
-				<Element agid:custom="cardinality">
+				<Element cardinality="0..1">
 					<Term>cac:PartyIdentification</Term>
 					<Name>Party identification </Name>
-					<Element>
+					<Element agid:custom="rule">
 						<Term>cbc:ID</Term>
 						<Name>Buyer party identification</Name>
 						<Description>An identification for the buyer party.</Description>
@@ -403,7 +409,7 @@
 						<Value type="EXAMPLE">7300010000001</Value>
 					</Element>
 				</Element>
-				<Element agid:custom="cardinality">
+				<Element agid:custom="cardinality rule">
 					<Term>cac:PartyName</Term>
 					<Name>Party name</Name>
 					<Element>
@@ -495,7 +501,7 @@
 						</Element>
 					</Element>
 				</Element>
-				<Element agid:custom="cardinality">
+				<Element agid:custom="cardinality rule">
 					<Term>cac:PartyTaxScheme</Term>
 					<Description>Buyer tax information </Description>
 					<Element>
@@ -618,7 +624,7 @@
 			<Element>
 				<Term>cac:Party</Term>
 				<Name>Party information</Name>
-				<Element>
+				<Element agid:custom="rule">
 					<Term>cbc:EndpointID</Term>
 					<Name>Seller party electronic address</Name>
 					<Description>Identifies the seller party's electronic address</Description>
@@ -636,7 +642,7 @@
 					<Reference type="RULE">INT-T01-R028</Reference>
 					<Value type="EXAMPLE">7300010000001</Value>
 				</Element>
-				<Element cardinality="0..n" agid:custom="custom-cardinality">
+				<Element cardinality="0..n" agid:custom="custom-cardinality rule">
 					<Term>cac:PartyIdentification</Term>
 					<Name>Party identification</Name>
 
@@ -646,15 +652,15 @@
 						<Description>Identifies a party.</Description>
 						<DataType>Identifier</DataType>
 						<Reference type="BUSINESS_TERM">tir01-059</Reference>
-
+						<Reference type="RULE">INT-T01-R036</Reference>
 						<Attribute usage="optional">
 							<Term>schemeID</Term>
 							<Name>Scheme identifier</Name>
 							<Description>Scheme identifier for party identification</Description>
 							<Reference type="CODE_LIST">ICD</Reference>
-							<Value type="EXAMPLE">0088</Value>
+							<Value type="EXAMPLE">9921</Value>
 						</Attribute>
-						<Value type="EXAMPLE">7300010000001</Value>
+						<Value type="EXAMPLE">CODDEST:1234567</Value>
 					</Element>
 				</Element>
 				<Element cardinality="0..1">
@@ -1764,7 +1770,7 @@
 				<Term>cac:LineItem</Term>
 				<Name>Line item</Name>
 				<Description>Description of line item </Description>
-				<Element>
+				<Element agid:custom="rule">
 					<Term>cbc:ID</Term>
 					<Name>Line item identifier</Name>
 					<Description>Identifies the Line Item assigned by the buyer, the identifier must
@@ -1796,7 +1802,7 @@
 					</Attribute>
 					<Value type="EXAMPLE">10</Value>
 				</Element>
-				<Element cardinality="0..1">
+				<Element cardinality="0..1" agid:custom="rule">
 					<Term>cbc:LineExtensionAmount</Term>
 					<Name>Order line amount</Name>
 					<Description>The total amount for the Line Item, including Allowance Charges but
@@ -1950,7 +1956,7 @@
 						<Value type="EXAMPLE">95</Value>
 					</Element>
 
-					<Element agid:custom="cardinality">
+					<Element cardinality="0..1">
 						<Term>cbc:AllowanceChargeReason</Term>
 						<Name>Line level allowance or charge reason</Name>
 						<Description>The reason for the line level allowance or charge, expressed as
@@ -2125,7 +2131,7 @@
 						<DataType>Text</DataType>
 						<Reference type="BUSINESS_TERM">tir01-133</Reference>
 					</Element>
-					<Element cardinality="0..1" agid:custom="extension">
+					<!--Element cardinality="0..1" agid:custom="extension">
 						<Term>cbc:PackQuantity</Term>
 						<Name>Il numero di sotto-unità in un articolo</Name>
 						<Attribute usage="Optional">
@@ -2138,13 +2144,13 @@
 							<Value type="EXAMPLE">C62</Value>
 						</Attribute>
 						<Value type="DEFAULT">1</Value>
-					</Element>
-					<Element cardinality="0..1" agid:custom="extension">
+					</Element-->
+					<!--Element cardinality="0..1" agid:custom="extension">
 						<Term>cbc:PackSizeNumeric</Term>
 						<Name>Il numero di articoli in una confezione</Name>
 						<Value type="DEFAULT">1</Value>
-					</Element>					
-					<Element agid:note="mandatory">
+					</Element-->
+					<Element agid:custom="rule" agid:note="mandatory">
 						<Term>cbc:Name</Term>
 						<Name>Item name</Name>
 						<Description>A short name for an item. A short name given to an
@@ -2209,13 +2215,20 @@
 						<Term>cac:ItemSpecificationDocumentReference</Term>
 						<Name>Item specification reference</Name>
 						<Description>Referece to an item specification document</Description>
-						<Element>
+						<Element agid:custom="rule">
 							<Term>cbc:ID</Term>
 							<Name>Document reference identifier</Name>
 							<Description>Reference to an external document (ID) when it is necessary
 								to specify the details of the item.</Description>
 							<DataType>Document reference</DataType>
 							<Reference type="BUSINESS_TERM">tir01-p007</Reference>
+							<Reference type="RULE">INT-T01-R037a</Reference>
+							<Reference type="RULE">INT-T01-R037b</Reference>
+							<Reference type="RULE">INT-T01-R037c</Reference>
+							<Reference type="RULE">INT-T01-R037d</Reference>
+							<Reference type="RULE">INT-T01-R037e</Reference>
+							<Value type="EXAMPLE">CIG:ES01</Value>
+							<Value type="EXAMPLE">CIG:729544145D</Value>
 							<Value type="EXAMPLE">doc4353.pdf</Value>
 						</Element>
 					</Element>
@@ -2376,11 +2389,11 @@
 					</Element>
 				</Element>
 			</Element>
-			<Element cardinality="0..n" agid:custom="extension">
+			<!--Element cardinality="0..n" agid:custom="extension">
 				<Term>cac:DocumentReference</Term>
 				<Name>Document reference</Name>
 				<Description>Riferimenti aggiuntivi a documenti e loro estremi a livello di riga.</Description>
-				<Element>
+				<Element agid:custom="rule">
 					<Term>cbc:ID</Term>
 					<Name>Riferimento ad un documento.</Name>
 					<Description>Specificare l’identificativo del documento a cui ci si riferisce.</Description>
@@ -2404,7 +2417,7 @@
 					<Reference type="BUSINESS_TERM">tir01-011</Reference>
 					<Value type="EXAMPLE">220</Value>
 				</Element>
-			</Element>
+			</Element-->
 		</Element>
 	</Document>
 </Structure>
