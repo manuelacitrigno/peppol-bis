@@ -1,19 +1,18 @@
-<!DOCTYPE html SYSTEM "about:legacy-compat">
-<html data-transaction="Rules for PEPPOL Order transaction 3.0"><head><!-- saved from url=(0168) -->
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Rules for PEPPOL Order transaction 3.0</title>
-	  
-	  
-	  
-	  
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html data-transaction="Rules for PEPPOL Order transaction 3.0">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+      <title>Rules for PEPPOL Order transaction 3.0</title>
+      <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="../../frontend/css/bootstrap.css">
-      <link rel="stylesheet" href="../../frontend/css/structure.css">
+      <link rel="stylesheet" href="../css/bootstrap.css">
+      <link rel="stylesheet" href="../css/structure.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-      <link rel="stylesheet" href="../../frontend/css/agid-custom.css">
-      <script src="../../frontend/javascript/jquery.js"></script>
-      <script src="../../frontend/javascript/bootstrap.js"></script><script type="text/javascript">
+      <link rel="stylesheet" href="../css/agid-custom.css"><script src="../js/jquery.js"></script><script src="../js/bootstrap.js"></script><script type="text/javascript">
 					//
 						debugger;//@ sourceURL=agid.js
 						$(function () {
@@ -51,7 +50,7 @@
 					//
 				</script></head>
    <body>
-   <div id="main" class="container">
+      <div id="main" class="container">
          <ol id="path" class="breadcrumb">
             <li class="active">Regole di business - Ordine di Fornitura Elettronico 3.0</li>
          </ol>
@@ -127,9 +126,8 @@
                      <td><a href="#">PEPPOL-T01-B00109</a><br><span class="message">Document MUST not contain schema location.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
-                  <tr id="PEPPOL-T01-B00201" data-context="/ubl:Order/cbc:CustomizationID" data-test="starts-with(normalize-space(text()), 'urn:fdc:peppol.eu:poacc:trns:order:3')">
-                     <td><a href="#">PEPPOL-T01-B00201</a><br><span class="message">Specification identifier MUST start with the value
-                           'urn:fdc:peppol.eu:poacc:trns:order:3'.</span></td>
+                  <tr id="PEPPOL-T01-B00201" data-context="/ubl:Order/cbc:CustomizationID" data-test="normalize-space(text()) = 'urn:fdc:peppol.eu:poacc:trns:order:3'">
+                     <td><a href="#">PEPPOL-T01-B00201</a><br><span class="message">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:poacc:trns:order:3'.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="PEPPOL-T01-B00801" data-context="/ubl:Order/cbc:OrderTypeCode" data-test="(some $code in $clUNCL1001_T01 satisfies $code = normalize-space(text()))">
@@ -966,15 +964,7 @@
                            indicati.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
-                  <tr id="INT-T01-R003" data-context="/ubl:Order" data-test="cbc:CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1' and cbc:ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'">
-                     <td><a href="#">INT-T01-R003</a><br><span class="message">[INT-T01-R003] - La transazione dell'Ordine DEVE essere identificata dai seguenti identificativi: 
-                           
-                           CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1', 
-                           
-                           ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.</span></td>
-                     <td style="width: 5%;">fatal</td>
-                  </tr>
-                  <tr id="INT-T01-R029" data-context="/ubl:Order" data-test="cac:AdditionalDocumentReference[cbc:DocumentType='CIG'] or cac:OrderLine/cac:DocumentReference[cbc:DocumentType='CIG']">
+                  <tr id="INT-T01-R029" data-context="/ubl:Order" data-test="cac:OriginatorDocumentReference/cbc:ID or cac:OrderLine/cac:LineItem/cac:Item/cac:ItemSpecificationDocumentReference[starts-with(cbc:ID, 'CIG:')]">
                      <td><a href="#">INT-T01-R029</a><br><span class="message">[INT-T01-R029] - Il Codice Identificativo Gara (CIG) dovrebbe essere sempre indicato in testata all'Ordine o a livello di
                            riga.</span></td>
                      <td style="width: 5%;">warning</td>
@@ -989,47 +979,53 @@
                            fornire una o pi&ugrave; righe d'ordine con identificativo diverso da 'NA'.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
-                  <tr id="INT-T01-R030" data-context="//cac:OrderDocumentReference" data-test="cac:IssuerParty/cbc:EndpointID or not(contains( ' Cancelled Disputed Revised NotConfirmed Rejected ',concat(' ',normalize-space(cbc:DocumentStatusCode),' ') ))">
-                     <td><a href="#">INT-T01-R030</a><br><span class="message">INT-T01-R030 - Se si intende revocare o modificare un ordine l'endpoint del Buyer &egrave; obbligatorio all&#8217;interno della sezione
-                           che contiene i riferimenti al documento collegato (OrderDocumentReference).</span></td>
-                     <td style="width: 5%;">fatal</td>
-                  </tr>
-                  <tr id="INT-T01-R031" data-context="//cac:OrderDocumentReference" data-test="cbc:IssueDate or not(contains( ' Cancelled Disputed Revised NotConfirmed Rejected ',concat(' ',normalize-space(cbc:DocumentStatusCode),' ') ))">
-                     <td><a href="#">INT-T01-R031</a><br><span class="message">INT-T01-R031 - Se si intende revocare o modificare un ordine la data &egrave; obbligatoria all&#8217;interno della sezione che contiene
-                           i riferimenti al documento collegato (OrderDocumentReference).</span></td>
-                     <td style="width: 5%;">fatal</td>
-                  </tr>
                   <tr id="INT-T01-R002" data-context="//cac:BuyerCustomerParty/cac:Party" data-test="cac:PartyName/cbc:Name and cac:PostalAddress/cac:Country/cbc:IdentificationCode and cac:PartyTaxScheme/cbc:CompanyID">
                      <td><a href="#">INT-T01-R002</a><br><span class="message">[INT-T01-R002] - L'ordine DEVE contenere il nome, il paese e l'identificativo fiscale della parte ordinane (Acquirente).</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
-                  <tr id="INT-T01-R032" data-context="//cac:BuyerCustomerParty/cac:Party" data-test="count(cac:PartyIdentification/cbc:ID)=1 and cac:PartyIdentification/cbc:ID/@schemeID='9921'">
+                  <tr id="INT-T01-R032" data-context="//cac:BuyerCustomerParty/cac:Party" data-test="not(cac:PartyIdentification/cbc:ID) or cac:PartyIdentification/cbc:ID/@schemeID='9921'">
                      <td><a href="#">INT-T01-R032</a><br><span class="message">INT-T01-R032 - Un ordine deve riportare obbligatoriamente un solo identificatore della parte di business (party identification)
                            del Buyer. Nel caso di Buyer di tipo PA deve riportare lo schema IPA.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
-                  <tr id="INT-T01-R033" data-context="//cac:BuyerCustomerParty/cac:Party" data-test="cac:PartyIdentification/cbc:ID[@schemeID='9921'][string-length(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789','')) = 0 and string-length() = 6]">
+                  <tr id="INT-T01-R033" data-context="//cac:BuyerCustomerParty/cac:Party" data-test="cac:PartyIdentification/cbc:ID[@schemeID='9921'][string-length(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789','')) = 0 and string-length() = 6] or cbc:EndpointID[@schemeID='9921']">
                      <td><a href="#">INT-T01-R033</a><br><span class="message">INT-T01-R033 - Un ordine DEVE contenere Il codice UFE IPA dell'ufficio della PA che lo ha emesso, composto da 6 caratteri
                            ASCII alfanumerici maiuscoli.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
-                  <tr id="INT-T01-R036" data-context="//cac:SellerSupplierParty/cac:Party" data-test="cac:PartyIdentification/cbc:ID[(@schemeID='9906' and matches(.,'^(IT)?[0-9]{11}$')) or @schemeID!='9906']">
-                     <td><a href="#">INT-T01-R036</a><br><span class="message">INT-T01-R036 - Un ordine DEVE contenere Il codice destinatario (CODDEST) del fornitore, composto da 7 caratteri ASCII alfanumerici
-                           maiuscoli, per un periodo di transizione sar&agrave; possibile utilizzare la P.IVA, il C.F. o l'IPA.</span></td>
-                     <td style="width: 5%;">fatal</td>
-                  </tr>
-                  <tr id="INT-T01-R036" data-context="//cac:SellerSupplierParty/cac:Party" data-test="cac:PartyIdentification/cbc:ID[(@schemeID='9907' and matches(.,'^[0-9]{11}$|^[A-Z]{6}\d{2}[ABCDEHLMPRST]{1}\d{2}[A-Z]{1}\d{3}[A-Z]{1}$')) or @schemeID!='9907']">
-                     <td><a href="#">INT-T01-R036</a><br><span class="message">INT-T01-R036 - Un ordine DEVE contenere Il codice destinatario (CODDEST) del fornitore, composto da 7 caratteri ASCII alfanumerici
-                           maiuscoli, per un periodo di transizione sar&agrave; possibile utilizzare la P.IVA, il C.F. o l'IPA.</span></td>
-                     <td style="width: 5%;">fatal</td>
-                  </tr>
-                  <tr id="INT-T01-R036" data-context="//cac:SellerSupplierParty/cac:Party" data-test="cac:PartyIdentification/cbc:ID[(@schemeID='9921' and string-length(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789','')) = 0 and string-length() &gt;= 6 and string-length() <= 7) or @schemeID!='9921']">
-                     <td><a href="#">INT-T01-R036</a><br><span class="message">INT-T01-R036 - Un ordine DEVE contenere Il codice destinatario (CODDEST) del fornitore, composto da 7 caratteri ASCII alfanumerici
-                           maiuscoli, per un periodo di transizione sar&agrave; possibile utilizzare la P.IVA, il C.F. o l'IPA.</span></td>
+                  <tr id="INT-T01-R036" data-context="//cac:SellerSupplierParty/cac:Party" data-test="cac:PartyIdentification/cbc:ID[(@schemeID='9921' and string-length(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789','')) = 0 and string-length() = 7)] or cbc:EndpointID[@schemeID='9921' or @schemeID='9906' or @schemeID='9907']">
+                     <td><a href="#">INT-T01-R036</a><br><span class="message">INT-T01-R036 - Un ordine DEVE indicare Il codice destinatario (CODDEST) del fornitore nel PartyIdentification/ID, composto
+                           da 7 caratteri ASCII alfanumerici maiuscoli, per un periodo di transizione sar&agrave; sufficiente fornire la P.IVA, il C.F. o l'IPA
+                           nell'EndpointID.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T01-R001" data-context="//cbc:*" data-test="normalize-space()">
                      <td><a href="#">INT-T01-R001</a><br><span class="message">[INT-T01-R001] - Un elemento informativo base, se istanziato, non pu&ograve; essere vuoto.</span></td>
+                     <td style="width: 5%;">fatal</td>
+                  </tr>
+                  <tr id="INT-T01-R037a" data-context="/*/cac:OriginatorDocumentReference/cbc:ID | /*/cac:OrderLine/cac:LineItem/cac:Item/cac:ItemSpecificationDocumentReference/cbc:ID[starts-with(., 'CIG:')]" data-test="matches($CIG, 'ES[0-2][1-7]') or matches(substring($CIG,1,1), '[XYZ]') or not( matches(substring($CIG,1,7), '0000000') )">
+                     <td><a href="#">INT-T01-R037a</a><br><span class="message">INT-T01-R037(a) - E' stato fornito un codice CIG invalido (NNNNNNN errato).
+                           		</span></td>
+                     <td style="width: 5%;">fatal</td>
+                  </tr>
+                  <tr id="INT-T01-R037b" data-context="/*/cac:OriginatorDocumentReference/cbc:ID | /*/cac:OrderLine/cac:LineItem/cac:Item/cac:ItemSpecificationDocumentReference/cbc:ID[starts-with(., 'CIG:')]" data-test="matches($CIG, 'ES[0-2][1-7]') or matches(substring($CIG,1,1), '[XYZ]') or (substring($CIG,1,7) castable as xs:integer and not( if( u:hexToDec(0,0,0,substring($CIG,8,3) ) = xs:integer((xs:integer(substring($CIG,1,7)) * 211 ) mod 4091) ) then 0 else 1 ))">
+                     <td><a href="#">INT-T01-R037b</a><br><span class="message">INT-T01-R037(b) - E' stato fornito un codice CIG invalido (KKK errato).
+                           		</span></td>
+                     <td style="width: 5%;">fatal</td>
+                  </tr>
+                  <tr id="INT-T01-R037c" data-context="/*/cac:OriginatorDocumentReference/cbc:ID | /*/cac:OrderLine/cac:LineItem/cac:Item/cac:ItemSpecificationDocumentReference/cbc:ID[starts-with(., 'CIG:')]" data-test="not(matches(substring($CIG,1,1), '[XYZ]')) or not( matches(substring($CIG,4,7), '0000000') )">
+                     <td><a href="#">INT-T01-R037c</a><br><span class="message">INT-T01-R036(c) - E' stato fornito un codice SmartCIG invalido (CCCCCCC errato).
+                           		</span></td>
+                     <td style="width: 5%;">error</td>
+                  </tr>
+                  <tr id="INT-T01-R037d" data-context="/*/cac:OriginatorDocumentReference/cbc:ID | /*/cac:OrderLine/cac:LineItem/cac:Item/cac:ItemSpecificationDocumentReference/cbc:ID[starts-with(., 'CIG:')]" data-test="not(matches(substring($CIG,1,1), '[XYZ]')) or not( if( u:hexToDec(0,0,0,substring($CIG,2,2) ) = xs:integer((u:hexToDec(0,0,0,substring($CIG,4,7)) * 211 ) mod 251) ) then 0 else 1 )">
+                     <td><a href="#">INT-T01-R037d</a><br><span class="message">INT-T01-R037(d) - E' stato fornito un codice SmartCIG invalido (KK errato).
+                           		</span></td>
+                     <td style="width: 5%;">fatal</td>
+                  </tr>
+                  <tr id="INT-T01-R037e" data-context="/*/cac:OriginatorDocumentReference/cbc:ID | /*/cac:OrderLine/cac:LineItem/cac:Item/cac:ItemSpecificationDocumentReference/cbc:ID[starts-with(., 'CIG:')]" data-test="matches($CIG, 'ES[0-2][1-7]') or substring($CIG,1,2) != 'ES'">
+                     <td><a href="#">INT-T01-R037e</a><br><span class="message">INT-T01-R037(e) - E' stato fornito un codice di esclusione CIG invalido (ES## non &egrave; fra ES01-ES27).
+                           		</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                </tbody>
