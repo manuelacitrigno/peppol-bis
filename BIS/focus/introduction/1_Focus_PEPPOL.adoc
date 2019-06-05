@@ -4,11 +4,11 @@ image::../../frontend/images/IMG_PEPPOL/PEPPOL_Authority.jpg[]
 <<<
 
 
-Le specifiche tecniche e relativi tools di validazione PEPPOL BIS 3.0 compatibili con NSO, dei profili: 
+Le specifiche tecniche e relativi tools di validazione PEPPOL BIS 3.0 compatibili con NSO inerente ai profili: 
 
 * https://notier.regione.emilia-romagna.it/docs/profiles/3-order-only/BIS_OrderOnly.htm[Ordine semplice]
 
-* https://notier.regione.emilia-romagna.it/docs/profiles/28-ordering/BIS_Ordering.htm[Ordinazione completa]
+* https://notier.regione.emilia-romagna.it/docs/profiles/28-ordering/BIS_Ordering.htm[Ordine con risposta]
 
 sono disponibili.
 
