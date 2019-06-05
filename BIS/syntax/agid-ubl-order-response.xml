@@ -4,7 +4,7 @@
 	<Term>OrderResponse</Term>
 	<agid:Extension>
 		<agid:ID>urn:www.ubl-italia.org:spec:ordine:ver3.1</agid:ID>
-		<agid:Name>Linee guida per lo schema XML - Ordine di Fornitura Elettronico con risposta 3.0</agid:Name>
+		<agid:Name>Linee guida per lo schema XML - Risposta all'Ordine di Fornitura Elettronico 3.0</agid:Name>
 		<agid:Version>3.1</agid:Version>
 	</agid:Extension>
 	
