@@ -21,11 +21,15 @@ ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.
 | INT-T01-R030 |	Se si intende revocare o modificare un ordine, l'identificatore della parte di business del Buyer è obbligatorio all’interno della sezione che contiene i riferimenti al documento collegato (OrderDocumentReference).	| Fatal
 | INT-T01-R031 |	Se si intende revocare o modificare un ordine la data è obbligatoria all’interno della sezione che contiene i riferimenti al documento collegato (OrderDocumentReference).	| Fatal
 | INT-T01-R032 |	Un ordine deve riportare obbligatoriamente un solo identificatore della parte di business (Endpoint) del Buyer. Nel caso di Buyer di tipo PA deve riportare lo schema IPA.	| Fatal
-| INT-T01-R033 |	Una ordine DEVE contenere Il codice UFE IPA dell'ufficio della PA che lo ha emesso, composto da 6 caratteri ASCII alfanumerici.	| Fatal
+| INT-T01-R033 |	Un ordine DEVE contenere Il codice UFE IPA dell'ufficio della PA che lo ha emesso, composto da 6 caratteri ASCII alfanumerici.	| Fatal
 | INT-T01-R034 |	Nel caso in cui l'ordine contenga il riferimento ad un solo ordine: per comunicare la cancellazione, è obbligatorio fornire una sola riga d'ordine con identificativo valorizzato a 'NA', quantità e totale riga posti a zero e nome articolo posto a N/A.	| Fatal
 | INT-T01-R035 |	Nel caso in cui l'ordine contenga il riferimento ad un solo ordine: per comunicare la revisione è obbligatorio fornire una o più righe d'ordine con identificativo diverso da 'NA'.	| Fatal
 | INT-T01-R036 |	Un ordine DEVE contenere il codice destinatario del fornitore, composto da 7 caratteri ASCII alfanumerici.	| Fatal 
-
+|INT-T01-R037a| E' stato fornito un codice CIG invalido (NNNNNNN errato).| Fatal
+|INT-T01-R037b| E' stato fornito un codice CIG invalido (KKK errato). | Fatal
+|INT-T01-R037c| E' stato fornito un codice SmartCIG invalido (CCCCCCC errato). | Error
+|INT-T01-R037d| E' stato fornito un codice SmartCIG invalido (KK errato). | Fatal
+|INT-T01-R037e| E' stato fornito un codice di esclusione CIG invalido (ES## non è fra ES01-ES27).| Fatal
 |===
 
 
@@ -37,7 +41,7 @@ ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.
 |*Identificatore* | *Regola di Business* |	*Livello di Errore*
 |INT-T76-R001	| Un elemento informativo base, se istanziato, non può essere vuoto.	| Fatal
 |INT-T76-R002	| Le informazioni di contatto del fornitore sono obbligatorie in caso di rigetto o modifica dell’Ordine.	| Fatal
-|INT-T76-R003	| La versione della Risposta d'Ordine DEVE corrispondere alle seguenti 2 dimensioni: 
+|#INT-T76-R003#	| La versione della Risposta d'Ordine DEVE corrispondere alle seguenti 2 dimensioni: 
 
 CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1', 
 ProfileID = 'urn:fdc:peppol.eu:poacc:bis:ordering:3'.

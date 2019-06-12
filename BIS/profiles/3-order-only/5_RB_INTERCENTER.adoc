@@ -8,7 +8,7 @@
 | INT-T01-R002 |	L'ordine DEVE contenere il nome, il paese e l'identificativo fiscale della parte ordinane (Acquirente).	| Fatal
 | INT-T01-R003 |	La versione dell’Ordine DEVE corrispondere alle seguenti 2 dimensioni:
 
-CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1', 
+CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order:3', 
 ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.
 	| Fatal
 | INT-T01-R004 |	Se il prezzo e il totale riga d'ordine sono presenti, il totale riga DEVE essere ottenuto moltiplicando il prezzo per la quantità diviso la quantità base a cui si riferisce il prezzo e includendo l'eventuale sconto o maggiorazione indicati.	| Fatal
