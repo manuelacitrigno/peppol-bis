@@ -6,11 +6,6 @@
 | Identificatore |	Regola di Business |	Livello di errore
 | INT-T01-R001 |	Un elemento informativo base, se istanziato, non può essere vuoto.	| Fatal
 | INT-T01-R002 |	L'ordine DEVE contenere il nome, il paese e l'identificativo fiscale della parte ordinane (Acquirente).	| Fatal
-| INT-T01-R003 |	La versione dell’Ordine DEVE corrispondere alle seguenti 2 dimensioni:
-
-CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order:3', 
-ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.
-	| Fatal
 | INT-T01-R004 |	Se il prezzo e il totale riga d'ordine sono presenti, il totale riga DEVE essere ottenuto moltiplicando il prezzo per la quantità diviso la quantità base a cui si riferisce il prezzo e includendo l'eventuale sconto o maggiorazione indicati.	| Fatal
 | INT-T01-R026 |	Se l'identificatore di endpoint si basa sullo schema di identificatori IT:IPA (ICD: 9921), questo dovrà seguire la sintassi [A-Z0-9]{6,7}.	| Fatal
 | INT-T01-R027 |	Se l'identificatore di endpoint si basa sullo schema di identificatori IT:VAT (ICD: 9906), questo dovrà seguire la sintassi (IT)?[0-9]{11}.	| Fatal
