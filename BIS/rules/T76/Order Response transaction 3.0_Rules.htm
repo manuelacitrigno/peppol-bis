@@ -381,18 +381,6 @@
                      <td><a href="#">PEPPOL-T76-R003</a><br><span class="message">Each order response line SHALL have a document line identifier that is unique within the order.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
-                  <tr id="INT-T76-R003" data-context="/ubl:OrderResponse" data-test="cbc:CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1' and cbc:ProfileID = 'urn:fdc:peppol.eu:poacc:bis:ordering:3'">
-                     <td><a href="#">INT-T76-R003</a><br><span class="message">[INT-T76-R003] - La versione della Risposta d'Ordine DEVE essere identificata dai seguenti identificativi: 
-                           
-                           CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1', 
-                           
-                           ProfileID = 'urn:fdc:peppol.eu:poacc:bis:ordering:3'.</span></td>
-                     <td style="width: 5%;">fatal</td>
-                  </tr>
-                  <tr id="INT-T76-R002" data-context="//cbc:OrderResponseCode[@listID='UNCL1225']" data-test="not(contains( ' 1 2 3 4 5 17 20 21 27 28 29 30 33 34 36 40 ',concat(' ',normalize-space(.),' ') )) or /*/cac:SellerSupplierParty/cac:Party/cac:Contact">
-                     <td><a href="#">INT-T76-R002</a><br><span class="message">INT-T76-R002 - Le informazioni di contatto del fornitore sono obbligatorie in caso di rigetto o modifica dell&#8217;Ordine.</span></td>
-                     <td style="width: 5%;">fatal</td>
-                  </tr>
                   <tr id="INT-T76-R010" data-context="//cbc:OrderResponseCode[@listID='UNCL1225']" data-test="not(contains( ' 1 2 3 4 5 17 20 21 27 28 29 30 33 34 36 40 ',concat(' ',normalize-space(.),' ') )) or /*/cbc:Note">
                      <td><a href="#">INT-T76-R010</a><br><span class="message">INT-T76-R010 - La risposta d&#8217;ordine in caso di rigetto o modifica DEVE specificarne il motivo.</span></td>
                      <td style="width: 5%;">fatal</td>
@@ -410,29 +398,9 @@
                            con il loro stato.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
-                  <tr id="INT-T76-R007" data-context="//cac:BuyerCustomerParty/cac:Party" data-test="cac:PartyIdentification/cbc:ID[@schemeID='9921'][string-length(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789','')) = 0 and string-length() &gt;= 6 and string-length() <= 7]">
+                  <tr id="INT-T76-R007" data-context="//cac:BuyerCustomerParty/cac:Party" data-test="cac:PartyIdentification/cbc:ID[@schemeID='9921'][string-length(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789','')) = 0 and string-length() = 6] or cbc:EndpointID[@schemeID='9921']">
                      <td><a href="#">INT-T76-R007</a><br><span class="message">INT-T76-R007 - Una risposta d'ordine DEVE contenere Il codice UFE IPA dell'ufficio della PA che ha emesso l'ordine, composto
-                           da 6 a 7 caratteri ASCII alfanumerici maiuscoli.</span></td>
-                     <td style="width: 5%;">fatal</td>
-                  </tr>
-                  <tr id="INT-T76-R008" data-context="//cac:OrderReference" data-test="cbc:ID and cbc:IssueDate and cac:DocumentReference/cbc:ID and cac:DocumentReference/cac:IssuerParty/cac:PartyIdentification/cbc:ID">
-                     <td><a href="#">INT-T76-R008</a><br><span class="message">INT-T76-R008 - Nel riferimento all'ordine a cui si risponde (OrderReference) devono essere forniti sia gli estremi ID e IssueDate
-                           che l'identificatore della parte di business che lo ha emesso originariamente (Buyer).</span></td>
-                     <td style="width: 5%;">fatal</td>
-                  </tr>
-                  <tr id="INT-T76-R011" data-context="//cac:OrderReference" data-test="cbc:ID and cac:DocumentReference/cbc:ID and cbc:ID = cac:DocumentReference/cbc:ID">
-                     <td><a href="#">INT-T76-R011</a><br><span class="message">INT-T76-R011 - Nel riferimento all'ordine a cui si risponde (OrderReference) l'ID deve corrispondere al DocumentReference/ID.</span></td>
-                     <td style="width: 5%;">fatal</td>
-                  </tr>
-                  <tr id="INT-T76-R013" data-context="//cac:OrderReference" data-test="xs:date(cbc:IssueDate) <= xs:date(/*/cbc:IssueDate)">
-                     <td><a href="#">INT-T76-R013</a><br><span class="message">INT-T76-R013 - Nel riferimento all'ordine a cui si risponde (OrderReference) la data di emissione indicata DEVE essere minore
-                           o uguale a quella della risposta d'ordine.</span></td>
-                     <td style="width: 5%;">fatal</td>
-                  </tr>
-                  <tr id="INT-T76-R009" data-context="//cac:OrderReference/cac:DocumentReference/cac:IssuerParty" data-test="cac:PartyIdentification/cbc:ID[@schemeID='9921'][string-length(translate(.,'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789','')) = 0 and string-length() &gt;= 6 and string-length() <= 7]">
-                     <td><a href="#">INT-T76-R009</a><br><span class="message">INT-T76-R009 - Nel riferimento all'ordine a cui si risponde (OrderReference), l'identificatore della parte di business DEVE
-                           contenere Il codice UFE IPA dell'ufficio della PA che ha emesso l'ordine originariamente, composto da 6 a 7 caratteri ASCII
-                           alfanumerici maiuscoli.</span></td>
+                           da 6 caratteri ASCII alfanumerici maiuscoli.</span></td>
                      <td style="width: 5%;">fatal</td>
                   </tr>
                   <tr id="INT-T76-R012" data-context="//cac:Delivery" data-test="cac:PromisedDeliveryPeriod and xs:date(cac:PromisedDeliveryPeriod/cbc:StartDate) <= xs:date(cac:PromisedDeliveryPeriod/cbc:EndDate)">
