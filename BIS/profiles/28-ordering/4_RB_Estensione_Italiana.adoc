@@ -13,8 +13,6 @@
 | INT-T01-R027 |	Se l'identificatore di endpoint si basa sullo schema di identificatori IT:VAT (ICD: 9906), questo dovrà seguire la sintassi (IT)?[0-9]{11}.	| Fatal
 | INT-T01-R028 |	Se l'identificatore di endpoint si basa sullo schema di identificatori IT:CF (ICD: 9907), questo dovrà seguire la sintassi [0-9]{11} per le persone giuridiche e la sintassi [A-Z]{6}\d{2}[ABCDEHLMPRST]{1}\d{2}[A-Z]{1}\d{3}[A-Z]{1} per quelle fisiche.	| Fatal
 | INT-T01-R029 |	Il Codice Identificativo Gara (CIG) deve essere sempre indicato in testata all'Ordine o a livello di riga.	| Warning
-| INT-T01-R030 |	Se si intende revocare o modificare un ordine, l'identificatore della parte di business del Buyer è obbligatorio all’interno della sezione che contiene i riferimenti al documento collegato (OrderDocumentReference).	| Fatal
-| INT-T01-R031 |	Se si intende revocare o modificare un ordine la data è obbligatoria all’interno della sezione che contiene i riferimenti al documento collegato (OrderDocumentReference).	| Fatal
 | INT-T01-R032 |	Un ordine deve riportare obbligatoriamente un solo identificatore della parte di business (Endpoint) del Buyer. Nel caso di Buyer di tipo PA deve riportare lo schema IPA.	| Fatal
 | INT-T01-R033 |	Un ordine DEVE contenere Il codice UFE IPA dell'ufficio della PA che lo ha emesso, composto da 6 caratteri ASCII alfanumerici.	| Fatal
 | INT-T01-R034 |	Nel caso in cui l'ordine contenga il riferimento ad un solo ordine: per comunicare la cancellazione, è obbligatorio fornire una sola riga d'ordine con identificativo valorizzato a 'NA', quantità e totale riga posti a zero e nome articolo posto a N/A.	| Fatal
@@ -35,20 +33,10 @@
 |===
 |*Identificatore* | *Regola di Business* |	*Livello di Errore*
 |INT-T76-R001	| Un elemento informativo base, se istanziato, non può essere vuoto.	| Fatal
-|INT-T76-R002	| Le informazioni di contatto del fornitore sono obbligatorie in caso di rigetto o modifica dell’Ordine.	| Fatal
-|#INT-T76-R003#	| La versione della Risposta d'Ordine DEVE corrispondere alle seguenti 2 dimensioni: 
-
-CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1', 
-ProfileID = 'urn:fdc:peppol.eu:poacc:bis:ordering:3'.
-	| Fatal
 |INT-T76-R004	| Se il codice di risposta in testata è 27 (rifiutato) non deve essere fornita alcuna riga di dettaglio.	| Fatal
 |INT-T76-R005	| Se il codice di risposta in testata è 29 (accettato) non deve essere fornita alcuna riga di dettaglio.	| Fatal
 |INT-T76-R006	| Se il codice di risposta in testata è 30 (accettato con modifiche) e necessario fornire tutte le righe dell'ordine con il relativo stato.	| Fatal
 |INT-T76-R007	| Una risposta d'ordine DEVE contenere Il codice UFE IPA dell'ufficio della PA che ha emesso l'ordine, composto da 6 a 7 caratteri ASCII alfanumerici maiuscoli.	| Fatal
-|INT-T76-R008	| Nel riferimento all'ordine a cui si risponde (OrderReference) devono essere forniti sia gli estremi ID e IssueDate che l'identificatore della parte di business che lo ha emesso originariamente (Buyer).	| Fatal
-|INT-T76-R009	| Nel riferimento all'ordine a cui si risponde (OrderReference), l'identificatore della parte di business DEVE contenere Il codice UFE IPA dell'ufficio della PA che ha emesso l'ordine originariamente, composto da 6 a 7 caratteri ASCII alfanumerici maiuscoli.	| Fatal
 |INT-T76-R010	| La risposta d’ordine in caso di rigetto o modifica DEVE specificarne il motivo.	| Fatal
-|INT-T76-R011	| Nel riferimento all'ordine a cui si risponde (OrderReference) il valore dell'ID ordine DEVE corrispondere al valore DocumentReference/ID.	| Fatal
 |INT-T76-R012	| Nelle informazioni di Delivery in testata o dettaglio il PromisedDeliveryPeriod DEVE essere valorizzato e la data di inizio deve essere inferiore o uguale quella di fine periodo.	| Fatal
-|INT-T76-R013	| Nel riferimento all'ordine a cui si risponde (OrderReference) la data di emissione indicata DEVE essere minore o uguale a quella della risposta d'ordine.	| Fatal
 |===
