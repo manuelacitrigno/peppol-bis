@@ -1166,13 +1166,6 @@ Esempi di ruoli risoperti dal fornitore sono: venditore, parte consegnante, cred
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R003</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">La versione dell’Ordine DEVE corrispondere alle seguenti 2 dimensioni:
-</p><p class="tableblock">CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1',
-ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R004</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Se il prezzo e il totale riga d&#8217;ordine sono presenti, il totale riga DEVE essere ottenuto moltiplicando il prezzo per la quantità diviso la quantità base a cui si riferisce il prezzo e includendo l&#8217;eventuale sconto o maggiorazione indicati.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
@@ -1196,16 +1189,6 @@ ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R029</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Il Codice Identificativo Gara (CIG) deve essere sempre indicato in testata all&#8217;Ordine o a livello di riga.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Warning</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R030</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Se si intende revocare o modificare un ordine, l&#8217;identificatore della parte di business del Buyer è obbligatorio all’interno della sezione che contiene i riferimenti al documento collegato (OrderDocumentReference).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R031</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Se si intende revocare o modificare un ordine la data è obbligatoria all’interno della sezione che contiene i riferimenti al documento collegato (OrderDocumentReference).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R032</p></td>
@@ -3617,7 +3600,7 @@ Questo valore deve essere aggiunto al valore indicato in AnticipatedMonetaryTota
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Il valore deve essere IVA.</td>
+<td>Il valore deve essere VAT.</td>
 </tr>
 </table>
 </div>
@@ -3792,7 +3775,7 @@ urn:fdc:peppol.eu:poacc:bis:order_only:3</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-05-17 16:15:14 WEDT
+Last updated 2019-06-18 16:00:27 WEDT
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

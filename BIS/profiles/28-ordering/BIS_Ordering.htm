@@ -472,7 +472,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truecodifiche-di-riferimento">7. Codifiche di riferimento</a>
 <ul class="sectlevel2">
 <li><a href="#truecodifiche-di-riferimento-per-elementi-codificati">7.1. Codifiche di riferimento per elementi codificati</a></li>
-<li><a href="#truecodifica-di-riferimento-per-identificatori">7.2. Codifica di riferimento per identificatori</a></li>
+<li><a href="#truetipologia-dell-ordine">7.2. Tipologia dell&#8217;ordine</a></li>
+<li><a href="#truecodifica-di-riferimento-per-identificatori">7.3. Codifica di riferimento per identificatori</a></li>
 </ul>
 </li>
 <li><a href="#truedescrizione-di-parti-selezionate-del-messaggio-dell-ordine">8. Descrizione di parti selezionate del messaggio dell’ordine</a>
@@ -481,20 +482,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueriferimento-ad-un-altro-ordine">8.2. Riferimento ad un’altro ordine</a></li>
 <li><a href="#truealtri-riferimenti">8.3. Altri Riferimenti</a></li>
 <li><a href="#trueallegati">8.4. Allegati</a></li>
-<li><a href="#trueriferimento-al-documento-del-committente-originator">8.5. Riferimento al documento del Committente (Originator)</a></li>
-<li><a href="#trueidentificazione-prodotto">8.6. Identificazione prodotto</a></li>
-<li><a href="#truenome-e-descrizione-prodotto">8.7. Nome e descrizione prodotto</a></li>
-<li><a href="#truecentro-di-costo">8.8. Centro di Costo</a></li>
-<li><a href="#truequantit-e-unit-di-misura">8.9. Quantità e unità di misura</a></li>
-<li><a href="#trueprezzi">8.10. Prezzi</a></li>
-<li><a href="#trueomaggi">8.11. Omaggi</a></li>
-<li><a href="#truesconti-e-maggiorazioni">8.12. Sconti e maggiorazioni</a></li>
-<li><a href="#truegestione-ordini-particolari">8.13. Gestione Ordini particolari</a></li>
-<li><a href="#truecalcolo-dei-totali-anticipatedmonetarytotals">8.14. Calcolo dei totali (AnticipatedMonetaryTotals)</a></li>
-<li><a href="#truetotale-imposte">8.15. Totale imposte</a></li>
-<li><a href="#trueconsegna-delivery">8.16. Consegna (Delivery)</a></li>
-<li><a href="#trueconfezionamento">8.17. Confezionamento</a></li>
-<li><a href="#truecategoria-iva-su-riga">8.18. Categoria IVA su riga</a></li>
+<li><a href="#trueidentificazione-prodotto">8.5. Identificazione prodotto</a></li>
+<li><a href="#truenome-e-descrizione-prodotto">8.6. Nome e descrizione prodotto</a></li>
+<li><a href="#truecentro-di-costo">8.7. Centro di Costo</a></li>
+<li><a href="#truequantit-e-unit-di-misura">8.8. Quantità e unità di misura</a></li>
+<li><a href="#trueprezzi">8.9. Prezzi</a></li>
+<li><a href="#trueomaggi">8.10. Omaggi</a></li>
+<li><a href="#truesconti-e-maggiorazioni">8.11. Sconti e maggiorazioni</a></li>
+<li><a href="#truegestione-ordini-particolari">8.12. Gestione Ordini particolari</a></li>
+<li><a href="#truecalcolo-dei-totali-anticipatedmonetarytotals">8.13. Calcolo dei totali (AnticipatedMonetaryTotals)</a></li>
+<li><a href="#truetotale-imposte">8.14. Totale imposte</a></li>
+<li><a href="#trueconsegna-delivery">8.15. Consegna (Delivery)</a></li>
+<li><a href="#trueconfezionamento">8.16. Confezionamento</a></li>
+<li><a href="#truecategoria-iva-su-riga">8.17. Categoria IVA su riga</a></li>
 </ul>
 </li>
 <li><a href="#truedescrizione-di-parti-selezionate-del-messaggio-di-risposta-d-ordine">9. Descrizione di parti selezionate del messaggio di risposta d’ordine</a>
@@ -515,8 +515,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueendpoint-id-identificativo-di-instradamento-sulla-rete-peppol">10.3. Endpoint ID - Identificativo di instradamento sulla rete PEPPOL</a></li>
 <li><a href="#trueparty-identification-identificazione-ai-fini-operativi-e-o-amministrativo-contabili">10.4. Party Identification - Identificazione ai fini operativi e/o amministrativo-contabili</a></li>
 <li><a href="#trueid-profilo">10.5. ID Profilo</a></li>
-<li><a href="#trueid-customizzazione">10.6. ID Customizzazione</a></li>
-<li><a href="#truespazio-dei-nomi">10.7. Spazio dei nomi</a></li>
+<li><a href="#truespazio-dei-nomi">10.6. Spazio dei nomi</a></li>
 </ul>
 </li>
 </ul>
@@ -1001,8 +1000,8 @@ cac:AccountingCustomerParty</p></td>
 </thead>
 <tfoot>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R036</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Un ordine DEVE contenere il codice destinatario del fornitore, composto da 7 caratteri ASCII alfanumerici.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R037e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">E' stato fornito un codice di esclusione CIG invalido (ES## non è fra ES01-ES27).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 </tfoot>
@@ -1015,13 +1014,6 @@ cac:AccountingCustomerParty</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R002</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">L&#8217;ordine DEVE contenere il nome, il paese e l&#8217;identificativo fiscale della parte ordinane (Acquirente).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R003</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">La versione dell’Ordine DEVE corrispondere alle seguenti 2 dimensioni:
-</p><p class="tableblock">CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1',
-ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
@@ -1050,23 +1042,13 @@ ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Warning</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R030</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Se si intende revocare o modificare un ordine, l&#8217;identificatore della parte di business del Buyer è obbligatorio all’interno della sezione che contiene i riferimenti al documento collegato (OrderDocumentReference).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R031</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Se si intende revocare o modificare un ordine la data è obbligatoria all’interno della sezione che contiene i riferimenti al documento collegato (OrderDocumentReference).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R032</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Un ordine deve riportare obbligatoriamente un solo identificatore della parte di business (Endpoint) del Buyer. Nel caso di Buyer di tipo PA deve riportare lo schema IPA.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R033</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Una ordine DEVE contenere Il codice UFE IPA dell&#8217;ufficio della PA che lo ha emesso, composto da 6 caratteri ASCII alfanumerici.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un ordine DEVE contenere Il codice UFE IPA dell&#8217;ufficio della PA che lo ha emesso, composto da 6 caratteri ASCII alfanumerici.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
@@ -1077,6 +1059,31 @@ ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R035</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nel caso in cui l&#8217;ordine contenga il riferimento ad un solo ordine: per comunicare la revisione è obbligatorio fornire una o più righe d&#8217;ordine con identificativo diverso da 'NA'.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R036</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un ordine DEVE contenere il codice destinatario del fornitore, composto da 7 caratteri ASCII alfanumerici.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R037a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">E' stato fornito un codice CIG invalido (NNNNNNN errato).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R037b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">E' stato fornito un codice CIG invalido (KKK errato).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R037c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">E' stato fornito un codice SmartCIG invalido (CCCCCCC errato).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R037d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">E' stato fornito un codice SmartCIG invalido (KK errato).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 </tbody>
@@ -1102,18 +1109,6 @@ ProfileID = 'urn:fdc:peppol.eu:poacc:bis:order_only:3'.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T76-R002</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Le informazioni di contatto del fornitore sono obbligatorie in caso di rigetto o modifica dell’Ordine.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T76-R003</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">La versione della Risposta d&#8217;Ordine DEVE corrispondere alle seguenti 2 dimensioni:
-</p><p class="tableblock">CustomizationID = 'urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1',
-ProfileID = 'urn:fdc:peppol.eu:poacc:bis:ordering:3'.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T76-R004</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Se il codice di risposta in testata è 27 (rifiutato) non deve essere fornita alcuna riga di dettaglio.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
@@ -1134,33 +1129,13 @@ ProfileID = 'urn:fdc:peppol.eu:poacc:bis:ordering:3'.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T76-R008</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nel riferimento all&#8217;ordine a cui si risponde (OrderReference) devono essere forniti sia gli estremi ID e IssueDate che l&#8217;identificatore della parte di business che lo ha emesso originariamente (Buyer).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T76-R009</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nel riferimento all&#8217;ordine a cui si risponde (OrderReference), l&#8217;identificatore della parte di business DEVE contenere Il codice UFE IPA dell&#8217;ufficio della PA che ha emesso l&#8217;ordine originariamente, composto da 6 a 7 caratteri ASCII alfanumerici maiuscoli.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T76-R010</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">La risposta d’ordine in caso di rigetto o modifica DEVE specificarne il motivo.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T76-R011</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nel riferimento all&#8217;ordine a cui si risponde (OrderReference) il valore dell&#8217;ID ordine DEVE corrispondere al valore DocumentReference/ID.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T76-R012</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Nelle informazioni di Delivery in testata o dettaglio il PromisedDeliveryPeriod DEVE essere valorizzato e la data di inizio deve essere inferiore o uguale quella di fine periodo.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T76-R013</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nel riferimento all&#8217;ordine a cui si risponde (OrderReference) la data di emissione indicata DEVE essere minore o uguale a quella della risposta d&#8217;ordine.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 </tbody>
@@ -1995,13 +1970,110 @@ Quando si utilizza un documento d’istanza, ciascun elemento di dati contiene i
 <div class="sect2">
 <h3 id="truecodifiche-di-riferimento-per-elementi-codificati"><a class="anchor" href="#truecodifiche-di-riferimento-per-elementi-codificati"></a>7.1. Codifiche di riferimento per elementi codificati</h3>
 <div class="paragraph">
-<p>Qualsiasi elemento semantico della tipologia dei dati, può richiedere l’utilizzo di una codifica di riferimento specifica (o un valore fissato). Le codifiche di riferimento applicabili sono disponibili nella SEZIONE TECNICA di INTERCENT-ER, <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO. In questa sezione, è possibile trovare i codici validi, i loro nomi e la descrizione. Inoltre, è possibile trovare anche i link per chiarire dove la codifica di riferimento viene utilizzata se nella transizione o in altri documenti PEPPOL BIS v3.</p>
+<p>Qualsiasi elemento semantico della tipologia dei dati, può richiedere l’utilizzo di una codifica di riferimento specifica (o un valore fissato).</p>
+</div>
+<div class="paragraph">
+<p>Nelle <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO è possibile trovare i codici validi, i loro nomi e la descrizione.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truecodifica-di-riferimento-per-identificatori"><a class="anchor" href="#truecodifica-di-riferimento-per-identificatori"></a>7.2. Codifica di riferimento per identificatori</h3>
+<h3 id="truetipologia-dell-ordine"><a class="anchor" href="#truetipologia-dell-ordine"></a>7.2. Tipologia dell&#8217;ordine</h3>
+<div class="paragraph">
+<p>La tipologia dell’Ordine può essere espressa utilizzando le seguenti codifiche ufficiali disponibili nel package UBL.</p>
+</div>
+<div class="paragraph">
+<p>Per identificare il tipo di ordine si usa un «subset» della codifica ufficiale UNCL 1001. Si riporta di seguito il subset denominato «OrderTypeCode IT» definito da PEPPOL ed esteso al modello italiano di procurement (vedi, <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO).</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 33.3335%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle" colspan="2"><strong>Tipo ordine</strong></th>
+<th class="tableblock halign-center valign-middle" colspan="2"><strong>Sotto-tipo ordine</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Codice</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Descrizione</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Codice</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Descrizione</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock"><strong>220</strong></p></td>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Ordine di Acquisto</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OF</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine di fatturazione per prodotti già consumati</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>OFR</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine di fatturazione e reintegro</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock"><strong>227</strong></p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Ordine di consegna</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CD</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conto deposito</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CV</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conto visione</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CG</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comodato gratuito</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note per l&#8217;utilizzo delle diverse tipologie d&#8217;ordine:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>220</strong> (Ordine di acquisto): corrisponde a un generico ordine di acquisto che può essere utilizzato sia per beni sia per servizi, con o senza emissione del relativo DDT. Sono inclusi gli ordini per l’acquisto di beni a scorta, gli ordini per l’acquisto di prodotti in transito ovvero prodotti che non vengono stoccati, gli ordini per l’invio di apparecchiature in riparazione e gli ordini di apparecchiature e beni di noleggio con canone. Può essere fornito un ulteriore dettaglio dell’ordine di acquisto usando i seguenti sottotipi:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>OF</strong> (Ordine di fatturazione per prodotti già consumati): nella gestione dei beni acquisiti attraverso modalità di conto visione (ad esempio, dispositivi medici impiantabili gestiti direttamente da sala operatoria) l’ordine di fatturazione è utilizzato per autorizzare la fatturazione dei soli beni effettivamente trattenuti e quindi consumati. Inoltre, nell’ambito del conto deposito l’ordine di fatturazione è utilizzato per autorizzare la fatturazione di beni in conto deposito per i quali non si richiede il ripristino contestuale. Al codice 220#OF possono essere ricondotti in generale tutti gli ordini che riguardano la sola fatturazione di beni già consumati, per i quali il fornitore non deve effettuare una nuova consegna. L’ordine di tipo 220#OF riporta i riferimenti (in specifici campi) di Lotto, N. Seriale, Numero e data DDT di consegna dei prodotti utilizzati;</p>
+</li>
+<li>
+<p><strong>OFR</strong> (Ordine di fatturazione e reintegro): la gestione delle scorte in conto deposito prevede normalmente una quantità di riordino prestabilita per ogni prodotto per mantenere le scorte minime necessarie. L’ordine di fatturazione e ripristino è utilizzato con la finalità di autorizzare il fornitore alla fatturazione di quanto consumato e per reintegrare il deposito del fornitore presso l’azienda cliente. Non è a intervalli regolari ma avviene ad ogni utilizzo. Nell’ambito del Conto Deposito non è previsto l’ordine di solo ripristino. L’ordine di tipo 220#OFR è utilizzato anche per tutti i beni acquistati con fatturazione a referto, kit, test o validazione. L’ordine di tipo 220#OFR riporta i riferimenti (in specifici campi) di Lotto, N. Seriale, Numero e data DDT di consegna dei prodotti utilizzati.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>227</strong> (Ordine di consegna): corrisponde all’ordine di materiali che non contempla una fatturazione se non dopo l’utilizzo degli stessi e a seguito di specifico ordine tipo 220. Può essere fornito un ulteriore dettaglio dell’ordine di consegna usando i seguenti sottotipi ordine:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>CD</strong> (Conto deposito) vale per l’ordine di beni in conto deposito;</p>
+</li>
+<li>
+<p><strong>CV</strong> (Conto visione) vale per l’ordine di beni in conto visione;</p>
+</li>
+<li>
+<p><strong>CG</strong> (Comodato d’uso gratuito): corrisponde ad un ordine di materiale o apparecchiature in comodato d’uso senza fatturazione.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Vedi <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truecodifica-di-riferimento-per-identificatori"><a class="anchor" href="#truecodifica-di-riferimento-per-identificatori"></a>7.3. Codifica di riferimento per identificatori</h3>
 <div class="sect3">
-<h4 id="trueidentificatori-delle-parti-e-schema-identificatore-delle-parti-legali-registrate"><a class="anchor" href="#trueidentificatori-delle-parti-e-schema-identificatore-delle-parti-legali-registrate"></a>7.2.1. Identificatori delle parti e schema identificatore delle parti legali registrate</h4>
+<h4 id="trueidentificatori-delle-parti-e-schema-identificatore-delle-parti-legali-registrate"><a class="anchor" href="#trueidentificatori-delle-parti-e-schema-identificatore-delle-parti-legali-registrate"></a>7.3.1. Identificatori delle parti e schema identificatore delle parti legali registrate</h4>
 <div class="paragraph">
 <p>Tutti gli identificatori delle parti (cac:PartyIdentification/cbc:ID) e gli identificatori delle parti legali registrate (cac:PartyLegalEntity/cbc:CompanyID) hanno uno schema identificatore facoltativo dell’attributo (@schemeID). Se utilizzato, il valore deve essere scelto tra i codici presenti nella ICD list, <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO.</p>
 </div>
@@ -2023,7 +2095,7 @@ Quando si utilizza un documento d’istanza, ciascun elemento di dati contiene i
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueidentificativo-dello-schema-identificatore-dell-indirizzo-elettronico"><a class="anchor" href="#trueidentificativo-dello-schema-identificatore-dell-indirizzo-elettronico"></a>7.2.2. Identificativo dello schema identificatore dell’indirizzo elettronico</h4>
+<h4 id="trueidentificativo-dello-schema-identificatore-dell-indirizzo-elettronico"><a class="anchor" href="#trueidentificativo-dello-schema-identificatore-dell-indirizzo-elettronico"></a>7.3.2. Identificativo dello schema identificatore dell’indirizzo elettronico</h4>
 <div class="paragraph">
 <p>Tutti gli identificatori degli indirizzi elettronici (cbc:EndpointID/@schemeID) utilizzano una codifica di riferimento che deve essere gestita direttamente da CEF.</p>
 </div>
@@ -2211,46 +2283,48 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
 <div class="title">Esempio di informazioni dell&#8217;intestatario fattura</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:AccountingCustomerParty&gt;
-&lt;cac:Party&gt;
-	&lt;cac:PartyIdentification&gt;
-		&lt;cbc:ID schemeID="9921"&gt;ABCDEF&lt;/cbc:ID&gt;
-	&lt;/cac:PartyIdentification&gt;
-	&lt;cac:PartyName&gt;
-		&lt;cbc:Name&gt;Ospedale Sant’Anna&lt;/cbc:Name&gt;
-	&lt;/cac:PartyName&gt;
-	&lt;cac:PostalAddress&gt;
-		&lt;cbc:StreetName&gt;Via del pensiero, 1&lt;/cbc:StreetName&gt;
-		&lt;cbc:AdditionalStreetName&gt;Primo Piano&lt;/cbc:AdditionalStreetName&gt;
-		&lt;cbc:CityName&gt;Maranello&lt;/cbc:CityName&gt;
-		&lt;cbc:PostalZone&gt;41053&lt;/cbc:PostalZone&gt;
-		&lt;cbc:CountrySubentity&gt;Modena&lt;/cbc:CountrySubentity&gt;
-		&lt;cac:AddressLine&gt;
-			&lt;cbc:Line&gt;Stanza 18&lt;/cbc:Line&gt;
-		&lt;/cac:AddressLine&gt;
-		&lt;cac:Country&gt;
-			&lt;cbc:IdentificationCode listID="ISO3166-1:Alpha2"&gt;IT&lt;/cbc:IdentificationCode&gt;
-		&lt;/cac:Country&gt;
-	&lt;/cac:PostalAddress&gt;
-	&lt;cac:PartyTaxScheme&gt;
-		&lt;cbc:CompanyID&gt;00234567890&lt;/cbc:CompanyID&gt;
-		&lt;cac:TaxScheme&gt;
-			&lt;cbc:ID&gt;VAT&lt;/cbc:ID&gt;
-		&lt;/cac:TaxScheme&gt;
-	&lt;/cac:PartyTaxScheme&gt;
-	&lt;cac:PartyLegalEntity&gt;
-		&lt;cbc:RegistrationName&gt;Ospedale Sant’Anna&lt;/cbc:RegistrationName&gt;
-		&lt;cbc:CompanyID schemeID="9907"&gt;00234567890&lt;/cbc:CompanyID&gt;
-		&lt;cac:RegistrationAddress&gt;
-			&lt;cbc:CityName&gt;Modena&lt;/cbc:CityName&gt;
-			&lt;cac:Country&gt;
-				&lt;cbc:IdentificationCode listID="ISO3166-1:Alpha2"&gt;IT&lt;/cbc:IdentificationCode&gt;
-			&lt;/cac:Country&gt;
-		&lt;/cac:RegistrationAddress&gt;
-	&lt;/cac:PartyLegalEntity&gt;
-	&lt;cac:Contact&gt;
-		&lt;cbc:ID&gt;IDResponsabileFatturazione&lt;/cbc:ID&gt;
-	&lt;/cac:Contact&gt;
-&lt;/cac:Party&gt;
+    &lt;cac:Party&gt;
+        &lt;cbc:EndpointID schemeID=”9921”&gt;ABCDEF&lt;/cbc:EndpoinID&gt;
+        &lt;cac:PartyIdentification&gt;
+            &lt;cbc:ID schemeID="9921"&gt;ABCDEF&lt;/cbc:ID&gt;
+        &lt;/cac:PartyIdentification&gt;
+        &lt;cac:PartyName&gt;
+            &lt;cbc:Name&gt;Ospedale Sant’Anna&lt;/cbc:Name&gt;
+        &lt;/cac:PartyName&gt;
+        &lt;cac:PostalAddress&gt;
+            &lt;cbc:StreetName&gt;Via del pensiero, 1&lt;/cbc:StreetName&gt;
+            &lt;cbc:AdditionalStreetName&gt;Primo Piano&lt;/cbc:AdditionalStreetName&gt;
+            &lt;cbc:CityName&gt;Maranello&lt;/cbc:CityName&gt;
+            &lt;cbc:PostalZone&gt;41053&lt;/cbc:PostalZone&gt;
+            &lt;cbc:CountrySubentity&gt;Modena&lt;/cbc:CountrySubentity&gt;
+            &lt;cac:AddressLine&gt;
+                &lt;cbc:Line&gt;Stanza 18&lt;/cbc:Line&gt;
+            &lt;/cac:AddressLine&gt;
+            &lt;cac:Country&gt;
+                &lt;cbc:IdentificationCode listID="ISO3166-1:Alpha2"&gt;IT&lt;/cbc:IdentificationCode&gt;
+            &lt;/cac:Country&gt;
+        &lt;/cac:PostalAddress&gt;
+        &lt;cac:PartyTaxScheme&gt;
+            &lt;cbc:CompanyID&gt;00234567890&lt;/cbc:CompanyID&gt;
+            &lt;cac:TaxScheme&gt;
+                &lt;cbc:ID&gt;VAT&lt;/cbc:ID&gt;
+            &lt;/cac:TaxScheme&gt;
+        &lt;/cac:PartyTaxScheme&gt;
+        &lt;cac:PartyLegalEntity&gt;
+            &lt;cbc:RegistrationName&gt;Ospedale Sant’Anna&lt;/cbc:RegistrationName&gt;
+            &lt;cbc:CompanyID schemeID="9907"&gt;00234567890&lt;/cbc:CompanyID&gt;
+            &lt;cac:RegistrationAddress&gt;
+                &lt;cbc:CityName&gt;Modena&lt;/cbc:CityName&gt;
+                &lt;cac:Country&gt;
+                    &lt;cbc:IdentificationCode listID="ISO3166-1:Alpha2"&gt;IT&lt;/cbc:IdentificationCode&gt;
+                &lt;/cac:Country&gt;
+            &lt;/cac:RegistrationAddress&gt;
+        &lt;/cac:PartyLegalEntity&gt;
+        &lt;cac:Contact&gt;
+            &lt;cbc:Name&gt;ResponsabileFatturazione&lt;/cbc:Name&gt;
+            &lt;cbc:ElectronicMail&gt;responsabile.fatturazione@ospedale.it&lt;/cbc:ElectronicMail&gt;
+        &lt;/cac:Contact&gt;
+    &lt;/cac:Party&gt;
 &lt;/cac:AccountingCustomerParty&gt;</code></pre>
 </div>
 </div>
@@ -2262,7 +2336,7 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
 </td>
 <td class="content">
 <div class="paragraph">
-<p>E’ importante notare che per facilitare il riutilizzo delle informazioni sull’intestatario in fattura, si raccomanda di includere pi§ informazioni possibili, come PostalAddress, PartyTaxScheme e PartyLegalEntity (iscrizione al REA) in aggiunta al PartyName e al PartyIdentification.</p>
+<p>E’ importante notare che per facilitare il riutilizzo delle informazioni sull’intestatario in fattura, si raccomanda di includere più informazioni possibili, come PostalAddress, PartyTaxScheme e PartyLegalEntity (iscrizione al REA) in aggiunta al PartyName e al PartyIdentification.</p>
 </div>
 </td>
 </tr>
@@ -2273,142 +2347,26 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
 <div class="sect2">
 <h3 id="trueriferimento-ad-un-altro-ordine"><a class="anchor" href="#trueriferimento-ad-un-altro-ordine"></a>8.2. Riferimento ad un’altro ordine</h3>
 <div class="paragraph">
-<p>Per diversi scopi potrebbe essere necessario riferirsi ad un altro ordine precedente. Allo scopo è possibile riferirsi ad un preciso ordine indicandone anche lo stato. Per esempio per sostituire un ordine rifiutato o per correggerlo è possibile:</p>
+<p>In caso di cancellazione o modifica di un ordine è necessario riportare gli elementi che lo identificano nel segmento “OrderDocumentReference/ID" valorizzato con la concatenazione dei seguenti campi:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>indicarne gli estremi;</p>
+<p><strong>ID</strong> dell’ordine;</p>
 </li>
 <li>
-<p>la tipologia 220 secondo la codifica OrderTypeCode basata su “UNCL1001”;</p>
+<p><strong>IssueDate</strong> valorizzato con la data dell&#8217;ordine;</p>
 </li>
 <li>
-<p>lo stato “Cancelled” o “Revised” secondo la codifica “DocumentStatusCode”</p>
+<p><strong>EndpointID</strong> dell’elemento BuyerCustomerParty dell’ordine;</p>
+</li>
+<li>
+<p>L&#8217;operazione che si vuole effettuare (<strong>Cancelled</strong> per la cancellazione e <strong>Revised</strong> per la modifica).</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Gli estremi che identificano un ordine precedente si trovano nell’elemento “OrderDocumentReference” e sono tre :</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>“ID”, valorizzato con il numero identificativo dell’Ordine che si intende aggiornare;</p>
-</li>
-<li>
-<p>“IssueDate”, valorizzato con la data dell’Ordine che si intende aggiornare;</p>
-</li>
-<li>
-<p>“IssuerParty”, al cui interno dovrà essere indicato il campo “EndpointID” con il corrispondente valore presente nel documento che si intende aggiornare.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>La tipologia dell’Ordine e il suo stato possono essere espressi utilizzando le seguenti codifiche ufficiali disponibili nel package UBL.</p>
-</div>
-<div class="paragraph">
-<p>Per identificare il tipo di ordine si usa un «subset» della codifica ufficiale UNCL 1001. Si riporta di seguito il subset denominato «OrderTypeCode IT» definito da PEPPOL ed esteso al modello italiano di procurement (vedi, <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO).</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 14.2857%;">
-<col style="width: 28.5714%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Codice</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo ordine (EN)</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo ordine (IT)</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">148</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bailment contract</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine di comodato d’uso</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">220</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Purchase Order</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine di Acquisto</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">221</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Blanket Order</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine generale "prodotti  a scorta"</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">222</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Spot Order</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine di "transito" occasionale</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">225</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Repair order</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine di riparazione</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">227</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Consignment Order</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine di apertura conto deposito</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">228</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sample Order</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine di fatturazione</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">232</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hire order</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine di noleggio del bene</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">258</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Standing Order</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ordine di fatturazione e ripristino</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Note per l’utilizzo delle diverse tipologie d’ordine:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>tipo 148</strong> (Bailment Contract – Ordine di comodato d’uso): corrisponde ad un ordine di materiale o apparecchiature in comodato d’uso senza fatturazione.</p>
-</li>
-<li>
-<p><strong>tipo 220</strong> (Purchase Order – Ordine di acquisto): corrisponde a un generico ordine di acquisto che può essere utilizzato sia per beni sia per servizi, con o senza emissione del relativo DDT.</p>
-</li>
-<li>
-<p><strong>tipo 221</strong> (Blancket Order – Ordine generale “prodotti a scorta”): corrisponde all’ordine per l’acquisto di beni a scorta.</p>
-</li>
-<li>
-<p><strong>tipo 222</strong> (Spot Order - Ordine di "transito" occasionale): corrisponde all’ordine per l’acquisto di prodotti in transito ovvero prodotti che non vengono stoccati.</p>
-</li>
-<li>
-<p><strong>tipo 225</strong> (Repair Order - Ordine di riparazione): corrisponde all’ordine per l’invio di apparecchiature in riparazione.</p>
-</li>
-<li>
-<p><strong>tipo 227</strong> (Consignment Order - Ordine di apertura conto deposito): corrisponde all’ordine di apertura del Conto Deposito (prima richiesta) e può essere utilizzato in modo opzionale dalle Amministrazioni. Le informazioni per la chiusura del conto deposito, così come per la trasmissione degli inventari periodici, non sono al momento gestite tramite profili PEPPOL.</p>
-</li>
-<li>
-<p><strong>tipo 228</strong> (Sample Order - Ordine di fatturazione): nella gestione dei beni acquisiti attraverso modalità di conto visione (ad esempio, dispositivi medici impiantabili gestiti direttamente da sala operatoria) l’ordine di fatturazione è utilizzato per autorizzare la fatturazione dei soli beni effettivamente trattenuti e quindi consumati. Inoltre, nell’ambito del conto deposito l’ordine di fatturazione è utilizzato per autorizzare la fatturazione di beni in conto deposito per i quali non si richiede il ripristino contestuale. Al codice 228 possono essere ricondotti in generale tutti gli ordini che riguardano la sola fatturazione di beni già consumati, per i quali il fornitore non deve effettuare una nuova consegna. L’ordine di tipo 228 riporta i riferimenti (in specifici campi) di Lotto, N. Seriale, Numero e data DDT di consegna dei prodotti utilizzati.</p>
-</li>
-<li>
-<p><strong>tipo 232</strong> (Hire Order - Ordine di noleggio del bene): corrisponde all’ordine di apparecchiature e beni di noleggio con canone.</p>
-</li>
-<li>
-<p><strong>tipo 258</strong> (Standing Order - Ordine di fatturazione e ripristino): la gestione delle scorte in conto deposito prevede normalmente una quantità di riordino prestabilita per ogni prodotto per mantenere le scorte minime necessarie. L&#8217;ordine di fatturazione e ripristino è utilizzato con la finalità di autorizzare il fornitore alla fatturazione di quanto consumato e per reintegrare il deposito del fornitore presso l’azienda cliente. Non è a intervalli regolari ma avviene ad ogni utilizzo. Nell’ambito del Conto Deposito non è previsto l’ordine di solo ripristino. L’ordine di tipo 258 è utilizzato anche per tutti i beni acquistati con fatturazione a referto, kit, test o validazione.  L’ordine di tipo 258 riporta i riferimenti (in specifici campi) di Lotto, N. Seriale, Numero e data DDT di consegna dei prodotti utilizzati.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Per la codifica <strong>Document Status Code</strong>, vedi <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO.</p>
-</div>
-<div class="paragraph">
-<p>Possono essere forniti uno o più riferimenti ad ordini precedenti dei quali se ne vuole comunicare la cancellazione (Cancelled) o la revisione (Revised).
-Per gli ordini precedenti con stato “Revised”, l’Ordine presente rappresenta quindi sempre la nuova versione che li sostituisce completamente.</p>
+<p>Per gli ordini precedenti con stato “Revised”, l’ordine rappresenta quindi sempre la nuova versione che sostituisce il precedente.</p>
 </div>
 <div class="sect3">
 <h4 id="trueesempio-di-cancellazione-di-un-ordine-precedente"><a class="anchor" href="#trueesempio-di-cancellazione-di-un-ordine-precedente"></a>8.2.1. Esempio di cancellazione di un ordine precedente</h4>
@@ -2418,26 +2376,17 @@ Per gli ordini precedenti con stato “Revised”, l’Ordine presente rappresen
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OrderDocumentReference&gt;
-        &lt;cbc:ID&gt;1111&lt;/cbc:ID&gt;
-        &lt;cbc:IssueDate&gt;2015-04-30&lt;/cbc:IssueDate&gt;
-        &lt;cbc:DocumentTypeCode listID=”UNCL1001”&gt;220&lt;/cbc:DocumentTypeCode&gt;
-        &lt;cbc:DocumentStatusCode listID=”DocumentStatusCode”&gt;Cancelled&lt;/cbc:DocumentStatusCode&gt;
-    &lt;cac:IssuerParty&gt;
-    &lt;cbc:EndpointID schemeID="9921"&gt; ABCDEF&lt;/cbc:EndpointID&gt;
-    &lt;cac:PartyIdentification&gt;
-        &lt;cbc:ID schemeID="9921"&gt;ABCDEF&lt;/cbc:ID&gt;
-    &lt;/cac:PartyIdentification&gt;
-    &lt;/cac:IssuerParty&gt;
-    &lt;/cac:OrderDocumentReference&gt;
+    &lt;cbc:ID&gt;111#2018-01-30#ABCDEF#Cancelled&lt;/cbc:ID&gt;
+&lt;/cac:OrderDocumentReference&gt;
             …
-    &lt;cac:OrderLine&gt;
+&lt;cac:OrderLine&gt;
     &lt;cac:LineItem&gt;
-		&lt;cbc:ID&gt;NA&lt;/cbc:ID&gt;
-		&lt;cbc:Quantity unitCode="C62" unitCodeListID="UNECERec20"&gt;0&lt;/cbc:Quantity&gt;
-		    &lt;cac:Item&gt;
-			    &lt;cbc:Name&gt;N/A&lt;/cbc:Name&gt;
-		    &lt;/cac:Item&gt;
-		&lt;/cac:LineItem&gt;
+        &lt;cbc:ID&gt;NA&lt;/cbc:ID&gt;
+        &lt;cbc:Quantity unitCode="C62" unitCodeListID="UNECERec20"&gt;0&lt;/cbc:Quantity&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;N/A&lt;/cbc:Name&gt;
+        &lt;/cac:Item&gt;
+    &lt;/cac:LineItem&gt;
 &lt;/cac:OrderLine&gt;</code></pre>
 </div>
 </div>
@@ -2450,16 +2399,7 @@ Per gli ordini precedenti con stato “Revised”, l’Ordine presente rappresen
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OrderDocumentReference&gt;
-    &lt;cbc:ID&gt;1115&lt;/cbc:ID&gt;
-    &lt;cbc:IssueDate&gt;2015-04-30&lt;/cbc:IssueDate&gt;
-    &lt;cbc:DocumentTypeCode listID=”UNCL1001”&gt;220&lt;/cbc:DocumentTypeCode&gt;
-    &lt;cbc:DocumentStatusCode listID=”DocumentStatusCode”&gt;Revised&lt;/cbc:DocumentStatusCode&gt;
-    &lt;cac:IssuerParty&gt;
-        &lt;cbc:EndpointID schemeID="9921"&gt; ABCDEF&lt;/cbc:EndpointID&gt;
-        &lt;cac:PartyIdentification&gt;
-            &lt;cbc:ID schemeID="9921"&gt;ABCDEF&lt;/cbc:ID&gt;
-        &lt;/cac:PartyIdentification&gt;
-    &lt;/cac:IssuerParty&gt;
+    &lt;cbc:ID&gt;1115#2015-04-30#ABCDEF#Revised&lt;/cbc:ID&gt;
 &lt;/cac:OrderDocumentReference&gt;
     …
 &lt;cac:OrderLine&gt;
@@ -2467,14 +2407,14 @@ Per gli ordini precedenti con stato “Revised”, l’Ordine presente rappresen
         &lt;cbc:ID&gt;1&lt;/cbc:ID&gt;
         &lt;cbc:Quantity unitCode="C62" unitCodeListID="UNECERec20"&gt;25&lt;/cbc:Quantity&gt;
         &lt;cbc:LineExtensionAmount currencyID="EUR"&gt;118.13&lt;/cbc:LineExtensionAmount&gt;
-			…
-		&lt;cac:Item&gt;
+                …
+        &lt;cac:Item&gt;
             &lt;cbc:Description&gt;128481&lt;/cbc:Description&gt;
             &lt;cbc:Name&gt;CISTO - AID 650036(EX79847-E) &lt;/cbc:Name&gt;
             &lt;cac:SellersItemIdentification&gt;
                 &lt;cbc:ID&gt;79847-E&lt;/cbc:ID&gt;
             &lt;/cac:SellersItemIdentification&gt;
-				…
+                …
         &lt;/cac:Item&gt;
     &lt;/cac:LineItem&gt;
 &lt;/cac:OrderLine&gt;</code></pre>
@@ -2485,8 +2425,7 @@ Per gli ordini precedenti con stato “Revised”, l’Ordine presente rappresen
 <div class="sect2">
 <h3 id="truealtri-riferimenti"><a class="anchor" href="#truealtri-riferimenti"></a>8.3. Altri Riferimenti</h3>
 <div class="paragraph">
-<p>Nel procurement pubblico possono essere diversi i riferimenti necessari a identificare una fornitura. Per fornire gli estremi di un documento a cui ci si riferisce dalla testata o dalle righe d’ordine è necessario specificarne la tipologia.
-Le seguenti tipologie di documento possono essere utilizzate sia in testata che dalle righe d’ordine. Altre tipologie possono essere utilizzate liberamente, purchè non siano in contrasto con altre informazioni per le quali esiste già una precisa posizione nel documento.</p>
+<p>Nel procurement pubblico possono essere diversi i riferimenti necessari a identificare una fornitura. Per fornire gli estremi di un documento a cui ci si riferisce dalla testata o dalle righe d’ordine è necessario specificarne l’identificativo. Le seguenti tipologie di documento possono essere utilizzate sia in testata che dalle righe d’ordine. Altre tipologie possono essere utilizzate liberamente, purché non siano in contrasto con altre informazioni per le quali esiste già una precisa posizione nel documento.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -2496,82 +2435,68 @@ Le seguenti tipologie di documento possono essere utilizzate sia in testata che 
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DocumentType</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo documento</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Descrizione</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Dove usarlo</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CIG</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Codice Identificativo Gara</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cac:AdditionalDocumentReference (0..n)
-cac:OrderLine/cac:DocumentReference (0..n)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cac:OriginatorDocumentReference (0..1)
+</p><p class="tableblock">cac:OrderLine/cac:LineItem/cac:Item/cac: ItemSpecificationDocumentReference/ID (0..n)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CUP</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Codice Unico Progetto</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cac:AdditionalDocumentReference (0..n)
-cac:OrderLine/cac:DocumentReference (0..n)</p></td>
+</p><p class="tableblock">cac:OrderLine/cac:LineItem/cac:Item/cac: ItemSpecificationDocumentReference/ID (0..n)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DDT</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Documento di Trasporto
 (usare solo per riferirsi a DDT precedentemente ricevuti all’apertura di un conto deposito merce)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cac:AdditionalDocumentReference (0..n)
-cac:OrderLine/cac:DocumentReference (0..n)</p></td>
+</p><p class="tableblock">cac:OrderLine/cac:LineItem/cac:Item/cac: ItemSpecificationDocumentReference/ID (0..n)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>IMPEGNO</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Estremi Impegno</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cac:AdditionalDocumentReference (0..n)
-cac:OriginatorDocumentReference (0..1)
-cac:OrderLine/cac:DocumentReference (0..n)</p></td>
+</p><p class="tableblock">cac:OriginatorDocumentReference (0..1)
+</p><p class="tableblock">cac:OrderLine/cac:LineItem/cac:Item/cac: ItemSpecificationDocumentReference/ID (0..n)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>DELIBERA</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Estremi Delibera</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cac:AdditionalDocumentReference (0..n)
-cac:OriginatorDocumentReference (0..1)
-cac:OrderLine/cac:DocumentReference (0..n)</p></td>
+</p><p class="tableblock">cac:OriginatorDocumentReference (0..1)
+</p><p class="tableblock">cac:OrderLine/cac:LineItem/cac:Item/cac: ItemSpecificationDocumentReference/ID (0..n)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CONTRATTO</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Estremi Contratto</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">In testata si usa cac:Contract (0..1)
-cac:OrderLine/cac:DocumentReference (0..n)</p></td>
+</p><p class="tableblock">cac:OrderLine/cac:LineItem/cac:Item/cac: ItemSpecificationDocumentReference/ID (0..n)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>CONVENZIONE</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Estremi Convenzione</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cac:AdditionalDocumentReference (0..n)
-cac:OriginatorDocumentReference (0..1)
-cac:OrderLine/cac:DocumentReference (0..n)</p></td>
+</p><p class="tableblock">cac:OriginatorDocumentReference (0..1)
+</p><p class="tableblock">cac:OrderLine/cac:LineItem/cac:Item/cac: ItemSpecificationDocumentReference/ID (0..n)</p></td>
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Se il documento citato è quello che ha originato l’ordine è preferibile usare cac:OriginatorDocumentReference piuttosto che cac:AdditionalDocumentReference.
-</td>
-</tr>
-</table>
-</div>
 <div class="sect3">
 <h4 id="trueriferimento-al-documento-che-ha-originato-l-ordine"><a class="anchor" href="#trueriferimento-al-documento-che-ha-originato-l-ordine"></a>8.3.1. Riferimento al documento che ha originato l’ordine</h4>
 <div class="paragraph">
 <p>In certi casi è necessario evidenziare quale sia il documento che ha originato l’ordine. Trattasi di riferimento necessario solitamente solo a livello di testata ordine.</p>
 </div>
 <div class="listingblock">
-<div class="title">L’esempio seguente indica una delibera come riferimento di origine.</div>
+<div class="title">L’esempio seguente indica un CIG come riferimento di origine.</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OriginatorDocumentReference&gt;
-    &lt;cbc:ID&gt;1245&lt;/cbc:ID&gt;
-    &lt;cbc:IssueDate&gt;2015-01-01&lt;/cbc:IssueDate&gt;
-    &lt;cbc:DocumentType&gt;DELIBERA&lt;/cbc:DocumentType&gt;
+    &lt;cbc:ID&gt;1Z1A3EE456&lt;/cbc:ID&gt;
 &lt;/cac:OriginatorDocumentReference&gt;</code></pre>
 </div>
 </div>
@@ -2579,36 +2504,35 @@ Se il documento citato è quello che ha originato l’ordine è preferibile usar
 <div class="sect3">
 <h4 id="trueriferimento-aggiuntivo-a-livello-di-testata"><a class="anchor" href="#trueriferimento-aggiuntivo-a-livello-di-testata"></a>8.3.2. Riferimento aggiuntivo a livello di testata</h4>
 <div class="listingblock">
-<div class="title">Esempio di riferimento ad un CIG a livello di testata ordine:</div>
+<div class="title">Esempio di riferimento con una delibera a livello di testata ordine.</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:AdditionalDocumentReference&gt;
-    &lt;cbc:ID&gt;1Z1A3EE456&lt;/cbc:ID&gt;
-    &lt;cbc:DocumentType&gt;CIG&lt;/cbc:DocumentType&gt;
-&lt;/cac:AdditionalDocumentReference</code></pre>
+    &lt;cbc:ID&gt;1245&lt;/cbc:ID&gt;
+&lt;/cac:AdditionalDocumentReference&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="trueriferimento-aggiuntivo-a-livello-di-riga"><a class="anchor" href="#trueriferimento-aggiuntivo-a-livello-di-riga"></a>8.3.3. Riferimento aggiuntivo a livello di riga</h4>
 <div class="listingblock">
-<div class="title">Esempio di riferimento ad un CIG (INT-T01-R029), un IMPEGNO e a un DDT a livello di riga:</div>
+<div class="title">Esempio di riferimento ad un CIG, un IMPEGNO e a un DDT a livello di riga:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OrderLine&gt;
-        …
-    &lt;cac:DocumentReference&gt;
-        &lt;cbc:DocumentType&gt;CIG&lt;/cbc:DocumentType&gt;
-        &lt;cbc:ID&gt;1Z1A3EE456&lt;/cbc:ID&gt;
-    &lt;/cac:DocumentReference&gt;
-    &lt;cac:DocumentReference&gt;
-        &lt;cbc:ID&gt;123&lt;/cbc:ID&gt;
-        &lt;cbc:IssueDate&gt;2015-03-10&lt;/cbc:IssueDate&gt;
-        &lt;cbc:DocumentType&gt;IMPEGNO&lt;/cbc:DocumentType&gt;
-    &lt;/cac:DocumentReference&gt;
-    &lt;cac:DocumentReference&gt;
-        &lt;cbc:ID&gt;CD13579&lt;/cbc:ID&gt;
-        &lt;cbc:IssueDate&gt;2015-04-12&lt;/cbc:IssueDate&gt;
-        &lt;cbc:DocumentType&gt;DDT&lt;/cbc:DocumentType&gt;
-    &lt;/cac:DocumentReference&gt;
+    &lt;cac:LineItem&gt;
+        &lt;cac:Item&gt;
+		...
+            &lt;cac:ItemSpecificationDocumentReference&gt;
+                &lt;cbc:Id&gt;1Z1A3EE456&lt;/cbc:Id&gt;
+            &lt;/cac:ItemSpecificationDocumentReference&gt;
+            &lt;cac:ItemSpecificationDocumentReference&gt;
+                &lt;cbc:Id&gt;IMPEGNO123&lt;/cbc:Id&gt;
+            &lt;/cac:ItemSpecificationDocumentReference&gt;
+            &lt;cac:ItemSpecificationDocumentReference&gt;
+                &lt;cbc:Id&gt;DDT123&lt;/cbc:Id&gt;
+            &lt;/cac:ItemSpecificationDocumentReference&gt;
+		...
+        &lt;/cac:Item&gt;
+    &lt;/cac:LineItem&gt;
 &lt;/cac:OrderLine&gt;</code></pre>
 </div>
 </div>
@@ -2635,18 +2559,18 @@ Gli allegati dovrebbero essere utilizzati per fornire informazioni aggiuntive e 
 </table>
 </div>
 <div class="paragraph">
-<p>I codici validi (<strong>MIMECode IT</strong>) vengono denotati nella SEZIONE TECNICA di INTERCENT-ER, <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO.</p>
+<p>I codici validi (<strong>MIMECode IT</strong>) vengono denotati tra le <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO.</p>
 </div>
 <div class="listingblock">
 <div class="title">Esempio di allegato incorporato, oggetto binario nel messaggio dell’Ordine PEPPOL.</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:AdditionalDocumentReference&gt;
-    &lt;cbc:ID&gt;Specification 123&lt;/cbc:ID&gt;
-    &lt;cbc:DocumentType&gt;Order details&lt;/cbc:DocumentType&gt; <i class="conum" data-value="1"></i><b>(1)</b>
-        &lt;cac:Attachment&gt;
-            &lt;cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="specification.pdf"&gt;PD94bWwgdm… +PC9PcmRlcj4=
-            &lt;/cbc:EmbeddedDocumentBinaryObject&gt; <i class="conum" data-value="2"></i><b>(2)</b>
-        &lt;/cac:Attachment&gt;
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:AdditionalDocumentReference&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;cbc:ID&gt;Doc2&lt;/cbc:ID&gt;
+    &lt;cbc:DocumentType&gt;Disegno&lt;/cbc:DocumentType&gt;
+    &lt;cac:Attachment&gt;
+        &lt;cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="disegno.pdf"&gt; UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi
+        &lt;/cbc:EmbeddedDocumentBinaryObject&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+    &lt;/cac:Attachment&gt;
 &lt;/cac:AdditionalDocumentReference&gt;</code></pre>
 </div>
 </div>
@@ -2676,21 +2600,7 @@ Gli allegati possono essere utilizzati come informazioni aggiuntive ma non come 
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueriferimento-al-documento-del-committente-originator"><a class="anchor" href="#trueriferimento-al-documento-del-committente-originator"></a>8.5. Riferimento al documento del Committente (Originator)</h3>
-<div class="paragraph">
-<p>L&#8217;elemento cac: OriginatorDocumentReference / cbc: ID è utilizzato per dare un riferimento al documento che ha originato l&#8217;ordine, ad esempio la richiesta interna sul sito dell&#8217;acquirente su cui si basa l&#8217;ordine.</p>
-</div>
-<div class="listingblock">
-<div class="title">Esempio UBL riferimento del Committente</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OriginatorDocumentReference&gt;
-  &lt;cbc:ID&gt;2139239&lt;/cbc:ID&gt;
-&lt;/cac:OriginatorDocumentReference&gt;</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="trueidentificazione-prodotto"><a class="anchor" href="#trueidentificazione-prodotto"></a>8.6. Identificazione prodotto</h3>
+<h3 id="trueidentificazione-prodotto"><a class="anchor" href="#trueidentificazione-prodotto"></a>8.5. Identificazione prodotto</h3>
 <div class="paragraph">
 <p>I prodotti devono essere identificati utilizzando i seguenti identificatori:</p>
 </div>
@@ -2736,7 +2646,7 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 </div>
 </div>
 <div class="sect2">
-<h3 id="truenome-e-descrizione-prodotto"><a class="anchor" href="#truenome-e-descrizione-prodotto"></a>8.7. Nome e descrizione prodotto</h3>
+<h3 id="truenome-e-descrizione-prodotto"><a class="anchor" href="#truenome-e-descrizione-prodotto"></a>8.6. Nome e descrizione prodotto</h3>
 <div class="paragraph">
 <p>Il nome del Prodotto deve essere fornito nell’elemento Item/Name a livello di riga. La sua descrizione può essere fornita in <span class="Silver">cac:Item/cbc:Description</span>.</p>
 </div>
@@ -2752,7 +2662,7 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 </div>
 </div>
 <div class="sect2">
-<h3 id="truecentro-di-costo"><a class="anchor" href="#truecentro-di-costo"></a>8.8. Centro di Costo</h3>
+<h3 id="truecentro-di-costo"><a class="anchor" href="#truecentro-di-costo"></a>8.7. Centro di Costo</h3>
 <div class="paragraph">
 <p>Gli ordini di approvvigionamento di certi settori, come ad esempio quello sanitario, necessitano di identificare precisamente il Centro di Costo di ogni articolo ordinato. Nell’esempio che segue si evidenzia come un’ordine possa contenere gli articoli richiesti da diverse unità operative (U.O.) che solitamente corrispondono a diversi centri di costo.</p>
 </div>
@@ -2792,7 +2702,7 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 </div>
 </div>
 <div class="sect2">
-<h3 id="truequantit-e-unit-di-misura"><a class="anchor" href="#truequantit-e-unit-di-misura"></a>8.9. Quantità e unità di misura</h3>
+<h3 id="truequantit-e-unit-di-misura"><a class="anchor" href="#truequantit-e-unit-di-misura"></a>8.8. Quantità e unità di misura</h3>
 <div class="paragraph">
 <p>Nell’Ordine PEPPOL possono essere fornite diverse Quantità e le relative Unità di misura. Esse sono relazionate sia al processo dell’ordine che a quello della logistica. La tabella seguente elenca le quantità e le relative unità di misura previste. Ogni quantità deve avere la sua unità di misura espressa secondo le <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a>.</p>
 </div>
@@ -2836,7 +2746,7 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueprezzi"><a class="anchor" href="#trueprezzi"></a>8.10. Prezzi</h3>
+<h3 id="trueprezzi"><a class="anchor" href="#trueprezzi"></a>8.9. Prezzi</h3>
 <div class="paragraph">
 <p>Nel processo dell’ordine i prezzi possono essere scambiati  sia per prodotti specificati con il nome che mediante identificatori. Questo permette al venditore di cambiare il prezzo nella risposta d’Ordine.</p>
 </div>
@@ -2860,31 +2770,31 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueomaggi"><a class="anchor" href="#trueomaggi"></a>8.11. Omaggi</h3>
+<h3 id="trueomaggi"><a class="anchor" href="#trueomaggi"></a>8.10. Omaggi</h3>
 <div class="paragraph">
 <p>Per includere nell’ordine degli articoli in omaggio è necessario indicarli in riga separata rispetto a quelli a pagamento e poi si deve indicare sia l’importo di riga che il prezzo con importo a 0 (zero).</p>
 </div>
 <div class="listingblock">
-<div class="title">Esempio di una riga d’ordine contenente 20 striscie per il test del glucosio in omaggio:</div>
+<div class="title">Esempio di una riga d’ordine contenente in omaggio 12 pacchi di striscie per il test del glucosio:</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cbc:ID&gt;1&lt;/cbc:ID&gt;
-    &lt;cbc:Quantity unitCode="SR" unitCodeListID=”UNECERec20”&gt;20&lt;/cbc:Quantity&gt;
-    &lt;cbc:LineExtensionAmount currencyID="EUR"&gt;0&lt;/cbc:LineExtensionAmount&gt;
-        &lt;cac:Price&gt;
-            &lt;cbc:PriceAmount currencyID="EUR"&gt;0&lt;/cbc:PriceAmount&gt;
-   	        &lt;cbc:BaseQuantity unitCode="LTR" unitCodeListID=”UNECERec20”&gt;1&lt;/cbc:BaseQuantity&gt;
-        &lt;/cac:Price&gt;
-        &lt;cac:Item&gt;
-            &lt;cbc:Description&gt;1x12 pacchi&lt;/cbc:Description&gt;
-   	        &lt;cbc:Name&gt;Striscie per glucosio&lt;/cbc:Name&gt;
-        &lt;/cac:Item&gt;</code></pre>
+&lt;cbc:Quantity unitCode="C62" unitCodeListID=”UNECERec20”&gt;20&lt;/cbc:Quantity&gt;
+&lt;cbc:LineExtensionAmount currencyID="EUR"&gt;0&lt;/cbc:LineExtensionAmount&gt;
+    &lt;cac:Price&gt;
+        &lt;cbc:PriceAmount currencyID="EUR"&gt;0&lt;/cbc:PriceAmount&gt;
+        &lt;cbc:BaseQuantity unitCode="LTR" unitCodeListID=”UNECERec20”&gt;1&lt;/cbc:BaseQuantity&gt;
+    &lt;/cac:Price&gt;
+&lt;cac:Item&gt;
+    &lt;cbc:Description&gt;1x12 pacchi&lt;/cbc:Description&gt;
+    &lt;cbc:Name&gt;Striscie per glucosio&lt;/cbc:Name&gt;
+&lt;/cac:Item&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truesconti-e-maggiorazioni"><a class="anchor" href="#truesconti-e-maggiorazioni"></a>8.12. Sconti e maggiorazioni</h3>
+<h3 id="truesconti-e-maggiorazioni"><a class="anchor" href="#truesconti-e-maggiorazioni"></a>8.11. Sconti e maggiorazioni</h3>
 <div class="sect3">
-<h4 id="trueregole-generali"><a class="anchor" href="#trueregole-generali"></a>8.12.1. Regole generali</h4>
+<h4 id="trueregole-generali"><a class="anchor" href="#trueregole-generali"></a>8.11.1. Regole generali</h4>
 <div class="paragraph">
 <p>Gli elementi per specificare sconti e maggiorazioni si trovano su due  livelli.</p>
 </div>
@@ -2934,7 +2844,7 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 </div>
 </div>
 <div class="sect3">
-<h4 id="truesconti-e-maggiornazioni-a-livello-di-testata"><a class="anchor" href="#truesconti-e-maggiornazioni-a-livello-di-testata"></a>8.12.2. Sconti e maggiornazioni a livello di testata</h4>
+<h4 id="truesconti-e-maggiornazioni-a-livello-di-testata"><a class="anchor" href="#truesconti-e-maggiornazioni-a-livello-di-testata"></a>8.11.2. Sconti e maggiornazioni a livello di testata</h4>
 <div class="paragraph">
 <p>Questo esempio mostra una maggiorazione relative ai costi di imballaggio:</p>
 </div>
@@ -2967,7 +2877,7 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 </div>
 </div>
 <div class="sect3">
-<h4 id="truesconti-e-maggiorazioni-sul-prezzo"><a class="anchor" href="#truesconti-e-maggiorazioni-sul-prezzo"></a>8.12.3. Sconti e maggiorazioni sul prezzo</h4>
+<h4 id="truesconti-e-maggiorazioni-sul-prezzo"><a class="anchor" href="#truesconti-e-maggiorazioni-sul-prezzo"></a>8.11.3. Sconti e maggiorazioni sul prezzo</h4>
 <div class="paragraph">
 <p>Questo esempio mostra uno sconto di 10 EUR sul prezzo base:</p>
 </div>
@@ -2986,7 +2896,7 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 </div>
 </div>
 <div class="sect3">
-<h4 id="truesconti-e-maggiorazioni-a-livello-di-riga"><a class="anchor" href="#truesconti-e-maggiorazioni-a-livello-di-riga"></a>8.12.4. Sconti e maggiorazioni a livello di riga</h4>
+<h4 id="truesconti-e-maggiorazioni-a-livello-di-riga"><a class="anchor" href="#truesconti-e-maggiorazioni-a-livello-di-riga"></a>8.11.4. Sconti e maggiorazioni a livello di riga</h4>
 <div class="paragraph">
 <p>Questo esempio mostra uno sconto applicato a tutta la riga d’ordine, dove 1&#8217;articolo è gratuito a titolo di sconto:</p>
 </div>
@@ -3013,7 +2923,7 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 </div>
 </div>
 <div class="sect3">
-<h4 id="truesconto-merce"><a class="anchor" href="#truesconto-merce"></a>8.12.5. Sconto Merce</h4>
+<h4 id="truesconto-merce"><a class="anchor" href="#truesconto-merce"></a>8.11.5. Sconto Merce</h4>
 <div class="paragraph">
 <p>Per cessioni a titolo di sconto, premio o abbuono si inserisce una riga d’ordine separata prestando attenzione ad indicarne la relativa esenzione IVA.</p>
 </div>
@@ -3049,36 +2959,34 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 </div>
 </div>
 <div class="sect2">
-<h3 id="truegestione-ordini-particolari"><a class="anchor" href="#truegestione-ordini-particolari"></a>8.13. Gestione Ordini particolari</h3>
+<h3 id="truegestione-ordini-particolari"><a class="anchor" href="#truegestione-ordini-particolari"></a>8.12. Gestione Ordini particolari</h3>
 <div class="sect3">
-<h4 id="trueordini-in-conto-visione-e-ordini-in-conto-deposito"><a class="anchor" href="#trueordini-in-conto-visione-e-ordini-in-conto-deposito"></a>8.13.1. Ordini in Conto Visione e Ordini in Conto Deposito</h4>
+<h4 id="trueordini-in-conto-visione-e-ordini-di-fatturazione-e-reintegro"><a class="anchor" href="#trueordini-in-conto-visione-e-ordini-di-fatturazione-e-reintegro"></a>8.12.1. Ordini in Conto Visione e Ordini di fatturazione e reintegro</h4>
 <div class="paragraph">
-<p>Gli ordini di beni in conto visione (tipo 228) e gli ordini di fatturazione e ripristino in conto deposito (tipo 258) prevedono che l’emissione dell’ordine avvenga successivamente alla consegna e all’utilizzo dei beni forniti.
-Pertanto negli ordini di tipo 228 e 258 è obbligatorio specificare i riferimenti relativi al Lotto, Numero Seriale, Numero e Data DDT di consegna dell’articolo utilizzato.</p>
+<p>Gli ordini con tipologia 227 di beni in conto visione (CV) e gli ordini con tipologia 220 di fatturazione e reintegro (OFR) prevedono che l’emissione dell’ordine avvenga successivamente alla consegna e all’utilizzo dei beni forniti. Pertanto, in questi ordini è obbligatorio specificare i riferimenti relativi al Lotto, Numero Seriale e Numero DDT di consegna dell’articolo utilizzato.</p>
 </div>
 <div class="paragraph">
 <p>Esempio:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:AdditionalItemProperty&gt;
-	&lt;!--Riferimento DDT--&gt;
-	&lt;cbc:Name&gt;DDT&lt;/cbc:Name&gt;
-	&lt;cbc:Value&gt;2018-1001&lt;/cbc:Value&gt;
-&lt;/cac:AdditionalItemProperty&gt;
-&lt;cac:ItemInstance&gt;
-	&lt;!--Seriale--&gt;
-	&lt;cbc:SerialID&gt;23456TY&lt;/cbc:SerialID&gt;
-	&lt;!--Lotto--&gt;
-	&lt;cac:LotIdentification&gt;
-		&lt;cbc:LotNumberID&gt;AB123WE&lt;/cbc:LotNumberID&gt;
-	&lt;/cac:LotIdentification&gt;
-&lt;/cac:ItemInstance&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:ItemSpecificationDocumentReference&gt;
+    &lt;cbc:Id&gt;DDT123&lt;/cbc:Id&gt;
+&lt;/cac:ItemSpecificationDocumentReference&gt;
+        ...
+    &lt;cac:ItemInstance&gt;
+            &lt;!--Seriale--&gt;
+        &lt;cbc:SerialID&gt;23456TY&lt;/cbc:SerialID&gt;
+            &lt;!--Lotto--&gt;
+        &lt;cac:LotIdentification&gt;
+            &lt;cbc:LotNumberID&gt;AB123WE&lt;/cbc:LotNumberID&gt;
+        &lt;/cac:LotIdentification&gt;
+    &lt;/cac:ItemInstance&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueordini-di-kit-a-componenti-predefinite-e-a-componenti-variabili-virtuali"><a class="anchor" href="#trueordini-di-kit-a-componenti-predefinite-e-a-componenti-variabili-virtuali"></a>8.13.2. Ordini di Kit a componenti predefinite e a componenti variabili (virtuali)</h4>
+<h4 id="trueordini-di-kit-a-componenti-predefinite-e-a-componenti-variabili-virtuali"><a class="anchor" href="#trueordini-di-kit-a-componenti-predefinite-e-a-componenti-variabili-virtuali"></a>8.12.2. Ordini di Kit a componenti predefinite e a componenti variabili (virtuali)</h4>
 <div class="paragraph">
 <p>I componenti di un Kit (generalmente si tratta di dispositivi sanitari impiantabili) possono essere predefiniti (definiti a listino dal fornitore e sempre utilizzati congiuntamente) o variabili (nel listino del fornitore vengono indicati i possibili componenti richiedibili).
 Solitamente esiste un codice articolo del kit e un codice articolo per ciascun componente del kit.</p>
@@ -3182,7 +3090,7 @@ Riferimento al KIT di appartenenza usando un AdditionalItemProperty (non obbliga
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecalcolo-dell-importo-sconti-maggiorazioni"><a class="anchor" href="#truecalcolo-dell-importo-sconti-maggiorazioni"></a>8.13.3. Calcolo dell&#8217;importo sconti/maggiorazioni</h4>
+<h4 id="truecalcolo-dell-importo-sconti-maggiorazioni"><a class="anchor" href="#truecalcolo-dell-importo-sconti-maggiorazioni"></a>8.12.3. Calcolo dell&#8217;importo sconti/maggiorazioni</h4>
 <div class="paragraph">
 <p>Sconti e maggiorazioni a livello di testata sono costituiti da elementi contenenti informazioni sull&#8217;importo base di sconti/maggiorazioni e sulla percentuale di sconti/maggiorazioni. Questi, se presenti in fattura, sono utilizzati per calcolare l&#8217;importo di sconti/maggiorazioni.</p>
 </div>
@@ -3269,7 +3177,7 @@ Riferimento al KIT di appartenenza usando un AdditionalItemProperty (non obbliga
 </div>
 </div>
 <div class="sect2">
-<h3 id="truecalcolo-dei-totali-anticipatedmonetarytotals"><a class="anchor" href="#truecalcolo-dei-totali-anticipatedmonetarytotals"></a>8.14. Calcolo dei totali (AnticipatedMonetaryTotals)</h3>
+<h3 id="truecalcolo-dei-totali-anticipatedmonetarytotals"><a class="anchor" href="#truecalcolo-dei-totali-anticipatedmonetarytotals"></a>8.13. Calcolo dei totali (AnticipatedMonetaryTotals)</h3>
 <div class="paragraph">
 <p>I seguenti elementi mostrano gli importi totali anticipati con l’ordine:</p>
 </div>
@@ -3386,7 +3294,7 @@ E’ importante notare che la classe AnticipatedMonetaryTotals è opzionale.  Se
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="trueesempio-di-calcolo"><a class="anchor" href="#trueesempio-di-calcolo"></a>8.14.1. Esempio di calcolo</h4>
+<h4 id="trueesempio-di-calcolo"><a class="anchor" href="#trueesempio-di-calcolo"></a>8.13.1. Esempio di calcolo</h4>
 <div class="imageblock">
 <div class="content">
 <img src="../../frontend/images/IMG_PEPPOL/fig5.jpg" alt="fig5.jpg">
@@ -3411,7 +3319,7 @@ E’ importante notare che la classe AnticipatedMonetaryTotals è opzionale.  Se
 </div>
 </div>
 <div class="sect3">
-<h4 id="truel-elemento-per-gli-arrotondamenti-il-payableroundingamount"><a class="anchor" href="#truel-elemento-per-gli-arrotondamenti-il-payableroundingamount"></a>8.14.2. L’elemento per gli arrotondamenti, il PayableRoundingAmount</h4>
+<h4 id="truel-elemento-per-gli-arrotondamenti-il-payableroundingamount"><a class="anchor" href="#truel-elemento-per-gli-arrotondamenti-il-payableroundingamount"></a>8.13.2. L’elemento per gli arrotondamenti, il PayableRoundingAmount</h4>
 <div class="paragraph">
 <p>E’ possibile arrotondare l’importo dovuto previsto. La regola per attuarlo è quella di arrotondamento standard, es. Maggiore o uguale a 0.5 viene arrotondato per eccesso, tutti gli altri valori vengono arrotondati per difetto.</p>
 </div>
@@ -3425,9 +3333,9 @@ Questo valore deve essere aggiunto al valore indicato in AnticipatedMonetaryTota
 </div>
 </div>
 <div class="sect2">
-<h3 id="truetotale-imposte"><a class="anchor" href="#truetotale-imposte"></a>8.15. Totale imposte</h3>
+<h3 id="truetotale-imposte"><a class="anchor" href="#truetotale-imposte"></a>8.14. Totale imposte</h3>
 <div class="paragraph">
-<p>E’ possibile fornire il totale delle imposte dell’ordine a livello di testate ma anche a livello di riga.</p>
+<p>E’ possibile fornire il totale delle imposte dell’ordine a livello di testata.</p>
 </div>
 <div class="listingblock">
 <div class="title">Livello di testata:</div>
@@ -3437,60 +3345,50 @@ Questo valore deve essere aggiunto al valore indicato in AnticipatedMonetaryTota
 &lt;/cac:TaxTotal&gt;</code></pre>
 </div>
 </div>
-<div class="listingblock">
-<div class="title">Livello di riga:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:LineItem&gt;
-    &lt;cbc:ID&gt;1&lt;/cbc:ID&gt;
-    &lt;cbc:Quantity unitCode="C62" unitCodeListID="UNECERec20"&gt;50&lt;/cbc:Quantity&gt;
-    &lt;cbc:LineExtensionAmount currencyID="EUR"&gt;50.00&lt;/cbc:LineExtensionAmount&gt;
-    &lt;cbc:TotalTaxAmount currencyID="EUR"&gt;5.00&lt;/cbc:TotalTaxAmount&gt;</code></pre>
-</div>
-</div>
 </div>
 <div class="sect2">
-<h3 id="trueconsegna-delivery"><a class="anchor" href="#trueconsegna-delivery"></a>8.16. Consegna (Delivery)</h3>
+<h3 id="trueconsegna-delivery"><a class="anchor" href="#trueconsegna-delivery"></a>8.15. Consegna (Delivery)</h3>
 <div class="paragraph">
-<p>Le informazioni di consegna sono necessarie qualora l’indirizzo differisca da quello della parte che emette l’ordine e permette di fornire indicazioni più precise sulla resa della merce (DeliveryTerms).</p>
+<p>Le informazioni di consegna sono necessarie qualora l’indirizzo differisca da quello della parte che emette l’ordine e permette di fornire indicazioni più precise sulla resa della merce (DeliveryTerms). Si ricorda che l&#8217;orario di apertura del magazzino dovranno essere inserite nel campo AddressLine/Line del segmento Address.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:Delivery&gt;
-	&lt;cac:DeliveryLocation&gt;
-		&lt;cbc:ID schemeID="UNCL5305"&gt;0088&lt;/cbc:ID&gt;
-		&lt;cac:Address&gt;
-			&lt;cbc:StreetName&gt;Viale Ercolani, 4&lt;/cbc:StreetName&gt;
-			&lt;cbc:CityName&gt;Bologna&lt;/cbc:CityName&gt;
-			&lt;cbc:PostalZone&gt;40138&lt;/cbc:PostalZone&gt;
-			&lt;cbc:CountrySubentity&gt;BO&lt;/cbc:CountrySubentity&gt;
-			&lt;cac:Country&gt;
-				&lt;cbc:IdentificationCode listID="ISO3166-1:Alpha2"&gt;IT&lt;/cbc:IdentificationCode&gt;
-			&lt;/cac:Country&gt;
-			&lt;cac:AddressLine&gt;
-				&lt;cbc:Line&gt;Magazzino&lt;/cbc:Line&gt;
-			&lt;/cac:AddressLine&gt;
-		&lt;/cac:Address&gt;
-	&lt;/cac:DeliveryLocation&gt;
-	&lt;cac:DeliveryParty&gt;
-		&lt;cac:PartyIdentification&gt;
-			&lt;cbc:ID schemeID="9907"&gt;92038610371&lt;/cbc:ID&gt;
-		&lt;/cac:PartyIdentification&gt;
-		&lt;cac:PartyName&gt;
-			&lt;cbc:Name&gt;Centro Logistico Beni Sanit-Ecom Area 2&lt;/cbc:Name&gt;
-		&lt;/cac:PartyName&gt;
-		&lt;cac:Contact&gt;
-			&lt;cbc:Telephone&gt;0516361509&lt;/cbc:Telephone&gt;
-			&lt;cbc:Telefax&gt;0516361511&lt;/cbc:Telefax&gt;
-		&lt;/cac:Contact&gt;
-	&lt;/cac:DeliveryParty&gt;
+    &lt;cac:DeliveryLocation&gt;
+        &lt;cbc:ID schemeID="UNCL5305"&gt;0088&lt;/cbc:ID&gt;
+        &lt;cac:Address&gt;
+            &lt;cbc:StreetName&gt;Viale Ercolani, 4&lt;/cbc:StreetName&gt;
+            &lt;cbc:CityName&gt;Bologna&lt;/cbc:CityName&gt;
+            &lt;cbc:PostalZone&gt;40138&lt;/cbc:PostalZone&gt;
+            &lt;cbc:CountrySubentity&gt;BO&lt;/cbc:CountrySubentity&gt;
+            &lt;cac:Country&gt;
+                &lt;cbc:IdentificationCode listID="ISO3166-1:Alpha2"&gt;IT&lt;/cbc:IdentificationCode&gt;
+            &lt;/cac:Country&gt;
+            &lt;cac:AddressLine&gt;
+                &lt;cbc:Line&gt;Orario:Lunedì-Venerdì 8:00-13:00 - Sabato 8:00-12:00&lt;/cbc:Line&gt;
+            &lt;/cac:AddressLine&gt;
+        &lt;/cac:Address&gt;
+    &lt;/cac:DeliveryLocation&gt;
+    &lt;cac:DeliveryParty&gt;
+        &lt;cac:PartyIdentification&gt;
+            &lt;cbc:ID schemeID="9907"&gt;92038610371&lt;/cbc:ID&gt;
+        &lt;/cac:PartyIdentification&gt;
+        &lt;cac:PartyName&gt;
+            &lt;cbc:Name&gt;Centro Logistico Beni Sanit-Ecom Area 2&lt;/cbc:Name&gt;
+        &lt;/cac:PartyName&gt;
+        &lt;cac:Contact&gt;
+            &lt;cbc:Telephone&gt;0516361509&lt;/cbc:Telephone&gt;
+            &lt;cbc:Telefax&gt;0516361511&lt;/cbc:Telefax&gt;
+        &lt;/cac:Contact&gt;
+    &lt;/cac:DeliveryParty&gt;
 &lt;/cac:Delivery&gt;
-	&lt;cac:DeliveryTerms&gt;
-		&lt;cbc:SpecialTerms&gt;PORTO FRANCO&lt;/cbc:SpecialTerms&gt;
-	&lt;/cac:DeliveryTerms&gt;</code></pre>
+&lt;cac:DeliveryTerms&gt;
+    &lt;cbc:ID&gt;PORTO FRANCO&lt;/cbc:ID&gt;
+&lt;/cac:DeliveryTerms&gt;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueperiodo-di-consegna-per-riga-d-ordine"><a class="anchor" href="#trueperiodo-di-consegna-per-riga-d-ordine"></a>8.16.1. Periodo di Consegna per riga d’ordine</h4>
+<h4 id="trueperiodo-di-consegna-per-riga-d-ordine"><a class="anchor" href="#trueperiodo-di-consegna-per-riga-d-ordine"></a>8.15.1. Periodo di Consegna per riga d’ordine</h4>
 <div class="paragraph">
 <p>Per la gestione di ordini frazionati il periodo di consegna richiesto può essere indicato su ogni riga d’ordine utilizzando le informazioni di delivery in modo simile a quelle in testata ordine.</p>
 </div>
@@ -3513,10 +3411,9 @@ Questo valore deve essere aggiunto al valore indicato in AnticipatedMonetaryTota
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueconfezionamento"><a class="anchor" href="#trueconfezionamento"></a>8.17. Confezionamento</h3>
+<h3 id="trueconfezionamento"><a class="anchor" href="#trueconfezionamento"></a>8.16. Confezionamento</h3>
 <div class="paragraph">
-<p>Per fornire informazioni sul confezionamento è possibile usare due diverse modalità a seconda di come viene effettuato l’ordine, e quindi se l’articolo corrisponde alla singola unità o alla confezione. Se l’articolo ordinato è una confezione è importante indicarne l’unità di misura corretta “PK” (pack).
-Nella tabella seguente si fornisce la metodologia per aggiungere informazioni sulle singole unità all’interno della confezione e viceversa, quando l’articolo coincide con l’unità base, per fornire informazioni sul confezionamento.</p>
+<p>Per fornire informazioni sul confezionamento è possibile usare due diverse modalità a seconda di come viene effettuato l’ordine, e quindi se l’articolo corrisponde alla singola unità "C62" o alla confezione "XPK". Se l’articolo ordinato è una confezione è importante indicarne l’unità di misura corretta. Nella tabella seguente si fornisce la metodologia per aggiungere informazioni sulle singole unità all’interno della confezione e viceversa, quando l’articolo coincide con l’unità base, per fornire informazioni sul confezionamento.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -3537,39 +3434,24 @@ Nella tabella seguente si fornisce la metodologia per aggiungere informazioni su
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Unità di Misura</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">C62</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PK</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XPK</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Numero unità base nella confezione</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cbc:PackSizeNumeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cbc:PackQuantity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Quantità</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;cbc:Quantity unitCode="C62" unitCodeListID="UNECERec20"&gt;5000&lt;/cbc:Quantity&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;cbc:Quantity unitCode="XPK" unitCodeListID="UNECERec20"&gt;10&lt;/cbc:Quantity&gt;</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Prezzo Unità Base</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Price/cbc:PriceAmount</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cac:AdditionalItemProperty/ cbc:Name = UnitPrice
-cbc:Value = 0.10</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Prezzo Confezione</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cac:AdditionalItemProperty/
-cbc:Name = PackPrice
-cbc:Value = 50.00</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Price/cbc:PriceAmount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Numero unità base della confezione</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cac:AdditionalItemProperty/cbc:Name=PackSizeNumeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cac:AdditionalItemProperty/cbc:Name=PackQuantity</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Identificativo Unità Base</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cac:SellersItemIdentification (o altro identificativo standard)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cac:AdditionalItemProperty/
-cbc:Name = UnitIdentification
-cbc:Value = XYZ</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Identificativo Confezione</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cac:AdditionalItemProperty/
-cbc:Name = PackIdentification
-cbc:Value = AIC12345</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cac:SellersItemIdentification (o altro identificativo standard)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Una confezione contiene 500 pezzi:
+</p><p class="tableblock">cac:AdditionalItemProperty/cbc:Value = 500</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un articolo (confezione) contiene 500 pezzi:
+</p><p class="tableblock">cac:AdditionalItemProperty/cbc:Value = 500</p></td>
 </tr>
 </tbody>
 </table>
@@ -3577,7 +3459,7 @@ cbc:Value = AIC12345</p></td>
 <p>Seguono due esempi significativi.</p>
 </div>
 <div class="sect3">
-<h4 id="truecaso-1-articolo-ordinato-per-singola-unit"><a class="anchor" href="#truecaso-1-articolo-ordinato-per-singola-unit"></a>8.17.1. Caso 1: Articolo ordinato per singola unità</h4>
+<h4 id="truecaso-1-articolo-ordinato-per-singola-unit"><a class="anchor" href="#truecaso-1-articolo-ordinato-per-singola-unit"></a>8.16.1. Caso 1: Articolo ordinato per singola unità</h4>
 <div class="paragraph">
 <p>Esempio in cui l’articolo viene ordinato per singola unità e non a confezione, ed indicazione del numero di pezzi per confezione primaria:</p>
 </div>
@@ -3585,81 +3467,68 @@ cbc:Value = AIC12345</p></td>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OrderLine&gt;
     &lt;cac:LineItem&gt;
-         &lt;cbc:Quantity unitCode="C62" unitCodeListID="UNECERec20"&gt;5000&lt;/cbc:Quantity&gt;
-         &lt;!-- 5000 guanti --&gt;
-         &lt;cbc:LineExtensionAmount currencyID="EUR"&gt;500.00&lt;/cbc:LineExtensionAmount&gt;
-         &lt;cac:Price&gt;
-               &lt;cbc:PriceAmount currencyID="EUR"&gt;0.10000&lt;/cbc:PriceAmount&gt;
-               &lt;cbc:BaseQuantity unitCode="C62" unitCodeListID=”UNECERec20”&gt;1&lt;/cbc:BaseQuantity&gt;
-               &lt;!-- Prezzo singolo guanto --&gt;
-         &lt;/cac:Price&gt;
-         &lt;cac:Item&gt;
-               &lt;cbc:PackSizeNumeric&gt;500&lt;/cbc:PackSizeNumeric&gt;
-               &lt;!-- Una confezione contiene 500 guanti --&gt;
-               &lt;cbc:Name&gt;GUANTI&lt;/cbc:Name&gt;
-               &lt;cac:SellersItemIdentification&gt;
-               &lt;!-- O altro identificativo (es. Standard) --&gt;
-                         &lt;cbc:ID&gt;XYZ&lt;/cbc:ID&gt;
-               &lt;/cac:SellersItemIdentification&gt;
-               &lt;cac:AdditionalItemProperty&gt;
-                         &lt;cbc:Name&gt;PackPrice&lt;/cbc:Name&gt;
-                         &lt;!-- Prezzo a confezione --&gt;
-                         &lt;cbc:Value&gt;50.00&lt;/cbc:Value&gt;
-               &lt;/cac:AdditionalItemProperty&gt;
-               &lt;cac:AdditionalItemProperty&gt;
-                         &lt;cbc:Name&gt;PackIdentification&lt;/cbc:Name&gt;
-                         &lt;!-- Codice confezione --&gt;
-                         &lt;cbc:Value&gt;AIC12345&lt;/cbc:Value&gt;
-               &lt;/cac:AdditionalItemProperty&gt;
-         &lt;/cac:Item&gt;
-  	&lt;/cac:LineItem&gt;
-&lt;/cac:OrderLine&gt;</code></pre>
+        &lt;!-- 5000 guanti --&gt;
+        &lt;cbc:Quantity unitCode="C62" unitCodeListID="UNECERec20"&gt;5000&lt;/cbc:Quantity&gt;
+        &lt;cbc:LineExtensionAmount currencyID="EUR"&gt;500.00&lt;/cbc:LineExtensionAmount&gt;
+        &lt;cac:Price&gt;
+                &lt;!-- Prezzo singolo guanto --&gt;
+            &lt;cbc:PriceAmount currencyID="EUR"&gt;0.10000&lt;/cbc:PriceAmount&gt;
+            &lt;cbc:BaseQuantity unitCode="C62" unitCodeListID=”UNECERec20”&gt;1&lt;/cbc:BaseQuantity&gt;
+        &lt;/cac:Price&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;Guanti&lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;!-- O altro identificativo (es. Standard) --&gt;
+                &lt;cbc:ID&gt;XYZ&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+            &lt;cac:AdditionalItemProperty&gt;
+                &lt;!—Una confezione contiene 500 pezzi--&gt;
+                &lt;cbc:Name&gt;PackSizeNumeric&lt;/cbc:Name&gt;
+                &lt;cbc:Value&gt;500&lt;/cbc:Value&gt;
+                &lt;cac:AdditionalItemProperty&gt;
+                &lt;/cac:Item&gt;
+            &lt;/cac:LineItem&gt;
+        &lt;/cac:OrderLine&gt;</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="truecaso-2-articolo-ordinato-a-confezione"><a class="anchor" href="#truecaso-2-articolo-ordinato-a-confezione"></a>8.17.2. Caso 2: Articolo ordinato a confezione</h4>
+<h4 id="truecaso-2-articolo-ordinato-a-confezione"><a class="anchor" href="#truecaso-2-articolo-ordinato-a-confezione"></a>8.16.2. Caso 2: Articolo ordinato a confezione</h4>
 <div class="paragraph">
 <p>Esempio in cui l’articolo viene ordinato a confezione:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OrderLine&gt;
-      &lt;cac:LineItem&gt;
-           &lt;cbc:Quantity unitCode="PK" unitCodeListID="UNECERec20"&gt;10&lt;/cbc:Quantity&gt;
-           &lt;!--10 confezioni di guanti --&gt;
-           &lt;cbc:LineExtensionAmount currencyID="EUR"&gt;500.00&lt;/cbc:LineExtensionAmount&gt;
-           &lt;cac:Price&gt;
-                 &lt;cbc:PriceAmount currencyID="EUR"&gt;50.00000&lt;/cbc:PriceAmount&gt;&lt;cbc:BaseQuantity unitCode="PK" unitCodeListID=”UNECERec20”&gt;1&lt;/cbc:BaseQuantity&gt;
-                 &lt;!--Prezzo confezione --&gt;
-           &lt;/cac:Price&gt;
-           &lt;cac:Item&gt;
-                 &lt;cbc:PackQuantity&gt;500&lt;/cbc:PackQuantity&gt;
-                 &lt;!-- Un articolo (confezione) contiene 500 guanti --&gt;
-                 &lt;cbc:Name&gt;CONFEZIONE GUANTI&lt;/cbc:Name&gt;
-                 &lt;cac:SellersItemIdentification&gt;
-                 &lt;!-- O altro identificativo (es. Standard) --&gt;
-                           &lt;cbc:ID&gt;XYZ500&lt;/cbc:ID&gt;
-                 &lt;/cac:SellersItemIdentification&gt;
-                 &lt;cac:AdditionalItemProperty&gt;
-                           &lt;cbc:Name&gt;UnitPrice&lt;/cbc:Name&gt;
-                           &lt;!--Prezzo singola unità base --&gt;
-                           &lt;cbc:Value&gt;0.10&lt;/cbc:Value&gt;
-                 &lt;/cac:AdditionalItemProperty&gt;
-                 &lt;cac:AdditionalItemProperty&gt;
-                           &lt;cbc:Name&gt;UnitIdentification&lt;/cbc:Name&gt;
-                           &lt;!--Codice unità base --&gt;
-                           &lt;cbc:Value&gt;XYZ&lt;/cbc:Value&gt;
-                 &lt;/cac:AdditionalItemProperty&gt;
-           &lt;/cac:Item&gt;
-  	     &lt;/cac:LineItem&gt;
-&lt;/cac:OrderLine&gt;</code></pre>
+    &lt;cac:LineItem&gt;
+                &lt;!--10 confezioni di guanti --&gt;
+        &lt;cbc:Quantity unitCode="XPK" unitCodeListID="UNECERec20"&gt;10&lt;/cbc:Quantity&gt;
+        &lt;cbc:LineExtensionAmount currencyID="EUR"&gt;500.00&lt;/cbc:LineExtensionAmount&gt;
+        &lt;cac:Price&gt;
+                &lt;!--Prezzo confezione --&gt;
+            &lt;cbc:PriceAmount currencyID="EUR"&gt;50.00000&lt;/cbc:PriceAmount&gt;
+            &lt;cbc:BaseQuantity unitCode="XPK" unitCodeListID=”UNECERec20”&gt;1&lt;/cbc:BaseQuantity&gt;
+        &lt;/cac:Price&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;CONFEZIONE GUANTI&lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;!-- O altro identificativo (es. Standard) --&gt;
+                &lt;cbc:ID&gt;XYZ500&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+            &lt;cac:AdditionalItemProperty&gt;
+                &lt;!—Una articolo (confezione) contiene 500 pezzi--&gt;
+                &lt;cbc:Name&gt;PackQuantity&lt;/cbc:Name&gt;
+                &lt;cbc:Value&gt;500&lt;/cbc:Value&gt;
+                &lt;cac:AdditionalItemProperty&gt;
+                &lt;/cac:Item&gt;
+            &lt;/cac:LineItem&gt;
+        &lt;/cac:OrderLine&gt;</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="truecategoria-iva-su-riga"><a class="anchor" href="#truecategoria-iva-su-riga"></a>8.18. Categoria IVA su riga</h3>
+<h3 id="truecategoria-iva-su-riga"><a class="anchor" href="#truecategoria-iva-su-riga"></a>8.17. Categoria IVA su riga</h3>
 <div class="paragraph">
 <p>Le informazioni sull’IVA a livello di riga sono fornite dalla classe cac:ClassifiedTaxCategory.</p>
 </div>
@@ -3692,7 +3561,7 @@ cbc:Value = AIC12345</p></td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Il valore deve essere IVA.</td>
+<td>Il valore deve essere VAT.</td>
 </tr>
 </table>
 </div>
@@ -3829,97 +3698,55 @@ cbc:Value = AIC12345</p></td>
 <div class="title">Esempio UBL di una risposta d&#8217;ordine che utilizza il codice risposta "AB" (ordine ricevuto)</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;OrderResponse xmlns:xs="http://www.w3.org/2001/XMLSchema"
-   xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2"
+&lt;OrderResponse
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2"
     xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"&gt;
-	&lt;cbc:CustomizationID&gt;urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1&lt;/cbc:CustomizationID&gt;
-	&lt;cbc:ProfileID&gt;urn:fdc:peppol.eu:poacc:bis:ordering:3&lt;/cbc:ProfileID&gt;
-	&lt;cbc:ID&gt;0005a-2018&lt;/cbc:ID&gt;
-	&lt;cbc:IssueDate&gt;2018-12-01&lt;/cbc:IssueDate&gt;
-	&lt;cbc:IssueTime&gt;14:30:00&lt;/cbc:IssueTime&gt;
-	&lt;!--Ordine ricevuto ma ancora non processato--&gt;
-	&lt;cbc:OrderResponseCode listID="UNCL4343"&gt;AB&lt;/cbc:OrderResponseCode&gt; <i class="conum" data-value="1"></i><b>(1)</b>
-	&lt;cbc:Note&gt;Risposta Ordine Inviato a Cliente&lt;/cbc:Note&gt;
-	&lt;cbc:DocumentCurrencyCode listID="ISO4217"&gt;EUR&lt;/cbc:DocumentCurrencyCode&gt;
-	&lt;cac:OrderReference&gt;
-		&lt;cbc:ID&gt;5a-2018&lt;/cbc:ID&gt;
-		&lt;cbc:IssueDate&gt;2018-11-25&lt;/cbc:IssueDate&gt;
-		&lt;cac:DocumentReference&gt;
-			&lt;cbc:ID&gt;5a-2018&lt;/cbc:ID&gt;
-			&lt;cac:IssuerParty&gt;
-			    &lt;cbc:EndpointID schemeID="9921"&gt;ABCDEF&lt;/cbc:EndpointID&gt;
-				&lt;cac:PartyIdentification&gt;
-					&lt;cbc:ID schemeID="9921"&gt;ABCDEF&lt;/cbc:ID&gt;
-				&lt;/cac:PartyIdentification&gt;
-			&lt;/cac:IssuerParty&gt;
-		&lt;/cac:DocumentReference&gt;
-	&lt;/cac:OrderReference&gt;
-	&lt;!--Fornitore, Venditore--&gt;
-	&lt;cac:SellerSupplierParty&gt;
-		&lt;cac:Party&gt;
-			&lt;cbc:EndpointID schemeID="9906"&gt;IT05501420900&lt;/cbc:EndpointID&gt;
-			&lt;cac:PartyIdentification&gt;
-				&lt;cbc:ID schemeID="9906"&gt;IT05501420900&lt;/cbc:ID&gt;
-			&lt;/cac:PartyIdentification&gt;
-			&lt;cac:PartyName&gt;
-				&lt;cbc:Name&gt;Fornitore S.p.A.&lt;/cbc:Name&gt;
-			&lt;/cac:PartyName&gt;
-			&lt;cac:PostalAddress&gt;
-				&lt;cbc:StreetName&gt;VIA CADUTI,13&lt;/cbc:StreetName&gt;
-				&lt;cbc:AdditionalStreetName&gt;Deposito&lt;/cbc:AdditionalStreetName&gt;
-				&lt;cbc:CityName&gt;MILANO&lt;/cbc:CityName&gt;
-				&lt;cbc:PostalZone&gt;20100&lt;/cbc:PostalZone&gt;
-				&lt;cbc:CountrySubentity&gt;MI&lt;/cbc:CountrySubentity&gt;
-				&lt;cac:AddressLine&gt;
-                    &lt;cbc:Line&gt;Informazioni aggiuntive&lt;/cbc:Line&gt;
-                &lt;/cac:AddressLine&gt;
-				    &lt;cac:Country&gt;
-					    &lt;cbc:IdentificationCode listID="ISO3166-1:Alpha2"&gt;IT&lt;/cbc:IdentificationCode&gt;
-				    &lt;/cac:Country&gt;
-			&lt;/cac:PostalAddress&gt;
-			&lt;cac:Contact&gt;
-				&lt;cbc:Name&gt;Mario Rossi&lt;/cbc:Name&gt;
-				&lt;cbc:Telephone&gt;02951811&lt;/cbc:Telephone&gt;
-				&lt;cbc:ElectronicMail&gt;seller@fornitore.it&lt;/cbc:ElectronicMail&gt;
-			&lt;/cac:Contact&gt;
-		&lt;/cac:Party&gt;
-	&lt;/cac:SellerSupplierParty&gt;
-	&lt;!--Mittente, Cliente--&gt;
-	&lt;cac:BuyerCustomerParty&gt;
-		&lt;cac:Party&gt;
-			&lt;cbc:EndpointID schemeID="9907"&gt;01598570777&lt;/cbc:EndpointID&gt;
-			&lt;cac:PartyIdentification&gt;
-				&lt;cbc:ID schemeID="9921"&gt;ABCDEF&lt;/cbc:ID&gt;
-			&lt;/cac:PartyIdentification&gt;
-			&lt;cac:PartyName&gt;
-				&lt;cbc:Name&gt;Azienda Unita Sanitaria Locale&lt;/cbc:Name&gt;
-			&lt;/cac:PartyName&gt;
-			&lt;cac:PostalAddress&gt;
-				&lt;cbc:StreetName&gt;Via Senza Nome 10&lt;/cbc:StreetName&gt;
-				&lt;cbc:CityName&gt;Bologna&lt;/cbc:CityName&gt;
-				&lt;cbc:PostalZone&gt;42100&lt;/cbc:PostalZone&gt;
-				&lt;cbc:CountrySubentity&gt;BO&lt;/cbc:CountrySubentity&gt;
-				&lt;cac:AddressLine&gt;
-                    &lt;cbc:Line&gt;Magazzino 34&lt;/cbc:Line&gt;
-                &lt;/cac:AddressLine&gt;
-				&lt;cac:Country&gt;
-					&lt;cbc:IdentificationCode listID="ISO3166-1:Alpha2"&gt;IT&lt;/cbc:IdentificationCode&gt;
-				&lt;/cac:Country&gt;
-			&lt;/cac:PostalAddress&gt;
-			    &lt;cac:Contact&gt;
-                    &lt;cbc:Name&gt;Giovanni Bianchi&lt;/cbc:Name&gt;
-                    &lt;cbc:Telephone&gt;02951823&lt;/cbc:Telephone&gt;
-                    &lt;cbc:ElectronicMail&gt;buyer@acquirente.it&lt;/cbc:ElectronicMail&gt;
-                &lt;/cac:Contact&gt;
-		&lt;/cac:Party&gt;
-	&lt;/cac:BuyerCustomerParty&gt;
-	&lt;cac:Delivery&gt;
-		&lt;cac:PromisedDeliveryPeriod&gt;
-			&lt;cbc:StartDate&gt;2018-12-10&lt;/cbc:StartDate&gt;
-			&lt;cbc:EndDate&gt;2018-12-20&lt;/cbc:EndDate&gt;
-		&lt;/cac:PromisedDeliveryPeriod&gt;
-	&lt;/cac:Delivery&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+    &lt;cbc:CustomizationID&gt;urn:fdc:peppol.eu:poacc:trns:order_response:3&lt;/cbc:CustomizationID&gt;
+    &lt;cbc:ProfileID&gt;urn:fdc:peppol.eu:poacc:bis:ordering:3&lt;/cbc:ProfileID&gt;
+    &lt;cbc:ID&gt;0005a-2018&lt;/cbc:ID&gt;
+    &lt;cbc:IssueDate&gt;2018-12-01&lt;/cbc:IssueDate&gt;
+    &lt;cbc:IssueTime&gt;14:30:00&lt;/cbc:IssueTime&gt;
+    &lt;!--Ordine ricevuto ma ancora non processato--&gt;
+    &lt;cbc:OrderResponseCode listID="UNCL4343"&gt;AB&lt;/cbc:OrderResponseCode&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;cbc:Note&gt;Risposta Ordine Inviato al Cliente&lt;/cbc:Note&gt;
+    &lt;cbc:DocumentCurrencyCode listID="ISO4217"&gt;EUR&lt;/cbc:DocumentCurrencyCode&gt;
+    &lt;cac:OrderReference&gt;
+        &lt;cbc:ID&gt;5a-2018#2018-11-25#ABCDEF&lt;/cbc:ID&gt;
+    &lt;/cac:OrderReference&gt;
+    &lt;!--Fornitore, Venditore--&gt;
+    &lt;cac:SellerSupplierParty&gt;
+        &lt;cac:Party&gt;
+            &lt;cbc:EndpointID schemeID="9906"&gt;IT05501420900&lt;/cbc:EndpointID&gt;
+            &lt;cac:PartyIdentification&gt;
+                &lt;cbc:ID schemeID="9906"&gt; IT05501420900&lt;/cbc:ID&gt;
+            &lt;/cac:PartyIdentification&gt;
+            &lt;cac:PartyLegalEntity&gt;
+                &lt;cbc:RegistrationName&gt;Fornitore S.p.A.
+                &lt;/cbc: RegistrationName&gt;
+            &lt;/cac: PartyLegalEntity &gt;
+        &lt;/cac:Party&gt;
+    &lt;/cac:SellerSupplierParty&gt;
+    &lt;!--Mittente, Cliente--&gt;
+    &lt;cac:BuyerCustomerParty&gt;
+        &lt;cac:Party&gt;
+            &lt;cbc:EndpointID schemeID="9921"&gt;ABCDEF&lt;/cbc:EndpointID&gt;
+            &lt;cac:PartyIdentification&gt;
+                &lt;cbc:ID schemeID="9907"&gt;01598570777&lt;/cbc:ID&gt;
+            &lt;/cac:PartyIdentification&gt;
+            &lt;cac:PartyLegalEntity&gt;
+                &lt;cbc:RegistrationName&gt;Azienda Sanitaria
+                &lt;/cbc: RegistrationName&gt;
+            &lt;/cac: PartyLegalEntity &gt;
+        &lt;/cac:Party&gt;
+    &lt;/cac:BuyerCustomerParty&gt;
+    &lt;cac:Delivery&gt;
+        &lt;cac:PromisedDeliveryPeriod&gt;
+            &lt;cbc:StartDate&gt;2018-12-10&lt;/cbc:StartDate&gt;
+            &lt;cbc:EndDate&gt;2018-12-20&lt;/cbc:EndDate&gt;
+        &lt;/cac:PromisedDeliveryPeriod&gt;
+    &lt;/cac:Delivery&gt; <i class="conum" data-value="2"></i><b>(2)</b>
 &lt;/OrderResponse&gt;</code></pre>
 </div>
 </div>
@@ -4013,26 +3840,16 @@ cbc:Value = AIC12345</p></td>
 <div class="listingblock">
 <div class="title">Esempio di riferimento d&#8217;ordine a livello di testata in un messaggio di risposta d&#8217;ordine BIS PEPPOL</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">        ...
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">    ...
 &lt;cbc:ID&gt;12&lt;/cbc:ID&gt;
-&lt;cbc:IssueDate&gt;2012-10-01&lt;/cbc:IssueDate&gt;
+&lt;cbc:IssueDate&gt;2018-10-01&lt;/cbc:IssueDate&gt;
 &lt;cbc:IssueTime&gt;12:30:00&lt;/cbc:IssueTime&gt;
 &lt;cbc:OrderResponseCode listID=”UNCL4343”&gt;CA&lt;/cbc:OrderResponseCode&gt;
-&lt;cbc:Note&gt;Changes in 1 orderline&lt;/cbc:Note&gt;
+&lt;cbc:Note&gt;Modifica in una linea ordine&lt;/cbc:Note&gt;
     &lt;cac:OrderReference&gt;
-        &lt;cbc:ID&gt;34&lt;/cbc:ID&gt;
-        &lt;cbc:IssueDate&gt;2017-11-20&lt;/cbc:IssueDate&gt;
-            &lt;cac:DocumentReference&gt;
-                &lt;cbc:ID&gt;34&lt;/cbc:ID&gt;
-                    &lt;cac:IssuerParty&gt;
-                        &lt;cbc:EndpointID schemeID="9921"&gt;ABCDEF&lt;/cbc:EndpointID&gt;
-                            &lt;cac:PartyIdentification&gt;
-                                &lt;cbc:ID schemeID=”9921”&gt;ABCDEF&lt;/cbc:ID&gt;
-                            &lt;/cac:PartyIdentification&gt;
-                    &lt;/cac:IssuerParty&gt;
-            &lt;/cac:DocumentReference&gt;
-	&lt;/cac:OrderReference&gt;
-        ...</code></pre>
+        &lt;cbc:ID&gt;34#2018-09-20#ABCDEF&lt;/cbc:ID&gt;
+    &lt;/cac:OrderReference&gt;
+    ...</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4041,21 +3858,22 @@ cbc:Value = AIC12345</p></td>
 <div class="listingblock">
 <div class="title">Esempio di riferimento alla linea d&#8217;ordine a livello di riga</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">        ...
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">    ...
 &lt;cac:OrderLine&gt;
     &lt;cac:LineItem&gt;
         &lt;cbc:ID&gt;2&lt;/cbc:ID&gt;
         &lt;cbc:LineStatusCode listID=”UNCL1229”&gt;5&lt;/cbc:LineStatusCode&gt;
+		    ...
         &lt;cac:Item&gt;
-            &lt;cbc:Description&gt;Salviette umide per bambini&lt;/cbc:Description&gt;
-            &lt;cbc:Name&gt;Salviette umide&lt;/cbc:Name&gt;
+            &lt;cbc:Name&gt;Salviette umide per bambini&lt;/cbc:Name&gt;
         &lt;/cac:Item&gt;
     &lt;/cac:LineItem&gt;
+            ...
     &lt;cac:OrderLineReference&gt;
         &lt;cac:LineID&gt;2&lt;/cac:LineID&gt;
     &lt;/cac:OrderLineReference&gt;
 &lt;/cac:OrderLine&gt;
-        ...</code></pre>
+    ...</code></pre>
 </div>
 </div>
 </div>
@@ -4142,8 +3960,7 @@ In questo caso non deve essere fornita alcuna riga di dettaglio.</p>
         &lt;cbc:LineStatusCode listID=”UNCL1229”&gt;3&lt;/cbc:LineStatusCode&gt;
         &lt;cbc:Quantity unitCode="C62" unitCodeListID=”UNECERec20”&gt;18&lt;/cbc:Quantity&gt;
         &lt;cac:Item&gt;
-            &lt;cbc:Description&gt;Salviette umide per bambini&lt;/cbc:Description&gt;
-            &lt;cbc:Name&gt;Salviette&lt;/cbc:Name&gt;
+            &lt;cbc:Name&gt;Salviette umide per bambini&lt;/cbc:Name&gt;
             &lt;cac:SellersItemIdentification&gt;
                 &lt;cbc:ID&gt;SN-35&lt;/cbc:ID&gt;
             &lt;/cac:SellersItemIdentification&gt;
@@ -4165,13 +3982,12 @@ In questo caso non deve essere fornita alcuna riga di dettaglio.</p>
         &lt;cbc:Quantity unitCode="C62" unitCodeListID=”UNECERec20”&gt;3&lt;/cbc:Quantity&gt;
         &lt;cac:Delivery&gt;
             &lt;cac:PromisedDeliveryPeriod&gt;
-                &lt;cbc:StartDate&gt;2013-07-15&lt;/cbc:StartDate&gt;
-                &lt;cbc:EndDate&gt;2013-07-15&lt;/cbc:EndDate&gt;
+                &lt;cbc:StartDate&gt;2018-07-15&lt;/cbc:StartDate&gt;
+                &lt;cbc:EndDate&gt;2018-07-15&lt;/cbc:EndDate&gt;
             &lt;/cac:PromisedDeliveryPeriod&gt;
         &lt;/cac:Delivery&gt;
         &lt;cac:Item&gt;
-            &lt;cbc:Description&gt;Salviette umide per bambini&lt;/cbc:Description&gt;
-            &lt;cbc:Name&gt;Salviette umide&lt;/cbc:Name&gt;
+            &lt;cbc:Name&gt; Salviette umide per bambini &lt;/cbc:Name&gt;
             &lt;cac:SellersItemIdentification&gt;
                 &lt;cbc:ID&gt;SN-35&lt;/cbc:ID&gt;
             &lt;/cac:SellersItemIdentification&gt;
@@ -4200,29 +4016,28 @@ Si noti nell’esempio seguente come è possibile inviare più di una riga di ri
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">    …
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">    ...
 &lt;cac:OrderLine&gt;
-	&lt;cac:LineItem&gt;
-		&lt;cbc:ID&gt;1&lt;/cbc:ID&gt;
-		&lt;cbc:LineStatusCode listID=”UNCL1229”&gt;1&lt;/cbc:LineStatusCode&gt;
-		&lt;cbc:Quantity unitCode="C62" unitCodeListID=”UNECERec20”&gt;12&lt;/cbc:Quantity&gt;
-		&lt;cac:Delivery&gt;
-			&lt;cac:PromisedDeliveryPeriod&gt;
-				&lt;cbc:StartDate&gt;2013-08-15&lt;/cbc:StartDate&gt;
-				&lt;cbc:EndDate&gt;2013-08-15&lt;/cbc:EndDate&gt;
-			&lt;/cac:PromisedDeliveryPeriod&gt;
-		&lt;/cac:Delivery&gt;
-            &lt;cac:Item&gt;
-		&lt;cbc:Description&gt;Salviette umide per bambini&lt;/cbc:Description&gt;
-        &lt;cbc:Name&gt;Salviette umide&lt;/cbc:Name&gt;
-                &lt;cac:SellersItemIdentification&gt;
-                    &lt;cbc:ID&gt;SN-35&lt;/cbc:ID&gt;
-                &lt;/cac:SellersItemIdentification&gt;
-			&lt;/cac:Item&gt;
-		&lt;/cac:LineItem&gt;
-		    &lt;cac:OrderLineReference&gt;
-     		    &lt;cbc:LineID&gt;4&lt;/cbc:LineID&gt;
-    	    &lt;/cac:OrderLineReference&gt;
+    &lt;cac:LineItem&gt;
+        &lt;cbc:ID&gt;1&lt;/cbc:ID&gt;
+        &lt;cbc:LineStatusCode listID=”UNCL1229”&gt;1&lt;/cbc:LineStatusCode&gt;
+        &lt;cbc:Quantity unitCode="C62" unitCodeListID=”UNECERec20”&gt;12&lt;/cbc:Quantity&gt;
+        &lt;cac:Delivery&gt;
+            &lt;cac:PromisedDeliveryPeriod&gt;
+                &lt;cbc:StartDate&gt;2018-08-19&lt;/cbc:StartDate&gt;
+                &lt;cbc:EndDate&gt;2018-08-19&lt;/cbc:EndDate&gt;
+            &lt;/cac:PromisedDeliveryPeriod&gt;
+        &lt;/cac:Delivery&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt; Salviette umide per bambini &lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;cbc:ID&gt;SN-35&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+        &lt;/cac:Item&gt;
+    &lt;/cac:LineItem&gt;
+    &lt;cac:OrderLineReference&gt;
+        &lt;cbc:LineID&gt;4&lt;/cbc:LineID&gt;
+    &lt;/cac:OrderLineReference&gt;
 &lt;/cac:OrderLine&gt;</code></pre>
 </div>
 </div>
@@ -4254,8 +4069,7 @@ Si noti nell’esempio seguente come è possibile inviare più di una riga di ri
         &lt;cbc:ID&gt;2&lt;/cbc:ID&gt;
         &lt;cbc:LineStatusCode listID=”UNCL1229”&gt;3&lt;/cbc:LineStatusCode&gt;
         &lt;cac:Item&gt;
-            &lt;cbc:Description&gt;Salviette umide per bambini&lt;/cbc:Description&gt;
-            &lt;cbc:Name&gt;Salviette umide&lt;/cbc:Name&gt;
+            &lt;cbc:Name&gt; Salviette umide per bambini &lt;/cbc:Name&gt;
             &lt;cac:SellersItemIdentification&gt;
                 &lt;cbc:ID&gt;SItemNo011&lt;/cbc:ID&gt;
             &lt;/cac:SellersItemIdentification&gt;
@@ -4263,36 +4077,30 @@ Si noti nell’esempio seguente come è possibile inviare più di una riga di ri
                 &lt;cbc:ID schemeID="0160"&gt;05704368876486&lt;/cbc:ID&gt;
             &lt;/cac:StandardItemIdentification&gt;
             &lt;cac:CommodityClassification&gt;
-                &lt;cbc:ItemClassificationCode
- listID="STI"&gt;
-56789
-                &lt;/cbc: ItemClassificationCode &gt;
+                &lt;cbc:ItemClassificationCode listID="STI"&gt;56789&lt;/cbc:ItemClassificationCode&gt;
             &lt;/cac:CommodityClassification&gt;
         &lt;/cac:Item&gt;
     &lt;/cac:LineItem&gt;
-    &lt;cac:SellerSubstitutedLineItem&gt;
-        <i class="conum" data-value="1"></i><b>(1)</b>
-            &lt;cbc:ID&gt;2&lt;/cbc:ID&gt;
-            &lt;cac:Item&gt;
-                &lt;cbc:Description&gt;Salviette umide per adulti&lt;/cbc:Description&gt;
-                &lt;cbc:Name&gt;Salviette umide&lt;/cbc:Name&gt;
-                &lt;cac:SellersItemIdentification&gt;
-                    &lt;cbc:ID&gt;SItemNo012&lt;/cbc:ID&gt;
-                &lt;/cac:SellersItemIdentification&gt;
-                &lt;cac:StandardItemIdentification&gt;
-                    &lt;cbc:ID schemeID="0160"&gt;05704368643453&lt;/cbc:ID&gt;
-                &lt;/cac:StandardItemIdentification&gt;
-                &lt;cac:CommodityClassification&gt;
-                    &lt;cbc: ItemClassificationCode
-	listID="STI"&gt;
-675634&lt;/cbc: ItemClassificationCode &gt;
-                &lt;/cac:CommodityClassification&gt;
-            &lt;/cac:Item&gt;
-        &lt;/cac:SellerSubstitutedLineItem&gt;
-        &lt;cac:OrderLineReference&gt;
-            &lt;cbc:LineID&gt;3&lt;/cbc:LineID&gt;
-        &lt;/cac:OrderLineReference&gt;
-    &lt;/cac:OrderLine&gt;</code></pre>
+    &lt;cac:SellerSubstitutedLineItem&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+        &lt;cbc:ID&gt;2&lt;/cbc:ID&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;Salviette umide per adulti&lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;cbc:ID&gt;SItemNo012&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+            &lt;cac:StandardItemIdentification&gt;
+                &lt;cbc:ID schemeID="0160"&gt;05704368643453&lt;/cbc:ID&gt;
+            &lt;/cac:StandardItemIdentification&gt;
+            &lt;cac:CommodityClassification&gt;
+                &lt;cbc: ItemClassificationCode listID="STI"&gt;
+				675634&lt;/cbc: ItemClassificationCode &gt;
+            &lt;/cac:CommodityClassification&gt;
+        &lt;/cac:Item&gt;
+    &lt;/cac:SellerSubstitutedLineItem&gt;
+    &lt;cac:OrderLineReference&gt;
+        &lt;cbc:LineID&gt;3&lt;/cbc:LineID&gt;
+    &lt;/cac:OrderLineReference&gt;
+&lt;/cac:OrderLine&gt;</code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -4307,32 +4115,32 @@ Si noti nell’esempio seguente come è possibile inviare più di una riga di ri
 <div class="title">Esempio di modifica prezzo in un messaggio di risposta d&#8217;ordine</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OrderLine&gt;
-	&lt;cac:LineItem&gt;
-		&lt;cbc:ID&gt;002&lt;/cbc:ID&gt;
-		&lt;cbc:Note&gt;Merce Modificata nel Prezzo&lt;/cbc:Note&gt;
-		&lt;!--Riga accettata con modifica--&gt;
-		&lt;cbc:LineStatusCode listID="UNCL1229"&gt;3&lt;/cbc:LineStatusCode&gt;
-		&lt;cbc:Quantity unitCode="C62" unitCodeListID="UNECERec20"&gt;5&lt;/cbc:Quantity&gt;
-		&lt;cac:Delivery&gt;
-			&lt;cac:PromisedDeliveryPeriod&gt;
-				&lt;cbc:StartDate&gt;2018-12-01&lt;/cbc:StartDate&gt;
-				&lt;cbc:EndDate&gt;2018-12-24&lt;/cbc:EndDate&gt;
-			&lt;/cac:PromisedDeliveryPeriod&gt;
-		&lt;/cac:Delivery&gt;
-		&lt;cac:Price&gt;
-			&lt;!--&lt;cbc:PriceAmount currencyID="EUR"&gt;4.00&lt;/cbc:PriceAmount&gt;--&gt;
-			&lt;cbc:PriceAmount currencyID="EUR"&gt;3.75&lt;/cbc:PriceAmount&gt;
-		&lt;/cac:Price&gt;
-		&lt;cac:Item&gt;
-			&lt;cbc:Name&gt;Prodotto 02&lt;/cbc:Name&gt;
-			&lt;cac:SellersItemIdentification&gt;
-				&lt;cbc:ID&gt;79847-E&lt;/cbc:ID&gt;
-			&lt;/cac:SellersItemIdentification&gt;
-		&lt;/cac:Item&gt;
-	&lt;/cac:LineItem&gt;
-	&lt;cac:OrderLineReference&gt;
-		&lt;cbc:LineID&gt;2&lt;/cbc:LineID&gt;
-	&lt;/cac:OrderLineReference&gt;
+    &lt;cac:LineItem&gt;
+        &lt;cbc:ID&gt;002&lt;/cbc:ID&gt;
+        &lt;cbc:Note&gt;Merce Modificata nel Prezzo&lt;/cbc:Note&gt;
+        &lt;!--Riga accettata con modifica--&gt;
+        &lt;cbc:LineStatusCode listID="UNCL1229"&gt;3&lt;/cbc:LineStatusCode&gt;
+        &lt;cbc:Quantity unitCode="C62" unitCodeListID="UNECERec20"&gt;5&lt;/cbc:Quantity&gt;
+        &lt;cac:Delivery&gt;
+            &lt;cac:PromisedDeliveryPeriod&gt;
+                &lt;cbc:StartDate&gt;2018-12-01&lt;/cbc:StartDate&gt;
+                &lt;cbc:EndDate&gt;2018-12-24&lt;/cbc:EndDate&gt;
+            &lt;/cac:PromisedDeliveryPeriod&gt;
+        &lt;/cac:Delivery&gt;
+        &lt;cac:Price&gt;
+            &lt;!--&lt;cbc:PriceAmount currencyID="EUR"&gt;4.00&lt;/cbc:PriceAmount&gt;--&gt;
+            &lt;cbc:PriceAmount currencyID="EUR"&gt;3.75&lt;/cbc:PriceAmount&gt;
+        &lt;/cac:Price&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;Prodotto 02&lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;cbc:ID&gt;79847-E&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+        &lt;/cac:Item&gt;
+    &lt;/cac:LineItem&gt;
+    &lt;cac:OrderLineReference&gt;
+        &lt;cbc:LineID&gt;2&lt;/cbc:LineID&gt;
+    &lt;/cac:OrderLineReference&gt;
 &lt;/cac:OrderLine&gt;</code></pre>
 </div>
 </div>
@@ -4346,37 +4154,37 @@ Si noti nell’esempio seguente come è possibile inviare più di una riga di ri
 <div class="title">Esempio di articolo sostituito in un messaggio di risposta d&#8217;ordine</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OrderLine&gt;
-	&lt;cac:LineItem&gt;
-		&lt;cbc:ID&gt;6&lt;/cbc:ID&gt;
-		&lt;cbc:LineStatusCode listID="UNCL1229"&gt;3&lt;/cbc:LineStatusCode&gt;
-		&lt;cac:Item&gt;
-			&lt;cbc:Name&gt;Salviette umide&lt;/cbc:Name&gt;
-			&lt;cac:SellersItemIdentification&gt;
-				&lt;cbc:ID&gt;SItemNo011&lt;/cbc:ID&gt;
-			&lt;/cac:SellersItemIdentification&gt;
-			&lt;cac:StandardItemIdentification&gt;
-				&lt;cbc:ID schemeID="0160"&gt;05704368876486&lt;/cbc:ID&gt;
-			&lt;/cac:StandardItemIdentification&gt;
-		&lt;/cac:Item&gt;
-	&lt;/cac:LineItem&gt;
-	&lt;cac:SellerSubstitutedLineItem&gt; <i class="conum" data-value="1"></i><b>(1)</b>
-		&lt;cbc:ID&gt;2&lt;/cbc:ID&gt;
-		&lt;cac:Item&gt;
-			&lt;cbc:Name&gt;Salviette umide&lt;/cbc:Name&gt;
-			&lt;cac:SellersItemIdentification&gt;
-				&lt;cbc:ID&gt;SItemNo012&lt;/cbc:ID&gt;
-			&lt;/cac:SellersItemIdentification&gt;
-			&lt;cac:StandardItemIdentification&gt;
-				&lt;cbc:ID schemeID="0160"&gt;05704368643453&lt;/cbc:ID&gt;
-			&lt;/cac:StandardItemIdentification&gt;
-			&lt;cac:CommodityClassification&gt;
-				&lt;cbc:ItemClassificationCode listID="STI"&gt;675634&lt;/cbc:ItemClassificationCode&gt;
-			&lt;/cac:CommodityClassification&gt;
-		&lt;/cac:Item&gt;
-	&lt;/cac:SellerSubstitutedLineItem&gt;
-	&lt;cac:OrderLineReference&gt;
-		&lt;cbc:LineID&gt;5&lt;/cbc:LineID&gt;
-	&lt;/cac:OrderLineReference&gt;
+    &lt;cac:LineItem&gt;
+        &lt;cbc:ID&gt;6&lt;/cbc:ID&gt;
+        &lt;cbc:LineStatusCode listID="UNCL1229"&gt;3&lt;/cbc:LineStatusCode&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;Salviette umide&lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;cbc:ID&gt;SItemNo011&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+            &lt;cac:StandardItemIdentification&gt;
+                &lt;cbc:ID schemeID="0160"&gt;05704368876486&lt;/cbc:ID&gt;
+            &lt;/cac:StandardItemIdentification&gt;
+        &lt;/cac:Item&gt;
+    &lt;/cac:LineItem&gt;
+    &lt;cac:SellerSubstitutedLineItem&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+        &lt;cbc:ID&gt;2&lt;/cbc:ID&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;Salviette umide&lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;cbc:ID&gt;SItemNo012&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+            &lt;cac:StandardItemIdentification&gt;
+                &lt;cbc:ID schemeID="0160"&gt;05704368643453&lt;/cbc:ID&gt;
+            &lt;/cac:StandardItemIdentification&gt;
+            &lt;cac:CommodityClassification&gt;
+                &lt;cbc:ItemClassificationCode listID="STI"&gt;675634&lt;/cbc:ItemClassificationCode&gt;
+            &lt;/cac:CommodityClassification&gt;
+        &lt;/cac:Item&gt;
+    &lt;/cac:SellerSubstitutedLineItem&gt;
+    &lt;cac:OrderLineReference&gt;
+        &lt;cbc:LineID&gt;5&lt;/cbc:LineID&gt;
+    &lt;/cac:OrderLineReference&gt;
 &lt;/cac:OrderLine&gt;</code></pre>
 </div>
 </div>
@@ -4398,76 +4206,76 @@ Si noti nell’esempio seguente come è possibile inviare più di una riga di ri
 <div class="title">Esempio di righe aggiuntive e consegna fuori tempo</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OrderLine&gt;
-  &lt;cac:LineItem&gt;
-    &lt;cbc:ID&gt;11&lt;/cbc:ID&gt;
-    &lt;cbc:LineStatusCode&gt;5&lt;/cbc:LineStatusCode&gt;
-    &lt;cac:Item&gt;
-      &lt;cbc:Name&gt;Prodotto A&lt;/cbc:Name&gt;
-      &lt;cac:SellersItemIdentification&gt;
-        &lt;cbc:ID&gt;Pr00A&lt;/cbc:ID&gt;
-      &lt;/cac:SellersItemIdentification&gt;
-    &lt;/cac:Item&gt;
-  &lt;/cac:LineItem&gt;
-  &lt;cac:OrderLineReference&gt;
-    &lt;cbc:LineID&gt;1&lt;/cbc:LineID&gt;
-  &lt;/cac:OrderLineReference&gt;
+    &lt;cac:LineItem&gt;
+        &lt;cbc:ID&gt;11&lt;/cbc:ID&gt;
+        &lt;cbc:LineStatusCode&gt;5&lt;/cbc:LineStatusCode&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;Prodotto A&lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;cbc:ID&gt;Pr00A&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+        &lt;/cac:Item&gt;
+    &lt;/cac:LineItem&gt;
+    &lt;cac:OrderLineReference&gt;
+        &lt;cbc:LineID&gt;1&lt;/cbc:LineID&gt;
+    &lt;/cac:OrderLineReference&gt;
 &lt;/cac:OrderLine&gt;
 &lt;cac:OrderLine&gt;
-  &lt;cac:LineItem&gt;
-    &lt;cbc:ID&gt;10&lt;/cbc:ID&gt;
-    &lt;cbc:LineStatusCode&gt;3&lt;/cbc:LineStatusCode&gt;
-    &lt;cbc:Quantity unitCode="C62"&gt;2&lt;/cbc:Quantity&gt;
-    &lt;cac:Delivery&gt;
-      &lt;cac:PromisedDeliveryPeriod&gt;
-        &lt;cbc:StartDate&gt;2018-07-01&lt;/cbc:StartDate&gt;
-      &lt;/cac:PromisedDeliveryPeriod&gt;
-    &lt;/cac:Delivery&gt;
-    &lt;cac:Item&gt;
-      &lt;cbc:Name&gt;Prodotto B&lt;/cbc:Name&gt;
-      &lt;cac:SellersItemIdentification&gt;
-        &lt;cbc:ID&gt;Pr00B&lt;/cbc:ID&gt;
-      &lt;/cac:SellersItemIdentification&gt;
-    &lt;/cac:Item&gt;
-  &lt;/cac:LineItem&gt;
-  &lt;cac:OrderLineReference&gt;
-    &lt;cbc:LineID&gt;2&lt;/cbc:LineID&gt;
-  &lt;/cac:OrderLineReference&gt;
+    &lt;cac:LineItem&gt;
+        &lt;cbc:ID&gt;10&lt;/cbc:ID&gt;
+        &lt;cbc:LineStatusCode&gt;3&lt;/cbc:LineStatusCode&gt;
+        &lt;cbc:Quantity unitCode="C62"&gt;2&lt;/cbc:Quantity&gt;
+        &lt;cac:Delivery&gt;
+            &lt;cac:PromisedDeliveryPeriod&gt;
+                &lt;cbc:StartDate&gt;2018-07-01&lt;/cbc:StartDate&gt;
+            &lt;/cac:PromisedDeliveryPeriod&gt;
+        &lt;/cac:Delivery&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;Prodotto B&lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;cbc:ID&gt;Pr00B&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+        &lt;/cac:Item&gt;
+    &lt;/cac:LineItem&gt;
+    &lt;cac:OrderLineReference&gt;
+        &lt;cbc:LineID&gt;2&lt;/cbc:LineID&gt;
+    &lt;/cac:OrderLineReference&gt;
 &lt;/cac:OrderLine&gt;
 &lt;cac:OrderLine&gt;
-  &lt;cac:LineItem&gt;
-    &lt;cbc:ID&gt;7&lt;/cbc:ID&gt;
-    &lt;cbc:LineStatusCode&gt;1&lt;/cbc:LineStatusCode&gt;
-    &lt;cbc:Quantity unitCode="C62"&gt;1&lt;/cbc:Quantity&gt;
-    &lt;cac:Delivery&gt;
-      &lt;cac:PromisedDeliveryPeriod&gt;
-        &lt;cbc:StartDate&gt;2018-07-05&lt;/cbc:StartDate&gt;
-      &lt;/cac:PromisedDeliveryPeriod&gt;
-    &lt;/cac:Delivery&gt;
-    &lt;cac:Item&gt;
-      &lt;cbc:Name&gt;Prodotto B&lt;/cbc:Name&gt;
-      &lt;cac:SellersItemIdentification&gt;
-        &lt;cbc:ID&gt;Pr00B&lt;/cbc:ID&gt;
-      &lt;/cac:SellersItemIdentification&gt;
-    &lt;/cac:Item&gt;
-  &lt;/cac:LineItem&gt;
-  &lt;cac:OrderLineReference&gt;
-    &lt;cbc:LineID&gt;2&lt;/cbc:LineID&gt;
-  &lt;/cac:OrderLineReference&gt;
+    &lt;cac:LineItem&gt;
+        &lt;cbc:ID&gt;7&lt;/cbc:ID&gt;
+        &lt;cbc:LineStatusCode&gt;1&lt;/cbc:LineStatusCode&gt;
+        &lt;cbc:Quantity unitCode="C62"&gt;1&lt;/cbc:Quantity&gt;
+        &lt;cac:Delivery&gt;
+            &lt;cac:PromisedDeliveryPeriod&gt;
+                &lt;cbc:StartDate&gt;2018-07-05&lt;/cbc:StartDate&gt;
+            &lt;/cac:PromisedDeliveryPeriod&gt;
+        &lt;/cac:Delivery&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;Prodotto B&lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;cbc:ID&gt;Pr00B&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+        &lt;/cac:Item&gt;
+    &lt;/cac:LineItem&gt;
+    &lt;cac:OrderLineReference&gt;
+        &lt;cbc:LineID&gt;2&lt;/cbc:LineID&gt;
+    &lt;/cac:OrderLineReference&gt;
 &lt;/cac:OrderLine&gt;
 &lt;cac:OrderLine&gt;
-  &lt;cac:LineItem&gt;
-    &lt;cbc:ID&gt;8&lt;/cbc:ID&gt;
-    &lt;cbc:LineStatusCode&gt;42&lt;/cbc:LineStatusCode&gt;
-    &lt;cac:Item&gt;
-      &lt;cbc:Name&gt;Prodotto C&lt;/cbc:Name&gt;
-      &lt;cac:SellersItemIdentification&gt;
-        &lt;cbc:ID&gt;Pr00C&lt;/cbc:ID&gt;
-      &lt;/cac:SellersItemIdentification&gt;
-    &lt;/cac:Item&gt;
-  &lt;/cac:LineItem&gt;
-  &lt;cac:OrderLineReference&gt;
-    &lt;cbc:LineID&gt;3&lt;/cbc:LineID&gt;
-  &lt;/cac:OrderLineReference&gt;
+    &lt;cac:LineItem&gt;
+        &lt;cbc:ID&gt;8&lt;/cbc:ID&gt;
+        &lt;cbc:LineStatusCode&gt;42&lt;/cbc:LineStatusCode&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;Prodotto C&lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;cbc:ID&gt;Pr00C&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+        &lt;/cac:Item&gt;
+    &lt;/cac:LineItem&gt;
+    &lt;cac:OrderLineReference&gt;
+        &lt;cbc:LineID&gt;3&lt;/cbc:LineID&gt;
+    &lt;/cac:OrderLineReference&gt;
 &lt;/cac:OrderLine&gt;</code></pre>
 </div>
 </div>
@@ -4493,26 +4301,26 @@ Se la quantità rimanente non verrà consegnata, utilizzare cbc:MaximumBackorder
 <div class="title">Esempio che mostra una risposta ad un ordine di 6 articoli di cui 2 ricevono conferma sulle date di consegna e 3 sono messi in ordine rinviato per essere in consegna successivamente, per una consegna totale fino a 5 articoli</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OrderLine&gt;
-  &lt;cac:LineItem&gt;
-    &lt;cbc:ID&gt;9&lt;/cbc:ID&gt;
-    &lt;cbc:LineStatusCode&gt;3&lt;/cbc:LineStatusCode&gt;
-    &lt;cbc:Quantity unitCode="C62"&gt;2&lt;/cbc:Quantity&gt;
-    &lt;cbc:MaximumBackorderQuantity&gt;3&lt;/cbc:MaximumBackorderQuantity&gt;
-    &lt;cac:Delivery&gt;
-      &lt;cac:PromisedDeliveryPeriod&gt;
-        &lt;cbc:StartDate&gt;2018-09-05&lt;/cbc:StartDate&gt;
-      &lt;/cac:PromisedDeliveryPeriod&gt;
-    &lt;/cac:Delivery&gt;
-    &lt;cac:Item&gt;
-      &lt;cbc:Name&gt;Prodotto D&lt;/cbc:Name&gt;
-      &lt;cac:SellersItemIdentification&gt;
-        &lt;cbc:ID&gt;Pr00D&lt;/cbc:ID&gt;
-      &lt;/cac:SellersItemIdentification&gt;
-    &lt;/cac:Item&gt;
-  &lt;/cac:LineItem&gt;
-  &lt;cac:OrderLineReference&gt;
-    &lt;cbc:LineID&gt;1&lt;/cbc:LineID&gt;
-  &lt;/cac:OrderLineReference&gt;
+    &lt;cac:LineItem&gt;
+        &lt;cbc:ID&gt;9&lt;/cbc:ID&gt;
+        &lt;cbc:LineStatusCode&gt;3&lt;/cbc:LineStatusCode&gt;
+        &lt;cbc:Quantity unitCode="C62"&gt;2&lt;/cbc:Quantity&gt;
+        &lt;cbc:MaximumBackorderQuantity&gt;3&lt;/cbc:MaximumBackorderQuantity&gt;
+        &lt;cac:Delivery&gt;
+            &lt;cac:PromisedDeliveryPeriod&gt;
+                &lt;cbc:StartDate&gt;2018-09-05&lt;/cbc:StartDate&gt;
+            &lt;/cac:PromisedDeliveryPeriod&gt;
+        &lt;/cac:Delivery&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:Name&gt;Prodotto D&lt;/cbc:Name&gt;
+            &lt;cac:SellersItemIdentification&gt;
+                &lt;cbc:ID&gt;Pr00D&lt;/cbc:ID&gt;
+            &lt;/cac:SellersItemIdentification&gt;
+        &lt;/cac:Item&gt;
+    &lt;/cac:LineItem&gt;
+    &lt;cac:OrderLineReference&gt;
+        &lt;cbc:LineID&gt;1&lt;/cbc:LineID&gt;
+    &lt;/cac:OrderLineReference&gt;
 &lt;/cac:OrderLine&gt;</code></pre>
 </div>
 </div>
@@ -4531,7 +4339,7 @@ Se la quantità rimanente non verrà consegnata, utilizzare cbc:MaximumBackorder
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:ClassifiedTaxCategory&gt;
-    &lt;cbc:ID schemeID="UNCL5305"&gt;S&lt;/cbc:ID&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;cbc:ID&gt;S&lt;/cbc:ID&gt; <i class="conum" data-value="1"></i><b>(1)</b>
     &lt;cbc:Percent&gt;22&lt;/cbc:Percent&gt; <i class="conum" data-value="2"></i><b>(2)</b>
     &lt;cac:TaxScheme&gt;
         &lt;cbc:ID&gt;VAT&lt;/cbc:ID <i class="conum" data-value="3"></i><b>(3)</b>
@@ -4543,7 +4351,7 @@ Se la quantità rimanente non verrà consegnata, utilizzare cbc:MaximumBackorder
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Categoria IVA a seconda della lista di codici UNCL5305 (DutyTaxCategoryCode IT), vedi <a href="http://intercenter.regione.emilia-romagna.it/noti-er-fatturazione-elettronica/specifiche-tecniche/IntercentERCodificheIdentificatoriCompatibiliNSOPEPPOL.zip/">Codifiche e Identificatori</a>;</td>
+<td>Categoria IVA a seconda della lista di codici UNCL5305 (DutyTaxCategoryCode IT), vedi <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO;</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
@@ -4717,41 +4525,7 @@ L’Endpoint ID non è obbligatorio nel documento ma è consigliato perché mant
 </div>
 </div>
 <div class="sect2">
-<h3 id="trueid-customizzazione"><a class="anchor" href="#trueid-customizzazione"></a>10.6. ID Customizzazione</h3>
-<div class="paragraph">
-<p>L’ID di customizzazione di PEPPOL identifica la specifica dei contenuti e delle regole che si applicano alla transazione.</p>
-</div>
-<div class="paragraph">
-<p>CustomizationID da utilizzare se non vi sono altre estensioni:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>CustomizationID da utilizzare in questa estensione:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Esempio di utilizzo per l’Ordine:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cbc:CustomizationID&gt;urn:fdc:peppol.eu:poacc:trns:order:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1&lt;/cbc:CustomizationID&gt;</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">Esempio di utilizzo per l&#8217;Ordine con risposta:</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cbc:CustomizationID&gt;urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1&lt;/cbc:CustomizationID&gt;</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="truespazio-dei-nomi"><a class="anchor" href="#truespazio-dei-nomi"></a>10.7. Spazio dei nomi</h3>
+<h3 id="truespazio-dei-nomi"><a class="anchor" href="#truespazio-dei-nomi"></a>10.6. Spazio dei nomi</h3>
 <div class="paragraph">
 <p>Lo spazio dei nomi (namespace) dell’ordine <a href="http://docs.oasis-open.org/ubl/UBL-2.1.html">UBL 2.1</a> è:</p>
 </div>
@@ -4774,7 +4548,7 @@ L’Endpoint ID non è obbligatorio nel documento ma è consigliato perché mant
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-04-18 11:35:46 WEDT
+Last updated 2019-06-18 16:01:19 WEDT
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">

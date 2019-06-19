@@ -4,7 +4,7 @@
 	<Term>OrderResponse</Term>
 	<agid:Extension>
 		<agid:ID>urn:www.ubl-italia.org:spec:ordine:ver3.1</agid:ID>
-		<agid:Name>Linee guida per lo schema XML - Ordine di Fornitura Elettronico con risposta 3.0</agid:Name>
+		<agid:Name>Linee guida per lo schema XML - Risposta all'Ordine di Fornitura Elettronico 3.0</agid:Name>
 		<agid:Version>3.1</agid:Version>
 	</agid:Extension>
 	
@@ -24,17 +24,15 @@
                 transaction.</Description>
 			<DataType>Identifier</DataType>
 			<Reference type="BUSINESS_TERM">tir76-001</Reference>
-			<Reference type="RULE">INT-T76-R003</Reference>
-			<Value type="FIXED">urn:fdc:peppol.eu:poacc:trns:order_response:3:extended:urn:www.ubl-italia.org:spec:ordine:ver3.1</Value>
+			<Value type="FIXED">urn:fdc:peppol.eu:poacc:trns:order_response:3</Value>
 		</Element>
-		<Element agid:custom="fixed-value">
+		<Element>
 			<Term>cbc:ProfileID</Term>
 			<Name>Business process type identifier</Name>
 			<Description>Identifies the BII profile or business process context in which the
                 transaction appears.</Description>
 			<DataType>Identifier</DataType>
 			<Reference type="BUSINESS_TERM">tir76-002</Reference>
-			<Reference type="RULE">INT-T76-R003</Reference>
 			<Value type="FIXED">urn:fdc:peppol.eu:poacc:bis:ordering:3</Value>
 		</Element>
 		<Element>
@@ -82,7 +80,7 @@
 			<Reference type="CODE_LIST">UNCL4343-T76</Reference>
 			<Value type="EXAMPLE">AP</Value>
 		</Element>
-		<Element cardinality="0..1">
+		<Element cardinality="0..1" agid:custom="rule">
 			<Term>cbc:Note</Term>
 			<Name>Response clarification</Name>
 			<Description>Clarification of the suppliers decision. Obbligatorio in caso di rigetto o modifica.</Description>
@@ -111,7 +109,7 @@
 		<Element>
 			<Term>cac:OrderReference</Term>
 			<Name>Order reference</Name>
-			<Element>
+			<Element agid:custom="rule">
 				<Term>cbc:ID</Term>
 				<Name>Order document reference (***)</Name>
 				<Description>Used to reference the order that is being responded to.</Description>
@@ -120,7 +118,7 @@
 				<Reference type="RULE">INT-T76-R008</Reference>
 				<Value type="EXAMPLE">o-23424</Value>
 			</Element>
-			<Element agid:custom="extension">
+			<!--Element agid:custom="extension rule">
 				<Term>cbc:IssueDate</Term>
 				<Name>Data Emissione Ordine</Name>
 				<Description>The date on which the referenced Order was issued.</Description>
@@ -133,7 +131,7 @@
 				<Term>cac:DocumentReference</Term>
 				<Name>Document reference</Name>
 				<Description>Utilizzato esclusivamente per fornire l’identificativo della parte che originariamente ha emesso l’ordine in riferimento.</Description>
-				<Element>
+				<Element agid:custom="rule">
 					<Term>cbc:ID</Term>
 					<Name>Order document reference (same as ***)</Name>
 					<Description>Used to reference the order that is being responded to.</Description>
@@ -141,7 +139,7 @@
 					<Reference type="RULE">INT-T76-R011</Reference>
 					<Value type="EXAMPLE">4832423</Value>
 				</Element>
-				<Element agid:custom="extension">
+				<Element agid:custom="extension rule">
 					<Term>cac:IssuerParty</Term>
 					<Name>Issuer information</Name>
 					<Description>Description of issuer</Description>
@@ -163,7 +161,7 @@
 					<Element>
 						<Term>cac:PartyIdentification</Term>
 						<Name>Party identification</Name>
-						<Element>
+						<Element agid:custom="rule">
 							<Term>cbc:ID</Term>
 							<Name>Identificativo della parte emittente</Name>
 							<Description>An identification for the issuer party.</Description>
@@ -179,7 +177,7 @@
 						</Element>
 					</Element>
 				</Element>
-			</Element>
+			</Element-->
 		</Element>
 		<Element>
 			<Term>cac:SellerSupplierParty</Term>
@@ -223,7 +221,7 @@
 						<Value type="EXAMPLE">DK88777654</Value>
 					</Element>
 				</Element>
-				<Element cardinality="0..1" agid:custom="extension">
+				<!--Element cardinality="0..1" agid:custom="extension">
 					<Term>cac:PartyName</Term>
 					<Name>Party name</Name>
 					<Description>Name of seller</Description>
@@ -305,7 +303,7 @@
 							<Value type="EXAMPLE">NL</Value>
 						</Element>
 					</Element>
-				</Element>
+				</Element-->
 
 				<Element cardinality="0..1">
 					<Term>cac:PartyLegalEntity</Term>
@@ -321,7 +319,7 @@
 						<Value type="EXAMPLE">Seller Inc.</Value>
 					</Element>
 				</Element>
-				<Element cardinality="0..1" agid:custom="extension">
+				<!--Element cardinality="0..1" agid:custom="extension rule">
 					<Term>cac:Contact</Term>
 					<Name>Contact</Name>
 					<Description>Seller contact information. Obbligatorio in caso di rigetto o modifica dell’Ordine.</Description>
@@ -346,7 +344,7 @@
 							direct e-mail this is that email.</Description>
 						<DataType>Text</DataType>
 					</Element>
-				</Element>
+				</Element-->
 
 			</Element>
 		</Element>
@@ -376,7 +374,7 @@
 					<Term>cac:PartyIdentification</Term>
 					<Name>Buyer identification</Name>
 					<Reference type="RULE">PEPPOL-T76-R001</Reference>
-					<Element>
+					<Element agid:custom="rule">
 						<Term>cbc:ID</Term>
 						<Name>Buyer party identification</Name>
 						<Description>An identification for the buyer party.</Description>
@@ -392,7 +390,7 @@
 						<Value type="EXAMPLE">DK88777654</Value>
 					</Element>
 				</Element>
-				<Element cardinality="0..1" agid:custom="extension">
+				<!--Element cardinality="0..1" agid:custom="extension">
 					<Term>cac:PartyName</Term>
 					<Name>Party name</Name>
 					<Description>Name of buyer</Description>
@@ -474,7 +472,7 @@
 							<Value type="EXAMPLE">NL</Value>
 						</Element>
 					</Element>
-				</Element>
+				</Element-->
 
 				<Element cardinality="0..1">
 					<Term>cac:PartyLegalEntity</Term>
@@ -492,7 +490,7 @@
 						<Value type="EXAMPLE">Buyer name</Value>
 					</Element>
 				</Element>
-				<Element cardinality="0..1" agid:custom="extension">
+				<!--Element cardinality="0..1" agid:custom="extension">
 					<Term>cac:Contact</Term>
 					<Name>Contact</Name>
 					<Description>Seller contact information</Description>
@@ -516,14 +514,14 @@
 							direct e-mail this is that email.</Description>
 						<DataType>Text</DataType>
 					</Element>
-				</Element>
+				</Element-->
 
 			</Element>
 		</Element>
 		<Element cardinality="0..1">
 			<Term>cac:Delivery</Term>
 			<Name>Delivery information </Name>
-			<Element>
+			<Element agid:custom="rule">
 				<Term>cac:PromisedDeliveryPeriod</Term>
 				<Name>Promised delivery period</Name>
 				<Reference type="RULE">INT-T76-R012</Reference>
@@ -549,7 +547,7 @@
 				</Element>
 			</Element>
 		</Element>
-		<Element cardinality="0..n">
+		<Element cardinality="0..n" agid:custom="rule">
 			<Term>cac:OrderLine</Term>
 			<Name>Specification of order lines</Name>
 			<Reference type="RULE">INT-T76-R004</Reference>
