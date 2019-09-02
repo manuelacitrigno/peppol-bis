@@ -2701,6 +2701,48 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 &lt;/cac:Item&gt;</code></pre>
 </div>
 </div>
+<div class="sect3">
+<h4 id="truedettaglio-sui-dispositivi-medici-e-loro-identificazione"><a class="anchor" href="#truedettaglio-sui-dispositivi-medici-e-loro-identificazione"></a>9.5.1. Dettaglio sui Dispositivi Medici e loro identificazione</h4>
+<div class="paragraph">
+<p>In questo esempio cac:CommodityClassification/cbc:ItemClassificationCode viene fornito il numero di registrazione attribuito al dispositivo medico nella Banca dati e Repertorio Dispositivi Medici dal Ministero della Salute.</p>
+</div>
+<div class="paragraph">
+<p>L’attributo schemeID dovrà essere valorizzato con:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DM1 per “Dispositivo medico o Dispositivo diagnostico in vitro”</p>
+</li>
+<li>
+<p>DM2 per “Sistema o kit Assemblato”</p>
+</li>
+<li>
+<p>DM0 per "Nessun numero di repertorio"</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;cac:Item&gt;
+	&lt;cbc:Name&gt;ESMERON EV 10FL 10ML 10MG/ML [029209]&lt;/cbc:Name&gt;
+	&lt;cac:SellersItemIdentification&gt;
+		&lt;cbc:ID&gt;141900&lt;/cbc:ID&gt;
+	&lt;/cac:SellersItemIdentification&gt;
+	&lt;cac:CommodityClassification&gt;
+		&lt;cbc:ItemClassificationCode listID="ZZZ"&gt;DM1:59788/R&lt;/cbc:ItemClassificationCode&gt;
+	&lt;/cac:CommodityClassification&gt;
+	&lt;cac:ClassifiedTaxCategory&gt;
+		&lt;cbc:ID schemeID="UNCL5305"&gt;S&lt;/cbc:ID&gt;
+		&lt;cbc:Percent&gt;10&lt;/cbc:Percent&gt;
+		&lt;cac:TaxScheme&gt;
+			&lt;cbc:ID&gt;VAT&lt;/cbc:ID&gt;
+		&lt;/cac:TaxScheme&gt;
+	&lt;/cac:ClassifiedTaxCategory&gt;
+&lt;/cac:Item&gt;</code></pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="truenome-e-descrizione-prodotto"><a class="anchor" href="#truenome-e-descrizione-prodotto"></a>9.6. Nome e descrizione prodotto</h3>
@@ -3794,7 +3836,7 @@ urn:fdc:peppol.eu:poacc:bis:order_only:3</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-08-22 15:00:16 +0200
+Last updated 2019-09-02 11:07:46 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
