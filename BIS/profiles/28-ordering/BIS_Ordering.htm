@@ -2540,7 +2540,7 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
         &lt;cac:Item&gt;
 		...
             &lt;cac:ItemSpecificationDocumentReference&gt;
-                &lt;cbc:Id&gt;1Z1A3EE456&lt;/cbc:Id&gt;
+                &lt;cbc:Id&gt;CIG:1Z1A3EE456&lt;/cbc:Id&gt;
             &lt;/cac:ItemSpecificationDocumentReference&gt;
             &lt;cac:ItemSpecificationDocumentReference&gt;
                 &lt;cbc:Id&gt;IMPEGNO123&lt;/cbc:Id&gt;
@@ -3373,7 +3373,7 @@ Questo valore deve essere aggiunto al valore indicato in AnticipatedMonetaryTota
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;cac:Delivery&gt;
     &lt;cac:DeliveryLocation&gt;
-        &lt;cbc:ID schemeID="UNCL5305"&gt;0088&lt;/cbc:ID&gt;
+        &lt;cbc:ID&gt;CF-IdShipTo&lt;/cbc:ID&gt;
         &lt;cac:Address&gt;
             &lt;cbc:StreetName&gt;Viale Ercolani, 4&lt;/cbc:StreetName&gt;
             &lt;cbc:CityName&gt;Bologna&lt;/cbc:CityName&gt;
@@ -3394,10 +3394,11 @@ Questo valore deve essere aggiunto al valore indicato in AnticipatedMonetaryTota
         &lt;cac:PartyName&gt;
             &lt;cbc:Name&gt;Centro Logistico Beni Sanit-Ecom Area 2&lt;/cbc:Name&gt;
         &lt;/cac:PartyName&gt;
-        &lt;cac:Contact&gt;
-            &lt;cbc:Telephone&gt;0516361509&lt;/cbc:Telephone&gt;
-            &lt;cbc:Telefax&gt;0516361511&lt;/cbc:Telefax&gt;
-        &lt;/cac:Contact&gt;
+            &lt;cac:Contact&gt;
+                &lt;cbc:Name&gt;ResponsabileMagazzino&lt;/cbc:Name&gt;
+                &lt;cbc:Telephone&gt;0516361509&lt;/cbc:Telephone&gt;
+                &lt;cbc:ElectronicMail&gt;responsabile.magazzino@azienda sanitaria.it&lt;/cbc:ElectronicMail&gt;
+            &lt;/cac:Contact&gt;
     &lt;/cac:DeliveryParty&gt;
 &lt;/cac:Delivery&gt;
 &lt;cac:DeliveryTerms&gt;
@@ -4566,7 +4567,7 @@ L’Endpoint ID non è obbligatorio nel documento ma è consigliato perché mant
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-07-25 11:22:49 +0200
+Last updated 2019-08-22 15:05:02 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">

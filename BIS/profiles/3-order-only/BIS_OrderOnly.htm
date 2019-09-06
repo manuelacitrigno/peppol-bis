@@ -489,8 +489,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#truecodifiche-di-riferimento">8. Codifiche di riferimento</a>
 <ul class="sectlevel2">
 <li><a href="#truecodifiche-di-riferimento-per-elementi-codificati">8.1. Codifiche di riferimento per elementi codificati</a></li>
-<li><a href="#truetipologia-dellordine">8.2. Tipologia dell&#8217;ordine</a></li>
-<li><a href="#truecodifica-di-riferimento-per-identificatori">8.3. Codifica di riferimento per identificatori</a></li>
+<li><a href="#trueuso-di-informazioni-concatenate-in-campi-strutturati">8.2. Uso di informazioni concatenate in campi strutturati</a></li>
+<li><a href="#truetipologia-dellordine">8.3. Tipologia dell&#8217;ordine</a></li>
+<li><a href="#truecodifica-di-riferimento-per-identificatori">8.4. Codifica di riferimento per identificatori</a></li>
 </ul>
 </li>
 <li><a href="#truedescrizione-di-parti-selezionate-del-messaggio-dellordine">9. Descrizione di parti selezionate del messaggio dell’ordine</a>
@@ -512,6 +513,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#trueconsegna-delivery">9.15. Consegna (Delivery)</a></li>
 <li><a href="#trueconfezionamento">9.16. Confezionamento</a></li>
 <li><a href="#truecategoria-iva-su-riga">9.17. Categoria IVA su riga</a></li>
+<li><a href="#trueuso-degli-elementi-note">9.18. Uso degli elementi "Note"</a></li>
 </ul>
 </li>
 <li><a href="#trueidentificatori-peppol">10. Identificatori PEPPOL</a>
@@ -936,7 +938,7 @@ Esempi di ruoli risoperti dal fornitore sono: venditore, parte consegnante, cred
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;cac:BuyerCustomerParty&gt;
     &lt;cac:Party&gt;
-        &lt;cbc:EndpointID schemeID="9921"&gt;ABCDEF&lt;/cbc:EndpointID&gt;
+        &lt;cbc:EndpointID schemeID="0201"&gt;ABCDEF&lt;/cbc:EndpointID&gt;
     …
     &lt;/cac:Party&gt;
 &lt;/cac:BuyerCustomerParty&gt;</code></pre>
@@ -949,9 +951,9 @@ Esempi di ruoli risoperti dal fornitore sono: venditore, parte consegnante, cred
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs"> &lt;cac:BuyerCustomerParty&gt;
      &lt;cac:Party&gt;
-         &lt;cbc:EndpointID schemeID="9921"&gt;ABCDEF&lt;/cbc:EndpointID&gt;
+         &lt;cbc:EndpointID schemeID="0201"&gt;ABCDEF&lt;/cbc:EndpointID&gt;
          &lt;cac:PartyIdentification&gt;
-             &lt;cbc:ID schemeID="9921"&gt;ABCDEF&lt;/cbc:ID&gt;
+             &lt;cbc:ID schemeID="0201"&gt;ABCDEF&lt;/cbc:ID&gt;
          &lt;/cac:PartyIdentification&gt;
      …
      &lt;/cac:Party&gt;
@@ -966,7 +968,7 @@ Esempi di ruoli risoperti dal fornitore sono: venditore, parte consegnante, cred
 <pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;cac:AccountingCustomerParty&gt;
     &lt;cac:Party&gt;
         &lt;cac:PartyIdentification&gt;
-            &lt;cbc:ID schemeID="9921"&gt;ABCDEF&lt;/cbc:ID&gt;
+            &lt;cbc:ID schemeID="0201"&gt;ABCDEF&lt;/cbc:ID&gt;
         &lt;/cac:PartyIdentification&gt;
         …
     &lt;/cac:Party&gt;
@@ -1009,7 +1011,7 @@ Esempi di ruoli risoperti dal fornitore sono: venditore, parte consegnante, cred
 </ul>
 </div>
 <div class="paragraph">
-<p>Il CIG va indicato per ciascun ordine o riga d’ordine. Nei casi di esclusione previsti dalle norme vigenti, il campo “Codice CIG” deve essere valorizzato in base alla seguente tabella (che, naturalmente, sarà oggetto di revisione ove le disposizioni normative dovessero mutare).</p>
+<p>Il CIG o Smart CIG va obbligatoriamente, indicato per ciascun ordine o riga d’ordine. Nei casi di esclusione previsti dalle norme vigenti, il campo “Codice CIG” deve essere valorizzato in base alla seguente tabella (che, naturalmente, sarà oggetto di revisione ove le disposizioni normative dovessero mutare).</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1183,7 +1185,7 @@ Esempi di ruoli risoperti dal fornitore sono: venditore, parte consegnante, cred
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">INT-T01-R026</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Se l&#8217;identificatore di endpoint si basa sullo schema di identificatori IT:IPA (ICD: 9921), questo dovrà seguire la sintassi [A-Z0-9]{6,7}.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Se l&#8217;identificatore di endpoint si basa sullo schema di identificatori IT:IPA (ICD: 0201), questo dovrà seguire la sintassi [A-Z0-9]{6,7}.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
 </tr>
 <tr>
@@ -2034,7 +2036,41 @@ Quando si utilizza un documento d’istanza, ciascun elemento di dati contiene i
 </div>
 </div>
 <div class="sect2">
-<h3 id="truetipologia-dellordine"><a class="anchor" href="#truetipologia-dellordine"></a>8.2. Tipologia dell&#8217;ordine</h3>
+<h3 id="trueuso-di-informazioni-concatenate-in-campi-strutturati"><a class="anchor" href="#trueuso-di-informazioni-concatenate-in-campi-strutturati"></a>8.2. Uso di informazioni concatenate in campi strutturati</h3>
+<div class="paragraph">
+<p>È previsto, dove possibile, l’uso di informazioni concatenate in campi strutturati, ossia elementi XML che possono (o debbono) contenere delle tuple di valori, tra loro separati dal carattere "#" senza interposizione di spazi, come mostrato nel seguente esempio:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;Tag&gt;Valore#Valore#Valore&lt;/Tag&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I campi strutturati ammessi sono, esclusivamente e tassativamente, quelli elencati nella seguente tabella:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Campo strutturato</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo documento PEPPOL</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OrderDocumentReference/ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order Only 3.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeliveryTerms/SpecialTerms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Order Only 3.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="truetipologia-dellordine"><a class="anchor" href="#truetipologia-dellordine"></a>8.3. Tipologia dell&#8217;ordine</h3>
 <div class="paragraph">
 <p>La tipologia dell’Ordine può essere espressa utilizzando le seguenti codifiche ufficiali disponibili nel package UBL.</p>
 </div>
@@ -2126,11 +2162,21 @@ Quando si utilizza un documento d’istanza, ciascun elemento di dati contiene i
 <div class="paragraph">
 <p>Vedi <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO.</p>
 </div>
+<div class="listingblock">
+<div class="title">Esempio di utilizzo per Ordine di fatturazione e reintegro</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;cbc:OrderTypeCode&gt;220&lt;/cbc:OrderTypeCode&gt;
+        ...
+&lt;cac:DeliveryTerms&gt;
+    &lt;cbc:SpecialTerms&gt;OFR&lt;/SpecialTerms&gt;
+&lt;/cac:DeliveryTerms&gt;</code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="truecodifica-di-riferimento-per-identificatori"><a class="anchor" href="#truecodifica-di-riferimento-per-identificatori"></a>8.3. Codifica di riferimento per identificatori</h3>
+<h3 id="truecodifica-di-riferimento-per-identificatori"><a class="anchor" href="#truecodifica-di-riferimento-per-identificatori"></a>8.4. Codifica di riferimento per identificatori</h3>
 <div class="sect3">
-<h4 id="trueidentificatori-delle-parti-e-schema-identificatore-delle-parti-legali-registrate"><a class="anchor" href="#trueidentificatori-delle-parti-e-schema-identificatore-delle-parti-legali-registrate"></a>8.3.1. Identificatori delle parti e schema identificatore delle parti legali registrate</h4>
+<h4 id="trueidentificatori-delle-parti-e-schema-identificatore-delle-parti-legali-registrate"><a class="anchor" href="#trueidentificatori-delle-parti-e-schema-identificatore-delle-parti-legali-registrate"></a>8.4.1. Identificatori delle parti e schema identificatore delle parti legali registrate</h4>
 <div class="paragraph">
 <p>Tutti gli identificatori delle parti (cac:PartyIdentification/cbc:ID) e gli identificatori delle parti legali registrate (cac:PartyLegalEntity/cbc:CompanyID) hanno uno schema identificatore facoltativo dell’attributo (@schemeID). Se utilizzato, il valore deve essere scelto tra i codici presenti nella ICD list, <a href="../../attachments/Intercent-ER-Code-Lists_Peppol-3.xls">Codifiche e Identificatori</a> compatibili con NSO.</p>
 </div>
@@ -2152,7 +2198,7 @@ Quando si utilizza un documento d’istanza, ciascun elemento di dati contiene i
 </div>
 </div>
 <div class="sect3">
-<h4 id="trueidentificativo-dello-schema-identificatore-dellindirizzo-elettronico"><a class="anchor" href="#trueidentificativo-dello-schema-identificatore-dellindirizzo-elettronico"></a>8.3.2. Identificativo dello schema identificatore dell’indirizzo elettronico</h4>
+<h4 id="trueidentificativo-dello-schema-identificatore-dellindirizzo-elettronico"><a class="anchor" href="#trueidentificativo-dello-schema-identificatore-dellindirizzo-elettronico"></a>8.4.2. Identificativo dello schema identificatore dell’indirizzo elettronico</h4>
 <div class="paragraph">
 <p>Tutti gli identificatori degli indirizzi elettronici (cbc:EndpointID/@schemeID) utilizzano una codifica di riferimento che deve essere gestita direttamente da CEF.</p>
 </div>
@@ -2259,9 +2305,9 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;cac:BuyerCustomerParty&gt;
 &lt;cac:Party&gt;
-	&lt;cbc:EndpointID schemeID="9921"&gt;ABCDEF&lt;/cbc:EndpointID&gt;
+	&lt;cbc:EndpointID schemeID="0201"&gt;ABCDEF&lt;/cbc:EndpointID&gt;
 	&lt;cac:PartyIdentification&gt;
-		&lt;cbc:ID schemeID="9921"&gt;ABCDEF&lt;/cbc:ID&gt;
+		&lt;cbc:ID schemeID="0201"&gt;ABCDEF&lt;/cbc:ID&gt;
 	&lt;/cac:PartyIdentification&gt;
 	&lt;cac:PartyName&gt;
 		&lt;cbc:Name&gt;Acquirente Pubblico S.p.A.&lt;/cbc:Name&gt;
@@ -2280,14 +2326,14 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
 		&lt;/cac:AddressLine&gt;
 	&lt;/cac:PostalAddress&gt;
 	&lt;cac:PartyTaxScheme&gt;
-		&lt;cbc:CompanyID&gt;00234567890&lt;/cbc:CompanyID&gt;
+		&lt;cbc:CompanyID&gt;IT00234567890&lt;/cbc:CompanyID&gt;
 		&lt;cac:TaxScheme&gt;
 			&lt;cbc:ID&gt;VAT&lt;/cbc:ID&gt;
 		&lt;/cac:TaxScheme&gt;
 	&lt;/cac:PartyTaxScheme&gt;
 	&lt;cac:PartyLegalEntity&gt;
 		&lt;cbc:RegistrationName&gt;Acquirente Pubblico S.p.A.&lt;/cbc:RegistrationName&gt;
-		&lt;cbc:CompanyID schemeID="9921"&gt;ABCDEF&lt;/cbc:CompanyID&gt;
+		&lt;cbc:CompanyID schemeID="0201"&gt;ABCDEF&lt;/cbc:CompanyID&gt;
 		&lt;cac:RegistrationAddress&gt;
 			&lt;cbc:CityName&gt;Genova&lt;/cbc:CityName&gt;
 			&lt;cac:Country&gt;
@@ -2341,9 +2387,9 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;cac:AccountingCustomerParty&gt;
     &lt;cac:Party&gt;
-        &lt;cbc:EndpointID schemeID=”9921”&gt;ABCDEF&lt;/cbc:EndpoinID&gt;
+        &lt;cbc:EndpointID schemeID=”0201”&gt;ABCDEF&lt;/cbc:EndpoinID&gt;
         &lt;cac:PartyIdentification&gt;
-            &lt;cbc:ID schemeID="9921"&gt;ABCDEF&lt;/cbc:ID&gt;
+            &lt;cbc:ID schemeID="0201"&gt;ABCDEF&lt;/cbc:ID&gt;
         &lt;/cac:PartyIdentification&gt;
         &lt;cac:PartyName&gt;
             &lt;cbc:Name&gt;Ospedale Sant’Anna&lt;/cbc:Name&gt;
@@ -2393,7 +2439,7 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
 </td>
 <td class="content">
 <div class="paragraph">
-<p>E’ importante notare che per facilitare il riutilizzo delle informazioni sull’intestatario in fattura, si raccomanda di includere più informazioni possibili, come PostalAddress, PartyTaxScheme e PartyLegalEntity (iscrizione al REA) in aggiunta al PartyName e al PartyIdentification.</p>
+<p>È importante notare che per facilitare il riutilizzo delle informazioni sull’intestatario in fattura, si raccomanda di includere più informazioni possibili, come EndPointID, PostalAddress, PartyTaxScheme e PartyLegalEntity (iscrizione al REA) in aggiunta al PartyName e al PartyIdentification.</p>
 </div>
 </td>
 </tr>
@@ -2579,7 +2625,7 @@ Il campo “PartyIdendification/ID” è obbligatorio e deve essere presente con
         &lt;cac:Item&gt;
 		...
             &lt;cac:ItemSpecificationDocumentReference&gt;
-                &lt;cbc:Id&gt;1Z1A3EE456&lt;/cbc:Id&gt;
+                &lt;cbc:Id&gt;CIG:1Z1A3EE456&lt;/cbc:Id&gt;
             &lt;/cac:ItemSpecificationDocumentReference&gt;
             &lt;cac:ItemSpecificationDocumentReference&gt;
                 &lt;cbc:Id&gt;IMPEGNO123&lt;/cbc:Id&gt;
@@ -2689,16 +2735,60 @@ Ogni ordine DEVE avere un identificatore per l’articolo e/o la sua denominazio
 <div class="listingblock">
 <div class="title">Esempio di un articolo di un Ordine PEPPOL utilizzando sia il Sellers ID che lo Standard ID (GTIN):</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;cac:Item&gt;
-        …
+<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">        ...
+&lt;cac:Item&gt;
+    &lt;cbc:Name&gt;Penna stilografica&lt;/cbc:Name&gt;
+    &lt;cbc:Description&gt;Penna stilografica edizione limitata&lt;/cbc:Description&gt;
     &lt;cac:SellersItemIdentification&gt;
          &lt;cbc:ID&gt;541706&lt;/cbc:ID&gt;
     &lt;/cac:SellersItemIdentification&gt;
     &lt;cac:StandardItemIdentification&gt;
          &lt;cbc:ID schemeID="0160"&gt;05704368124358&lt;/cbc:ID&gt;
     &lt;/cac:StandardItemIdentification&gt;
-        …
+        ...
 &lt;/cac:Item&gt;</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truedettaglio-sui-dispositivi-medici-e-loro-identificazione"><a class="anchor" href="#truedettaglio-sui-dispositivi-medici-e-loro-identificazione"></a>9.5.1. Dettaglio sui Dispositivi Medici e loro identificazione</h4>
+<div class="paragraph">
+<p>In questo esempio cac:CommodityClassification/cbc:ItemClassificationCode viene fornito il numero di registrazione attribuito al dispositivo medico nella Banca dati e Repertorio Dispositivi Medici dal Ministero della Salute.</p>
+</div>
+<div class="paragraph">
+<p>L’attributo schemeID dovrà essere valorizzato con:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>DM1 per “Dispositivo medico o Dispositivo diagnostico in vitro”</p>
+</li>
+<li>
+<p>DM2 per “Sistema o kit Assemblato”</p>
+</li>
+<li>
+<p>DM0 per "Nessun numero di repertorio"</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;cac:Item&gt;
+	&lt;cbc:Name&gt;ESMERON EV 10FL 10ML 10MG/ML [029209]&lt;/cbc:Name&gt;
+	&lt;cac:SellersItemIdentification&gt;
+		&lt;cbc:ID&gt;141900&lt;/cbc:ID&gt;
+	&lt;/cac:SellersItemIdentification&gt;
+	&lt;cac:CommodityClassification&gt;
+		&lt;cbc:ItemClassificationCode listID="ZZZ"&gt;DM1:59788/R&lt;/cbc:ItemClassificationCode&gt;
+	&lt;/cac:CommodityClassification&gt;
+	&lt;cac:ClassifiedTaxCategory&gt;
+		&lt;cbc:ID schemeID="UNCL5305"&gt;S&lt;/cbc:ID&gt;
+		&lt;cbc:Percent&gt;10&lt;/cbc:Percent&gt;
+		&lt;cac:TaxScheme&gt;
+			&lt;cbc:ID&gt;VAT&lt;/cbc:ID&gt;
+		&lt;/cac:TaxScheme&gt;
+	&lt;/cac:ClassifiedTaxCategory&gt;
+&lt;/cac:Item&gt;</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -3624,6 +3714,24 @@ Questo valore deve essere aggiunto al valore indicato in AnticipatedMonetaryTota
 </table>
 </div>
 </div>
+<div class="sect2">
+<h3 id="trueuso-degli-elementi-note"><a class="anchor" href="#trueuso-degli-elementi-note"></a>9.18. Uso degli elementi "Note"</h3>
+<div class="paragraph">
+<p>Eccezionalmente, ove vi sia l’esigenza di fornire indicazioni particolari, è possibile valorizzare con testo libero gli elementi “Note” presenti a vari livelli degli schemi dati dei Documenti.
+In particolare, con riferimento al campo “Note” dell’elemento “PaymentTerms”, si raccomanda di indicare il numero di giorni dall’emissione della fattura. In assenza di indicazioni si intendono i termini massimi stabiliti dalla normativa vigente.</p>
+</div>
+<div class="listingblock">
+<div class="title">Esempio</div>
+<div class="content">
+<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">&lt;cac:PaymentTerms&gt;
+    &lt;cbc:Note&gt;30 giorni fattura&lt;/cbc:Note&gt;
+&lt;/cac:PaymentTerms&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="underline">Come regola generale, si raccomanda l’utilizzo delle note testuali solo se assolutamente necessario e in mancanza di altri elementi degli schemi dati che possano contenere la medesima informazione.</span></p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -3686,6 +3794,9 @@ L’Endpoint ID specificato nel documento DEVE coincidere con quello utilizzato 
 L’Endpoint ID non è obbligatorio nel documento ma è consigliato perché mantiene il legame fra il documento, la parte di business e l’access point/circuito utilizzato.</p>
 </div>
 <div class="paragraph">
+<p>Dal 15 Agosto 2019 OpenPeppol ha inserito la nuova codifica nelle liste EAS e ICD che interessa l’IPA (0201). Resta temporaneamente valida anche la vecchia codifica IPA (9921).</p>
+</div>
+<div class="paragraph">
 <p>Le tipologie di identificativi italiani riconosciuti da PEPPOL e consigliati sono:</p>
 </div>
 <div class="ulist">
@@ -3697,7 +3808,7 @@ L’Endpoint ID non è obbligatorio nel documento ma è consigliato perché mant
 <p><strong>9907</strong> per IT:CF	(codice fiscale persona fisica o giuridica)</p>
 </li>
 <li>
-<p><strong>9921</strong> per IT:IPA	(Indice Pubbliche Amministrazioni)</p>
+<p><strong>0201</strong> per IT:IPA	(Indice Pubbliche Amministrazioni)</p>
 </li>
 </ul>
 </div>
@@ -3707,7 +3818,7 @@ L’Endpoint ID non è obbligatorio nel documento ma è consigliato perché mant
 <div class="listingblock">
 <div class="title">Esempio di Endpoint di un’Autorità Appaltante registrata in PEPPOL con l’IPA:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">    &lt;cbc:EndpointID schemeID="9921"&gt;ABCDEF&lt;/cbc:EndpointID&gt;</code></pre>
+<pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">    &lt;cbc:EndpointID schemeID="0201"&gt;ABCDEF&lt;/cbc:EndpointID&gt;</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -3737,7 +3848,7 @@ L’Endpoint ID non è obbligatorio nel documento ma è consigliato perché mant
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code data-lang="xml" class="language-xml hljs">    &lt;cac:PartyIdentification&gt;
-	    &lt;cbc:ID schemeID="9921"&gt;ABCDEF&lt;/cbc:ID&gt;
+	    &lt;cbc:ID schemeID="0201"&gt;ABCDEF&lt;/cbc:ID&gt;
     &lt;/cac:PartyIdentification&gt;</code></pre>
 </div>
 </div>
@@ -3794,7 +3905,7 @@ urn:fdc:peppol.eu:poacc:bis:order_only:3</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-07-25 11:21:47 +0200
+Last updated 2019-09-06 15:36:59 +0200
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
