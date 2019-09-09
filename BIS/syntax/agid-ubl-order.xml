@@ -30,7 +30,6 @@
 			<DataType>Identifier</DataType>
 			<Reference type="BUSINESS_TERM">tir01-001</Reference>
 			<Reference type="RULE">PEPPOL-T01-B00201</Reference>
-		<!--Reference type="RULE">INT-T01-R003</Reference-->
 			<Value type="FIXED">urn:fdc:peppol.eu:poacc:trns:order:3</Value>
 		</Element>
 		<Element>
@@ -1813,21 +1812,6 @@
 					<Reference type="RULE">PEPPOL-T01-R024</Reference>
 					<Reference type="RULE">PEPPOL-T01-R028</Reference>
 					<Reference type="RULE">INT-T01-R004</Reference>
-					<Attribute>
-						<Term>currencyID</Term>
-						<Description>Currency identifier, value must be the same as what is used in
-							tir01-007, DocumentCurrencyCode.</Description>
-						<Reference type="CODE_LIST">ISO4217</Reference>
-						<Reference type="RULE">PEPPOL-T01-R003</Reference>
-						<Value type="EXAMPLE">EUR</Value>
-					</Attribute>
-					<Value type="EXAMPLE">200</Value>
-				</Element>
-				<Element cardinality="0..1">
-					<Term>cbc:TotalTaxAmount</Term>
-					<Name>Total tax amount</Name>
-					<Description>The total tax amount for this line item.</Description>
-					<DataType>Amount</DataType>
 					<Attribute>
 						<Term>currencyID</Term>
 						<Description>Currency identifier, value must be the same as what is used in
