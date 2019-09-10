@@ -3,7 +3,7 @@
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:stx="urn:fdc:difi.no:2017:vefa:structure-1"
 	xmlns:cus="urn:fdc:agid.gov.it:peppol:customization"
-	exclude-result-prefixes="stx cus">
+	exclude-result-prefixes="stx cus xsd">
 	<xsl:output method="html"
               doctype-system="about:legacy-compat"
               encoding="UTF-8"
@@ -15,7 +15,8 @@
 	<xsl:template match="/">
 		<html data-transaction="{$transaction}">
 			<head>
-				<title><xsl:value-of select="$transaction"/> | Struttura</title>
+				<title>
+					<xsl:value-of select="$transaction"/> | Struttura</title>
 				<meta charset="utf-8"/>
 				<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -36,6 +37,7 @@
 					debugger;//@ sourceURL=agid.js
 						$(function () {
 							var $html = $("html");
+							var $syntax = $("#syntax");
 							var source = window.location.href.split('?')[0];
 							var transaction = $html.data("transaction");
 							
@@ -45,15 +47,19 @@
 								changeContext(ctx);
 							});
 							
-							$("#syntax tr > td > a").click(function(e) {
+							$syntax.find("tr > td > a").click(function(e) {
 								e.preventDefault();
 								var ctx = $(this);
-								changeContext(ctx);
+								changeContext(ctx, true);
 							});
 						
-							function changeContext(ctx) {
+							function changeContext(ctx, showRef) {
 								var branch = ctx.closest("tr");
 								var level = parseInt(branch.attr("data-level"));
+								if (!showRef)
+									$syntax.removeClass("show-references");
+								else
+									$syntax.addClass("show-references");
 								$("tr").show();
 								branch.nextAll("tr").filter(function() {
 									return parseInt($(this).data("level")) <= level;
@@ -83,8 +89,10 @@
 				<div id="main" class="container">
 
 					<ol id="path" class="breadcrumb">
-					<!--li><a href="#">Home</a></li-->
-					<li class="active"><xsl:value-of select="$transaction"/></li>
+						<!--li><a href="#">Home</a></li-->
+						<li class="active">
+							<xsl:value-of select="$transaction"/>
+						</li>
 					</ol>
 
 					<div class="page-header">
@@ -92,7 +100,7 @@
 							<xsl:value-of select="$transaction"/>
 						</h1>
 					</div>
-					
+
 					<div class="page-header" style="margin-top:0;padding-top:10px">
 						<img style="width: 255px; height: 68px;margin-left:5%;" alt="AGID"	src="../frontend/images/IMG_PEPPOL/logo_AgID.jpg"/>
 						<img style="width: 225px; height: 103px;margin-left:40%;" alt="Intercent-ER" src="../frontend/images/IMG_PEPPOL/logo_INTERCENT-ER.jpg"/>
@@ -104,8 +112,8 @@
 								<tr>
 									<th style="width: 5%">Cardinalità</th>
 									<th style="width: 35%">Nome</th>
-									<th>Descrizione</th>
-									<th>Stato</th>
+									<th style="width: 55%">Descrizione</th>
+									<th style="width: 5%">Stato</th>
 								</tr>
 							</thead>
 							<tbody id="syntax">
@@ -113,7 +121,7 @@
 							</tbody>
 						</table>
 					</div>
-					
+
 					<!--div class="table-responsive">
 						<table class="table table-striped">
 							<thead>
@@ -148,14 +156,27 @@
 		</p>
 	</xsl:template>
 
+	<xsl:template match="stx:Reference" priority="3">
+		<code>
+			<xsl:value-of select="."/>
+		</code>
+	</xsl:template>
+
 	<xsl:template name="dots">
 		<xsl:param name="count" select="1"/>
-		<xsl:if test="$count > 0">
-			<span style="margin-right:10px;display:inline-block">&#8226;</span>
+		<xsl:if test="$count &gt; 0">
+			<xsl:text>• &#160; </xsl:text>
 			<xsl:call-template name="dots">
 				<xsl:with-param name="count" select="$count - 1"/>
 			</xsl:call-template>
 		</xsl:if>
+	</xsl:template>
+
+	<xsl:template match="stx:Include" priority="1">
+		<xsl:param name="level" select="0"/>
+		<xsl:apply-templates select="document(.)/stx:Element">
+			<xsl:with-param name="level" select="$level"/>
+		</xsl:apply-templates>
 	</xsl:template>
 
 	<xsl:template match="stx:Document | stx:Element" priority="1">
@@ -170,15 +191,20 @@
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
-		<xsl:variable name="extension" select="@cus:custom='extension'"/>
-		<xsl:variable name="fixedValue" select="@cus:custom='fixed-value'"/>
-		<xsl:variable name="customCardinality" select="@cus:custom='cardinality'"/>
-		<xsl:variable name="mandatory" select="@cus:custom='fixed-value' or @cus:note='mandatory'"/>
+		<xsl:variable name="extension" select="contains(@cus:custom, 'extension')"/>
+		<xsl:variable name="restriction" select="contains(@cus:custom, 'restriction')"/>
+		<xsl:variable name="rule" select="contains(@cus:custom, 'rule')"/>
+		<xsl:variable name="fixedValue" select="contains(@cus:custom, 'fixed-value')"/>
+		<xsl:variable name="customCardinality" select="contains(@cus:custom, 'cardinality')"/>
+		<xsl:variable name="mandatory" select="contains(@cus:custom, 'fixed-value') or @cus:note='mandatory'"/>
 		<xsl:variable name="location">
 			<xsl:apply-templates select="." mode="syntax-get-full-path"/>
 		</xsl:variable>
+		<xsl:variable name="references" select="stx:Reference[@type='BUSINESS_TERM']"/>
+		<xsl:variable name="rules" select="stx:Reference[@type='RULE']"/>
+		<xsl:variable name="codelists" select="stx:Reference[@type='CODE_LIST']"/>
 		<tr id="{translate(translate(substring-after($location,'/'),':','-'),'/','_')}" data-level="{$level}">
-			<xsl:if test="$extension or $fixedValue">
+			<xsl:if test="$extension or $restriction or $fixedValue">
 				<xsl:attribute name="class">
 					<xsl:value-of select="@cus:custom"/>
 				</xsl:attribute>
@@ -200,7 +226,7 @@
 					<xsl:value-of select="stx:Term"/>
 				</a>
 			</td>
-			<td>
+			<td style="width: 55%;">
 				<p>
 					<strong>
 						<xsl:value-of select="stx:Name"/>
@@ -211,39 +237,156 @@
 					</em>
 				</p>
 				<xsl:apply-templates select="stx:Value"/>
+				<xsl:if test="$references">
+					<p class="references">
+						<xsl:text>Termine di business:</xsl:text>
+						<xsl:apply-templates select="$references"/>
+					</p>
+				</xsl:if>
+				<xsl:if test="$rules">
+					<p class="references">
+						<xsl:text>Regole:</xsl:text>
+						<xsl:apply-templates select="$rules"/>
+					</p>
+				</xsl:if>
+				<xsl:if test="$codelists">
+					<p class="references">
+						<xsl:text>Codifiche:</xsl:text>
+						<xsl:apply-templates select="$codelists"/>
+					</p>
+				</xsl:if>
 			</td>
-			<td>
+			<td style="width: 5%;">
 				<xsl:if test="$mandatory">
 					<i class="fas fa-exclamation fa-fw" title="Elemento diventato obbligatorio"/>
 				</xsl:if>
 				<xsl:if test="$extension">
 					<span>Estensione</span>
 				</xsl:if>
+				<xsl:if test="$restriction">
+					<span>Restrizione</span>
+				</xsl:if>
+				<xsl:if test="$rule">
+					<i class="fas fa-check fa-fw" title="Regola/e italiane"/>
+				</xsl:if>
 				<xsl:if test="@cus:note='new'">
 					<i class="fas fa-map-pin fa-fw" title="Nuovo elemento"/>
 				</xsl:if>
 			</td>
 		</tr>
-		<xsl:apply-templates select="stx:Element">
+		<xsl:apply-templates select="stx:Element | stx:Attribute | stx:Include">
 			<xsl:with-param name="level" select="$level + 1"/>
 		</xsl:apply-templates>
 	</xsl:template>
 
-	<xsl:template match="node() | @*" mode="syntax-get-full-path">
-		<xsl:for-each select="ancestor-or-self::*">
-			<xsl:if test="contains('Document,Element', name(.))">
-			<xsl:text>/</xsl:text>
-			<xsl:value-of select="stx:Term"/><!--name(.)-->
-			<!--xsl:if test="preceding-sibling::*[name(.)=name(current())]">
-				<xsl:text>[</xsl:text>
-				<xsl:value-of select="count(preceding-sibling::*[name(.)=name(current())])+1"/>
-				<xsl:text>]</xsl:text>
-			</xsl:if-->
+	<xsl:template match="stx:Attribute" priority="0">
+		<xsl:param name="level" select="0"/>
+		<xsl:variable name="card">
+			<xsl:choose>
+				<xsl:when test="@cardinality">
+					<xsl:value-of select="@cardinality"/>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>M</xsl:text>
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:variable name="extension" select="contains(@cus:custom, 'extension')"/>
+		<xsl:variable name="restriction" select="contains(@cus:custom, 'restriction')"/>
+		<xsl:variable name="rule" select="contains(@cus:custom, 'rule')"/>
+		<xsl:variable name="fixedValue" select="contains(@cus:custom, 'fixed-value')"/>
+		<xsl:variable name="customCardinality" select="contains(@cus:custom, 'cardinality')"/>
+		<xsl:variable name="mandatory" select="contains(@cus:custom, 'fixed-value') or @cus:note='mandatory'"/>
+		<xsl:variable name="location">
+			<xsl:apply-templates select="." mode="syntax-get-full-path"/>
+		</xsl:variable>
+		<xsl:variable name="references" select="stx:Reference[@type='BUSINESS_TERM']"/>
+		<xsl:variable name="rules" select="stx:Reference[@type='RULE']"/>
+		<xsl:variable name="codelists" select="stx:Reference[@type='CODE_LIST']"/>
+		<tr id="{translate(translate(substring-after($location,'/'),':','-'),'/','_')}" data-level="{$level}">
+			<xsl:if test="$extension or $restriction or $fixedValue">
+				<xsl:attribute name="class">
+					<xsl:value-of select="@cus:custom"/>
+				</xsl:attribute>
 			</xsl:if>
-		</xsl:for-each>
-		<!--xsl:if test="not(self::*)">
-			<xsl:text/>/@<xsl:value-of select="name(.)"/>
-		</xsl:if-->
+
+			<td style="width: 5%;">
+				<xsl:if test="$customCardinality">
+					<xsl:attribute name="class">cardinality</xsl:attribute>
+				</xsl:if>
+				<span>
+					<xsl:value-of select="$card"/>
+				</span>
+			</td>
+			<td style="width: 35%;">
+				<xsl:call-template name="dots">
+					<xsl:with-param name="count" select="$level"/>
+				</xsl:call-template>
+				<a href="#">
+					<xsl:value-of select="concat('@',stx:Term)"/>
+				</a>
+			</td>
+			<td style="width: 55%;">
+				<p>
+					<strong>
+						<xsl:value-of select="stx:Name"/>
+					</strong>
+					<br/>
+					<em>
+						<xsl:value-of select="stx:Description"/>
+					</em>
+				</p>
+				<xsl:apply-templates select="stx:Value"/>
+				<xsl:if test="$references">
+					<p class="references">
+						<xsl:text>Termine di business:</xsl:text>
+						<xsl:apply-templates select="$references"/>
+					</p>
+				</xsl:if>
+				<xsl:if test="$rules">
+					<p class="references">
+						<xsl:text>Regole:</xsl:text>
+						<xsl:apply-templates select="$rules"/>
+					</p>
+				</xsl:if>
+				<xsl:if test="$codelists">
+					<p class="references">
+						<xsl:text>Codifiche:</xsl:text>
+						<xsl:apply-templates select="$codelists"/>
+					</p>
+				</xsl:if>
+			</td>
+			<td style="width: 5%;">
+				<xsl:if test="$mandatory">
+					<i class="fas fa-exclamation fa-fw" title="Attributo diventato obbligatorio"/>
+				</xsl:if>
+				<xsl:if test="$extension">
+					<span>Estensione</span>
+				</xsl:if>
+				<xsl:if test="$restriction">
+					<span>Restrizione</span>
+				</xsl:if>
+				<xsl:if test="$rule">
+					<i class="fas fa-check fa-fw" title="Regola/e italiane"/>
+				</xsl:if>
+				<xsl:if test="@cus:note='new'">
+					<i class="fas fa-map-pin fa-fw" title="Nuovo attributo"/>
+				</xsl:if>
+			</td>
+		</tr>
 	</xsl:template>
 
-</xsl:stylesheet>					
+	<xsl:template match="node()" mode="syntax-get-full-path">
+		<xsl:for-each select="ancestor-or-self::*">
+			<xsl:if test="contains('Document,Element', name(.))">
+				<xsl:text>/</xsl:text>
+				<xsl:value-of select="stx:Term"/>
+			</xsl:if>
+			<xsl:if test="contains('Attribute', name(.))">
+				<xsl:text>/@</xsl:text>
+				<xsl:value-of select="stx:Term"/>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
+
+</xsl:stylesheet>
