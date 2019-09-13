@@ -1,0 +1,56 @@
+== Codifiche di riferimento
+
+I seguenti paragrafi forniscono una panoramica del set limitato di codici che viene utilizzato in questa PEPPOL BIS.
+
+=== #Codifiche di riferimento per elementi codificati#
+
+==== Codifiche di riferimento per codice di tipologia fattura (BT-3)
+
+I seguenti sottoparagrafi forniscono una panoramica del set limitato di codici della tipologia fattura (BT-3) utilizzato in questa PEPPOL BIS di fatturazione.
+
+La tabella indica il nome e la descrizione di ogni codice, nonché una colonna "Sinonimo con" per indicare come la tipologia di fattura può essere elaborata se il destinatario non ha un processo / flusso di lavoro separato da questo codice e come si può notare, tutti i tipi di fattura validi in questo profilo possono essere elaborati come una fattura commerciale (380) e tutti i tipi di nota di credito come nota di credito commerciale (381). Alcuni destinatari potrebbero avere processi separati o flussi di lavoro per alcuni di queste tipologie e possono utilizzare questi processi.
+
+La tabella fornisce informazioni sul tipo di messaggio da utilizzare nella sintassi UBL per i diversi codici.
+
+===== Codiche di riferimento specifiche per la fatturazione
+
+====== Tipo di codice della fattura
+
+[width="100%", cols="3, 4"]
+
+|===
+
+|**Punto di accesso del documento** |	cbc:InvoiceTypeCode 
+|**Sorgente della codifica di riferimento** | http://www.unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred1001.htm[Sottoinsieme della codifica di riferimento UN/CEFACT 1001, D.16B]
+|===
+
+
+.Tabella delle codifiche di riferimento
+
+[width="100%", cols="1s, 2s, 4, 2, 2"]
+
+|===
+| Codifica | Denominazione | *Descrizione* | *Sinonimo con* | *Tipologia di messaggio UBL*
+| 380 | Fattura commerciale  | Document/message claiming payment for goods or services supplied under conditions agreed between seller and buyer. |  | Fattura
+
+| 393 | Fattura #factored# | Fattura assigned to a third party for collection. | 380 | Fattura
+
+| 82 | Metered services Fattura | Document/message claiming payment for the supply of metered services (e.g., gas, electricity, etc.) supplied to a fixed meter whose consumption is measured over a period of time. | 380 | Fattura
+
+| 80 | Debit note related to goods or services | Debit information related to a transaction for goods or services to the relevant party. | 380 | Fattura
+
+| 84 | Debit note related to financial adjustments | Document/message for providing debit information related to financial adjustments to the relevant party. | 380 | Fattura
+| 395 | Consignment Fattura | Commercial Fattura that covers a transaction other than one involving a sale. | 380 | Fattura
+
+| 575 | Insurer’s Fattura | Document/message issued by an insurer specifying the cost of an insurance which has been effected and claiming payment therefore. | 380 | Fattura
+| 623 | Forwarder’s Fattura | Fattura issued by a freight forwarder specifying services rendered and costs incurred and claiming payment therefore. | 380 | Fattura
+
+| 780 | Freight Fattura | Document/message issued by a transport operation specifying freight costs and charges incurred for a transport operation and stating conditions of payment. | 380 | Fattura
+
+| 383 | Debit note | Document/message for providing debit information to the relevant party. | 380 | Fattura
+
+| 386 | Prepayment Fattura | An Fattura to pay amounts for goods and services in advance; these amounts will be subtracted from the final Fattura. | 380 | Fattura
+
+Fattura
+
+|===

@@ -1,0 +1,46 @@
+==== Istruzioni particolari per le unità di misura
+
+Nelle righe dell’ordine, è necessario indicare la quantità del prodotto specificando un’unità di misura tra quelle indicate nell’apposita codifica di riferimento prevista dallo standard PEPPOL.
+Nella tabella che segue, si riportano alcuni esempi di unità di misura ed i rispettivi codici.
+
+[width="100%", cols="1,1,2,1"]
+|===
+|**Codice** |	**Nome** |	**Descrizione** |	**Unità Minima**
+|4N	| Megabecquerel|	Unità di misura che definisce la milionesima parte del becquerel	| UNITA' ELEMENTARE
+|ANN|	Anno	|Unità di misura del tempo pari a 365,25 giorni. Sinonimo: anno Giuliano	| UNITA' ELEMENTARE
+|BQL|	Becquerel |	Unità di misura che definisce l'attività di un radionuclide che ha un decadimento al secondo. Nel sistema internazionale ha sostituito il Curie.	| UNITA' ELEMENTARE
+|C62|	Unità	| Definisce l'unità singola	| UNITA' ELEMENTARE
+|CMK|	Centimetro quadrato |	Unità di misura della superficie, pari all'area racchiusa da un quadrato avente lati lunghi un centimetro	| UNITA' ELEMENTARE
+|CMQ|	Centimetro cubo	| Unità volumetrica, equivalente al volume di un cubo con lato di 1 centimetro	| UNITA' ELEMENTARE
+|CMT|	Centimetro	| Unità di misura di lunghezza, pari alla centesima parte del metro	| UNITA' ELEMENTARE
+|CUR|	Curie	| Unità di misura che definisce l'attività di un radionuclide di un grammo dell'isotopo radio-226	| UNITA' ELEMENTARE
+|DAY|	Giorno	| Unità di misura del tempo pari a 24 ore.	| UNITA' ELEMENTARE
+|GBQ|	Gigabecquerel	| Unità di misura che definisce la miliardesima parte del becquerel	| UNITA' ELEMENTARE
+|GRM|	Grammo	| Unità di misura della massa, pari a un millesimo di un chilogrammo	| UNITA' ELEMENTARE
+|HGM|	Hettogrammo	| Unità di misura della massa pari a 100 g	| UNITA' ELEMENTARE
+|HUR|	Ora	| Unità di misura del tempo pari a 3 600 secondi o 60 minuti	| UNITA' ELEMENTARE
+|KGM|	Chilogrammo |	Unità di misura della massa pari a mille grammi	| UNITA' ELEMENTARE
+|KM	|Chilometro	| Unità di misura della distanza pari a 1000 metri	| UNITA' ELEMENTARE
+|KWH|	Chilowatt per ora |	Unità di misura della potenza, pari a 1000 watt per ora	| UNITA' ELEMENTARE
+|LTR|	Litro	| Unità di misura della capacità nel sistema metrico decimale, pari al volume di 1 kg di acqua distillata alla temperatura di 4 °C, equivalente a 1,000028 dm³	| UNITA' ELEMENTARE
+
+|MC|	Microgrammo |	Unità di misura che definisce la milionesima parte del grammo	| UNITA' ELEMENTARE
+|MCU|	Millicurie	| Unità di misura che definisce 1/1000 l'attività di un radionuclide di un grammo dell'isotopo radio-226	| UNITA' ELEMENTARE
+|MGM|	Milligrammo	| Unità di misura di massa equivalente alla millesima parte del grammo	| UNITA' ELEMENTARE
+|MLT|	Millilitro	| Unità di misura che definisce la millesima parte del litro	| UNITA' ELEMENTARE
+|MMQ|	Millimetro cubo	| Unità volumetrica, equivalente al volume di un cubo con lato di 1 millimetro	| UNITA' ELEMENTARE
+|MMT|	Millimetro	| Unità di misura di lunghezza equivalente alla millesima parte del metro	| UNITA' ELEMENTARE
+|MON|	Mese	| Unità di misura del tempo pari a 1/12 di un anno di 365,25 giorni.	| UNITA' ELEMENTARE
+|MTK|	Metro quadrato	| Unità di misura per misurare le estensioni di un superficie.E' l''area racchiusa da un quadrato avente il lato lungo 1 metro	| UNITA' ELEMENTARE
+|MTQ|	Metro cubo	| Unità di misura utilizzata per il gas in condizioni “normali	| UNITA' ELEMENTARE
+|MTR|	Metro	| Unità base della lunghezza	| UNITA' ELEMENTARE
+|MWH|	Megawatt ora	| Unità di misura della potenza che definisce la quantità totale di energia sfusa trasferita o consumata.	| UNITA' ELEMENTARE
+|PR|	Paio	| Unità di misura del conteggio che definisce il numero di coppie (ad esempio coppia: oggetto descritto da due).	| UNITA' ELEMENTARE
+|BX|	Scatola	| Definisce il confezionamento secondario che contiene più confezioni	| CONFEZIONAMENTO
+|KT|	Kit	| Definisce il numero di kit di più articoli diversi tra di loro ma utilizzabili solo se insieme(ad esempio kit: viti e placche).	| CONFEZIONAMENTO
+|PK|	Confezione	| Definisce il pacchetto che contiene più unità singole e' il confezionamento minimo vendibile ( Es. confezione di compresse )	| CONFEZIONAMENTO
+|OB|	Pallet	| Piattaforma o scatola aperta, solitamente in legno, su cui vengono trattenute le merci per facilità di movimentazione meccanica durante il trasporto e lo stoccaggio	 | CONFEZIONAMENTO
+
+|DZP|	Dozzina |	Confezionamento standard con 12 pezzi |	CONFEZIONAMENTO
+
+|===

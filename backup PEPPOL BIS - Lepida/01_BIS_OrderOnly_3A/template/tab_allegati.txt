@@ -1,0 +1,18 @@
+[width="100%", cols="1,2"]
+|===
+|Elemento |	Descrizione
+|Codifica |	Base64	
+|Nome file |	Il nome file e l’estensione dovrebbero essere inviati nell’attributo “filename” dell’elemento EmbeddedDocumentBinaryObject.
+|Formato documento |	Tipi MIME raccomandati:
+
+ 	PDF – application/pdf 
+ 	TXT – text/txt
+ 	XML – text/xml 
+ 	GIF – image/gif
+ 	TIFF – image/tiff
+ 	JPEG, JPG – image/jpeg
+ 	PNG – image/png
+|Dimensione	| La dimensione massima del messaggio raccomandata  inclusi gli allegati è 5MB.
+|Descrizione |	Si raccomanda l’uso dell’elemento cac:AdditionalDocumentReference/cbc:DocumentType per inviare una breve descrizione del contenuto dell’allegato. 
+
+|===

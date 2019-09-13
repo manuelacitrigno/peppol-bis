@@ -1,0 +1,194 @@
+
+image::../../frontend/images/IMG_PEPPOL/PEPPOL_Authority.jpg[]
+
+<<<
+
+
+Glossario dei termini e degli acronimi utilizzati nei profili d'implementazione italiani delle specifiche.
+
+[big red]*A*
+
+**Acquirente (BuyerCustomerParty)** -	L’acquirente è la persona giuridica che acquista la merce o i servizi. Questo ruolo viene ricoperto dal Cliente o per suo conto.
+
+**AP** -	Access Point della rete PEPPOL.
+
+**Allowance** -	Abbuono o Sconto.
+
+
+[big red]*B*
+
+**BDNCP (Banca dati nazionale dei contratti pubblici)** -	La banca dati dei bandi e dei contratti pubblici affidati sul territorio nazionale, gestita dall’Autorità Nazionale Anticorruzione (ANAC).
+
+**Billing** -	Ciclo di fatturazione, attiva e passiva.
+
+**BPMN (Business Process Model and Notation)** -	Lo standard internazionale per la rappresentazione dei processi organizzativi definito dall’Object Management Group (OMG).
+
+*Busta di trasmissione* - La parte del Messaggio che contiene i dati necessari per il corretto indirizzamento.
+
+
+[big red]*C*
+
+*CEN* - Comitato Europeo per la Standardizzazione.
+
+*CEN WS/BII* - CEN Workshop on Business Interoperability Interfaces for public procurement in Europe.
+Arrivato al suo terzo mandato, BII 3 definisce le specifiche semantiche (interfacce) per i processi e le relative transazioni di business necessarie al procurement pubbico Europeo. Le interfacce BII sono astratte e indipendenti dalla sintassi, tuttavia solo linguaggi di business evoluti come UBL possono essere utilizzati per implementarle.
+
+*Charge* - Addebito, Maggiorazione.
+
+*CIG (Codice identificativo di gara)* - Il codice alfanumerico univoco e obbligatorio che identifica un dato appalto o lotto sulla Banca dati nazionale dei contratti pubblici (BDNCP).
+
+*Cliente / Cessionario* - Il cliente è la persona giuridica che richiede un prodotto o servizio. Esempi di ruoli ricoperti dal cliente sono: acquirente, consegnatario/parte ricevente, debitore, autorità appaltante, committente.
+
+*Codice IPA* - Il codice alfanumerico univoco che identifica ciascuna unità organizzativa censita sull’Indice delle pubbliche amministrazioni (IPA).
+
+*Committente (OriginatorCustomerParty)* - La parte che eventualmente riceve o consuma la merce e per la quale la parte acquirente fa l’acquisto.
+
+*Commodity Classification* - Classificazione merceologica.
+
+*Consegna*, Il trasporto di una data raccolta di merci da una parte (Speditore) ad un’altra parte (Consegnatario) attraverso uno o più modi di trasporto.
+
+*Consegnatario (DeliveryCustomerParty)* - Il consegnatario è la persona o organizzazione alla quale i prodotti saranno spediti e che ne prenderà il possesso. Questo ruolo viene ricoperto dal cliente o per suo conto. (Il Consegnatario è anche detto Destinatario o Depositario).
+
+*CPV* - Common Procurement Vocabulary.
+
+*Customer (Buyer)* - Cliente, Acquirente. Detta anche Cessionario o Committente.
+
+
+[big red]*D*
+
+*Delivery* - Consegna, Resa.
+
+*Depositante* - Vedi Speditore.
+
+*Depositario* - Vedi Consegnatario.
+
+*Destinatario* - Vedi Consegnatario.
+
+[big red]*E*
+
+*EIF* - European Interoperability Framework. EIF definisce i livelli di interoperabilità necessari in Europa (legale, organizzativo, semantico, tecnico).
+
+*Etichetta Logistica* - L’etichetta logistica è una carta di identità abbinata ad ogni lotto di produzione in cui vengono inserite le informazioni destinate ad accompagnare il prodotto nelle diverse fasi della catena di fornitura.
+L’etichetta logistica viene applicata su ogni collo mediante l’uso del Serial Shipping Container Code (GS1 SSCC), il numero seriale univoco assegnato all’unità logistica, che identifica ogni singolo pallet o cartone.
+
+[big red]*F*
+
+**Fornitore / Cedente** - Il fornitore è la persona giuridica che fornisce un prodotto o servizio. Esempi di ruoli ricoperti dal fornitore sono: venditore, vettore/parte consegnante, creditore, operatore economico.
+
+*FTP (File Transfer Protocol)* - Il protocollo di trasferimento file tra sistemi remoti definito nell’RFC 959.
+
+[big red]*G*
+
+*GINC* - Global Identification Number of Consignment. Un numero di consegna riconosciuto a livello globale utilizzato per identificare univocamente la consegna come specificato dallo spedizioniere: (_a_) Utilizzato per identificare il raggruppamento logico di unità logistiche o di trasporto che sono assemblate per il trasporto associato ad un documento di trasporto; (_b_) E’ utilizzato per identificare il raggruppamento logico di unità logistiche durante uno specifico viaggio nel quale ci potrebbero essere molteplici fasi di consegna.
+
+*GLN* - Il numero di ubicazione globale utilizzato ad esempio per indicare il luogo di consegna.
+
+*GS1 Key* - Le chiavi identificative GS1 permettono alle aziende ed organizzazioni di assegnare degli identificatori univoci a livello globale ai loro prodotti, documenti, ubicazioni, unità logistiche, ecc. http://www.gs1.org/barcodes/technical/id_keys
+
+*GS1* - GS1 è un’organizzazione internazionale neutrale, no-profit, che sviluppa e manutiene degli standard per le catene di fornitura e della domanda in modo trasversale su molteplici settori.
+
+*GSIN (Global Shipment Identification Number)* - Un numero di spedizione riconosciuto a livello globale utilizzato per identificare univocamente la spedizione nel suo complesso come specificato dal venditore: (_a_) A livello documento questo specifica il numero assegnato all’intera Spedizione, che può essere formata da diverse consegne; (_b_) Numero assegnato dal venditore per identificare un raggruppamento logico di unità logistiche o di trasporto che sono tipicamente assemblate dal venditore per il trasporto di una spedizione; (_c_) E’ allineato al requisito del Unique Consignment Reference (UCR) del World Customs Organisation (WCO); (_d_) È approvato da ISO/IEC 15459 (ISO
+License Plate).
+
+**GTIN (Global Trade Item Number)** - Un codice prodotto globale.
+
+[big red]*I*
+
+*Intestatario fattura (AccountingCustomerParty)* - Una persona o unità di business che riceve la fattura per conto del cliente.
+
+**IPA (Indice delle pubbliche amministrazioni)** - Archivio ufficiale degli enti pubblici e dei gestori di pubblici servizi, gestito dall'Agenzia per l'Italia digitale (AgID)
+
+*ISO* - Organizzazione Internazionale per la Standardizzazione.
+
+
+[big red]**L**
+
+**List ID** - Identificativo della codifica (code list) standard alla quale appartiene un dato Codice (es. ‘UNCL5153’ come valore dell’attributo listID del codice cac:TaxScheme/cbc:ID).
+
+[big red]**M**
+
+**Messaggio** - Un file non contenente codice eseguibile né macroistruzioni. Un messaggio è composto dalla Busta di trasmissione e dal Corpo del messaggio, che costituisce il documento.
+
+**Mittente** - Si veda anche Speditore.
+
+[big red]**N**
+
+**NSO (Nodo di smistamento degli ordini di acquisto)** - Il sistema per la validazione e la trasmissione dei documenti elettronici attestanti l’ordinazione e l’esecuzione degli acquisti di beni e servizi della pubblica amministrazione, gestito dal Ministero dell’economia e delle finanze – Dipartimento della Ragioneria Generale dello Stato.
+
+[big red]**O**
+
+*OASIS* - OASIS è un’organizzazione no-profit e un consorzio internazionale che crea specifiche industriali interoperabili basate su standard pubblici come XML e SGML. OASIS è riconosciuta da ISO, IEC, ITU e UN/ECE.
+
+*OpenPEPPOL* - L’associazione OpenPEPPOL è stata costituita il 1 Settembre 2012 dopo il completamento positivo del progetto PEPPOL (Pan-European Public Procurement Online) che ha visto le sue specifiche implementate in diversi paesi Europei per risolvere problemi di interoperabilità per le forniture elettroniche. OpenPEPPOL è un’associazione no-profit internazionale registrata in Belgio (Association Internationale Sans But Lucratif – AISBL) formata da membri sia pubblici che privati. L’associazione ha assunto la piena responsablità per lo sviluppo e la manutenzione delle specifiche PEPPOL, i componenti base e i suoi servizi e le implementazioni in tutta Europa.
+
+*Ordine* - Il Documento con cui il Cliente comunica al Fornitore i beni e/o i servizi che intende acquistare e le relative istruzioni.
+
+*Ordine con risposta* - Il Documento con cui il Fornitore accetta, declina o apporta dei cambiamenti (Risposta con modifiche) all’Ordine ricevuto dal Cliente.
+
+**Ordine pre-concordato** - Il Documento, equivalente all’Ordine, ma emesso dal Fornitore in accordo con il Cliente.
+
+[big red]**P**
+
+*Payee* - Beneficiario Pagamento
+
+*PEPPOL* - Il consorzio PEPPOL (Pan-European Public Procurement Online).
+
+*PEPPOL BIS* - La Business Interoperability Specification (BIS) reppresenta una specifica di implementazione PEPPOL/OpenPEPPOL relativa a un dato processo di business e fornisce il dettaglio di implementazione per ogni transazione di business prevista.
+
+*Profilo d’implementazione* - Si riferisce all’analisi di uno o più processi di business e alla loro implementazione in uno scenario preciso mediante la specifica dettagliata degli attori, delle collaborazioni e delle transazioni di business necessarie. I profili OpenPEPPOL devono essere conformi sia alla sintassi sottostante (es. UBL) che alla semantica CEN BII. Un profilo OpenPEPPOL può essere esteso e localizzato per usi specifici di un dato paese purchè rimanga conforme a quello di origine.
+
+[big red]**S**
+
+*Scheme ID* - Identificativo dello schema (sintassi) standard con il quale viene qualificato un Identificativo (es. ‘IT:VAT’ come valore dell’attributo schemeID dell’identificativo CompanyID).
+
+*SdI (Sistema di interscambio)* - Il sistema per la trasmissione delle fatture elettroniche destinate alle amministrazioni pubbliche, gestito dall’Agenzia delle Entrate.
+
+*Speditore (DespatchSupplierParty)* - Lo Speditore è la persona o organizzazione che spedisce la merce o eroga i servizi. Questo ruolo viene ricoperto dal fornitore o per suo conto. (La Speditore è anche detto Mittente o Depositante).
+
+*Spedizione* - Un accordo contrattuale in base al quale una data raccolta di merci deve essere trasportata da una parte (solitamente un Fornitore) ad un’altra parte (solitamente un Cliente).
+
+**SSCC (Serial Shipping Container Code)** - SSCC è una chiave identificativa GS1 per un articolo di qualsiasi composizione, utilizzato per il trasporto e/o deposito che necessita di essere gestito attraverso la catena di fornitura. L’SSCC è assegnato per la durata del trasporto dell’articolo merce ed è un elemento obbligatorio nell’Etichetta Logistica di GS1.
+A ogni unità logistica viene assegnata una SSCC.
+
+*Supplier (Seller)* - Parte fornitrice. Detta anche Cedente o Prestatore.
+
+[big red]**T**
+
+*Taxable Amount* - Imponibile.
+
+*Tax Category* - Natura dell’imposta.
+
+*Tax Scheme* - Tipologia generale dell’imposta (es. VAT). Il Regime d’imposta può essere più articolato rispetto al Tax Scheme.
+
+*Trasportatore / Vettore* - Il trasportatore gestisce la consegna/trasporto fisico della spedizione inviata. Utilizzata se una terza parte effettua il trasporto fisico.
+
+[big red]**U**
+
+*UBL (Universal Business Language)* - Il Linguaggio Universale per il Business, è il prodotto di uno sforzo internazionale per definire una libreria standard di documenti di business elettronici royalty-free come ad esempio gli ordini e le fatture. Sviluppato in un Comitato Tecnico OASIS aperto e responsabile, con la partecipazione di una varietà di organizzazioni di standardizzazione dei dati industriali, UBL è disegnato per inserirsi direttamente nelle pratiche di business, legali, di revisione e contabilità esistenti, eliminando la riscrittura dei dati nelle catene di fornitura basate ancora su carta e fax e fornendo il punto di entrata al commercio elettronico per le PMI.
+
+*UBL ITALIA* - Iniziativa di divulgazione tecnologica per lo standard UBL in Italia supportato da ENEA, Javest e FTI.
+
+*Unità Logistica* - La descrizione delle unità logistiche individuali nelle quali gli articoli merce sono imballati.
+
+*UN/CEFACT* - United Nations Centre for Trade Facilitation and Electronic Business.
+
+*UN/ECE* - United Nations Economic Commission for Europe.
+
+[big red]**V**
+
+*VAT (Value Added Tax)* - VAT è l’acronimo generico Inglese per riferirsi all’imposta sul valore aggiunto (IVA) che può avere diversi nomi a seconda del paese (es. CVR in Danimarca).
+
+*Venditore (SellerSupplierParty)* - Il Venditore è la persona giuridica che vende la merce o i servizi al cliente. Questo ruolo viene ricoperto dal Fornitore o per suo conto.
+
+[big red]**W**
+
+**Withholding Tax** - Ritenuta d’acconto.
+
+[big red]**X**
+
+**XML** - Extensible Mark-up Language.
+
+*XSD* - XML Schema Definition Language.
+
+*XSLT* - Extensible Stylesheet Language Transformations. E’ il linguaggio di trasformazione dell'XML.
+

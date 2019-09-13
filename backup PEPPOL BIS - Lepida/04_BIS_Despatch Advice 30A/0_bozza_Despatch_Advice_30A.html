@@ -1,0 +1,2656 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.5.dev">
+<meta name="author" content="PEPPOL">
+<title>Documento di Trasporto (DDT) Elettronico</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+/* Remove comment around @import statement below when using as a custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+audio,canvas,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
+script{display:none!important}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{margin:0}
+a{background:transparent}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+body{-webkit-font-smoothing:antialiased}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.spread{width:100%}
+p.lead,.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{font-size:1.21875em;line-height:1.6}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:none}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #ddddd8;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.no-bullet{list-style:none}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite:before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media only screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7;font-weight:bold}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+body{tab-size:4}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
+.clearfix:after,.float-group:after{clear:both}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menu{color:rgba(0,0,0,.8)}
+b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
+b.button:before{content:"[";padding:0 3px 0 2px}
+b.button:after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header:before,#header:after,#content:before,#content:after,#footnotes:before,#footnotes:after,#footer:before,#footer:after{content:" ";display:table}
+#header:after,#content:after,#footnotes:after,#footer:after{clear:both}
+#content{margin-top:1.25em}
+#content:before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #ddddd8}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #ddddd8;padding-bottom:8px}
+#header .details{border-bottom:1px solid #ddddd8;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span:before{content:"\00a0\2013\00a0"}
+#header .details br+span.author:before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark:before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber:after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #ddddd8;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #efefed;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media only screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}
+@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+.sect1{padding-bottom:.625em}
+@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}
+.sect1+.sect1{border-top:1px solid #efefed}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
+.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock pre:not(.highlight),.listingblock pre[class="highlight"],.listingblock pre[class^="highlight "],.listingblock pre.CodeRay,.listingblock pre.prettyprint{background:#f7f7f8}
+.sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
+.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
+.literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
+@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
+.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]:before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
+.listingblock:hover code[data-lang]:before{display:block}
+.listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
+.listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
+table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0;line-height:1.45}
+table.pyhltable td.code{padding-left:.75em;padding-right:0}
+pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
+pre.pygments .lineno{display:inline-block;margin-right:.25em}
+table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock blockquote p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote:before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.5em;margin-right:.5ex;text-align:right}
+.quoteblock .quoteblock{margin-left:0;margin-right:0;padding:.5em 0;border-left:3px solid rgba(0,0,0,.6)}
+.quoteblock .quoteblock blockquote{padding:0 0 0 .75em}
+.quoteblock .quoteblock blockquote:before{display:none}
+.verseblock{margin:0 1em 1.25em 1em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract{margin:0 0 1.25em 0;display:block}
+.quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{text-align:left;word-spacing:0}
+.quoteblock.abstract blockquote:before,.quoteblock.abstract blockquote p:first-of-type:before{display:none}
+table.tableblock{max-width:100%;border-collapse:separate}
+table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
+table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
+table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
+table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
+table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
+table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
+table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot{border-width:1px 0}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+td>div.verse{white-space:pre}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
+ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
+ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
+ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
+ul.inline>li>*{display:block}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:last-of-type{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
+.imageblock.right,.imageblock[style*="float: right"]{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;text-indent:-1.05em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background-color:#00fafa}
+.black{color:#000}
+.black-background{background-color:#000}
+.blue{color:#0000bf}
+.blue-background{background-color:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background-color:#fa00fa}
+.gray{color:#606060}
+.gray-background{background-color:#7d7d7d}
+.green{color:#006000}
+.green-background{background-color:#007d00}
+.lime{color:#00bf00}
+.lime-background{background-color:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background-color:#7d0000}
+.navy{color:#000060}
+.navy-background{background-color:#00007d}
+.olive{color:#606000}
+.olive-background{background-color:#7d7d00}
+.purple{color:#600060}
+.purple-background{background-color:#7d007d}
+.red{color:#bf0000}
+.red-background{background-color:#fa0000}
+.silver{color:#909090}
+.silver-background{background-color:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background-color:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background-color:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background-color:#fafa00}
+span.icon>.fa{cursor:default}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]:after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@media print{@page{margin:1.25cm .75cm}
+*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]:after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
+.sect1{padding-bottom:0!important}
+.sect1+.sect1{border:0!important}
+#header>h1:first-child{margin-top:1.25rem}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em 0}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span:before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]:before{display:block}
+#footer{background:none!important;padding:0 .9375em}
+#footer-text{color:rgba(0,0,0,.6)!important;font-size:.9em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body class="book toc2 toc-left">
+<div id="header">
+<h1>Documento di Trasporto (DDT) Elettronico</h1>
+<div class="details">
+<span id="author" class="author">PEPPOL</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel0">
+<li><a href="#true-span-class-black-documento-di-trasporto-ddt-elettronico-30-a-span"><span class="black">Documento di trasporto (DDT) elettronico 30 A</span></a>
+<ul class="sectlevel4">
+<li><a href="#truelink-home-specifiche-generali">Link - Home specifiche generali</a></li>
+<li><a href="#trueintroduzione-a-openpeppol-e-alla-bis">1. Introduzione a openPEPPOL e alla BIS</a>
+<ul class="sectlevel2">
+<li><a href="#truecontesto-e-obiettivi">1.1. Contesto e obiettivi</a></li>
+<li><a href="#truea-chi-si-rivolge">1.2. A chi si rivolge</a></li>
+</ul>
+</li>
+<li><a href="#trueprincipi-e-requisiti">2. Principi e requisiti</a>
+<ul class="sectlevel2">
+<li><a href="#trueil-messaggio-del-documento-di-trasporto-in-generale">2.1. Il messaggio del Documento di Trasporto in generale</a></li>
+<li><a href="#trueparti-e-ruoli">2.2. Parti e ruoli</a></li>
+<li><a href="#truealtri-concetti-importanti">2.3. Altri concetti importanti</a></li>
+</ul>
+</li>
+<li><a href="#trueprocessi-e-scenari-tipici">3. Processi e scenari tipici</a>
+<ul class="sectlevel2">
+<li><a href="#truelegenda-per-i-diagrammi-bpmn">3.1. Legenda per i diagrammi BPMN</a></li>
+<li><a href="#trueprocesso-semplice-due-parti-coinvolte">3.2. Processo semplice – due parti coinvolte</a></li>
+<li><a href="#trueprocesso-pi-avanzato-uso-del-trasportatore">3.3. Processo più avanzato – uso del Trasportatore</a></li>
+<li><a href="#truecasi-d-uso-tipici">3.4. Casi d’uso tipici</a></li>
+</ul>
+</li>
+<li><a href="#truesemantica-della-tipologia-di-dati-semantic-datatype">4. Semantica della tipologia di dati (Semantic datatype)</a>
+<ul class="sectlevel2">
+<li><a href="#truetipi-primitivi">4.1. Tipi primitivi</a></li>
+<li><a href="#truesemantica-della-tipologia-di-dati">4.2. Semantica della tipologia di dati</a></li>
+</ul>
+</li>
+<li><a href="#truecodifiche-di-riferimento">5. Codifiche di riferimento</a>
+<ul class="sectlevel2">
+<li><a href="#truecodifiche-di-riferimento-per-elementi-codificati">5.1. Codifiche di riferimento per elementi codificati</a></li>
+<li><a href="#truecodifica-di-riferimento-per-identificatori">5.2. Codifica di riferimento per identificatori</a></li>
+</ul>
+</li>
+<li><a href="#truedescrizione-di-parti-selezionate-del-messaggio-di-avviso-spedizione">6. Descrizione di parti selezionate del messaggio di Avviso Spedizione</a>
+<ul class="sectlevel2">
+<li><a href="#trueparti-di-business">6.1. Parti di business</a></li>
+<li><a href="#true-mark-riferimento-all-ordine-mark-strong-da-approfondire-strong">6.2. <mark>Riferimento all’Ordine</mark> <strong>da approfondire</strong></a></li>
+<li><a href="#truespedizione">6.3. Spedizione</a></li>
+</ul>
+</li>
+<li><a href="#trueriga-di-spedizione">7. Riga di spedizione</a>
+<ul class="sectlevel2">
+<li><a href="#truedescrizione-dell-articolo-e-sua-identificazione">7.1. Descrizione dell’Articolo e sua identificazione</a></li>
+<li><a href="#trueparticolare-trattamento-della-spedizione">7.2. Particolare Trattamento della spedizione</a></li>
+<li><a href="#truetemperatura">7.3. Temperatura</a></li>
+<li><a href="#truequantit-inevasa">7.4. Quantità inevasa</a></li>
+<li><a href="#trueomaggi">7.5. Omaggi</a></li>
+<li><a href="#truesconto-merce">7.6. Sconto Merce</a></li>
+<li><a href="#truemerce-pericolosa">7.7. Merce Pericolosa</a></li>
+<li><a href="#truenumeri-di-serie-s-n">7.8. Numeri di serie (S/N)</a></li>
+<li><a href="#truenumeri-di-lotto-merce-data-di-scadenza-e-da-consumarsi-preferibilmente-entro-il-bestbeforedate">7.9. Numeri di lotto merce, Data di Scadenza e Da consumarsi preferibilmente entro il (BestBeforeDate)</a></li>
+<li><a href="#trueunit-logistica-di-trasporto">7.10. Unità logistica di trasporto</a></li>
+<li><a href="#trueconfezionamento">7.11. Confezionamento</a></li>
+</ul>
+</li>
+<li><a href="#trueregole-di-business-intercent-er">8. Regole di business INTERCENT-ER</a>
+<ul class="sectlevel2">
+<li><a href="#trueregole-di-business-per-il-documento-di-trasporto">8.1. Regole di business per il documento di trasporto</a></li>
+</ul>
+</li>
+<li><a href="#trueidentificatori-peppol">9. Identificatori PEPPOL</a>
+<ul class="sectlevel2">
+<li><a href="#trueprofili-e-messaggi">9.1. Profili e messaggi</a></li>
+<li><a href="#trueidentificatori-di-personalizzazione-e-profilo">9.2. Identificatori di personalizzazione e profilo</a></li>
+<li><a href="#truespazio-dei-nomi">9.3. Spazio dei nomi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="C:/IMG_PEPPOL/peppol.JPG" alt="C:\IMG PEPPOL\peppol.JPG">
+</div>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<h1 id="true-span-class-black-documento-di-trasporto-ddt-elettronico-30-a-span" class="sect0"><a class="anchor" href="#true-span-class-black-documento-di-trasporto-ddt-elettronico-30-a-span"></a><span class="black">Documento di trasporto (DDT) elettronico 30 A</span></h1>
+<div class="openblock partintro">
+<div class="content">
+<div class="paragraph">
+<p>OpenPEPPOL AISBL, Post-Award Coordinating Community
+Versione 3.0.0</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>La specifica PEPPOL Business Interoperability, la denomineremo "BIS" da ora in avanti, è stata sviluppata da OpenPEPPOL AISBL Post Award Coordinating Community e pubblicata come parte delle specifiche PEPPOL.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Statement of copyright</div>
+<div class="paragraph">
+<p>This PEPPOL Business Interoperability Specification (BIS) document is based on the CEN CWA prepared by the BII workshop specified in the introduction below. The original CEN CWA document contains the following copyright notice which still applies:</p>
+</div>
+<div class="paragraph">
+<p>© 2012 CEN All rights of exploitation in any form and by any means reserved worldwide for CEN national Members.</p>
+</div>
+<div class="paragraph">
+<p>The CEN CWA documents and profiles prepared by the BII workshop are not specific to a business area. Subject to agreement with CEN, customizations have been made by PEPPOL to establish the PEPPOL BIS, detailing and adding further guidance on the use of BII profiles.</p>
+</div>
+<div class="paragraph">
+<p>OpenPEPPOL AISBL holds the copyright in the customizations made to the original document. The customizations appear from the corresponding conformance statement which is attached to this document. For the purpose of national implementations, customizations covered by the conformance statement may be further refined and detailed by PEPPOL Authorities and/or other entities authorized by OpenPEPPOL AISBL, provided that interoperability with PEPPOL BIS is ensured. This PEPPOL BIS document may not be modified, re-distributed, sold or repackaged in any other way without the prior consent of CEN and/or OpenPEPPOL AISBL.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="truelink-home-specifiche-generali"><a class="anchor" href="#truelink-home-specifiche-generali"></a>Link - Home specifiche generali</h5>
+<div class="paragraph">
+<p><a href="http://url">Home specifiche generali</a></p>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueintroduzione-a-openpeppol-e-alla-bis"><a class="anchor" href="#trueintroduzione-a-openpeppol-e-alla-bis"></a>1. Introduzione a openPEPPOL e alla BIS</h2>
+<div class="sectionbody">
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Questa BIS è il risultato del lavoro svolto nel progetto PEPPOL e pubblicato come parte delle specifiche PEPPOL.</p>
+</div>
+<div class="paragraph">
+<p>Questo PEPPOL BIS fornisce un set di specifiche per implementare un processo di business <a href="https://peppol.eu/?rel=undefined">PEPPOL</a>. Il documento è inteso per chiarire i requisiti necessari per assicurare l’interoperabilità nell’eProcurement Pubblico pan-europeo e fornisce le linee guida per il supporto e l’implementazione di questi requisiti. Questo PEPPOL BIS si basa sul profilo CEN WS/BII2 "Profile BII30 Dispatch Only" e lo estende in base ai requisiti di e-Procurement della Regione Emilia Romagna.</p>
+</div>
+<div class="paragraph">
+<p>Fare riferimento alla sezione “ID Customizzazione” per ulteriori informazioni.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/IMG_PEPPOL/fig1.JPG" alt="C:\IMG PEPPOL\fig1.JPG">
+</div>
+<div class="title">Figure 1. Relazione tra i profili BII e PEPPOL BIS</div>
+</div>
+<hr>
+<div class="sect2">
+<h3 id="truecontesto-e-obiettivi"><a class="anchor" href="#truecontesto-e-obiettivi"></a>1.1. Contesto e obiettivi</h3>
+<div class="paragraph">
+<p>Il PEPPOL BIS (Business Interoperability Specification) fornisce le specifiche per implementare i documenti di business PEPPOL. Le specifiche abilitano qualsiasi azienda a emettere documenti elettronici che soddisfano i requisiti di processo legali e di business nell’Unione Europea e la EEA.  Supporta un sottoinsieme delle informazioni utilizzate dalla maggior parte dei settori industriali e abilita gli utenti a emettere documenti (fatture, ordini, avvisi di spedizione, ecc.) che sono validi per il commercio transfrontaliero all’interno dell’Unione Europea e la EEA.</p>
+</div>
+<div class="paragraph">
+<p>Lo <strong>scopo</strong> di questo documento è di descrivere un formato comune per il messaggio del Documento di Trasporto nel mercato europo, e di facilitare l’implementazione efficiente e l’uso crescente della collaborazione elettronica relativa al processo di evasione dell’ordine basato su questo formato.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truea-chi-si-rivolge"><a class="anchor" href="#truea-chi-si-rivolge"></a>1.2. A chi si rivolge</h3>
+<div class="paragraph">
+<p>Questo documento si rivolge alle organizzazioni che intendono essere abilitate a <a href="https://peppol.eu/?rel=undefined ">PEPPOL</a> per scambiare ordini elettronici, e/o ai loro fornitori ICT. Queste organizzazioni potrebbero essere:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fornitori di Servizi</p>
+</li>
+<li>
+<p>Autorità appaltanti</p>
+</li>
+<li>
+<p>Operatori Economici</p>
+</li>
+<li>
+<p>Sviluppatori Software</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Più specificatamente, i ruoli previsti sono i seguenti:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Architetti ICT</p>
+</li>
+<li>
+<p>Sviluppatori ICT</p>
+</li>
+<li>
+<p>Esperti di Business</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Per ulteriori informazioni su PEPPOL/OpenPEPPOL, leggete <a href="https://joinup.ec.europa.eu/svn/peppol/PEPPOL%20BIS%20Common%20text%20and%20introduction%20-%20ver%201%202014-04-14.pdf ">PEPPOL BIS, common text and introduction</a>.</p>
+</div>
+<div class="paragraph">
+<p>Lo sviluppo di questa BIS iniziò come progetto congiunto tra DIFI (NO), DIGST (DK) e SFTI (SE). Comunque, il gruppo del progetto decise che la Comunità Post-Award di openPEPPOL sarebbe stata una piattaforma migliore aprendo a più interessati la possibilità di partecipare. I membri del team di progetto hanno cercato consiglio da, e intervistato, diverse PMI e grandi aziende che utilizzano il Documento di Trasporto elettronico oggi. Particolarmente con l’intenzione d’identificare gli scenari comuni più importanti e i più utilizzati.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueprincipi-e-requisiti"><a class="anchor" href="#trueprincipi-e-requisiti"></a>2. Principi e requisiti</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Questo capitolo descrive i principi e le assunzioni che stanno alla base dell’uso del Documento di Trasporto PEPPOL. Esso si basa sul profilo CEN BII 30 “Despatch only”.</p>
+</div>
+<div class="sect2">
+<h3 id="trueil-messaggio-del-documento-di-trasporto-in-generale"><a class="anchor" href="#trueil-messaggio-del-documento-di-trasporto-in-generale"></a>2.1. Il messaggio del Documento di Trasporto in generale</h3>
+<div class="paragraph">
+<p>La transazione elettronica descritta in questa guida implementativa è il messaggio dell’Avviso Spedizione (Despatch Advice) utilizzato in Italia anche come Documento di Trasporto (DDT) introdotto dal DPR 472/96.  Il messaggio del Documento di Trasporto è utilizzato dal fornitore (cedente) nel processo dell’evasione dell’ordine per notificare il ricevitore (cessionario) circa, la spedizione e il periodo di consegna per i beni inviati, come pure i dettagli relativi per effettuare controlli incrociati con l’ordine, nonchè dichiarare la tipologia di imballaggio.</p>
+</div>
+<div class="paragraph">
+<p>Le attività principali supportate da questo messaggio sono:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Trasporto</strong>, descrizione completa di come la merce è imballata e consegnata. Una consegna è intesa come un numero di unità (articoli) che vengono spediti come singola spedizione ad un singolo indirizzo di consegna.</p>
+</li>
+<li>
+<p><strong>Ordine</strong>, indica cosa viene spedito; la quantità della merca spedita e cosa rimane inevaso.</p>
+</li>
+<li>
+<p><strong>Accettazione della merce</strong>, supporto completo al processo di accettazione della merce in un magazzino, all’inventario, nei negozi o semplicemente al banco di accettazione.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueparti-e-ruoli"><a class="anchor" href="#trueparti-e-ruoli"></a>2.2. Parti e ruoli</h3>
+<div class="paragraph">
+<p>La tabella sottostante fornisce le definizioni delle parti e dei ruoli nel processo di evasione dell’ordine (fulfillment).</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parti</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definizione</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cliente (Cessionario)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il cliente è la persona giuridica che richiede un prodotto o servizio.
+</p><p class="tableblock">Esempi di ruoli ricoperti dal cliente sono: acquirente, consegnatario, debitore, autorità appaltante.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fornitore (Cedente)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il fornitore è la persona giuridica che fornisce un prodotto o servizio.
+</p><p class="tableblock">Esempi di ruoli ricoperti dal fornitore sono: venditore, vettore, creditore, operatore economico.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Trasportatore (Cedente)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il trasportatore gestisce la consegna/trasporto fisico della spedizione inviata. Utilizzata se una terza parte effettua il trasporto fisico.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ruoli</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definizione</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Consegnatario
+(UBL:DeliveryCustomerParty)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il consegnatario è la persona o organizzazione alla quale i prodotti saranno spediti e che ne prenderà il possesso. Questo ruolo viene ricoperto dal cliente o per suo conto. (Il Consegnatario è anche detto Destinatario)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Speditore
+(UBL:DespatchSupplierParty)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lo Speditore è la persona o organizzazione che spedisce la merce o eroga i servizi. Questo ruolo viene ricoperto dal fornitore o per suo conto. (Lo Speditore è anche detto Mittente)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Acquirente
+(UBL:BuyerCustomerParty)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L’acquirente è la persona giuridica che acquista la merce o i servizi. Questo ruolo viene ricoperto dal Cliente o per suo conto.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Venditore
+(UBL:SellerSupplierParty)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il Venditore è la persona giuridica che vende la merce o i servizi al cliente. Questo ruolo viene ricoperto dal Fornitore o per suo conto.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Committente
+(UBL:OriginatorCustomerParty)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"> La parte che eventualmente riceve o consuma la merce e per la quale la parte acquirente fa l’acquisto.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Il diagramma seguente mostra i ruoli nel processo di evasione dell’ordine.</p>
+</div>
+<div class="paragraph">
+<p><mark><strong>TBD img diagramma, non anora presente in PEPPOL</strong></mark></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truealtri-concetti-importanti"><a class="anchor" href="#truealtri-concetti-importanti"></a>2.3. Altri concetti importanti</h3>
+<div class="paragraph">
+<p>La tabella sottostante fornisce le definizioni e i concetti chiave del processo di evasione dell’ordine.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Termine</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definizione</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Spedizione</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un accordo contrattuale in base al quale una data raccolta di merci deve essere trasportata da una parte (solitamente un Fornitore) ad un’altra parte (solitamente un Cliente).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Consegna</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il trasporto di una data raccolta di merci da una parte (Speditore) ad un’altra parte (Consegnatario) attraverso uno o più modi di trasporto.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Unità logistica</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La descrizione delle unità logistiche individuali nelle quali gli articoli merce sono imballati.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Anagrafiche Centrali</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le anagrafiche centrali dei dati che sono generalmente statiche.  Dati come le ubicazioni geografiche o gli articoli merce possono essere considerati come dati anagrafici centrali. Il processo di allineamento dei dati è lo scambio, a monte, tra i partner commerciali delle ubicazioni geografiche e/o dei dati degli articoli merce.  Nel contesto GS1, i dati anagrafici centrali sono riferiti mediante chiavi di identificazione GS1; Il GLN – il numero di ubicazione globale, e il GTIN – il codice prodotto globale.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Etichetta Logistica</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un’etichetta logistica è stata applicata su ogniuno dei colli dove gli SSCC sono utilizzati e rappresentati con numeri in chiaro, dettagli relativi all’indirizzo e codice a barre GS1 128.  NB quando multipli SSCC vengono applicati a unità logistiche su un collo, è necessario che venga applicata un’etichetta logistica GS1 sulla parte esteriore del collo.  Le SSCC subordinate sulle unità logistiche individuali dovrebbero essere imballate in modo da non essere visibili ad occhio nudo (in questo scenario). Per una descrizione dettagliata sul come applicare gli SSCC e l’etichetta logistica GS1 vedasi il link; <a href="http://www.gs1.eu/?page=&amp;tudasbazis=60&amp;lister=26" class="bare">http://www.gs1.eu/?page=&amp;tudasbazis=60&amp;lister=26</a>
+In Italia viene denominata comunemente “segnacollo” l’etichetta logistica posta sul collo o sul pallet.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueprocessi-e-scenari-tipici"><a class="anchor" href="#trueprocessi-e-scenari-tipici"></a>3. Processi e scenari tipici</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="truelegenda-per-i-diagrammi-bpmn"><a class="anchor" href="#truelegenda-per-i-diagrammi-bpmn"></a>3.1. Legenda per i diagrammi BPMN</h3>
+<div class="paragraph">
+<p>I diagrammi sono espressi nella notazione BPMN.  Il diagramma sottostante serve come spiegazione dei diagrammi utilizzati successivamente nella descrizione del processo.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="C:/IMG_PEPPOL/fig10.JPG" alt="C:\IMG PEPPOL\fig10.JPG">
+</div>
+</div>
+<div class="paragraph">
+<p>La sezione seguente e i diagrammi mostrano la coreografia del processo di business che coinvolge varie parti.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueprocesso-semplice-due-parti-coinvolte"><a class="anchor" href="#trueprocesso-semplice-due-parti-coinvolte"></a>3.2. Processo semplice – due parti coinvolte</h3>
+<div class="paragraph">
+<p>In seguito alla stipula di un contratto di acquisto il Fornitore, nel ruolo dello Speditore, consegna o fornisce la merce ordinata o i servizi al Cliente, che ha il ruolo del Consegnatario.</p>
+</div>
+<div class="paragraph">
+<p><mark><strong>TBD img diagramma, non anora presente in PEPPOL</strong></mark></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueprocesso-pi-avanzato-uso-del-trasportatore"><a class="anchor" href="#trueprocesso-pi-avanzato-uso-del-trasportatore"></a>3.3. Processo più avanzato – uso del Trasportatore</h3>
+<div class="paragraph">
+<p>Il processo più avanzato si basa su quello più semplice descritto precedentemente con l’aggiunta del Trasportatore che è responsabile per la preparazione fisica della merce per la consegna.  Questa situazione avviene tipicamente quando il fornitore ha dato in outsourcing la funzione logistica ad un’altra azienda.</p>
+</div>
+<div class="paragraph">
+<p><mark><strong>TBD img diagramma, non anora presente in PEPPOL</strong></mark></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truecasi-d-uso-tipici"><a class="anchor" href="#truecasi-d-uso-tipici"></a>3.4. Casi d’uso tipici</h3>
+<div class="sect3">
+<h4 id="truecaso-d-uso-1-spedizione-semplice"><a class="anchor" href="#truecaso-d-uso-1-spedizione-semplice"></a>3.4.1. Caso d’uso 1 – Spedizione semplice</h4>
+<div class="paragraph">
+<p>Questo caso d’uso è una spedizione semplice dove non viene usata alcuna unità logistica nel Documento di Trasporto. Vi sono solo due parti (soggetti giuridici) in questo caso.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nr. Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nome Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spedizione Semplice</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Descrizione Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Questo caso d’uso è una spedizione semplice dove non viene usata alcuna unità logistica nel Documento di Trasporto. Vi sono solo due parti (soggetti giuridici) in questo caso.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parti coinvolte</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Speditore (In UBL: DespatchSupplierParty) (stesso soggetto giuridico del Fornitore/Venditore in questo caso)
+</p><p class="tableblock">Consegnatario (In UBL: DeliveryCustomerParty) (stesso soggetto giuridico del Cliente/Acquirente in questo caso)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Assunzioni</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1. Il Venditore ha ricevuto un ordine dall’Acquirente con
+</p><p class="tableblock">    a. 2 righe (2 articoli)
+</p><p class="tableblock">    b. Da consegnare ad un singolo indirizzo di consegna
+</p><p class="tableblock">    c. Allo stesso tempo.
+</p><p class="tableblock">2.	Il Venditore ha accettato l’ordine senza modifiche
+</p><p class="tableblock">3.	Lo Speditore evade l’ordine completo come accettato</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Il flusso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il Venditore preleva gli articoli ordinati
+</p><p class="tableblock">2.	Il Venditore dispone gli articoli in casse
+</p><p class="tableblock">3.	Lo Speditore crea un Messaggio di Avviso di Spedizione
+</p><p class="tableblock">4.	Lo Speditore invia il Messaggio di Avviso di Spedizione al Consegnatario
+</p><p class="tableblock">5.	Il Consegnatario riceve il messaggio di Avviso di Spedizione
+</p><p class="tableblock">6.	Il Consegnatario utilizza il contenuto dell’Avviso di Spedizione per registrare l’accettazione
+</p><p class="tableblock">    a.	Due righe di spedizione, due articoli (Nessuna unità logistica nel messaggio)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Risultato</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il messaggio dell’Avviso di Spedizione ha aiutato il Consegnatario a preparare l’accettazione
+</p><p class="tableblock">    a.	Allo stesso tempo
+</p><p class="tableblock">    b.	Nel luogo corretto (indirizzo)
+</p><p class="tableblock">2.	Il messaggio dell’Avviso di Spedizione ha aiutato il Consegnatario nella registrazione dell’accettazione per identificare:
+</p><p class="tableblock">    a.	L’ordine
+</p><p class="tableblock">    b.	Le righe d’ordine
+</p><p class="tableblock">    c.	Gli articoli
+</p><p class="tableblock">    d.	La quantità evasa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio XML</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><mark><strong>TBD</strong></mark></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="truecaso-d-uso-2-spedizione-semplice-con-quantit-inevasa"><a class="anchor" href="#truecaso-d-uso-2-spedizione-semplice-con-quantit-inevasa"></a>3.4.2. Caso d’uso 2 – Spedizione semplice con quantità inevasa</h4>
+<div class="paragraph">
+<p>Questo caso d’uso è un semplice Documento di Trasporto (DDT) dove non ci sono unità logistiche, ma una quantità inevasa a livello di riga. Ci sono vari esempi di utilizzo per la quantità inevasa e le motivazioni relative. Vi sono quattro parti (soggetti giuridici) in questo caso.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nr. Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nome Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spedizione Semplice con quantità inevasa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Descrizione Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Questo caso d’uso è un semplice Documento di Trasporto (DDT) dove non ci sono unità logistica, ma una quantità inevasa a livello di riga. Ci sono vari esempi di utilizzo per la quantità inevasa e le motivazioni relative. Vi sono quattro parti (soggetti giuridici) in questo caso.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parti coinvolte</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Acquirente (In UBL: BuyerCustomerParty)
+</p><p class="tableblock">Venditore (In UBL: SellerSupplierParty)
+</p><p class="tableblock">Speditore (In UBL: DespatchSupplierParty) (Soggetto giuridico diverso dal Venditore in questo caso)
+</p><p class="tableblock">Consegnatario (In UBL: DeliveryCustomerParty) (Soggetto giuridico diverso dall’Acquirente in questo caso)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Assunzioni</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il Venditore ha ricevuto un ordine dall’Acquirente con
+</p><p class="tableblock">    a.	5 righe (5 diversi articoli)
+</p><p class="tableblock">    b.	Da consegnare ad un singolo indirizzo di consegna
+</p><p class="tableblock">    c.	Allo stesso tempo.
+</p><p class="tableblock">2.	Il Venditore ha accettato l’ordine senza modifiche
+</p><p class="tableblock">3.	Lo Speditore non può evadere l’ordine completo come accettato
+</p><p class="tableblock">4.	La prima riga contiene la quantità ordinata
+</p><p class="tableblock">5.	La seconda riga contiene la consegna di 6 dei 10 articoli ordinati.
+I rimanenti 4 articoli saranno consegnati in un’altra Spedizione
+</p><p class="tableblock">6.	La terza linea contiene la consegna di 6 dei 10 articoli ordinati. I rimanenti 4 articoli non-saranno consegnati
+</p><p class="tableblock">7.	La quarta riga contiene la consegna di 6 dei 10 articoli. 3 articoli saranno consegnati in un’altra Spedizione e 1 articolo non sarà consegnato
+</p><p class="tableblock">8.	La quinta riga contiene una consegna di 12 invece dei 10 articoli ordinati</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Il flusso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il Venditore preleva gli articoli ordinati
+</p><p class="tableblock">2.	Il Venditore dispone gli articoli in casse
+</p><p class="tableblock">3.	Lo Speditore crea un messaggio di Avviso di Spedizione
+</p><p class="tableblock">4.	Lo Speditore invia il messaggio di Avviso di Spedizione al Cliente
+</p><p class="tableblock">5.	Il Consegnatario riceve il messaggio di Avviso di Spedizione
+</p><p class="tableblock">6.	Il Consegnatario utilizza il contenuto del messaggio di Avviso Spedizione per registrare l’accettazione.
+</p><p class="tableblock">    a.	Cinque righe della spedizione con articoli differenti, ma una parte degli articoli relativa alle righe 2-5 è sia inevasa o non può essere consegnata affatto. (Il messaggio non utilizza alcuna unità logistica)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Risultato</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il messaggio di Avviso di Spedizione ha aiutato il Consegnatario a preparare l’accettazione
+</p><p class="tableblock">    a.	In tempo
+</p><p class="tableblock">    b.	Nel luogo corretto (indirizzo)
+</p><p class="tableblock">2.	Il messaggio di Avviso di Spedizione ha aiutato il Consegnatario nella registrazione dell’accettazione per identificare:
+</p><p class="tableblock">    a.	L’ordine
+</p><p class="tableblock">    b.	Le righe d’ordine
+</p><p class="tableblock">    c.	Gli articoli
+</p><p class="tableblock">    d.	La quantità evasa
+</p><p class="tableblock">    e.	La quantità inevasa da consegnare successivamente
+</p><p class="tableblock">    f.	La quantità inevasa che non verrà mai consegnata</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio XML</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><mark><strong>TBD</strong></mark></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="truecaso-d-uso-3-spedizione-con-unit-logistica-utilizzando-le-chiavi-gs1"><a class="anchor" href="#truecaso-d-uso-3-spedizione-con-unit-logistica-utilizzando-le-chiavi-gs1"></a>3.4.3. Caso d’uso 3 – Spedizione con unità logistica utilizzando le chiavi GS1</h4>
+<div class="paragraph">
+<p>Questo caso d’uso rappresenta l’uso più specifico del Documento di Trasporto (DDT) dove vengono applicate al suo interno diverse chiavi GS1 per identificare diverse entità nel documento, come; Parti di business, Endpoint, Shipment id, consignment id, logistic unit id ed identificatori dei prodotti.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nr. Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nome Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Documento di Trasporto con unità logistica e uso di chiavi GS1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Descrizione Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Descrive un processo completo per cui uno Speditore genera un Documento di Trasporto basato su informazioni relative all’ordine e ai prodotti.
+</p><p class="tableblock">Il Documento di Trasporto (DDT) abilita il Fornitore / Trasportatore a fornire informazioni dettagliati sul contenuto di una spedizione e permette all’Acquirente di riconciliare, o confermare, la spedizione fisica a fronte dell’ordine; esso fornisce una copia del dettaglio di imballaggio della spedizione e la composizione della consegna.
+</p><p class="tableblock">Il Documento di Trasporto è inviato dallo Speditore al Consegnatario quando la merce viene inviata.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parti coinvolte</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lo Speditore (In UBL: DespatchSupplierParty) (In questo caso è soggetto giuridico diverso dal Venditore)
+</p><p class="tableblock">Venditore (In UBL: SellerSupplierParty)
+</p><p class="tableblock">Consegnatario (In UBL: DeliveryCustomerParty) (In questo caso è soggetto giuridico diverso dall’Acquirente)
+</p><p class="tableblock">Acquirente (In UBL: BuyerCustomerParty)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Pre condizioni</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allineamento delle anagrafiche centrali con ubicazioni (GLNs) e prodotti (GTINs).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Post condizioni</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il Documento di Trasporto è ricevuto dal destinatario della merce.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Assunzioni</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a.	L’Avviso di Spedizione ha un ID di spedizione (GSIN) assegnato dal venditore
+</p><p class="tableblock">b.	L’Avviso di Spedizione ha un ID di consegna che è stato assegnato dal trasportatore (GINC)
+</p><p class="tableblock">c.	Un luogo di consegna (no cross-docking) che è identificato da un GLN.
+</p><p class="tableblock">d.	Le quattro righe di spedizione sono ciascuna una unità ordinabile – un GTIN.
+</p><p class="tableblock">e.	Due unità ordinate (GTIN) sono imballate in ogni pallet.
+</p><p class="tableblock">f.	Ci sono due pallet nella spedizione.
+</p><p class="tableblock">g.	Ad ogni pallet standard è assegnata un’etichetta logistica (SSCC) identificativa.
+</p><p class="tableblock">h.	Un’etichetta logistica è stata applicate ad ognuno dei pallet dove l’SSCC è usato e rappresentato con numeri in chiaro, dettagli sull’indirizzo e codice a barre GS1 128
+</p><p class="tableblock"><mark><strong>TBD</strong> image</mark></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Il flusso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il Venditore ha accettato l’ordine senza modifiche.
+</p><p class="tableblock">1.	Il Venditore preleva la merce ordinata
+</p><p class="tableblock">2.	La merce ordinata consiste di un pallet ogni 2 righe di articoli
+ordinati.
+</p><p class="tableblock">3.	Lo Speditore carica la merce per il trasporto.
+</p><p class="tableblock">4.	Lo Speditore invia l’Avviso di Spedizione (DDT) al Consegnatario
+</p><p class="tableblock">5.	Il Consegnatario receve il messaggio di Avviso di Spedizione
+</p><p class="tableblock">6.	Il Consegnatario usa il contenuto del messaggio di Avviso di Spedizione per registrare l’accettazione.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Risultato</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il messaggio di Avviso di Spedizione ha aiutato il Consegnatario a preparare l’accettazione della merce:
+</p><p class="tableblock">a.	In tempo
+</p><p class="tableblock">b.	Nel luogo corretto (indirizzo)
+</p><p class="tableblock">2.	L’Avviso di Spedizione ha aiutato il Consegnatario nella registrazione dell’accettazione per identificare:
+</p><p class="tableblock">a.	L’ordine
+</p><p class="tableblock">b.	Le righe d’ordine
+</p><p class="tableblock">c.	Le unità logistiche
+</p><p class="tableblock">d.	La descrizione della merce
+</p><p class="tableblock">e.	La quantità evasa
+</p><p class="tableblock">f.	Le Parti coinvolte nel processo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio XML</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><mark><strong>TBD</strong></mark></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Di seguito si forniscono ulteriori dettagli e chiarimenti sulle varie chiavi e identificatori utilizzati in questo Caso d’uso, come pure i benfici che gli implementatori possono ottenere quando li usano. Infine vi sono due immagini che chiariscono la relazione che intercorre tra gli identificatori GSIN e GINC.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Di seguito, una panoramica e una spiegazione delle chiavi usate nel caso d&#8217;uso.</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GLN</strong>:
+</p><p class="tableblock">Global location number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Speditore - Identificazione organizzativa.
+</p><p class="tableblock">Speditore - Identificazione Endpoint
+</p><p class="tableblock">Consegnatario - Identificazione organizzativa.
+</p><p class="tableblock">Consegnatario - Identificazione Endpoint
+</p><p class="tableblock">Acquirente - Identificazione organizzativa.
+</p><p class="tableblock">Acquirente - Identificazione Endpoint.
+</p><p class="tableblock">Venditore - Identificazione organizzativa
+</p><p class="tableblock">Venditore - Identificazione Endpoint.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SSCC</strong>:
+</p><p class="tableblock">Serial Shipping Container Code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ad ogni unità logistica viene assegnata una SSCC.
+</p><p class="tableblock">L’SSCC è una chiave identificativa GS1 per un articolo di qualsiasi composizione utilizzato per il trasporto e/o deposito che necessita di essere gestito attraverso la catena di fornitura. L’SSCC è assegnato per la durata del trasporto dell’articolo merce ed è un elemento obbligatorio nell’Etichetta Logistica di GS1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GSIN</strong>:
+</p><p class="tableblock">Global Shipment Identification Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Identificativo della Spedizione. Un numero di spedizione per il Documento di Trasporto.
+</p><p class="tableblock">A livello documento questo specifica il numero assegnato all’intera Spedizione, che può essere formata da diverse consegne.
+</p><p class="tableblock">•	Numero assegnato dal venditore per identificare un raggruppamento logico di unità logistiche o di trasporto che sono tipicamente assemblate dal venditore per il trasporto di una spedizione.
+</p><p class="tableblock">•	È allineato al requisito del Unique Consignment Reference (UCR) del World Customs Organisation (WCO).
+</p><p class="tableblock">È approvato da ISO/IEC 15459 (ISO License Plate).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GINC</strong>:
+</p><p class="tableblock">Global Identification Number of Consignment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un numero di consegna per il Documento di Trasporto
+</p><p class="tableblock">•	È utilizzato per identificare il raggruppamento logico di unità logistiche o di trasporto che sono assemblate per il trasporto associato ad un documento di trasporto.
+</p><p class="tableblock">•	È utilizzato per identificare il raggruppamento logico di unità logistiche durante uno specifico viaggio nel quale ci potrebbbero essere molteplici fasi di consegna.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GTIN</strong>:
+</p><p class="tableblock">Global trade Item Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ogni articolo ordinato come un GTIN.
+</p><p class="tableblock">Identificazione del Prodotto.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock"><strong>Di seguito, una panoramica e una spiegazione delle chiavi usate nel caso d&#8217;uso.</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GTIN</strong>:
+</p><p class="tableblock">Global trade Item Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•	La merce corretta e i dati associati sono stati ottenuti grazie ad un allineamento dei dati a monte.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GLN</strong>:
+</p><p class="tableblock">Global location number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•	Dati di ubicazione precisi e fidati sono stati ottenuti attraverso l’allineamento con i registri anagrafici principali di GS1.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>SSCC</strong>:
+</p><p class="tableblock">Serial Shipping Container Code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•	Le unità logistiche vengono identificate individualmente mediante l’SSCC (Serial Shipping Container Code)
+</p><p class="tableblock">•	I dettagli sul’articolo merce vengono acceduti attraverso la lettura di codici a barre o leggendo (EPC/RFID) l’SSCC posto sull’unità logistica.
+</p><p class="tableblock">•	L’uso dell’SSCC su di una unità logistica è soggetto a regole, cioè che multiple SSCC visibili su di una unità logistica possono essere solo utilizzate a scopo di transito.
+</p><p class="tableblock">o	Se due o più SSCC vengono applicate su di una unità logistica, le unità associate ad una data SSCC devono essere avvolte o legate insieme a formare un’unità logistica individuale.
+</p><p class="tableblock">o	Multipli SSCC possono essere applicate su unità individuali di una unità logistica per il successivo cross-docking ma queste DEVONO essere avvolte in modo da non essere visibili.
+</p><p class="tableblock">•	Inoltre, un’etichetta logistica principale deve essere applicata all’unità logistica complessiva per la consegna al centro di distribuzione.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GSIN</strong>:
+</p><p class="tableblock">Global Shipment Identification Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•	Un numero di spedizione riconosciuto a livello globale utilizzato per identificare univocamente la spedizione nel suo complesso come specificato dal venditore.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>GINC</strong>:
+</p><p class="tableblock">Global Identification Number of Consignment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•	Un numero di consegna riconosciuto a livello globale utilizzato per identificare univocamente la consegna come specificato dallo spedizioniere.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Chiarimenti supplementari sull’uso del GSIN e del GINC.</p>
+</div>
+<div class="paragraph">
+<p><em>Assemblaggio delle chiavi:</em></p>
+</div>
+<div class="paragraph">
+<p><mark><strong>TBD</strong> img</mark></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecaso-d-uso-4-spedizione-con-indicazione-del-peso-lunghezza-e-o-volume-degli-articoli-merce"><a class="anchor" href="#truecaso-d-uso-4-spedizione-con-indicazione-del-peso-lunghezza-e-o-volume-degli-articoli-merce"></a>3.4.4. Caso d’uso 4 – Spedizione con indicazione del peso, lunghezza e/o volume degli articoli merce</h4>
+<div class="paragraph">
+<p>Questo caso d’uso dimostra l’uso del Documento di Trasporto, dove il Venditore spedisce degli articoli prezzati in base al peso, lunghezza e/o volume (es. insalata, carne).</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nr. Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nome Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spedizione con articoli descritti mediante il peso, la lunghezza e/o il volume (es. verdure, carne)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Descrizione Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Questo caso d’uso dimostra l’uso del Documento di Trasporto (DDT), dove il Venditore spedisce degli articoli prezzati in base al peso, lunghezza e/o volume. Quindi, il peso, la lunghezza o il volume degli articoli sono importanti.  Le unità logistiche vengono utilizzate per indicare come sono imballati gli gli articoli.
+</p><p class="tableblock">Questo caso d’uso dimostra inoltre:
+</p><p class="tableblock">•	l’uso di identificatori per diverse parti (GLN ed il numero di organizzazione Svedese)
+</p><p class="tableblock">•	l’uso di ItemBestBeforeDate, ItemExpiryDate, ItemBatchNumber, ItemSerialNumbers,
+</p><p class="tableblock">•	l’uso delle chiavi SSCC,
+</p><p class="tableblock">•	l’uso dell’ItemSellersIdentifier e dell’ItemStandardIdentifier (GTIN).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parti coinvolte</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lo Speditore (In UBL: DespatchSupplierParty) (In questo caso è lo stesso soggetto giuridico del Fornitore/Venditore)
+</p><p class="tableblock">Il Consegnatario (In UBL: DeliveryCustomerParty) (In questo caso è lo stesso soggetto giuridico del Cliente/Acquirente)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Assunzioni</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il Venditore ha ricevuto un ordine dall’Acquirente con:
+</p><p class="tableblock">a.	4 righe (4 articoli) che sono prezzate in base al peso
+</p><p class="tableblock">b.	Da consegnare ad un singolo indirizzo di consegna
+</p><p class="tableblock">c.	Allo stesso tempo.
+</p><p class="tableblock">2.	Il Venditore ha accettato l’ordine senza modifiche.
+</p><p class="tableblock">3.	Il Venditore consegna l’ordine completo come accettato.
+</p><p class="tableblock">4.	Gli articoli sono suddivisi in quattro unità logistiche diverse.
+</p><p class="tableblock"><mark><strong>TBD</strong> image</mark></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Il flusso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il Venditore preleva gli articoli ordinati
+</p><p class="tableblock">2.	Il Venditore pesa gli articoli merce.
+</p><p class="tableblock">3.	Il Venditore carica gli articoli in unità logistiche (Scatole)
+</p><p class="tableblock">4.	Lo Speditore crea il messaggio di Avviso di Spedizione
+</p><p class="tableblock">5.	Lo Speditore invia il messaggio di Avviso di Spedizione al Consegnatario
+</p><p class="tableblock">6.	Il Consegnatario riceve il messaggio di Avviso di Spedizione
+</p><p class="tableblock">7.	Il Consegnatario usa il contenuto dell’Avviso di Spedizione per registrare l’accettazione.
+</p><p class="tableblock">a.	Quattro righe di spedizione, quattro articoli.
+</p><p class="tableblock">b.	Le unità logistiche sono identificate mediante identificatori SSCC
+</p><p class="tableblock">c.	Il peso consegnato è utilizzato nell’accettazione (per verifica)
+</p><p class="tableblock">8.	Il Consegnatario usa il contenuto del messaggio di Avviso Spedizione per lo stoccaggio e la movimentazione.
+</p><p class="tableblock">a.	Gli articoli possono essere stoccati per BestBeforeDate o ExpiryDate
+</p><p class="tableblock">b.	Gli articoli possono essere stoccati per lotto e/o numero seriale
+</p><p class="tableblock">c.	Gli articoli possono essere movimentati in base al peso della unità logistica</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Risultato</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il messaggio di Avviso di Spedizione ha aiutato il Consegnatario a preparare l’accettazione
+</p><p class="tableblock">a.	In tempo
+</p><p class="tableblock">b.	Nel luogo corretto (indirizzo)
+</p><p class="tableblock">c.	Con strumenti di stoccaggio appropriati
+</p><p class="tableblock">2.	Il messaggio di Avviso di Spedizione ha aiutato il Consegnatario nel processo di registrazione dell’accettazione per identificare
+</p><p class="tableblock">a.	L’ordine
+</p><p class="tableblock">b.	Le righe d’ordine
+</p><p class="tableblock">c.	Le unità logistiche
+</p><p class="tableblock">d.	Gli articoli
+</p><p class="tableblock">e.	La quantità evasa/peso</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio XML</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><mark><strong>TBD</strong></mark></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="truecaso-d-uso-5-spedizione-avanzata-con-l-uso-della-maggior-parte-delle-informazioni-di-business"><a class="anchor" href="#truecaso-d-uso-5-spedizione-avanzata-con-l-uso-della-maggior-parte-delle-informazioni-di-business"></a>3.4.5. Caso d’uso 5 – Spedizione avanzata con l’uso della maggior parte delle informazioni di business</h4>
+<div class="paragraph">
+<p>Questo caso d’uso è relativamente più complesso e dimostra l’uso della maggior parte dei termini di business disponibili nel messaggio del Documento di Trasporto.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nr. Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nome Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Documento di Trasporto (DDT) avanzato con dimostrazione della maggior parte dei termini di business</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Descrizione Caso d’uso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Questo caso d’uso rappresenta un uso molto complesso del Documento di Trasporto perchè dimostra l’uso di tutti i termini di business esistenti nel messaggio del Documento di Trasporto elettronico.
+</p><p class="tableblock">Questo caso d’uso dimostra anche diversi utilizzi di:
+</p><p class="tableblock">•	Identificativo delle Parti di business
+</p><p class="tableblock">•	Identificativo degli articoli
+</p><p class="tableblock">•	Imballaggi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Parti coinvolte</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Acquirente (In UBL: BuyerCustomerParty)
+</p><p class="tableblock">Venditore (In UBL: SellerSupplierParty)
+</p><p class="tableblock">Speditore (In UBL: DespatchSupplierParty) (In questo caso d’uso è un soggetto giuridico diverso dal Venditore)
+</p><p class="tableblock">Consegnatario (In UBL: DeliveryCustomerParty) (In questo caso d’uso è un soggetto giuridico diverso dall’Acquirente)
+</p><p class="tableblock">Committente (In UBL: OriginatorCustomerParty)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Assunzioni</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il Venditore e lo Speditore sono soggetti giuridici diversi.
+</p><p class="tableblock">2.	L’Acquirente e il Consegnatario sono soggetti giuridici diversi.
+</p><p class="tableblock">3.	Il Venditore ha ricevuto un ordine dall’Acquirente
+</p><p class="tableblock">a.	5 righe d’ordine (5 articoli).
+</p><p class="tableblock">b.	La riga d’ordine 4 non è consegnata con questa spedizione.
+</p><p class="tableblock">c.	La seconda riga della Spedizione contiene una consegna di 6 dei 10 articoli ordinati. I rimanenti 4 articoli saranno consegnati in un’altra spedizione.
+</p><p class="tableblock">d.	La terza riga della Spedizione è basata sul peso.
+</p><p class="tableblock">e.	Ordine da consegnare ad un unico indirizzo di consegna.
+</p><p class="tableblock">f.	Allo stesso stempo.
+</p><p class="tableblock">g.	La riga 4 della Spedizione contiene articoli pericolosi.
+</p><p class="tableblock">4.	Il Venditore ha accettato l’ordine senza modifiche.
+</p><p class="tableblock">5.	Lo Speditore è responsabile per la consegna e utilizza un trasportatore per il trasporto fisico.
+</p><p class="tableblock">6.	Gli articoli nella prima e seconda riga sono nella stessa unità logistica.
+</p><p class="tableblock">7.	Gli articoli nella riga tre e quatto sono in unità logistiche separate.
+</p><p class="tableblock"><mark><strong>TBD</strong> image</mark></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Il flusso</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il Venditore preleva gli articoli ordinati
+</p><p class="tableblock">2.	Il Venditore carica gli articoli in unità logistiche (Scatole, casse, pallet, etc..)
+</p><p class="tableblock">3.	Lo Speditore identifica tutti i dettagli della spedizione
+</p><p class="tableblock">4.	Il trasportatore prende la merce per iniziare il trasporto
+</p><p class="tableblock">5.	Lo Speditore crea il messaggio di Avviso Spedizione
+</p><p class="tableblock">6.	Lo Speditore invia il messaggio di Avviso Spedizione al Consegnatario
+</p><p class="tableblock">7.	Il Consegnatario può usare l’ID di tracking per tracciare la spedizione
+</p><p class="tableblock">8.	Il Consegnatario riceve il messaggio di Avviso Spedizione
+</p><p class="tableblock">9.	Il trasportatore consegna la merce al Consegnatario
+</p><p class="tableblock">10.	Il Consegnatario usa il contenuto del messaggio di Avviso Spedizione per la registrazione dell’accettazione.
+</p><p class="tableblock">a.	Quattro righe di Spedizione, Quattro articoli.
+</p><p class="tableblock">b.	Le unità logistiche sono identificate mediante identificatori SSCC
+</p><p class="tableblock">11.	Il Consegnatario usa il contenuto del messaggio di Avviso Spedizione per stoccaggio e movimentazione.
+</p><p class="tableblock">a.	Le unità logistiche con articoli pericolosi vengono identificate
+</p><p class="tableblock">b.	Gli articoli possono essere stoccati per best before date, per lotto e/o numero seriale
+</p><p class="tableblock">c.	Gli articoli possono essere movimentati in base al peso della unità logistica</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Risultato</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.	Il messaggio di Avviso Spedizione ha aiutato il Consegnatario a preparare l’accettazione
+</p><p class="tableblock">a.	In tempo
+</p><p class="tableblock">b.	Nel luogo giusto (indirizzo)
+</p><p class="tableblock">c.	Con strumenti di stoccaggio appropriati
+</p><p class="tableblock">d.	In modo sicuro
+</p><p class="tableblock">2.	Il messaggio di Avviso di Spedizione ha aiutato il Consegnatario nel processo di registrazione dell’accettazione per identificare
+</p><p class="tableblock">a.	L’ordine
+</p><p class="tableblock">b.	Le righe d’ordine
+</p><p class="tableblock">c.	Le unità logistiche
+</p><p class="tableblock">d.	Gl articoli
+</p><p class="tableblock">e.	La quantità evasa/peso</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio XML</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><mark><strong>TBD</strong></mark></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truesemantica-della-tipologia-di-dati-semantic-datatype"><a class="anchor" href="#truesemantica-della-tipologia-di-dati-semantic-datatype"></a>4. Semantica della tipologia di dati (Semantic datatype)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La semantica della tipologia di dati viene utilizzata per colmare il divario tra i concetti semantici espressi dagli elementi informativi e l&#8217;implementazione tecnica. La semantica della tipologia di dati definisce il dominio dei valori consentiti e qualsiasi componente aggiuntiva di informazioni (attributi), necessari a garantire una corretta interpretazione.</p>
+</div>
+<div class="sect2">
+<h3 id="truetipi-primitivi"><a class="anchor" href="#truetipi-primitivi"></a>4.1. Tipi primitivi</h3>
+<div class="paragraph">
+<p>Il contenuto semantico della tipologia di dati può essere espresso tra le seguenti tipologie primitive. I tipi primitivi sono stati definiti dalla normativa <a href="https://www.iso.org/standard/61433.html">ISO 15000-5:2014</a>, Annex A.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Definizione</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Binario</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un insieme di sequenze a lunghezza finita di cifre binarie</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Data</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time point rappresenta un giorno di calendario su una scala temporale formata da una data iniziale ed una successione di calendario <a href="https://www.iso.org/standard/40874.html ">ISO 8601:2004</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Decimale</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un sottoinsieme di numeri reali che può essere rappresentato da numeri decimali</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Stringa</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Una sequenza finita di caratteri</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="truesemantica-della-tipologia-di-dati"><a class="anchor" href="#truesemantica-della-tipologia-di-dati"></a>4.2. Semantica della tipologia di dati</h3>
+<div class="paragraph">
+<p>Le differenze semantiche della tipologia di dati sono descritte nelle tabelle riportate di seguito, dove vengono denotate le diverse caratteristiche: attributo, formato ed ordine di grandezza decimale. Viene fatto riferimento alla normativa <a href="https://www.iso.org/standard/61433.html ">ISO 15000-5: 2014</a>.
+Quando si utilizza un documento d’istanza, ciascun elemento di dati contiene i dati. Nelle tabelle di seguito riportate, viene identificato come il “contenuto”. Ogni volta che viene utilizzato questo termine di business, esso deve essere necessariamente presente nel contenuto poiché è sempre obbligatorio.</p>
+</div>
+<div class="sect3">
+<h4 id="trueimporto"><a class="anchor" href="#trueimporto"></a>4.2.1. Importo</h4>
+<div class="paragraph">
+<p>Un importo indica un valore numerico monetario. La valuta dell’importo è definito come un termine finanziario distinto.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>L’importo viene espresso come numero con al più due cifre decimali</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decimale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10000.25</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="trueimporto-del-prezzo"><a class="anchor" href="#trueimporto-del-prezzo"></a>4.2.2. Importo del prezzo</h4>
+<div class="paragraph">
+<p>Un importo del prezzo indica un valore numerico monetario per gli elementi di dati che contengono i prezzi degli articoli che possono essere moltiplicati per le loro quantità. La valuta dell’importo è definito come un termine finanziario distinto.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>L’importo unitario del prezzo non impone restrizioni sul numero di cifre decimali utilizzate, a differenza della tipologia definita precedente (Importo).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decimale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10000.12345</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="truepercentuale"><a class="anchor" href="#truepercentuale"></a>4.2.3. Percentuale</h4>
+<div class="paragraph">
+<p>Le percentuali sono date come frazioni centesimali (%) cioè il valore di 34,78 % in termini percentuali è dato come 34,78.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Nessuna restrizione sul numero di cifre decimali utilizzate per le percentuali</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decimale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">34.7812</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="truequantit"><a class="anchor" href="#truequantit"></a>4.2.4. Quantità</h4>
+<div class="paragraph">
+<p>Le quantità vengono utilizzate per indicare un numero unitario per gli articoli. Il codice per l’unità di misura è definito come un termine finanziario distinto.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Nessuna restrizione sul numero di cifre decimali utilizzate per le quantità</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decimale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10000.1234</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="truecodifiche"><a class="anchor" href="#truecodifiche"></a>4.2.5. Codifiche</h4>
+<div class="paragraph">
+<p>Le codidiche vengono utilizzate per specificare i valori consentiti degli elementi e per <mark>lists of options</mark>. Il codice è differente dall’identificatore in quanto i valori consentiti hanno significati standardizzati che possono essere riconosciuti dal destinatario.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>I codici devono essere inseriti esattamente come indicato nella codifica di riferimento selezionata</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decimale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abc123</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="trueidentificatore"><a class="anchor" href="#trueidentificatore"></a>4.2.6. Identificatore</h4>
+<div class="paragraph">
+<p>Gli identificatori (IDs) vengono emessi dal mittente o dal destinatario di un documento o da una terza parte.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>L’utilizzo degli attributi è specificato per ogni elemento informativo.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decimale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abc:123-DEF</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Schema identificatore</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Facoltativo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stringa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GLN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Versione schema identificatore</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Facoltativo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stringa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="truedata"><a class="anchor" href="#truedata"></a>4.2.7. Data</h4>
+<div class="paragraph">
+<p>La data deve essere conforme alla rappresentazione completa del calendario come specificato dalla normativa <a href="https://www.iso.org/standard/40874.html ">ISO 8601:2004</a>, formato YYYY-MM-DD.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Le date non devono includere informazioni sul fuso orario</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2017-12-01</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="trueora"><a class="anchor" href="#trueora"></a>4.2.8. Ora</h4>
+<div class="paragraph">
+<p>L’ora deve essere conforme al formato orario esteso come specificato dalla normativa <a href="https://www.iso.org/standard/40874.html ">ISO 8601:2004</a>, formato [hh]:[mm]:[ss].</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Il tempo non deve includere informazioni sul fuso orario. La frazione decimale sui secondi non deve essere utilizzata.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">09:30:12</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="truedocumento-referenziato"><a class="anchor" href="#truedocumento-referenziato"></a>4.2.9. Documento referenziato</h4>
+<div class="paragraph">
+<p>I tipi di documento referenziato sono identificatori che sono stati assegnati ad un documento o ad una riga di documenti.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stringa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Abc:123-DEF</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="truetesto"><a class="anchor" href="#truetesto"></a>4.2.10. Testo</h4>
+<div class="paragraph">
+<p>Il testo è la formulazione di qualsiasi contenuto redatto o stampato. Potrebbero essere presenti dei troncamenti nel testo, qualsiasi troncamento dovrebbe essere preservato e rispettato dal sistema ricevente.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stringa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5% di tolleranza se pagato entro 30 giorni</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="trueoggetti-binari"><a class="anchor" href="#trueoggetti-binari"></a>4.2.11. Oggetti binari</h4>
+<div class="paragraph">
+<p>Gli oggetti binari possono essere utilizzati per descrivere i file che vengono trasmessi unitamente al documento di business. Gli allegati devono essere trasmessi insieme al documento di business. L’oggetto binario presenta due codici supplementari: un codice MIME il quale specifica il tipo MIME dell’allegato ed una denominazione del file fornito dal (o per conto del) mittente del documento di business.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Binario</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QmFzZTY0IGNvbnRlbnQgZXhhbXBsZQ==</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Codice MIME</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stringa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">image/jpeg</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Nome file</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stringa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">drawing5.jpg</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="truebooleani"><a class="anchor" href="#truebooleani"></a>4.2.12. Booleani</h4>
+<div class="paragraph">
+<p>Gli indicatori booleani vengono utilizzati per specificare i due valori consentiti, vero o falso. Tutti gli elementi di tipo booleano, devono avere come valore vero oppure falso.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Componente</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Utilizzo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo primitivo</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Esempio</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Contenuto</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Obbligatorio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Stringa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truecodifiche-di-riferimento"><a class="anchor" href="#truecodifiche-di-riferimento"></a>5. Codifiche di riferimento</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="truecodifiche-di-riferimento-per-elementi-codificati"><a class="anchor" href="#truecodifiche-di-riferimento-per-elementi-codificati"></a>5.1. Codifiche di riferimento per elementi codificati</h3>
+<div class="paragraph">
+<p>Qualsiasi elemento con la semantica del tipo di dati = codice, può richiedere l’uso di una codifica di riferimento specifica (o un valore fissato). Le codifiche di riferimento applicabili sono disponibili nella <a href="http://test-docs.peppol.eu/poacc/upgrade-3/codelist/">sezione Code list</a>. In questa sezione, è possibile trovare i codici validi, i loro nomi e la descrizione. Inoltre, è possibile trovare anche i link per chiarire dove la codifica di riferimento viene utilizzata se nella transizione o in altri documenti PEPPOL BIS v3.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truecodifica-di-riferimento-per-identificatori"><a class="anchor" href="#truecodifica-di-riferimento-per-identificatori"></a>5.2. Codifica di riferimento per identificatori</h3>
+<div class="sect3">
+<h4 id="trueidentificatori-delle-parti-e-schema-identificatore-delle-parti-legali-registrate"><a class="anchor" href="#trueidentificatori-delle-parti-e-schema-identificatore-delle-parti-legali-registrate"></a>5.2.1. Identificatori delle parti e schema identificatore delle parti legali registrate</h4>
+<div class="paragraph">
+<p>Tutti gli identificatori delle parti (cac:PartyIdentification/cbc:ID) e gli identificatori delle parti legali registrate (cac:PartyLegalEntity/cbc:CompanyID) hanno uno schema identificatore facoltativo dell’attributo (@schemeID). Se utilizzato, il valore deve essere scelto tra i codici presenti nella <a href="http://test-docs.peppol.eu/poacc/upgrade-3/codelist/ICD/">lista ICD</a>.</p>
+</div>
+<div class="exampleblock">
+<div class="title">Example 1. Utilizzo in cac:PartyIdentification</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">    &lt;cac:PartyIdentification&gt;
+     &lt;cbc:ID schemeID="0088"&gt;5790000435968&lt;/cbc:ID&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;/cac:PartyIdentification&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>L’attributo schemeID è facoltativo, ma se utilizzato, i codici devono essere dei <a href="http://test-docs.peppol.eu/poacc/upgrade-3/codelist/ICD/">codici ICD</a>.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueidentificativo-dello-schema-identificatore-dell-indirizzo-elettronico"><a class="anchor" href="#trueidentificativo-dello-schema-identificatore-dell-indirizzo-elettronico"></a>5.2.2. Identificativo dello schema identificatore dell’indirizzo elettronico</h4>
+<div class="paragraph">
+<p>Tutti gli identificatori degli indirizzi elettronici (cbc:EndpointID/@schemeID) utilizzano una codifica di riferimento che deve essere gestita direttamente da CEF.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Questa codifica di riferimento non è ancora disponibile. Utilizzare la PEPPOL policy per gli identificatori fino a quando la codifica di riferimento non sarà resa disponibile.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="exampleblock">
+<div class="title">Example 2. Utilizzo in cbc:EndpointID</div>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">    &lt;cbc:EndpointID schemeID="IT:VAT"&gt;IT01234567890&lt;/cbc:EndpointID&gt; <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>L’attributo schemeID è obbligatorio</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truedescrizione-di-parti-selezionate-del-messaggio-di-avviso-spedizione"><a class="anchor" href="#truedescrizione-di-parti-selezionate-del-messaggio-di-avviso-spedizione"></a>6. Descrizione di parti selezionate del messaggio di Avviso Spedizione</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="trueparti-di-business"><a class="anchor" href="#trueparti-di-business"></a>6.1. Parti di business</h3>
+<div class="paragraph">
+<p>Le seguenti parti/ruoli possono essere specificate nel messaggio.  Lo stesso attore gioca più di un ruolo a seconda dei casi.</p>
+</div>
+<div class="sect3">
+<h4 id="truespeditore-mittente-despatchsupplierparty"><a class="anchor" href="#truespeditore-mittente-despatchsupplierparty"></a>6.1.1. Speditore - Mittente (DespatchSupplierParty)</h4>
+<div class="paragraph">
+<p>Lo Speditore è la persona o organizzazione che fornisce (spedisce) merce o servizi. Questo ruolo è ricoperto dal Fornitore o per suo conto. Lo Speditore è un’informazione obbligatoria.  In particolare sono obbligatori il nome e l’identificativo come da Art. 21, comma 4 del DPR n. 633/1972.  Le stesse informazioni sono richieste e verificate dall’Access Point di destinazione ai fini della riconciliazione con l’Ordine.</p>
+</div>
+<div class="listingblock">
+<div class="title">Esempio</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:DespatchSupplierParty&gt;
+        &lt;cac:Party&gt;
+                &lt;cbc:EndpointID schemeID="0184"&gt;DK87654321&lt;/cbc:EndpointID&gt;
+                &lt;cac:PartyIdentification&gt;
+                        &lt;cbc:ID schemeID="0088"&gt;7300010000001&lt;/cbc:ID&gt;
+                &lt;/cac:PartyIdentification&gt;
+                &lt;cac:PartyLegalEntity&gt;
+                        &lt;cbc:RegistrationName&gt;Sender Company&lt;/cbc:RegistrationName&gt;
+                &lt;/cac:PartyLegalEntity&gt;
+                &lt;cac:Contact&gt;
+                        &lt;cbc:Name&gt;John&lt;/cbc:Name&gt;
+                        &lt;cbc:Telephone&gt;123456789&lt;/cbc:Telephone&gt;
+                        &lt;cbc:ElectronicMail&gt;John@SenderCompany.dk&lt;/cbc:ElectronicMail&gt;
+                &lt;/cac:Contact&gt;
+        &lt;/cac:Party&gt;
+&lt;/cac:DespatchSupplierParty&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueconsegnatario-destinatario-deliverycustomerparty"><a class="anchor" href="#trueconsegnatario-destinatario-deliverycustomerparty"></a>6.1.2. Consegnatario - Destinatario (DeliveryCustomerParty)</h4>
+<div class="paragraph">
+<p>Il Consegnatario è la persona o organizzazione alla quale saranno spediti i prodotti e che ne prenderà il possesso. Questo ruolo è ricoperto dal Cliente o per suo conto. Il Consegnatario è un’informazione obbligatoria nel messaggio di Avviso Spedizione e lo è anche per legge come da Art. 21, comma 4 del DPR n. 633/1972.</p>
+</div>
+<div class="listingblock">
+<div class="title">Esempio</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:DeliveryCustomerParty&gt;
+        &lt;cac:Party&gt;
+                &lt;cbc:EndpointID schemeID="0184"&gt;DK12345678&lt;/cbc:EndpointID&gt;
+                &lt;cac:PartyIdentification&gt;
+                        &lt;cbc:ID schemeID="0088"&gt;7300010000001&lt;/cbc:ID&gt;
+                &lt;/cac:PartyIdentification&gt;
+                &lt;cac:PostalAddress&gt;
+                        &lt;cbc:StreetName&gt;Reciever Street 1&lt;/cbc:StreetName&gt;
+                        &lt;cbc:AdditionalStreetName&gt;Reciever Building&lt;/cbc:AdditionalStreetName&gt;
+                        &lt;cbc:CityName&gt;Reciever City&lt;/cbc:CityName&gt;
+                        &lt;cbc:PostalZone&gt;9000&lt;/cbc:PostalZone&gt;
+                        &lt;cbc:CountrySubentity&gt;Region A&lt;/cbc:CountrySubentity&gt;
+                        &lt;cac:AddressLine&gt;
+                                &lt;cbc:Line&gt;Gate 34&lt;/cbc:Line&gt;
+                        &lt;/cac:AddressLine&gt;
+                        &lt;cac:Country&gt;
+                                &lt;cbc:IdentificationCode&gt;DK&lt;/cbc:IdentificationCode&gt;
+                        &lt;/cac:Country&gt;
+                &lt;/cac:PostalAddress&gt;
+                &lt;cac:PartyLegalEntity&gt;
+                        &lt;cbc:RegistrationName&gt;Consignee Company&lt;/cbc:RegistrationName&gt;
+                &lt;/cac:PartyLegalEntity&gt;
+        &lt;/cac:Party&gt;
+        &lt;cac:DeliveryContact&gt;
+                &lt;cbc:Name&gt;Tim&lt;/cbc:Name&gt;
+                &lt;cbc:Telephone&gt;987654321&lt;/cbc:Telephone&gt;
+                &lt;cbc:ElectronicMail&gt;Tim@RecieverCompany.dk&lt;/cbc:ElectronicMail&gt;
+        &lt;/cac:DeliveryContact&gt;
+&lt;/cac:DeliveryCustomerParty&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueacquirente-buyercustomerparty"><a class="anchor" href="#trueacquirente-buyercustomerparty"></a>6.1.3. Acquirente (BuyerCustomerParty)</h4>
+<div class="paragraph">
+<p>L’Acquirente è la persona giuridica che acquista la merce o i servizi. Il ruolo è ricoperto dal Cliente o per suo conto.  L’Acquirente è un’informazione opzionale nel messaggio di Avviso Spedizione.</p>
+</div>
+<div class="listingblock">
+<div class="title">Esempio</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:BuyerCustomerParty&gt;
+        &lt;cac:Party&gt;
+                &lt;cac:PartyIdentification&gt;
+                        &lt;cbc:ID schemeID="0088"&gt;1251513513245&lt;/cbc:ID&gt;
+                &lt;/cac:PartyIdentification&gt;
+                &lt;cac:PartyName&gt;
+                        &lt;cbc:Name&gt;Buyer Company&lt;/cbc:Name&gt;
+                &lt;/cac:PartyName&gt;
+        &lt;/cac:Party&gt;
+&lt;/cac:BuyerCustomerParty&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truevenditore-sellersupplierparty"><a class="anchor" href="#truevenditore-sellersupplierparty"></a>6.1.4. Venditore (SellerSupplierParty)</h4>
+<div class="paragraph">
+<p>Il Venditore è la persona giuridica che vende la merce o i servizi al Cliente. Il ruolo è ricoperto dal Fornitore o per suo conto. L’informazione del Venditore è opzionale nel messaggio di Avviso Spedizione.</p>
+</div>
+<div class="listingblock">
+<div class="title">Esempio</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:SellerSupplierParty&gt;
+        &lt;cac:Party&gt;
+                &lt;cac:PartyIdentification&gt;
+                        &lt;cbc:ID schemeID="0088"&gt;1231612366324&lt;/cbc:ID&gt;
+                &lt;/cac:PartyIdentification&gt;
+                &lt;cac:PartyName&gt;
+                        &lt;cbc:Name&gt;Seller Company&lt;/cbc:Name&gt;
+                &lt;/cac:PartyName&gt;
+        &lt;/cac:Party&gt;
+&lt;/cac:SellerSupplierParty&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecommittente-originatorcustomerparty"><a class="anchor" href="#truecommittente-originatorcustomerparty"></a>6.1.5. Committente (OriginatorCustomerParty)</h4>
+<div class="paragraph">
+<p>La parte che eventualmente riceve e consuma la merce per cui conto l’Acquirente fa l’acquisto. Il Committente è un’informazione opzionale nel messaggio dell’Avviso Spedizione.</p>
+</div>
+<div class="listingblock">
+<div class="title">Esempio</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:OriginatorCustomerParty&gt;
+        &lt;cac:Party&gt;
+                &lt;cac:PartyIdentification&gt;
+                        &lt;cbc:ID schemeID="0088"&gt;1234415341925&lt;/cbc:ID&gt;
+                &lt;/cac:PartyIdentification&gt;
+                &lt;cac:PartyName&gt;
+                        &lt;cbc:Name&gt;Originator&lt;/cbc:Name&gt;
+                &lt;/cac:PartyName&gt;
+        &lt;/cac:Party&gt;
+&lt;/cac:OriginatorCustomerParty&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="true-mark-riferimento-all-ordine-mark-strong-da-approfondire-strong"><a class="anchor" href="#true-mark-riferimento-all-ordine-mark-strong-da-approfondire-strong"></a>6.2. <mark>Riferimento all’Ordine</mark> <strong>da approfondire</strong></h3>
+<div class="paragraph">
+<p>Usato per fornire riferimento all’ordine d’acquisto sul quale il Documento di Trasporto si basa e per favorirne la riconciliazione automatica. Ci possono essere molteplici avvisi di spedizione a fronte di un ordine d’acquisto.</p>
+</div>
+<div class="paragraph">
+<p>Ogni Documento di Trasporto si può riferire ad uno o più ordini.
+A seconda dei casi è possibile indicare il riferimento all’ordine in testata o dalle righe del Documento di Trasporto. I paragrafi seguenti indicano con precisione i casi possibili.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truespedizione"><a class="anchor" href="#truespedizione"></a>6.3. Spedizione</h3>
+<div class="paragraph">
+<p>Descrizione della spedizione effettiva che contiene la merce che è stata spedita.</p>
+</div>
+<div class="sect3">
+<h4 id="trueid-spedizione-vettore-informazioni-di-trasporto-consegna-ed-evasione"><a class="anchor" href="#trueid-spedizione-vettore-informazioni-di-trasporto-consegna-ed-evasione"></a>6.3.1. ID Spedizione, Vettore, informazioni di trasporto, consegna ed evasione</h4>
+<div class="paragraph">
+<p>In alcuni usi dell’Avviso Spedizione, non c’è un unico identificatore assegnato alla spedizione. Comunque, la sintassi UBL richiede che lo Shipment ID sia specificato. Conseguentemente, per poter utilizzare elementi come <em>GrossWeightMeasure</em> o <em>CarrierParty</em>, lo Shipment/ID deve essere valorizzato. Per supportare scenari dove non è disponibile o non è utilizzato l’ID della spedizione si deve usare il valore
+“<strong>NA</strong>”.</p>
+</div>
+<div class="paragraph">
+<p>Come parte delle informazioni di spedizione (Shipment) vengono forniti: peso, volume, colli, vettore, tempi di consegna stimati e di effettiva evasione.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Le misure (measure) come peso e volume sono obbligatoriamente espresse secondo la codifica UN/ECE Rec20 e non è richiesto qualificarle con ulteriori attributi.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Esempio</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:Shipment&gt;
+        &lt;cbc:ID&gt;NA&lt;/cbc:ID&gt;
+        &lt;cbc:Information&gt;Free text information relating to the Shipment&lt;/cbc:Information&gt;
+        &lt;cbc:GrossWeightMeasure unitCode="KGM"&gt;23&lt;/cbc:GrossWeightMeasure&gt;
+        &lt;cbc:GrossVolumeMeasure unitCode="MTQ"&gt;27&lt;/cbc:GrossVolumeMeasure&gt;
+        &lt;cac:Consignment&gt;
+                &lt;cbc:ID&gt;12345&lt;/cbc:ID&gt;
+                &lt;cac:CarrierParty&gt;
+                        &lt;cac:PartyName&gt;
+                                &lt;cbc:Name&gt;CarrierPart&lt;/cbc:Name&gt;
+                        &lt;/cac:PartyName&gt;
+                &lt;/cac:CarrierParty&gt;
+        &lt;/cac:Consignment&gt;
+        &lt;cac:Delivery&gt;
+                &lt;cac:EstimatedDeliveryPeriod&gt;
+                        &lt;cbc:StartDate&gt;2013-03-15&lt;/cbc:StartDate&gt;
+                        &lt;cbc:StartTime&gt;08:00:00&lt;/cbc:StartTime&gt;
+                        &lt;cbc:EndDate&gt;2013-03-16&lt;/cbc:EndDate&gt;
+                        &lt;cbc:EndTime&gt;12:00:00&lt;/cbc:EndTime&gt;
+                &lt;/cac:EstimatedDeliveryPeriod&gt;
+                &lt;cac:Despatch&gt;
+                        &lt;cbc:ActualDespatchDate&gt;2013-03-13&lt;/cbc:ActualDespatchDate&gt;
+                        &lt;cbc:ActualDespatchTime&gt;08:00:00&lt;/cbc:ActualDespatchTime&gt;
+                &lt;/cac:Despatch&gt;
+        &lt;/cac:Delivery&gt;
+&lt;/cac:Shipment&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueriga-di-spedizione"><a class="anchor" href="#trueriga-di-spedizione"></a>7. Riga di spedizione</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Descrizione degli articoli che vengono spediti.</p>
+</div>
+<div class="sect2">
+<h3 id="truedescrizione-dell-articolo-e-sua-identificazione"><a class="anchor" href="#truedescrizione-dell-articolo-e-sua-identificazione"></a>7.1. Descrizione dell’Articolo e sua identificazione</h3>
+<div class="paragraph">
+<p>Ogni riga della spedizione contiene elementi informativi per descrivere ed identificare l’articolo. Normalmente è necessario specificare solo uno tra gli identificatori disponibili.</p>
+</div>
+<div class="listingblock">
+<div class="title">Esempio</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:Item&gt;
+        &lt;cbc:Name&gt;Item123&lt;/cbc:Name&gt;
+        &lt;cac:SellersItemIdentification&gt;
+                &lt;cbc:ID&gt;010120401&lt;/cbc:ID&gt;
+        &lt;/cac:SellersItemIdentification&gt;
+        &lt;cac:StandardItemIdentification&gt;
+                &lt;cbc:ID schemeID="0160"&gt;7611104117056&lt;/cbc:ID&gt;
+        &lt;/cac:StandardItemIdentification&gt;
+&lt;/cac:Item&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueparticolare-trattamento-della-spedizione"><a class="anchor" href="#trueparticolare-trattamento-della-spedizione"></a>7.2. Particolare Trattamento della spedizione</h3>
+<div class="paragraph">
+<p>In certi casi la spedizione necessita di un particolare trattamento (es. Articoli che debbono essere refrigerati).
+Dalle righe dell’avviso spedizione utilizzare l’elemento &lt;cbc:HandlingCode&gt; nei dettagli dello Shipment, come nell’esempio seguente:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">ESEMPIO</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Utilizzare la codifica “<em>HandlingInstructionDescriptionCode</em>” disponibile nella specifica delle codifiche.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truetemperatura"><a class="anchor" href="#truetemperatura"></a>7.3. Temperatura</h3>
+<div class="paragraph">
+<p>Per indicare la temperatura da impostare per talune merci o la temperatura minima/massima tollerata è possibile specificarlo sempre nel dettaglio della spedizione come nell’esempio seguente:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">ESEMPIO</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>L’esempio denota l’uso delle unità di misura Celsius (CEL) e Fahrenheit (FAH). L’elemento AttributeID è obbligatorio ma può essere ignorato valorizzandolo con NA, tuttavia in alcuni casi può migliorare la comprensione della misura fornita (es. Recommended, Allowable, Alert).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Le misure (Measure) sono obbligatoriamente espresse secondo la codifica UN/ECE Rec20 e non è richiesto qualificarle con ulteriori attributi.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truequantit-inevasa"><a class="anchor" href="#truequantit-inevasa"></a>7.4. Quantità inevasa</h3>
+<div class="paragraph">
+<p>L’elemento per specificare la parte inevasa nella riga di spedizione è utilizzata sia per segnalare la quantità inevasa che per informare circa le eventuali discrepanze relative alla consegna.</p>
+</div>
+<div class="paragraph">
+<p>La gestione della “quantità inevasa che non sarà mai consegnata” viene ottenuta come segue: l’importo che è dichiarato nell’elemento OutstandingQuantity è equivalente all’importo che sarà consegnato in una Spedizione successiva. Questo significa implicitamente che gli articoli mancanti che NON sono dichiarati nell’elemento OutstandingQuantity non possono o non saranno consegnati.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Non è possibile indicare quantità consegnate pari a zero (DeliveredQuantity) e quindi di conseguenza non è possibile indicare tutti gli articoli come inevasi.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Esempio 1:</div>
+<p>10 articoli vengono ordinati, 6 sono in consegna e i 4 rimanenti verranno spediti successivamente:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Quantity ordered: 10</p>
+</li>
+<li>
+<p>Quantity delivered: 6</p>
+</li>
+<li>
+<p>Outstanding quantity: 4</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;!-- Obbligatorio: Art. 21, comma 4 del DPR n. 633/1972 --&gt;
+&lt;cbc:DeliveredQuantity unitCode="H87" unitCodeListID="UNECERec20”&gt;6&lt;/cbc:DeliveredQuantity&gt;
+&lt;cbc:OutstandingQuantity unitCode="H87" unitCodeListID="UNECERec20"&gt;4&lt;/cbc:OutstandingQuantity&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Esempio 2:</div>
+<p>10 articoli vengono ordinati. 6 sono in consegna e i 4 rimanenti NON saranno consegnati:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Quantity ordered: 10</p>
+</li>
+<li>
+<p>Quantity delivered: 6</p>
+</li>
+<li>
+<p>Outstanding quantity: 0</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;!-- Obbligatorio: Art. 21, comma 4 del DPR n. 633/1972 --&gt;
+&lt;cbc:DeliveredQuantity unitCode="H87" unitCodeListID="UNECERec20"&gt;6&lt;/cbc:DeliveredQuantity&gt;
+&lt;cbc:OutstandingQuantity unitCode="H87" unitCodeListID="UNECERec20"&gt;0&lt;/cbc:OutstandingQuantity&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Esempio 3:</div>
+<p>10 articoli vengono ordinati. 6 sono in consegna, 3 saranno consegnati succesivamente e 1 articolo NON sarà consegnato:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Quantity ordered: 10</p>
+</li>
+<li>
+<p>Quantity delivered: 6</p>
+</li>
+<li>
+<p>Outstanding quantity: 3</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;!-- Obbligatorio: Art. 21, comma 4 del DPR n. 633/1972 --&gt;
+&lt;cbc:DeliveredQuantity unitCode="H87" unitCodeListID="UNECERec20"&gt;6&lt;/cbc:DeliveredQuantity&gt;
+&lt;cbc:OutstandingQuantity unitCode="H87" unitCodeListID="UNECERec20"&gt;3&lt;/cbc:OutstandingQuantity&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><mark><strong>Rif.to: Caso d’uso 2.</strong></mark></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueomaggi"><a class="anchor" href="#trueomaggi"></a>7.5. Omaggi</h3>
+<div class="paragraph">
+<p>Per evidenziare nelle righe dell’avviso spedizione gli item che sono in omaggio è possibile indicare che si tratta di “OMAGGIO” nell’elemento AdditionalInformation all’interno dell’Item. Esempio di omaggio in una riga dell’avviso spedizione:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">ESEMPIO</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truesconto-merce"><a class="anchor" href="#truesconto-merce"></a>7.6. Sconto Merce</h3>
+<div class="paragraph">
+<p>Per evidenziare nelle righe dell’avviso spedizione gli item che sono consegnati a titolo di sconto (Sconto Merce) è possibile indicare che si tratta di “SCONTO MERCE” nell’elemento AdditionalInformation all’interno dell’Item. Esempio di sconto merce in una riga dell’avviso spedizione:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">ESEMPIO</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truemerce-pericolosa"><a class="anchor" href="#truemerce-pericolosa"></a>7.7. Merce Pericolosa</h3>
+<div class="paragraph">
+<p>Il Documento di Trasporto PEPPOL contiene anche la possibilità di informare il Consegnatario riguardo agli articoli pericolosi (indicati anche come HAZMAT, Hazard Material o Dangerous Goods). Questo viene fatto fornendo il codice di pericolosità in base al regolamento adottato, per esempio ADR (trasporto su gomma), IMDG (trasporto via mare) or RID (trasporto ferroviario). Quando si dichiarano delle merci pericolose si raccomanda l’uso del codice UNDG per informare in base a quale convenzione l’articolo viene dichiarato pericoloso (es. ADR).  Quando il codice UNDG viene dichiarato viene fornita anche la classe di pericolosità. La classe di pericolosità è relativa all’articolo, per esempio la classe 2.3 che indica il Gas Poison. Inoltre è importante dichiarare che il contenuto dell’unità logistica puà comportare dei rischi pericolosi.  Vedi sotto per un esempio su come dichiarare articoli pericolosi.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">ESMEPIO</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueesempio-avanzato-nel-settore-health-gli-antiblastici"><a class="anchor" href="#trueesempio-avanzato-nel-settore-health-gli-antiblastici"></a>7.7.1. Esempio avanzato nel settore Health: gli antiblastici</h4>
+<div class="paragraph">
+<p>Nel caso sia necessario identificare più precisamente la merce pericolosa è possibile fornire ulteriori informazioni come l’ID della sostanza pericolosa secondo la convenzione dichiarata nell’UNDGCode, il nome tecnico e la categoria.
+Per il trasporto di medicinali pericolosi (antiblastici) su gomma viene usata la convenzione ADR che definisce le classi di pericolosità (Hazard class) e identifica ogni sostanza con un UN Number.
+Si forniscono a titolo di esempio gli identificativi e le relative classi di pericolosità più utilizzate nel trasporto degli antiblastici:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">ESEMPIO</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truenumeri-di-serie-s-n"><a class="anchor" href="#truenumeri-di-serie-s-n"></a>7.8. Numeri di serie (S/N)</h3>
+<div class="paragraph">
+<p>Se ognuno degli articoli consegnati è contrassegnato con un numero di serie individuale, questi numeri possono essere comunicati nel Documento di Trasporto come parte dell’articolo merce (Item) specificando una specifica istanza per ogni numero di serie.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">ESMEPIO</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truenumeri-di-lotto-merce-data-di-scadenza-e-da-consumarsi-preferibilmente-entro-il-bestbeforedate"><a class="anchor" href="#truenumeri-di-lotto-merce-data-di-scadenza-e-da-consumarsi-preferibilmente-entro-il-bestbeforedate"></a>7.9. Numeri di lotto merce, Data di Scadenza e Da consumarsi preferibilmente entro il (BestBeforeDate)</h3>
+<div class="paragraph">
+<p>Il numero di Lotto si applica a tutti gli articoli nella riga di spedizione. ExpiryDate (data di scadenza) è utilizzata ad esempio per i farmaci. BestBeforeDate (da consumarsi preferibilmente entro il) è spesso usato per gli alimenti.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">ESEMPIO</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truenota-aifa"><a class="anchor" href="#truenota-aifa"></a>7.9.1. Nota AIFA</h4>
+<div class="paragraph">
+<p>Quando la scadenza di un medicinale è indicata con il mese e con l’anno la validità si deve intendere fino all’ultimo giorno del mese. Questo è indicato nel Quality review of documents human product information annotated template, documento che l’Agenzia Europea dei Medicinali rende disponibile sul proprio portale e che indica quali informazioni devono essere riportate negli stampati dei medicinali (Riassunto delle Caratteristiche del Prodotto, Foglio Illustrativo ed Etichetta). In particolare, il punto 8 dell’Annex III chiarisce: “The expiry date printed on medicinal product stating only month and year should be taken to mean the last day of that month”.</p>
+</div>
+<div class="paragraph">
+<p>Il documento può essere reperito al link seguente:</p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.ema.europa.eu/ema/index.jsp?curl=pages/regulation/document_listing/document_listing_000134.jsp&amp;mid=WC0b01ac0580022c59" class="bare">http://www.ema.europa.eu/ema/index.jsp?curl=pages/regulation/document_listing/document_listing_000134.jsp&amp;mid=WC0b01ac0580022c59</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueunit-logistica-di-trasporto"><a class="anchor" href="#trueunit-logistica-di-trasporto"></a>7.10. Unità logistica di trasporto</h3>
+<div class="paragraph">
+<p>Gli articoli merce indicati in una riga di spedizione possono essere imballati in diverse unità logistiche che sono le unità logistiche fisiche come casse, container, pallet, etc., che contengono la consegna.</p>
+</div>
+<div class="paragraph">
+<p>Il codice TransportHandlingUnitTypeCode permette di specificare precisamente il tipo di unità logistica utilizzando la codifica UN/ECE Rec 21 del quale si riportano alcuni esempi più semplici:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Codice</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Unità logistica</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cartone</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cassa</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Box</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pallet</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Il Serial Shipping Container Code (SSCC) emesso da GS1 può essere usato per identificare l’unità logistica.  È importante notare che la stessa unità logistica può contenere articoli merce indicati in righe diverse nel Documento di Trasporto. Questo si implementa mediante il riferimento allo stesso codice SSCC nell’elemento ID del TransportHandlingUnit su diverse righe di spedizione.</p>
+</div>
+<div class="paragraph">
+<p>In Italia l’etichetta logistica posta sull’unità logistica, come ad esempio un collo singolo o un pallet con il relativo identificativo SSCC, viene denominata comunemente “segnacollo”.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">ESEMPIO</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueconfezionamento"><a class="anchor" href="#trueconfezionamento"></a>7.11. Confezionamento</h3>
+<div class="paragraph">
+<p>Per fornire informazioni sul confezionamento è possibile usare due diverse modalità a seconda di come viene effettuato l’ordine, e quindi se l’articolo corrisponde alla singola unità o alla confezione. Se l’articolo ordinato è una confezione è importante indicarne l’unità di misura corretta “PK” (pack).
+Nella tabella seguente si fornisce la metodologia per aggiungere informazioni sulle singole unità all’interno della confezione e viceversa, quando l’articolo coincide con l’unità base, per fornire informazioni sul confezionamento.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Informazioni</strong></p></td>
+<td class="tableblock halign-center valign-top" colspan="2"><p class="tableblock"><strong>Articolo</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Caso 1  Unità Base</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Caso 2 Confezione</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Unità di Misura</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NAR  (o altra più specifica)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PK</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Numero unità base nella confezione</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cbc:PackSizeNumeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cbc:PackQuantity</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Identificativo Unità Base</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cac:SellersItemIdentification (o altro identificativo standard)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cac:AdditionalItemProperty/
+cbc:Name = UnitIdentification
+cbc:Value = XYZ</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Identificativo Confezione</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cac:AdditionalItemProperty/
+cbc:Name = PackIdentification
+cbc:Value = AIC12345</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cac:Item/cac:SellersItemIdentification (o altro identificativo standard)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Seguono due esempi significativi.</p>
+</div>
+<div class="sect3">
+<h4 id="truecaso-1-articolo-ordinato-per-singola-unit"><a class="anchor" href="#truecaso-1-articolo-ordinato-per-singola-unit"></a>7.11.1. Caso 1: Articolo ordinato per singola unità</h4>
+<div class="paragraph">
+<p>Esempio in cui l’articolo ordinato corrisponde alla singola unità e non alla confezione, con evidenza del numero di pezzi per confezione primaria:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:DespatchLine&gt;
+    &lt;cbc:DeliveredQuantity unitCode="NAR"&gt;5000&lt;/cbc:DeliveredQuantity&gt;&lt;!—5000 guanti --&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:PackSizeNumeric&gt;500&lt;/cbc:PackSizeNumeric&gt;&lt;!-- Una confezione contiene 500 guanti --&gt;
+            &lt;cbc:Name&gt;GUANTI&lt;/cbc:Name&gt;
+                &lt;cac:SellersItemIdentification&gt;&lt;!—O altro identificativo (es. Standard) --&gt;
+                   &lt;cbc:ID&gt;XYZ&lt;/cbc:ID&gt;
+                &lt;/cac:SellersItemIdentification&gt;
+                    &lt;cac:AdditionalItemProperty&gt;
+                        &lt;cbc:Name&gt;PackIdentification&lt;/cbc:Name&gt;&lt;!—Codice confezione --&gt;
+                        &lt;cbc:Value&gt;AIC12345&lt;/cbc:Value&gt;
+                    &lt;/cac:AdditionalItemProperty&gt;
+        &lt;/cac:Item&gt;
+&lt;/cac:DespatchLine&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecaso-2-articolo-ordinato-a-confezione"><a class="anchor" href="#truecaso-2-articolo-ordinato-a-confezione"></a>7.11.2. Caso 2: Articolo ordinato a confezione</h4>
+<div class="paragraph">
+<p>Esempio in cui l’articolo ordinato corrisponde alla confezione:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;cac:DespatchLine&gt;
+    &lt;cbc:DeliveredQuantity unitCode="PK"&gt;10&lt;/cbc:DeliveredQuantity&gt;&lt;!—10 confezioni di guanti --&gt;
+        &lt;cac:Item&gt;
+            &lt;cbc:PackQuantity&gt;500&lt;/cbc:PackQuantity&gt;&lt;!-- Un articolo (confezione) contiene 500 guanti --&gt;
+            &lt;cbc:Name&gt;CONFEZIONE GUANTI&lt;/cbc:Name&gt;
+                &lt;cac:SellersItemIdentification&gt;&lt;!—O altro identificativo (es. Standard) --&gt;
+                    &lt;cbc:ID&gt;XYZ500&lt;/cbc:ID&gt;
+                &lt;/cac:SellersItemIdentification&gt;
+                    &lt;cac:AdditionalItemProperty&gt;
+                        &lt;cbc:Name&gt;UnitIdentification&lt;/cbc:Name&gt;&lt;!—Codice unità base --&gt;
+                        &lt;cbc:Value&gt;XYZ&lt;/cbc:Value&gt;
+                    &lt;/cac:AdditionalItemProperty&gt;
+        &lt;/cac:Item&gt;
+&lt;/cac:DespatchLine&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueregole-di-business-intercent-er"><a class="anchor" href="#trueregole-di-business-intercent-er"></a>8. Regole di business INTERCENT-ER</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="trueregole-di-business-per-il-documento-di-trasporto"><a class="anchor" href="#trueregole-di-business-per-il-documento-di-trasporto"></a>8.1. Regole di business per il documento di trasporto</h3>
+<table class="tableblock frame-topbot grid-all spread">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 62.5%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Identificatore</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Regola di business</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Livello di errore</strong></th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T16-R028</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Se l&#8217;identificatore di endpoint si basa sullo schema di identificatori IT:CF, questo dovrà seguire la sintassi [0-9]{11} per le persone giuridiche e la sintassi [A-Z]{6}\d{2}[ABCDEHLMPRST]{1}\d{2}[A-Z]{1}\d{3}[A-Z]{1} per quelle fisiche.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T16-R001</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un elemento informativo base, se istanziato, non può essere vuoto.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T16-R002</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La testata del DDT DEVE contenere le informazioni minime previste dall’Art. 21, comma 4 del DPR n. 633/1972 (Identificativo e nome dello Speditore, nome e indirizzo del Consegnatario, peso lordo e numero colli della spedizione)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T16-R003</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le righe del DDT DEVONO contenere le informazioni minime previste dall’Art. 21, comma 4 del DPR n. 633/1972 (Nome articolo merce, identificativo articolo e quantità consegnata)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T16-R004</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La versione del DespatchAdvice (DDT) DEVE corrispondere alle seguenti 3 dimensioni:
+</p><p class="tableblock">UBLVersionID = '2.1',
+</p><p class="tableblock">CustomizationID = 'urn:www.cenbii.eu:transaction:biitrns016: ver1.0:extended:urn:www.peppol.eu:bis:peppol30a:ver1.0:extended: urn:www.ubl-italia.org:spec:ddt:ver2.1',
+</p><p class="tableblock">ProfileID = 'urn:www.cenbii.eu:profile:bii30:ver2.0'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T16-R026</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Se l&#8217;identificatore di endpoint si basa sullo schema di identificatori IT:IPA, questo dovrà seguire la sintassi [A-Z0-9]{6,7}.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INT-T16-R027</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Se l&#8217;identificatore di endpoint si basa sullo schema di identificatori IT:VAT, questo dovrà seguire la sintassi (IT)?[0-9]{11}.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fatal</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueidentificatori-peppol"><a class="anchor" href="#trueidentificatori-peppol"></a>9. Identificatori PEPPOL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>PEPPOL ha definito una <a href="https://joinup.ec.europa.eu/svn/peppol/TransportInfrastructure/PEPPOL_Policy%20for%20use%20of%20identifiers-300.pdf">PEPPOL Policy for identifiers, policy 8</a> che specifica come utilizzare gli identificatori sia nella sua infrastruttura di trasporto che all’interno dei documenti scambiati su questa.  Essa introduce anche i principi per ogni identificatore utilizzato nell’ambiente PEPPOL.   Le regole che si applicano a questo BIS sono le seguenti:</p>
+</div>
+<div class="sect2">
+<h3 id="trueprofili-e-messaggi"><a class="anchor" href="#trueprofili-e-messaggi"></a>9.1. Profili e messaggi</h3>
+<div class="paragraph">
+<p>Tutti i messaggi contengono ProfileID e CustomizationID.
+ProfileID identifica il processo di business di cui un determinato messaggio fa parte mentre il CustomizationID identifica il tipo di messaggio e le regole applicate.</p>
+</div>
+<div class="paragraph">
+<p>I profili sono collegati a un processo di business e possono contenere diverse tipologie di documento.
+I documenti esemplificativi che sono validi devono contenere i corrispondenti ProfileID e CustomizationID.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+CustomizationID è una stringa senza spazi. La codifica seguente contiene spazi sui CustomizationID per renderli facilmente leggibili. <strong>Bisogna assicurarsi di rimuovere gli eventuali spazi prima dell’uso.</strong>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueidentificatori-di-personalizzazione-e-profilo"><a class="anchor" href="#trueidentificatori-di-personalizzazione-e-profilo"></a>9.2. Identificatori di personalizzazione e profilo</h3>
+<div class="paragraph">
+<p>Nella tabella seguente vengono riportati i valori da utilizzare come identificatori della specifica e della tipologia di processo di business per tale profilo.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 44.4444%;">
+<col style="width: 44.4445%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Tipo </strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Elemento</strong> cbc:CustomizationID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Element</strong> cbc:ProfileID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ordine (Trdm01)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">urn:fdc:peppol.eu:poacc:trns:despatch_advice:3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">urn:fdc:peppol.eu:poacc:bis:despatch_advice:3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="truespazio-dei-nomi"><a class="anchor" href="#truespazio-dei-nomi"></a>9.3. Spazio dei nomi</h3>
+<div class="paragraph">
+<p>Il modlelo dati del documento di trasporto è in questa PEPPOL BIS associata all' <a href="http://docs.oasis-open.org/ubl/UBL-2.1.html">UBL 2.1</a> del tipo di documento di trasporto <a href="http://docs.oasis-open.org/ubl/os-UBL-2.1/xsd/maindoc/UBL-DespatchAdvice-2.1.xsd">UBL Despatch Advice 2.1</a>. Il <mark>target namespace</mark> per UBL 2.1 Despatch Advice è</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2019-01-16 18:40:30 WEST
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+<script>hljs.initHighlighting()</script>
+</body>
+</html>

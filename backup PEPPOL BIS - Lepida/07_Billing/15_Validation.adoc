@@ -1,0 +1,279 @@
+== Validazione
+
+Per ottimizzare la flessibilità nel processo di validazione, ogni documento PEPPOL viene validato in differenti fasi. Lo schema seguente illustra le diverse fasi.
+
+image::C:\IMG_PEPPOL\fig16.jpg[]
+
+=== Principi di validazione
+
+Fasi del processi di validazione.
+
+*Validazione della sintassi*
+
+Ad esempio:
+
+* Controllo formale;
+
+* I nomi degli elementi e gli attributi devo essere riportati correttamente, seguendo la sequenza UBL 2.1;
+
+* Tutti gli elementi UBL 2.1 obbligatori devo essere presenti;
+
+* I contenuti degli elementi devono essere pertinenti in base alla definizione deltipo di elemento.
+
+*Validazione su* https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:60602&cs=1B61B766636F9FB34B7DBD72CE9026C72[EN 16931]
+
+Per verificare che il messaggio d'istanza sia conforme allo standard europeo, come:
+
+* Codici validi per valute, paesi, tasse, ecc.
+
+* Elementi obbligatori secondo https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:60602&cs=1B61B766636F9FB34B7DBD72CE9026C72[EN 16931].
+
+* Correlazioni logiche tra l'informazione dell'elemento, i.e.  la data di inizio deve essere inferiore o uguale alla data di fine, ed i calcoli che forniscono il corretto risultato ecc.
+
+*CIUS - Regole generali*
+
+Regola generale applicabile a tutte le fatture attivate dall'esistenza di uno o più specifici termini di business.
+
+* *Esempio regola standard*
+
+_Una fattura deve avere un riferimento dell'acquirente o un riferimento dell'ordine_
+
+* *Contesto che attiva la regola*
+
+_Esistenza del riferimento dell'acquirente (BT-10) o del riferimento dell'ordine acquistato (BT-13)_
+
+
+*CIUS - Norme qualificate di validazione per Paese*
+
+Si applica solamente alle fatture emesse in determinati Paesi. La regola viene innescata dal codice paese fornito dal venditore (BT-40).
+
+* *Esempio regola standard*
+
+_Quando il venditore è svedese, il numero legale di registrazione dovrà essere numerico con 10 cifre._
+
+* *Contesto che attiva la regola*
+
+_Esistenza del venditore / indirizzo / codice paese = "SE" e esistenza del venditore / numero legale di registrazione_
+
+***
+
+===== Appendice A: restrizioni su EN16931
+
+Di seguito, viene riportato un elenco delle restrizioni su EN 16931 presenti in questa specifica di utilizzo inerente alle fatture (CIUS). Oltre a queste regole, alcune norme nazionali prevedono ulteriori restrizioni in base al paese del venditore o al paese IVA. Un elenco di queste norme nazionali può essere trovato nella CUYS italiana.
+
+===== A.1. Restrizioni per il profilo 01 - Billing
+
+[width="100%", cols="s, , , "]
+|===
+| ID | Terminologia di business| Descrizione | Regola
+
+| BT-3 | Invoice type code | Viene resa disponibile la possibilità di trovare l'insieme dei valori consentiti nell'Invoice type code | PEPPOL-EN16931-P0100, PEPPOL-EN16931-P0101
+
+|===
+
+
+===== A.2. Restrizioni sulla transazione della fattura e nota di credito
+
+[width="100%", cols="s, , , "]
+|===
+| ID | Terminologia di business| Descrizione | Regola
+
+|	BT-2 , BT-7 , BT-9 , BT-26, BT-72, BT-73, BT-74, BT-134, BT-135	|	All date elements	|	La data deve essere nel seguente formato YYYY-MM-DD	|	PEPPOL-EN16931-F001
+|	BT-6	|	VAT accounting currency code	|	#VAT accounting currency code shall be different from invoice currency code when provided.#	|	PEPPOL-EN16931-R005
+|	BT-9, BT-20	|	Payment due date or payment terms	|	Assicurarsi che la regola venga applicata solo per le fatture, non per le note di credito.	|	BR-CO-25
+|	BT-10, BT-13	|	Buyer reference or Purchase order	|	Deve essere fornito un riferimento dell'acquirente o un riferimento dell'ordine di acquisto.	|	PEPPOL-EN16931-R003
+|	BG-1	|	Invoice note	|	#Change cardinality from 0..n to 0..1#	|	PEPPOL-EN16931-R002
+|	BT-21	|	Invoice note subject code	|	#Changing cardinality 0..1 to 0..0#	|	Not applicable
+|	BT-23	|	Business process type	|	#Changing cardinality 0..1 to 1..1#	|	PEPPOL-EN16931-R001
+|	BT-24	|	Specification identifier	|L'identificativo della specifica deve avere il valore. urn:cen.eu:en16931:2017#compliant# urn:fdc:peppol.eu:2017:poacc:billing:3.0. **(Rimuovere gli spazi prima dell'utilizzo del valore)**	|	PEPPOL-EN16931-R004 
+	
+|	BT-34	|	Seller electronic address	|	Deve essere fornito l'indirizzo di posta elettronica del venditore	|	PEPPOL-EN16931-R020
+|	BT-49	|	Buyer electronic address	|	Deve essere fornito l'indirizzo di posta elettronica dell'acquirente	|	PEPPOL-EN16931-R010
+|	BG-19	|	Payment card information	|	Il riferimento dell'incarico deve essere fornito per l'addebito diretto.	|	PEPPOL-EN16931-R061
+|	BT-93, BT-100, BT-137, BT-142	| Allowance/charge base amount	|	L'importo base di sconti/maggiorazioni deve essere fornito quando viene fornita la percentuale di sconti/maggiorazioni.	|	PEPPOL-EN16931-R041
+|	BT-94, BT-101, BT-138, BT-143	|	Allowance/charge percentage	|	
+La percentuale di sconti/maggiorazioni deve essere fornita quando viene fornito l'importa base di sconti/maggiorazioni.	|	PEPPOL-EN16931-R042
+|	BT-92, BT-99, BT-136, BT-141	|	Allowance/charge amount	|	
+
+Se l'importo base e la percentuale sono presenti nell'istanza, allora 
+
+*Importo Sconti/Maggiorazioni = 
+
+importo base × (percentuale ÷ 100)* 	|	PEPPOL-EN16931-R040
+|	BT-98, BT-140	|	Allowance reason code	| Codice reason deve essere	Reason code shall be according to subset of UNCL 5189 D.16B.	|	PEPPOL-EN16931-CL002
+|	BT-110	|	Invoice total VAT amount	|	Only one tax total without tax subtotals shall be provided when tax currency code is provided.	|	PEPPOL-EN16931-R054
+|	BG-23	|	VAT breakdown	|	Only one tax total with tax subtotals shall be provided	|	PEPPOL-EN16931-R053
+|	BG-23	|	VAT breakdown	|	Only one tax total without tax subtotals shall be provided when tax currency code is provided.	|	PEPPOL-EN16931-R054
+|	BT-131	|	Invoice line net amount	|	Calculation shall equal (Invoiced quantity×(Item net price÷item price base amount))(Invoiced quantity×(Item net price÷item price base amount))+Invoice line charge amount+Invoice line charge amount−Invoice line allowance amount-Invoice line allowance amount	|	PEPPOL-EN16931-R120
+|	BT-134	|	Invoice line period start date	|	Start date of line period shall be within invoice period.	|	PEPPOL-EN16931-R110
+|	BT-135	|	Invoice line period end date	|	End date of line period shall be within invoice period.	|	PEPPOL-EN16931-R111
+|	BT-146	|	Item net price	|	Item net price shall equal (Gross price - Allowance amount) when gross price is provided.	|	PEPPOL-EN16931-R046
+|	BT-149	|	Item price base quantity	|	Base quantity shall be a positive number above zero.	|	PEPPOL-EN16931-R121
+|	BT-150	|	Item price base quantity unit of measure	|	Unit code of price base quantity shall be same as invoiced quantity.	|	PEPPOL-EN16931-R130
+|	Not applicable	|	All currencyID attributes	|	All currencyID attributes shall have the same value as the invoice currency code (BT-5), except for the invoice total VAT amount in accounting currency (BT-111)	|	PEPPOL-EN16931-R051
+
+
+|===
+
+
+===== A.3 Restrizioni sui processi supportati 
+
+Questa Core Invoice Usage Specification (CIUS) ha limitato le restrizioni e non supporta esplicitamente i seguenti processi aziendali:
+
+*P10 - Fatturazione correttiva*
+
+Il processo descritto per la fatturazione correttiva è stato visto come non chiaro rispetto alla distinzione tra una fattura correttiva e una nota di credito, e questo processo è stato impostato per essere al di fuori del nostro campo di applicazione.
+
+*P11 - Fatturazione parziale e finale*
+
+A causa del fatto che le fatture parziali e finali non richiedono tutte le informazioni richieste, questo processo non rientra nell'ambito di questa BIS PEPPOL.
+
+*P12 - Auto fatturazione*
+
+La direttiva 2006/112 / CE (articolo 224) richiede che venga osservato un processo specifico, che preveda un accordo preliminare e una procedura in cui il fornitore deve accettare ciascuna fattura. L'autofatturazione richiede un set-up specifico a causa dei requisiti presenti nell'accordo preliminare e nella procedura per l'accettazione di ogni auto-fattura. 
+
+
+===== A.4 Regole CIUS Italia
+
+[width="100%", cols="s, , , , ,  "]
+|===
+
+|CIUS ID	|	**Terminologia di business**	|	**Descrizione CIUS  ID**	|	**Elemento in XML PA**	|	**Descrizione regola**	|	**Motivazione regola**	
+
+|BR-IT-010	|	BT-1 Invoice number	|	A unique identification of the Invoice.	|	2.1.1.4 Numero	|	La lunghezza dell'elemento non può superare i 20 caratteri e deve includere almeno una cifra	|		|
+
+BR-IT-020	|	BT-11 Project reference	|	The identification of the project the invoice refers to.	|	2.1.3.6 CodiceCUP	|	La lunghezza dell'elemento non può superare i 15 caratteri	|		|
+BR-IT-030	|	BT-12 Contract reference	|	The identification of a contract.	|	2.1.3.2 IdDocumento	|	La lunghezza dell'elemento non può superare i 20 caratteri	|		|
+BR-IT-040	|	BT-13 Purchase order reference	|	An identifier of a referenced purchase order, issued by the Buyer.	|	2.1.2.2. IdDocumento	|	La lunghezza dell'elemento non può superare i 20 caratteri	|		|
+BR-IT-050	|	BT-15 Receiving advice reference	|	An identifier of a referenced receiving advice.	|	2.1.5.2 IdDocumento	|	La lunghezza dell'elemento non può superare i 20 caratteri	|		|
+BR-IT-060	|	BT-16 Despatch advice reference	|	An identifier of a referenced despatch advice.	|	2.1.8.1 NumeroDDT	|	La lunghezza dell'elemento non può superare i 20 caratteri	|		|
+BR-IT-070	|	BT-17 Tender or lot reference	|	The identification of the call for tender or lot the invoice relates to.	|	2.1.3.7 CodiceCIG	|	La lunghezza dell'elemento non può superare i 15 caratteri	|		|
+BR-IT-080	|	BT-19 Buyer accounting reference	|	A textual value that specifies where to book the relevant data into the Buyer's financial accounts.	|	1.2.6 RiferimentoAmministrazione	|	La lunghezza dell'elemento non può superare i 20 caratteri	|		|
+BR-IT-090	|	BT-25 Preceding Invoice number	|	The identification of an Invoice that was previously sent by the Seller.	|	2.1.6.2. IdDocumento	|	La lunghezza dell'elemento non può superare i 20 caratteri	|		|
+BR-IT-100	|	"BT-29 Seller identifier
+"	|	"An identification of the Seller.
+"	|	1.2.1.3.5 CodEORI or 1.2.1.4 AlboProfessionale and 1.2.1.6 NumeroIscrizioneAlbo	|	"Se il valore dell’elemento BT-40 Seller country code è ”IT”, se il valore dell'elemento BT-29 Seller identifier comincia con ""IT:EORI:"",  la sua lunghezza deve essere compresa fra 21 e 25 caratteri. 
+Altrimenti, se il valore dell'elemento BT-29 Seller identifier comincia con ""IT:ALBO:"",  la sua lunghezza non può superare i 129 caratteri e deve essere indicato come ""IT:ALBO:AlboProfessionale:NumeroIscrizioneAlbo"""	|		|
+BR-IT-110	|	"BT-30 Seller legal registration identifier
+"	|	"An identifier issued by an official registrar that identifies the Seller as a legal entity or person.
+"	|	"1.2.4.1 Ufficio
+1.2.4.2 NumeroREA"	|	Se il valore dell’elemento BT-40 Seller country code è ”IT”, se il valore dell'elemento BT-30 Seller legal registration identifier comincia con "IT:REA:", la sua lunghezza deve essere compresa fra 10 e 30 caratteri e deve essere indicato come "IT:REA:Ufficio:NumeroREA"	|		|
+BR-IT-120	|	BT-31 Seller VAT identifier	|	The Seller's VAT identifier (also known as Seller VAT identification number).	|	1.2.1.1.1   IdPaese 1.2.1.1.2  IdCodice 	|	La lunghezza dell'elemento non può superare i 30 caratteri	|		|
+BR-IT-130	|	BT-32 Seller tax registration identifier	|	The local identification (defined by the Seller’s address) of the Seller for tax purposes or a reference that enables the Seller to state his registered tax status.	|	1.2.1.2 CodiceFiscale	|	Se il valore dell’elemento BT-40 Seller country code è ”IT”, la lunghezza dell'elemento BT-32 Seller tax registration identifier deve essere compresa fra 17 e 22 caratteri.	|		|
+BR-IT-140	|	"BT-35 Seller address line 1
+BT-37 Seller city
+BT-38 Seller post code"	|	"The main address line in an address.
+The common name of the city, town or village, where the Seller address is located.
+The identifier for an addressable group of properties according to the relevant postal service."	|	1.2.2.1 Indirizzo, 1.2.2.4 Comune, 1.2.2.3 CAP	|	Se il valore dell’elemento BT-40 Seller country code è ”IT”, gli elementi devono essere obbligatoriamente valorizzati	|	"In FatturaPA i corrispondenti elementi relativi alla sede del cedente/prestatore sono obbligatori.
+"	|
+BR-IT-150	|	BT-39 Seller country subdivision	|	The subdivision of a country.	|	1.2.2.5 Provincia	|	Se l'elemento BT-40 Seller country code ha valore "IT", per l'elemento BT-39 Seller country subdivision deve essere utilizzato uno dei valori della lista delle province italiane. Altrimenti l'informazione è riportata in allegato 	|		|
+BR-IT-160	|	"
+BT-46 Buyer identifier
+BT-48 Buyer VAT identifier"	|	"The Buyer's VAT identifier (also known as Buyer VAT identification number).
+An identifier of the Buyer.
+The identification scheme identifier of the Buyer identifier."	|	"
+1.4.1.2 CodiceFiscale
+1.4.1.1 IdFiscaleIVA"	|	Almeno uno degli elementi  BT-48 Buyer VAT identifier e BT-46 Buyer identifier deve essere valorizzato. BT-46 Buyer identifier, se presente, deve iniziare con "IT:CF:" e la sua lunghezza deve essere compresa fra 17 e 22 caratteri	|	In Fattura PA è obbligatorio valorizzare almeno uno degli elementi relativi al cessionario/committente 1.4.1.1 <IdFiscaleIVA> e 1.4.1.2 <CodiceFiscale>.	|
+BR-IT-170	|	"BT-47 Buyer legal registration identifier
+"	|	"An identifier issued by an official registrar that identifies the Buyer as a legal entity or person.
+"	|	1.4.1.3.5 CodEori	|	Se l'elemento BT-47 Buyer legal registration identifier inizia con "IT:EORI:", la lunghezza dell'elemento BT-47 Buyer legal registration identifier deve essere compresa fra 21 e 25 caratteri	|		|
+BR-IT-180	|	BT-48 Buyer VAT identifier	|	The Buyer's VAT identifier (also known as Buyer VAT identification number).	|	1.4.1.1.1   IdPaese 1.4.1.1.2  IdCodice 	|	La lunghezza dell'elemento non può superare i 30 caratteri	|		|
+BR-IT-190	|	"BT-49 Buyer electronic address
+BT-49-1 Buyer electronic address identification scheme identifier"	|	"Identifies the Buyer's electronic address to which a business document should be delivered.
+The identification scheme identifier of the Buyer electronic address."	|	"1.1.6 PECDestinatario
+1.1.4 CodiceDestinatario"	|	L'elemento BT-49 Buyer electronic address deve contenere la PEC del destinatario della fattura, oppure l’indice IPA oppure il codice destinatario. Di conseguenza per l'elemento BT-49-1 Buyer electronic address identification scheme identifier sono previsti i valori IT:PEC, IT:IPA oppure IT:CODDEST	|	Questa lista è stata assegnata dal CEN/TC 434 al CEF: i valori da aggiungere alla code list per l'Italia sono stati definiti ma i lavori lato CEF sono in corso.	|
+BR-IT-200	|	"BT-49 Buyer electronic address
+BT-49-1 Buyer electronic address identification scheme identifier"	|	"Identifies the Buyer's electronic address to which a business document should be delivered.
+The identification scheme identifier of the Buyer electronic address."	|		|	"Se l'elemento BT-49-1 Buyer electronic address identification scheme identifier contiene il valore ""IT:PEC"", la lunghezza dell'elemento BT-49 Buyer electronic address deve essere compresa fra 7 e 256 caratteri. 
+Altrimenti, se l'elemento BT-49-1 Buyer electronic address identification scheme identifier contiene il valore ""IT:IPA"", la lunghezza dell'elemento BT-49 Buyer electronic address deve essere di 6 caratteri. 
+Altrimenti, se l'elemento BT-49-1 Buyer electronic address identification scheme identifier contiene il valore ""IT:CODDEST"", la lunghezza dell'elemento BT-49 Buyer electronic address deve essere di 7 caratteri"	|		|
+BR-IT-210	|	"BT-50 Buyer address line 1
+BT-52 Buyer city
+BT-53 Buyer post code"	|	"The main address line in an address.
+The common name of the city, town or village, where the Buyer's address is located.
+The identifier for an addressable group of properties according to the relevant postal service."	|	1.4.2.1 Indirizzo, 1.4.2.4 Comune, 1.4.2.3 CAP	|	Gli elementi devono essere obbligatoriamente valorizzati	|	"In FatturaPA i corrispondenti elementi relativi alla sede del cedente/prestatore sono obbligatori.
+"	|
+BR-IT-220	|	BT-54 Buyer country subdivision	|	The subdivision of a country.	|	 1.4.2.5 Provincia	|	Per l'elemento BT-54 Buyer country subdivision deve essere utilizzato uno dei valori della lista delle province italiane. Altrimenti l'informazione è riportata in allegato	|		|
+BR-IT-230	|	BT-63 Seller tax representative VAT identifier	|	The VAT identifier of the Seller's tax representative party.	|	1.3.1.1.1   IdPaese 1.3.1.1.2  IdCodice 	|	La lunghezza dell'elemento non può superare i 30 caratteri	|		|
+BR-IT-240	|	"BT-75 Deliver to address line 1
+BT-77 Deliver to city
+BT-78 Deliver to post code"	|	"The main address line in an address.
+The common name of the city, town or village, where the deliver to address is located.
+The identifier for an addressable group of properties according to the relevant postal service."	|	2.1.9.12.1 Indirizzo, 2.1.9.12.4 Comune, 2.1.9.12.3 CAP	|	Se il valore dell’elemento BT-80 Deliver to country code è ”IT”, gli elementi devono essere obbligatoriamente valorizzati	|	In FatturaPA  i corrispondenti elementi relativi all’indirizzo di resa sono obbligatori.	|
+BR-IT-250	|	BT-79 Deliver to country subdivision	|	The subdivision of a country.	|	2.1.9.12.5 Provincia	|	Se l'elemento BT-80 Deliver to country code ha valore "IT", per l'elemento BT-79 Deliver to country subdivision deve essere utilizzato uno dei valori della lista delle province italiane. Altrimenti l'informazione deve essere riportata in allegato	|		|
+BR-IT-260	|	"BG-16 Payment instructions 
+"	|	A group of business terms providing information about the payment.	|	"2.4 DatIPagamento
+"	|	Il gruppo di elementi BG-16 Payment instructions deve essere obbligatorio	|	"La regola stabilisce di rendere obbligatorio il gruppo BG-16 Payment instructions, di cui fa parte l’elemento BT-81 Payment means type code, obbligatorio nell’ambito del gruppo.
+In FatturaPA il gruppo 2.4 <DatiPagamento> non è obbligatorio mentre lo è l’elemento <2.4.2.2 ModalitaPagamento> contenuto nel gruppo: la situazione è dunque simile a quella del modello semantico. La regola è necessaria perché l’elemento BT-115 Amount due for payment, obbligatorio del modello semantico, è mappato sull’elemento 2.4.2.6 <ImportoPagamento> di FatturaPA. Dovendo quindi valorizzare l'elemento 2.4.2.6 <ImportoPagamento>, è necessario indicare l’intero gruppo 2.4 <DatiPagamento>, e con esso anche tutti gli elementi obbligatori in esso contenuti, fra cui 2.4.2.2 <ModalitaPagamento>. 
+Per lo stesso motivo, sarebbe obbligatorio indicare anche l’elemento 2.4.1 <CondizioniPagamento>, obbligatorio nell’ambito di 2.4 <DatiPagamento>, ma in questo caso, invece di inserire un’ulteriore regola, si propone di fare ricorso al valore di default TP02."	|
+BR-IT-270	|	BT-84 Payment account identifier	|	A unique identifier of the financial payment account, at a payment service provider, to which payment should be made.	|	2.4.2.13 IBAN	|	L'identificativo del pagamento BT-84 Payment account identifier deve essere un codice IBAN	|	In FatturaPA l’elemento 2.4.2.13 <IBAN> è l’unico che contiene un identificativo del mezzo di pagamento. Non è obbligatorio e non sono previsti controlli legati ai valori dell’elemento 2.4.2.2 <ModalitaPagamento>.	|
+BR-IT-280	|	BT-86 Payment service provider identifier	|	An identifier for the payment service provider where a payment account is located.	|	2.4.2.16 BIC	|	La lunghezza dell'elemento deve essere compresa fra 8 e 11 caratteri (BIC)	|		|
+BR-IT-290	|	"BT-92 Document level allowance amount
+BT-99 Document level charge amount"	|	"The amount of an allowance, without VAT.
+The amount of a charge, without VAT."	|	"2.2.1.9 PrezzoUnitario
+2.2.1.11 PrezzoTotale"	|	La lunghezza dell'elemento non può superare i 15 caratteri incluso 2 cifre decimali	|		|
+BR-IT-300	|	BT-112 Invoice total amount with VAT	|	The total amount of the Invoice with VAT.	|	2.1.1.9 ImportoTotaleDocumento	|	La lunghezza dell'elemento non può superare i 15 caratteri incluso 2 cifre decimali	|		|
+BR-IT-310	|	BT-114 Rounding amount	|	The amount to be added to the invoice total to round the amount to be paid.	|	2.1.1.10 Arrotondamento	|	La lunghezza dell'elemento non può superare i 15 caratteri incluso 2 cifre decimali	|		|
+BR-IT-320	|	BT-115 Amount due for payment	|	The outstanding amount that is requested to be paid.	|	2.4.2.6 ImportoPagamento	|	La lunghezza dell'elemento non può superare i 15 caratteri incluso 2 cifre decimali	|		|
+BR-IT-330	|	BT-116 VAT category taxable amount	|	Sum of all taxable amounts subject to a specific VAT category code and VAT category rate (if the VAT category rate is applicable).	|	2.2.2.5 ImponibileImporto	|	La lunghezza dell'elemento non può superare i 15 caratteri incluso 2 cifre decimali	|		|
+BR-IT-340	|	BT-117 VAT category tax amount	|	The total VAT amount for a given VAT category.	|	2.2.2.6 Imposta	|	La lunghezza dell'elemento non può superare i 15 caratteri incluso 2 cifre decimali	|		|
+BR-IT-350	|	"BT-118 VAT category code
+BT-95 Document level allowence VAT category code
+BT-102 Document level charge VAT category code
+BT-151 invoiced item VAT category code"	|	Coded identification of a VAT category	|	"1.2.1.8 RegimeFiscale
+2.2.2.2 Natura"	|	I valori accettati sono esclusivamente AE E S G  K	|		|
+BR-IT-360	|	"BT-124 External document location
+BT-125 Attached document"	|	An attached document embedded as binary object or sent together with the invoice.	|	2.5.5 Attachment	|	Se l'elemento l’elemento BT-122 Supporting document reference è valorizzato, è obbligatorio valorizzare almeno uno degli elementi BT-124 External document location e BT-125 Attached document	|	Gli elementi sono corrispondenti al gruppo 2.5 <Allegati> in FatturaPA laddove, se è presente un allegato, devono essere valorizzati gli elementi 2.5.1 <NomeAttachment> e 2.5.5 <Attachment>.	|
+BR-IT-370	|	BT-128 Invoice line object identifier	|	An identifier for an object on which the invoice line is based, given by the Seller.	|	2.2.1.3.2 CodiceValore	|	La lunghezza dell'elemento non può superare i 35 caratteri	|		|
+BR-IT-380	|	BT-129 Invoiced quantity  	|	The quantity of items (goods or services) that is charged in the invoice line	|	2.2.1.5 Quantita	|	La lunghezza dell'elemento non deve essere superiore a 21 caratteri e l'elemento dovrà avere 8 cifre decimali	|		|
+BR-IT-390	|	BT-131 Invoice line net amount	|	The total amount of the invoice line	|	2.2.1.11 PrezzoTotale	|	La lunghezza dell'elemento non può superare i 15 caratteri incluso 2 cifre decimali	|		|
+BR-IT-400	|	BT-132 Referenced purchase order line reference	|	An identifier for a referenced line within a purchase order, issued by the Buyer.	|	2.1.2.4 NumItem	|	La lunghezza dell'elemento non può superare i 20 caratteri	|		|
+BR-IT-410	|	BT-133 Invoice line Buyer accounting reference	|	A textual value that specifies where to book the relevant data into the Buyer's financial accounts.	|	2.2.1.15 RiferimentoAmministrazione	|	La lunghezza dell'elemento non può superare i 20 caratteri	|		|
+BR-IT-420	|	"BT-136 Invoice line allowance amount
+BT-141 Invoice line charge amount"	|	"The amount of an allowance, without VAT.
+The amount of a charge, without VAT."	|	"2.2.1.9 PrezzoUnitario
+2.2.1.11 PrezzoTotale"	|	La lunghezza dell'elemento non può superare i 15 caratteri incluso 2 cifre decimali	|		|
+BR-IT-430	|	BT-146 Item net price	|	The price of an item, exclusive of VAT, after subtracting item price discount.	|	2.2.1.9 PrezzoUnitario	|	La lunghezza dell'elemento non deve essere superiore a 21 caratteri e l'elemento dovrà avere 8 cifre decimali	|		|
+BR-IT-440	|	BT-155 Item Seller's identifier	|	An identifier, assigned by the Seller, for the item.	|	2.2.1.3.2 CodiceValore	|	La lunghezza dell'elemento non può superare i 35 caratteri	|		|
+BR-IT-450	|	BT-156 Item Buyer's identifier	|	An identifier, assigned by the Buyer, for the item.	|	2.2.1.3.2 CodiceValore	|	La lunghezza dell'elemento non può superare i 35 caratteri	|		|
+BR-IT-460	|	BT-157 Item standard identifier	|	An item identifier based on a registered scheme.	|	2.2.1.3.2 CodiceValore	|	La lunghezza dell'elemento non può superare i 35 caratteri	|		|
+BR-IT-470	|	BT-158 Item classification identifier	|	A code for classifying the item by its type or nature.	|	2.2.1.3.2 CodiceValore	|	La lunghezza dell'elemento non può superare i 35 caratteri	|		|
+                    
+
+|===
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

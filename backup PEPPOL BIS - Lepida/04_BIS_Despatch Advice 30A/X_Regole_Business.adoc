@@ -1,0 +1,25 @@
+== Regole di business INTERCENT-ER
+
+=== Regole di business per il documento di trasporto
+
+[frame="topbot", cols="1, 5, 2"options="header,footer", width="100%"]
+|===
+| *Identificatore* | *Regola di business* | *Livello di errore*
+| INT-T16-R001	| Un elemento informativo base, se istanziato, non può essere vuoto.	| Fatal
+| INT-T16-R002	| La testata del DDT DEVE contenere le informazioni minime previste dall’Art. 21, comma 4 del DPR n. 633/1972 (Identificativo e nome dello Speditore, nome e indirizzo del Consegnatario, peso lordo e numero colli della spedizione)	| Fatal
+| INT-T16-R003	| Le righe del DDT DEVONO contenere le informazioni minime previste dall’Art. 21, comma 4 del DPR n. 633/1972 (Nome articolo merce, identificativo articolo e quantità consegnata)	| Fatal
+| INT-T16-R004	| La versione del DespatchAdvice (DDT) DEVE corrispondere alle seguenti 3 dimensioni: 
+
+UBLVersionID = '2.1', 
+
+CustomizationID = 'urn:www.cenbii.eu:transaction:biitrns016: ver1.0:extended:urn:www.peppol.eu:bis:peppol30a:ver1.0:extended: urn:www.ubl-italia.org:spec:ddt:ver2.1', 
+
+ProfileID = 'urn:www.cenbii.eu:profile:bii30:ver2.0'	| Fatal
+| INT-T16-R026	| Se l'identificatore di endpoint si basa sullo schema di identificatori IT:IPA, questo dovrà seguire la sintassi [A-Z0-9]{6,7}.	| Fatal
+| INT-T16-R027	| Se l'identificatore di endpoint si basa sullo schema di identificatori IT:VAT, questo dovrà seguire la sintassi (IT)?[0-9]{11}.	| Fatal
+| INT-T16-R028	| Se l'identificatore di endpoint si basa sullo schema di identificatori IT:CF, questo dovrà seguire la sintassi [0-9]{11} per le persone giuridiche e la sintassi [A-Z]{6}\d{2}[ABCDEHLMPRST]{1}\d{2}[A-Z]{1}\d{3}[A-Z]{1} per quelle fisiche.	| Fatal
+|===
+
+
+
+

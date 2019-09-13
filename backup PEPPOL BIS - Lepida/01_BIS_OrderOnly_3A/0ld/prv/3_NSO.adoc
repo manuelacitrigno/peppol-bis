@@ -1,0 +1,14 @@
+== Funzionamento di NSO
+
+Il Nodo di smistamento degli ordini (NSO) è il sistema tramite il quale amministrazioni pubbliche e fornitori, anche avvalendosi di intermediari, si scambiano i documenti elettronici attestanti l’ordinazione degli acquisti di beni e servizi.
+
+In altre parole, NSO è una sorta di postino intelligente che gestisce lo scambio, tra clienti e fornitori, degli ordini di acquisto (e gli altri documenti eventualmente occorrenti). Oltre a provvedere al loro recapito, NSO verifica che i documenti trasmessi siano stati correttamente formati e contengano tutte le informazioni necessarie al loro successivo utilizzo per le fasi di fatturazione e pagamento.
+
+Al fine del predetto processo, per Documento si intende un file contenente i dati di business necessari per l’effettuazione della prestazione (ad esempio, le descrizioni dei prodotti, le quantità, i prezzi, i tempi e le modalità di esecuzione, eccetera). Ciascun Documento è incluso in un Messaggio.
+
+Le amministrazioni pubbliche, i fornitori di beni e servizi e i loro intermediari costituiscono gli Attori del processo.
+
+Lo scambio dei Documenti tra gli Attori avviene attraverso determinati Canali di comunicazione, attraverso cui NSO riceve i Messaggi, controlla che siano correttamente formati e, se tale verifica va a buon fine, li inoltra ai rispettivi destinatari.
+
+NSO informa i mittenti dell’esito della verifica e del recapito per mezzo di apposite Notifiche.
+
