@@ -1,0 +1,38 @@
+Le transazioni su fatture e note di credito hanno elementi per sconti/maggiorazioni su tre livelli.
+
+L'elemento cac: AllowanceCharge con sub elemento cbc: ChargeIndicator indica se l'istanza è una maggiorazione (true) o uno sconto (false).
+
+*Il livello di testata*
+
+_Si applica interamente alla fattura ed è inclusa nel calcolo dell'importo totale della fattura._
+
+* Numerosi sconti e maggiorazioni possono essere forniti
+
+* L'indicazione dell'IVA per sconti e maggiorazioni, cac:TaxCategory con sottoelementi, deve essere fornita
+
+* La somma di tutte gli sconti e maggiorazioni a livello di testata deve essere valorizzata rispettivamente in cbc:AllowanceTotalAmount e cbc:ChargeTotalAmount. Vedere http://test-docs.peppol.eu/poacc/billing/3.0/bis/#totals[UBL syntax]. 
+
+*Il livello di riga*
+
+_Si applica a livello di riga e viene incluso nel calcolo dell'importo della riga._
+
+* Numerosi sconti e maggiorazioni possono essere fornite
+
+* L'indicazione dell'IVA per sconti e maggiorazioni non deve essere specificata, poiché la categoria IVA indicata per la stessa riga della fattura si applica anche a sconti o maggiorazioni di tale riga.
+
+* La somma di tutte gli sconti e maggiorazioni a livello di riga deve essere presa in considerazione, sottratta o aggiunta, quando si calcola l'importo dell'estensione di riga. Questi sconti e maggiorazioni a livello di riga non devono essere calcolati negli elementi a livello di testata.
+
+
+*L'elemento Prezzo a livello di riga*
+
+_Un modo per informare l'acquirente di come viene impostato il prezzo. Inoltre, è pertinente se il venditore o l'acquirente desiderano pubblicare l'assegno nei propri sistemi contabili. Il prezzo stesso deve sempre essere il prezzo netto, cioè l'importo base ridotto con uno ssconto/abbuono._
+
+* È consentita solo un'occorrenza di sconto/abbuono.
+
+* L'indicazione dell'IVA per lo sconto non deve essere specificata.
+
+* Lo sconto relativo al prezzo non deve far parte di nessun altro calcolo.
+
+* Lo sconto relativo al prezzo può specificare l'importo e l'importo di base.
+
+Ulteriori dettagli del calcolo dell'importo di sconti/maggiorazioni, sono riportati in #Calculation of allowance/charge amount **inserire riferimenti incrociati**#.

@@ -1,0 +1,9 @@
+Quando vengono inviate informazioni sul beneficiario, questo sta ad indicare che è in corso la documentazione di #**factoring** (strumento finanziario di liquidità)#.
+
+Per tener conto dell'assegnazione di una fattura ad un #**factor** agente di credito# è necessario:
+
+1. avere un #**disclaimer** dichiarazione di non responsabilità# (avviso di notifica) sulla fattura che segnala l'assegnazione ad un #**factor** agente di credito#. La #**disclaimer** dichiarazione di non responsabilità# deve essere fornita utilizzando la nota di credito (BT-22) a livello di testata;.
+
+2. identificare il #**factor** agente di credito# come beneficiario; 
+
+3. modificare il conto bancario in favore del #**factor** agente di credito#.

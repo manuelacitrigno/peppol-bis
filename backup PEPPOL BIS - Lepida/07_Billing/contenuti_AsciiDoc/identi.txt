@@ -1,0 +1,5 @@
+Identificativo dell'oggetto fatturato
+
+L'identificatore dell'oggetto fatturato è l'identificatore di un oggetto su cui è definita la fattura, fornito direttamente dal venditore. Gli esempi possono essere un numero di abbonamento, un numero di telefono, un veicolo, una persona ecc., a seconda dei casi.
+
+Se non è chiaro al destinatario quale schema è utilizzato per l'identificatore, è necessario utilizzare un identificatore di schema condizionale, che deve essere scelto dallo #Invoiced object identifier scheme **inserire riferimento incrocoiato**#.

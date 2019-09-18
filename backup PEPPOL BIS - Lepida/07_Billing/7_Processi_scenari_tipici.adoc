@@ -1,0 +1,869 @@
+== Processo e scenari tipici
+
+#N.B. gli esempi XML dei casi d'uso sono in corso di modifica e verranno linkati, in un secondo momento#
+
+=== Fattura
+
+image::C:\IMG_PEPPOL\fig15.jpg[]
+
+==== Caso d’uso 1.a – Fattura semplice di un servizio con IVA (VAT)
+
+Questo caso d’uso è basato su di uno scenario semplice dove una Fattura è inviata dal Fornitore al Cliente. Questo scenario di fatturazione contiene un set minimo di informazioni e una singola aliquota IVA, dove le informazioni sull’IVA sono specificate al livello documento e non a livello di riga.  Questo scenario è basato su un servizio relativo alla iscrizione ad un quotidiano d’informazione.
+
+[width="100%", cols="1 s, 2"]
+|===
+|Numero Caso d’uso	| 1.a
+|Nome	| Servizio semplice fattura con IVA
+|Descrizione	| Questo caso d'uso si basa su uno scenario semplice in cui una fattura viene inviata dal fornitore al cliente. La fattura contiene un minimo di informazioni e un'aliquota IVA.
+|Attori coinvolti	| 
+
+Fornitore (in UBL: AccountingSupplierParty)
+
+Cliente (In UBL: AccountingCustomerParty)
+|Assunzioni	|
+
+1.	Il Fornitore ha ricevuto un ordine dal Cliente con
+
+a. 1 riga (1 servizio)
+
+2.	La fattura contiene:
+
+a. un'aliquota IVA
+
+b. indennità (sconto) a livello di documento
+
+c. importo richiesto e importo totale
+
+d. data di scadenza e informazioni sul conto bancario
+
+e. riferimento del contratto
+
+f. periodo di fatturazione a livello di documento
+
+3.	1 riga della fattura contenenti:
+
+• 1 riga con 1 servizio "abbonamento a giornali" con IVA 22%
+
+4.	La fattura è principalmente basata su testo con l’utilizzo di un minimo di codifica e schemi.
+|Il flusso	|
+
+-	Il Cliente stipula un accordo contrattuale con il Fornitore
+
+-	Il Fornitore invia una fattura basata su un periodo al Cliente
+|Risultati |
+
+1.	Il messaggio della fattura elettronica ha contribuito il Fornitore ad:
+
+a. automatizzare il processo per la creazione della fattura
+
+b. convalidare gli importi totali della fattura
+
+c. garantire che l'IVA della fattura sia corretta
+
+2.	Il messaggio della fatturazione ha aiutato il Cliente:
+
+a. ad abbinare la fattura al contratto a livello di documento
+|Esempio XML	| Vedi allegato A per un file di esempio che illustra il caso d'uso 1.a
+|===
+
+
+==== Caso d’uso 1.b – Fattura semplice di un prodotto con IVA (VAT)
+
+Questo caso d’uso è basato su uno scenario semplice dove una Fattura è inviata dal Fornitore al Cliente. La fattura contiene le informazioni minime e due diverse aliquote IVA.
+
+[width="100%", cols="1 s, 2"]
+|===
+
+| Numero Caso d’uso |	1.b
+| Nome	| Fatturazione semplice con IVA
+| Descrizione	| Questo caso d'uso si basa su uno scenario semplice in cui una fattura viene inviata dal fornitore al cliente. La fattura contiene un minimo di informazioni e due diverse aliquote IVA.
+| Attori coinvolti |	
+
+Fornitore (in UBL: AccountingSupplierParty)
+
+Cliente (In UBL: AccountingCustomerParty)
+
+|Assunzioni	| 
+1.	Il Fornitore ha ricevuto un ordine dal Cliente con
+
+a. 3 linee (3 prodotti diversi)
+
+2.	2. La fattura contiene:
+
+a. due aliquote IVA
+
+b. nessuno sconto o maggiorazione
+
+c. importi parziali e importi totali richiesti 
+
+d. data di scadenza e informazioni sul conto bancario
+
+e. ordine di riferimento a livello di documento
+
+3.	3 righe della fattura:
+
+• 1 riga con articolo risma con IVA al 22%
+
+• 2 righe con articolo penne con IVA al 22%
+
+• 1 riga con i cookie americani con IVA al 10%
+
+4.	La fattura è principalmente basata su testo con l’utilizzo minimo di codifica, schemi e identificatori.
+
+|Il flusso	| 
+-	Il cliente effettua un ordine
+
+-	Il fornitore invia una fattura al cliente
+|Risultati |
+1.	Il messaggio della fattura elettronica ha contribuito il Fornitore ad:
+
+a. automatizzare il processo di creazione della fattura
+
+b. convalidare la fattura
+
+c. garantire che l'IVA della fattura sia corretta
+
+2.	Il messaggio della fatturazione ha contribuito il cliente:
+
+a. ad abbinare all'ordine le informazioni a livello di documento
+
+|Esempio XML	| Vedi allegato A per un file di esempio che illustra il caso d'uso 1.b
+
+|===
+
+==== Caso d’uso 2 – Fattura con contenuti complessi
+
+Questo caso d’uso è basato su uno scenario avanzato che dimostra l’uso dell’IVA, abbuoni (maggiorazioni) e addebiti (sconti), indirizzo di consegna esplicito e introduce l’uso di più parti di business. Questo scenario è inoltre basato su un set più avanzato di capacità del sistema relative all’invio, ricevimento, sincronizzazione e riconciliazione automatica.
+
+[width="100%", cols="1 s, 2"]
+|===
+|Numero Caso d’uso |	2
+|Nome	| Fattura ricca di contenuti
+|Descrizione	| Questo caso d'uso si basa su uno scenario avanzato che esemplifica l'uso dell’IVA, maggiorazioni e sconti, indirizzo di consegna esplicito, identificatori di articoli e l'uso del beneficiario. Questo caso d'uso è finalizzato all'acquisizione delle transazioni commerciali delle fatture in cui viene utilizzata una quantità sufficiente di informazioni disponibili a causa di un livello superiore di capacità e di una maggiore ambizione di elaborazione automatica. In questo scenario viene favorito l'uso di identificatori degli articoli.
+|Attori coinvolti	| 
+Fornitore (in UBL: AccountingSupplierParty)
+
+Cliente (In UBL: AccountingCustomerParty)
+
+Beneficiario (In UBL: PayeeParty)
+
+|Assunzioni	| 
+1.	Il Fornitore ha ricevuto un ordine dal Cliente con
+
+a. 4 righe (4 prodotti)
+
+2.	La fattura contiene:
+
+a. due aliquote IVA
+
+b. indennità (sconto) relativa alla riga 1
+
+c. addebito (tariffa di fatturazione) a livello di documento con aliquota IVA
+
+d. importi parziali e importi totali richiesti
+
+e. indirizzo di consegna esplicito
+
+f. informazioni del beneficiario
+
+g. riferimenti all'ordine e al contratto del cliente
+
+h. utilizzo della contabilità su riga e del livello del documento
+
+i. data di scadenza e informazioni sulla contabilità bancaria
+
+j. identificatori GS1 utilizzati
+
+3.	4 righe della fattura:
+
+4.	1 riga con carta da stampa IVA 22%
+
+5.	1 riga con penne IVA 22%
+
+6.	1 riga con i cookie americani IVA 10%
+
+7.	1 riga con biscotti croccanti IVA 10%
+
+|Il flusso	|
+-	Il Cliente identifica gli articoli per conto di un catalogo e inserisce un ordine
+
+-	Il fornitore riceve l'ordine
+
+-	Il fornitore conferma l'ordine
+
+-	Il fornitore invia una fattura al cliente
+
+-	Il cliente elabora la fattura
+
+Parte di questo flusso non rientra nell'ambito di questa BIS
+|Risultati |
+1.	Il messaggio della fattura elettronica ha contribuito il fornitore ad:
+
+a. automatizzare il processo di creazione della fattura
+
+b. convalidare la fattura
+
+c. garantire che l'IVA della fattura sia corretta
+
+2.	Il messaggio della fatturazione ha contribuito il cliente:
+
+a. ad abbinare nell'ordine informazioni su documento e a livello di riga
+
+|Esempio XML	| Vedi allegato A per un file di esempio che illustra il caso d'uso 2
+
+|===
+
+
+==== Caso d’uso 3 – La Fattura transfrontaliera (Crossborder)
+
+Questo caso d’uso è basato sullo scenario transfrontaliero dove una fattura viene inviata tra due diversi paesi; tipicamente questo avverrà tra due paesi membri in EU, che risulta nel versamento dell’IVA all’erario a cura dell’organizzazione ricevente. Questo caso d’uso illustra l’uso dei pagamenti in SEPA; IBAN & BIC.
+
+
+[width="100%", cols="1 s, 2"]
+|===
+
+| Numero caso d’uso |	3
+| Nome	| Fattura transfrontaliera (Crossborder)
+| Descrizione	| Questo caso d'uso si basa sullo scenario di cross border in cui viene inviata una fattura tra due paesi, in genere tra due stati membri dell'UE, che comportano l'IVA pagata dall'organizzazione ricevente. Questo caso d'uso illustra l'uso dei pagamenti SEPA; IBAN e BIC.
+| Attori coinvolti	| 
+
+Fornitore (in UBL: AccountingSupplierParty)
+
+Cliente (In UBL: AccountingCustomerParty)
+| Assunzioni	|
+1.	Il Fornitore ha ricevuto un ordine dal Cliente con
+
+a. 2 righe (2 articoli)
+
+2.	La fattura contiene:
+
+a. un'aliquota IVA
+
+b. importi parziali e importi totali richiesti
+
+c. riferimenti all'ordine del cliente
+
+d. data di scadenza e informazioni sulla contabilità bancaria, pagamento internazionale
+
+3.	2 righe fattura:
+
+4.	1 riga con carta da stampa IVA al 22%
+
+5.	1 riga con penne IVA al 22%
+
+| Il flusso	| 
+-	Il cliente effettua l'ordine
+
+-	Il fornitore invia una fattura al cliente
+| Risultati |
+
+1.	Il messaggio della fattura elettronica ha contribuito il fornitore ad:
+
+a. automatizzare il processo di creazione della fattura
+
+b. convalidare la fattura
+
+c. garantire che l'IVA della fattura sia corretta
+
+2.	Il messaggio di fatturazione ha contribuito il cliente alla:
+
+a. corrispondenza con l'ordine a livello di testata
+
+| Esempio XML	| Vedi allegato A per un file di esempio che illustra il caso d'uso 3
+
+
+|===
+
+==== Caso d’uso 4 – EU VAT non applicabile
+
+Questo caso d’uso illustra uno scenario dove non viene applicata l’IVA alla transazione perché questa non è contemplata dalla direttiva VAT (Direttiva 2006/112/CE).  Come conseguenza le parti coinvolte possono avere o no il valore del VAT assegnato. La fattura illustra come dichiarare prodotti e servizi che non sono soggetti ad IVA.
+
+[width="100%", cols="1 s, 2"]
+|===
+
+|Numero Caso d’uso |	4
+|Nome	| IVA UE non applicabile
+|Descrizione	| Questo caso d'uso illustra uno scenario in cui non vi è alcuna IVA applicata alla transazione perché la transazione non è regolamentata nella Direttiva 2006/112/CE. Di conseguenza, le parti coinvolte possono avere o meno valori dell’IVA. La fattura illustra come dichiarare prodotti e servizi che non sono regolati dall'IVA.
+|Attori coinvolti	| 
+
+Fornitore (in UBL: AccountingSupplierParty)
+
+Cliente (In UBL: AccountingCustomerParty)
+|Assunzioni	| 
+1.	Il Fornitore ha ricevuto un ordine dal Cliente con
+
+a. 2 righe (2 articoli)
+
+2.	La fattura contiene:
+
+a. nessuna aliquota IVA
+
+b. importi parziali e importi totali richiesti
+
+c. riferimenti all'ordine del cliente
+
+d. data di scadenza e informazioni sulla contabilità bancaria, pagamento internazionale
+
+3.	2 righe della fattura:
+
+4.	1 riga con carta da stampa senza IVA
+
+5.	1 riga con penne senza IVA
+|Il flusso	| 
+-	Il cliente effettua l'ordine
+
+-	Il fornitore invia una fattura al cliente
+|Risultati |
+
+1.	Il messaggio della fattura elettronica ha contribuito il fornitore ad:
+
+a. automatizzare il processo di creazione della fattura
+
+b. convalidare la fattura
+
+2.	Il messaggio di fatturazione ha contribuito il cliente alla:
+
+a. corrispondenza con l'ordine a livello di testata
+
+|Esempio XML |	Vedi allegato A per un file di esempio che illustra il caso d'uso 4
+
+|===
+
+
+==== Caso d’uso 5 – Fattura completa
+
+Questo caso d’uso non rispecchia uno scenario di fatturazione tipico. Si tratta di un esempio contenente tutte le diverse possibilità che la specifica PEPPOL BIS offre per la fattura.  
+
+[width="100%", cols="1 s, 2"]
+|===
+
+| Numero Caso d’uso |	5
+| Nome	| Fattura completa
+| Descrizione	| 
+Massimo teorico dei contenuti secondo il profilo PEPPOL BIS
+| Attori |
+Fornitore (in UBL: AccountingSupplierParty)
+
+Cliente (In UBL: AccountingCustomerParty)
+
+Beneficiario (In UBL: PayeeParty)
+
+Rappresentante Fiscale (in UBL: TaxRepresentativeParty)
+
+| Assunzioni	| 
+Questo scenario, copre i seguenti dettagli, oltre agli elementi specificati anche negli altri casi d'uso, ed è quindi un riflesso ampio o completo della fattura:
+
+•	Centro di costo a livello di testata e di riga
+
+•	periodo di fatturazione a livello di documento e di riga
+
+•	consegna a livello di testata e di riga
+
+•	riferimento del contratto
+
+•	riferimento documento aggiuntivo con allegati:
+
+o	Riferimento esterno, URI
+
+o	 EmbeddedDocumentBinaryObject (oggetto dell’allegato in formato binario)
+
+•	PayeeParty (Beneficiario)
+
+•	TaxRepresentativeParty (Rappresentante Fiscale)
+
+•	diversi PaymentTerms (Termini Pagamento)
+
+•	diversi AllowanceCharge (Sconti/Maggiorazioni) a livello di documento
+
+•	diverse categorie IVA (S, E, Z, O)
+
+•	PrepaidAmount (Prepagato)  e PayableRoundingAmount (Arrotondamento)
+
+•	diversi AllowanceCharge (Sconti/Maggiorazioni) a livello di riga
+
+•	AllowanceCharge (Sconti/Maggiorazioni) sul prezzo
+
+•	righe con quantità fatturata negativa
+
+•	OriginCountry (Paese di Origine) a livello di riga
+
+•	SellersItemIdentification (Codice Prodotto Fornitore) e StandarItemIdentification (Identificatore articolo Standard) sulla stessa riga
+
+•	classificazione CCS che CPC sulla stessa riga
+
+| Il flusso	| 
+-	Il cliente effettua l'ordine
+
+-	Il fornitore invia una fattura al cliente
+| Risultati |
+1.	Il messaggio di fattura elettronica ha contribuito il fornitore ad:
+
+a.	automatizzare il processo di creazione della fattura
+
+b.	convalidare la fattura
+
+c.	garantire che l'IVA della fattura sia corretta
+
+2.	Il messaggio di fatturazione ha contribuito il cliente alla:
+
+a. corrispondenza con l'ordine a livello di testata
+
+| Esempio XML	| Vedi allegato A per un file di esempio che illustra il caso d'uso 5
+
+
+|===
+
+=== Nota di credito
+
+image::C:\IMG_PEPPOL\fig14.jpg[]
+
+==== Caso d’uso 1.a – Fattura semplice di un servizio con IVA e relativa Nota di Credito
+
+Questo caso d’uso è basato su di uno scenario semplice dove una Fattura è inviata dal Fornitore al Cliente e in seguito viene stornata.
+
+[width="100%", cols="1 s, 2"]
+|===
+|Numero Caso d’Uso	| 1.a
+|Nome Caso d’Uso |	Fatturazione semplice di un servizio con IVA e corrispondente nota di credito.
+|Descrizione Caso d’Uso	| Questo caso d’uso si basa su uno scenario semplice dove una Fattura viene inviata dal Fornitore al Cliente e in seguito viene inviata anche una Nota di Credito stornando l’intera fattura. 
+|Parti coinvolte	| 
+Fornitore (In UBL: AccountingSupplierParty) 
+
+Cliente (In UBL: AccountingCustomerParty) 
+|Assunzioni	|
+
+1.	Il Fornitore ha ricevuto un ordine dal Cliente con 
+
+a.	1 riga (1 servizio)
+
+2.	La fattura contiene:  
+
+a.	Un aliquota IVA
+
+b.	Un addebito a livello documento
+
+c.	Gli importi e i totali necessari
+
+d.	Data di scadenza pagamento e coordinate bancarie
+
+e.	Riferimento al contratto
+
+
+f.	Periodo di fatturazione a livello documento
+
+3.	Una riga della fattura contiene 1 servizio “Newspaper subscription” con IVA al 22% .
+
+4.	La fattura è principalmente testuale con un utilizzo minimo di codici e schemi. 
+
+5.	Il Fornitore invia una nota di credito al Cliente.
+
+6.	La nota di credito contiene le stesse informazioni della fattura, con in aggiunta il riferimento alla fattura stornata.
+|Il flusso |
+
+-	Il Cliente entra in un accordo contrattuale con il Fornitore
+
+-	Il Fornitore invia una fattura periodica al Cliente 
+
+-	L’Acquirente contesta la fattura e dopo la riconciliazione il venditore accetta di stornare completamente la fattura.
+
+-	Il Fornitore invia una nota di credito al Cliente.
+|Risultati |
+
+1.	Il processo di fatturazione elettronica ha aiutato il Fornitore a: 
+
+a.	Automatizzare il processo di creazione della fattura e nota di credito
+
+b.	Validazione degli importi e dei totali
+
+c.	Assicurare che l’importo IVA è corretto 
+
+2.	Il processo di fatturazione elettronica ha aiutato il Cliente a:
+
+a.	Correlare la fattura al contratto a livello documento
+
+b.	Correlare la nota di credito con la fattura corretta
+|XML di esempio	| Vedi Allegato A per un esempio che illustra il Caso d’uso 1.a
+|===
+
+==== Caso d’uso 1.b – Fattura semplice di un prodotto con IVA e Nota di Credito relativa
+
+Questo caso d’uso è basato su uno scenario semplice dove una Fattura è inviata dal Fornitore al Cliente. La fattura contiene le informazioni minime e due diverse aliquote IVA.
+
+[width="100%", cols="1s , 2"]
+|===
+|Numero Caso d’Uso	| 1.b
+|Nome Caso d’Uso	| Fatturazione semplice con IVA e relativa Nota di Credito
+|Descrizione Caso d’Uso	| Questo scenario è basato su uno scenario semplice do una Fattura viene inviata dal Fornitore al Cliente. La fattura contiene un set di informazioni minime e due diverse aliquote IVA. 
+|Parti coinvolte |	
+Fornitore (In UBL: AccountingSupplierParty) 
+
+Cliente (In UBL: AccountingCustomerParty) 
+|Assunzioni	| 
+1.	Il Fornitore ha ricevuto un ordine dal Cliente con 
+
+a.	3 righe (3 diversi prodotti)
+
+2.	La fattura contiene:  
+
+a.	Due aliquote IVA
+
+b.	Nessuno abbuono o addebito 
+
+c.	Gli importi e totali necessari 
+
+d.	La data di scadenza pagamento e le coordinate bancarie
+
+e.	Il riferimento all’Ordine a livello documento
+
+3.	3 righe di fattura:
+
+•	1 riga con IVA 22% Paper 
+
+•	2 riga con IVA 22% Pens
+
+•	1 riga con IVA 10% Cookies 
+
+4.	La fattura è principalmente testuale con un utilizzo minimo di codici, schemi e identificatori. 
+
+5.	Il Fornitore invia una nota di credito al Cliente.
+
+6.	La nota di credito contiene le stesse informazioni della fattura, con in aggiunta il riferimento alla fattura stornata.
+|Il flusso |
+
+-	Il Cliente emette un ordine
+
+-	Il Fornitore invia una Fattura al Cliente
+
+-	L’acquirente contesta la fattura e dopo la riconciliazione il venditore accetta di stornare completamente la fattura.
+
+-	Il Fornitore invia una nota di credito al Cliente.
+|Risultato |
+1.	Il processo di fatturazione elettronica ha aiutato il Fornitore a:
+
+a.	Automatizzare il processo di creazione della fattura e nota di credito
+
+b.	Validazione degli importi e dei totali
+
+c.	 Assicurare che l’IVA è corretta 
+
+2.	Il processo di fatturazione elettronica ha aiutato il Cliente a:
+
+a.	Correlare la fattura con il contratto a livello documento
+
+b.	Correlare la nota di credito con la fattura corretta 
+|XML di esempio	| Vedi Allegato A per un esempio illustrato del Caso d’Uso 1.b
+|===
+
+==== Caso d’uso 2 – Fattura avanzata e la corrispondente nota di credito
+Questo caso d’uso è basato su uno scenario avanzato che dimostra l’uso di IVA, abbuoni e addebiti, indirizzo di consegna esplicito e introduce l’uso di più parti di business. Questo scenario è inoltre basato su un set più avanzato di capacità del sistema relative all’invio, ricevimento, sincronizzazione e riconciliazione automatica.
+
+[width="100%", cols="1s , 2"]
+|===
+| Numero Caso d’Uso |	2
+| Nome Caso d’Uso	| Fattura avanzata e corrispondente nota di credito
+| Descrizione Caso d’Uso	| Questo caso d’uso si basa su uno scenario avanzato che dimostra l’uso del IVA, abbuoni e addebiti, indirizzo di consegna esplicito, identificatori per gli articoli e l’uso del beneficiario pagamento. Questo caso d’uso desidera catturare quelle transazioni di business dove un numero sufficiente di informationi vengono utilizzate a causa di eleIVAe capacità elaborative e l’ambizione di automatizzarne il processo. In questo scenario l’uso degli identificatori per gli articoli è raccomandato. 
+| Parti coinvolte	| 
+Fornitore (In UBL: AccountingSupplierParty) 
+
+Cliente (In UBL: AccountingCustomerParty) 
+
+Beneficiario (In UBL: PayeeParty)
+| Assunzioni	| 
+1.	Il Fornitore ha ricevuto un ordine dal Cliente con 
+
+a.	4 righe (4 prodotti)
+
+2.	La Fattura contiene:  
+
+a.	Due aliquote IVA 
+
+b.	Abbuono (Sconto) relative alla riga 1
+
+c.	Addebito (commissione di fatturazione) a livello documento con aliquota IVA
+
+d.	Gli importi e i totali necessari 
+
+e.	L’indirizzo di consegna esplicito 
+
+f.	Il Beneficiario 
+
+g.	Riferimento all’Ordine dle Cliente ed al contratto
+
+h.	Uso dei riferimenti contabili a livello di riga e documento
+
+i.	Data scadenza pagamento e coordinate bancarie
+
+j.	Uso di identificatori GS1 
+
+3.	4 righe di fattura:
+
+4.	1 riga con printing paper IVA 22% 
+
+5.	1 riga con pens IVA 22%
+
+6.	1 riga con American cookies IVA 10% 
+
+7.	1 riga con crunchy cookies IVA 10% 
+
+8.	Il Fornitore invia una nota di credito al Cliente
+
+9.	La nota di credito contiene le stesse informazioni della fattura, con in aggiunta il riferimento alla fattura stornata.
+
+| Il flusso |
+-	Il Cliente identifica gli articoli a partire da un catalogo ed emette un ordine
+
+-	Il Fornitore riceve l’Ordine
+
+-	Il Fornitore conferma l’Ordine 
+
+-	Il Fornitore invia una Fattura al Cliente
+
+-	Il Cliente processa la Fattura
+
+-	L’acquirente contesta la fattura e dopo la riconciliazione il venditore accetta di stornare completamente la fattura.
+
+-	Il Fornitore invia una nota di credito al Cliente.
+
+NOTA: Parte di questo flusso è fuori dal campo di applicazione di questo BIS
+| Risultato |
+
+1.	Il processo di fatturazione elettronica ha aiutato il Fornitore a:
+
+a.	Automatizzare il processo di creazione della fattura e nota di credito
+
+b.	Validazione degli importi e dei totali
+
+c.	Assicurare che l’IVA è corretta
+
+2.	Il processo di fatturazione elettronica ha aiutato il Cliente a:
+
+a.	Correlare la fattura con il contratto a livello document e di riga
+
+b.	Correlare la nota di credito con la fattura corretta
+| XML di esempio	| Vedi Allegato A per un esempio illustrato del Caso d’Uso 2
+
+|===
+
+
+==== Caso d’uso – La Fattura transfrontaliera e la corrispondente nota di credito
+
+Questo caso d’uso è basato sullo scenario trasfrontaliero dove la fattura e la nota di credito vengono inviate tra due paesi; tipicamente questo avverrà tra due paesi membri in EU, che risulta nel versamento del IVA all’erario a cura dell’organizzazione ricevente. Questo caso d’uso illustra l’inversione contabile (reverse charge) come pure l’uso dei pagamenti in SEPA; IBAN & BIC.
+
+
+[width="100%", cols="1s , 2"]
+|===
+
+| Numero Caso d’Uso	| 3
+| Nome Caso d’Uso	| Fattura Transfrontaliera
+| Descrizione Caso d’Uso	| Questo caso d’uso si vìbasa su uno scenario transfrontaliero dove una fattura viene inviata tra due paesi, tipicamente questo avviene tra due stati membri in EU, con il risultato che l’imposta IVA viene pagata dall’organizzazione ricevente. Questo caso d’uso illustra l’uso dei pagamenti SEPA; IBAN & BIC.  
+
+| Parti coinvolte |	
+
+Fornitore (In UBL: AccountingSupplierParty) 
+
+Cliente (In UBL: AccountingCustomerParty) 
+
+| Assunzioni	|
+
+1.	Il Fornitore ha ricevuto un ordine dal Cliente con: 2 righe (2 articoli)
+
+2.	La fattura contiene:  
+
+a.	Un’aliquota IVA
+
+b.	Gli importi e i totali necessari 
+
+c.	Riferimento all’Ordine del Cliente
+
+d.	Data scadenza pagamento e coordinate bancarie per un pagamento internazionale 
+
+3.	2 righe fattura
+
+4.	La nota di credito contiene le stesse informazioni della fattura, con in aggiunta il riferimento alla fattura stornata.
+
+| Il flusso |
+
+-	Il Cliente emette un ordine
+
+-	Il Fornitore invia una fattura al Cliente
+
+-	L’acquirente contesta la fattura e dopo la riconciliazione il venditore accetta di stornare completamente la fattura
+
+-	Il Fornitore invia una nota di credito al Cliente.
+
+| Risultato |
+
+1.	Il processo di fatturazione elettronica ha aiutato il Fornitore a: 
+
+a.	Automatizzare il processo di creazione della fattura e nota di credito
+
+b.	Validazione degli importi e dei totali
+
+c.	Assicurare che l’IVA è corretta 
+
+2.	Il processo di fatturazione elettronica ha aiutato il Cliente a:
+
+a.	Correlare l’ordine a livello di testata
+
+b.	Correlare la nota di credito alla fattura corretta
+
+| XML di esempio	| Vedi Allegato A per un esempio che illustra il Caso d’Uso 3
+
+
+|===
+
+
+==== Caso d’uso 4 – EU IVA non applicabile
+
+Questo caso d’uso illustra uno scenario dove non vi è l’applicazione del IVA alla transazione perché questa non è contemplata dalla direttiva IVA.  Come conseguenza le parti coinvolte possono avere o no il numero IVA assegnato.
+
+[width="100%", cols="1s , 2"]
+|===
+
+| Numero Caso d’Uso	| 4
+| Nome Caso d’Uso	| EU IVA non applicabile 
+
+|Descrizione Caso d’Uso	| Questo caso d’uso illustra uno scenario dove non viene applicato il IVA  alla transazione perchè questa non rientra nella direttiva IVA. Come conseguenza le Parti coinvolte possono specificare o no il numero IVA relativo.
+
+| Parti coinvolte |	
+
+Fornitore (In UBL: AccountingSupplierParty) 
+Cliente (In UBL: AccountingCustomerParty) 
+
+| Assunzioni |	
+1.	Il Fornitore ha ricevuto un ordine dal Cliente con: 2 righe (2 articoli)
+
+2.	La fattura contiene:  
+
+a.	Nessuna aliquota IVA
+
+b.	Gli importi e i totali necessari 
+
+c.	Riferimento all’Ordine del Cliente
+
+d.	Data scadenza pagamento e coordinate bancarie, per un pagamento internazionale 
+
+3.	2 righe di fattura:
+
+4.	1 riga con: Paper no IVA
+
+5.	1 riga con: Pens no IVA
+
+6.	La nota di credito contiene le stesse informazioni della fattura, con in aggiunta il riferimento alla fattura stornata.
+
+| Il flusso |
+
+-	Il Cliente emette un ordine
+
+-	Il Fornitore invia una Fattura al Cliente
+
+-	L’acquirente contesta la fattura e dopo la riconciliazione il venditore accetta di stornare completamente la fattura
+
+-	Il Fornitore invia una nota di credito al Cliente.
+
+| Risultato |
+
+1.	Il processo di fatturazione elettronica ha aiutato il Fornitore a: 
+
+a.	Automatizzare il processo di creazione della fattura e nota di credito
+
+b.	Validazione degli importi e dei totali
+
+2.	Il processo di fatturazione elettronica ha aiutato il Cliente a:
+
+a.	Correlare l’ordine a livello di testata
+
+b.	Correlare la nota di credito con la fattura corretta
+
+| XML di esempio	| Vedi Allegato A per un esempio illustrato del Caso d’Uso 4
+|===
+
+==== Caso d’uso 5 – Fattura e nota di credito complete
+Questo caso d’uso non rispecchia uno scenario di fatturazione tipico. Si tratta di un esempio contenente tutte le diverse possibilità che la specifica PEPPOL BIS Billing offre.
+
+[width="100%", cols="1s , 2"]
+|===
+
+| Numero Caso d’Uso	| 5
+| Nome Caso d’Uso	| Fattura completa 
+| Descrizione Caso d’Uso |	Theoretical maximum of contents according to PEPPOL BIS profile
+| Parti coinvolte |	
+
+Fornitore (In UBL: AccountingSupplierParty) 
+
+Cliente (In UBL: AccountingCustomerParty) 
+
+Beneficiario (In UBL: PayeeParty)
+
+Rappresentante Fiscale (in UBL: TaxRepresentativeParty)
+
+| Assunzioni	| This scenario, covers the following details, in addition to elements also specified in the other use cases, and is hence a full or complete reflection of the invoice:
+
+•	Riferimenti contabili a livello documento e sulle righe
+
+•	Periodo di fatturazione a livello documento e sulle righe
+
+•	Informazioni di Delivery a livello documento e sulle righe 
+
+
+•	Riferimento al contratto
+
+•	Riferimento a documenti aggiuntivi con allegati:
+
+o	External reference ,  URI 
+
+o	EmbeddedDocumentBinaryObject 
+
+•	PayeeParty
+
+•	TaxRepresentativeParty
+
+•	Diversi PaymentTerms
+
+•	Diversi AllowanceCharge a livello documento
+
+•	Diverse cateorie di imposta IVA (S, H, E)
+
+•	PrepaidAmount e PayableRoundingAmount
+
+•	Diversi AllowanceCharge a livello di riga
+
+•	AllowanceCharge sul prezzo
+
+•	Righe con un numero negativo di InvoicedQuantity
+
+•	OriginCountry a livello di riga
+
+•	SellersItemIdentification e StandarItemIdentification sulla stessa riga
+
+•	Uso delle classificazioni UNSPC e CPV sulla stessa riga
+
+•	La nota di credito contiene le stesse informazioni della fattura, con in aggiunta il riferimento alla fattura stornata
+
+| Il flusso |
+
+-	Il Cliente emette un ordine
+
+-	Il Fornitore invia una Fattura al Cliente
+
+-	L’acquirente contesta la fattura e dopo la riconciliazione il venditore accetta di stornare completamente la fattura
+
+-	Il Fornitore invia una nota di credito al Cliente.
+| Risultato |
+
+Il processo di fatturazione elettronica ha aiutato il Fornitore a: 
+
+a.	Automatizzare il processo di creazione della fattura e nota di credito
+
+b.	Validazione degli importi e dei totali
+
+c.	Assicurare che l’IVA è corretta 
+
+Il processo di fatturazione elettronica ha aiutato il Cliente a:
+
+a.	Correlare l’ordine a livello di testata
+
+b.	Correlare la nota di credito con la fattura corretta
+| XML di esempio |	Vedi Allegato A per un esempio che illustra il Caso d’Uso 5
+
+|===

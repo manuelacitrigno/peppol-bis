@@ -1,0 +1,1 @@
+* *Allegati* forniscono informazioni sulle restrizioni secondo https://standards.cen.eu/dyn/www/f?p=204:110:0::::FSP_PROJECT:60602&cs=1B61B766636F9FB34B7DBD72CE9026C72[EN 16931], l'utilizzo della sintassi di Cross Industry Invoice e delle regole nazionali.

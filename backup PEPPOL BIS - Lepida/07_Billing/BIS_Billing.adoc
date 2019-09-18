@@ -1,0 +1,39 @@
+= Fatturazione Elettronica
+PEPPOL
+:doctype: book
+:encoding: utf-8
+:lang: it
+:toc: left
+:toclevels: 2
+:numbered:
+
+
+include::1_Introduzione.adoc[]
+
+include::2_Benefici.adoc[]
+
+include::3_Parti_ruoli.adoc[]
+
+include::4_Processi_Business.adoc[]
+
+include::5_Funzionalità_Fattura.adoc[]
+
+include::6_Requisiti_Business.adoc[]
+
+include::7_Processi_scenari_tipici.adoc[]
+
+include::8_Semantica.adoc[]
+
+include::9_VAT.adoc[]
+
+include::10_Rounding.adoc[]
+
+include::11_Calcoli.adoc[]
+
+include::12_Descrizione_parti_selezionate_Fattura.adoc[]
+
+include::13_Identificatori_PEPPOL.adoc[]
+
+include::14_UBL_namespaces.adoc[]
+
+include::15_Validation.adoc[]

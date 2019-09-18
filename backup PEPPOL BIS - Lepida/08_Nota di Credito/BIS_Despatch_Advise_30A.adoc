@@ -1,0 +1,27 @@
+= Documento di Trasporto (DDT) Elettronico
+PEPPOL
+:doctype: book
+:encoding: utf-8
+:lang: it
+:toc: left
+:toclevels: 2
+:numbered:
+
+
+include::1_Introduzione.adoc[]
+
+include::2_Principi_Prerequisiti.adoc[]
+
+include::3_Processi_scenari_tipici.adoc[]
+
+include::4_Semantica.adoc[]
+
+include::5_Code_List.adoc[]
+
+include::6_Descrizione_parti_selezionate_messaggio_avviso_spedizione.adoc[]
+
+include::7_Riga_spedizione.adoc[]
+
+include::X_Regole_Business.adoc[]
+
+include::8_Identificatori_PEPPOL.adoc[]

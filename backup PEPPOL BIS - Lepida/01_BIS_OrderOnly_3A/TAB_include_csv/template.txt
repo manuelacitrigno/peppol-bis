@@ -1,0 +1,15 @@
+[format="csv",options="header"]
+|===================================================
+*Identificatore* , *Regola di business* , *Livello di errore*
+include::Regole_Business_IntercentER.csv[]
+|===================================================
+
+
+
+
+[frame="topbot",options="header,footer", width="70%"]
+|===
+| *Identificatore* | *Regola di business* | *Livello di errore* |
+| INT-T01-R001  | Un elemento informativo base, se istanziato, non può essere vuoto.
+
+urn:www.cenbii.eu:transaction:biitrns001:ver2.0: extended:urn:www.peppol.eu:bis:peppol3a:ver2.0: extended:urn:www.ubl-italia.org:spec:ordine:ver2.1', ProfileID = 'urn:www.cenbii.eu:profile:bii03:ver2.0

@@ -1,0 +1,49 @@
+*** Validazione Documenti PEPPOL BIS Italiani per NSO ***
+
+La validazione viene effettuata in due passi
+- validazione strutturale
+- validazione semantica
+
+I risultati della validazione vengono mostrati nel browser di defautl disponibile sul vs. PC.
+
+Se la validazione strutturale non và a buon fine quella semantica non viene invocata.
+
+Per eseguire le validazioni è sufficiente invocare i rispettivi file batch nella root:
+
+	Valida FATTURA.bat		(XSLT 2.0)
+	Valida NC.bat			(XSLT 2.0)
+	Valida ORDINE.bat		(XSLT 2.0)
+	Valida DDT.bat			(XSLT 2.0)
+
+Il processo di validazione chiede esclusivamente di selezionare il file xml sorgente da validare.
+
+
+§ Validazione Strutturale §
+La validazione strutturale restituisce sempre errori di tipo fatale.
+
+
+§ Validazione Semantica §
+
+La validazione semantica restituisce due livelli di severità:
+- warning (indicati in arancione con "Attenzione: ...")
+- fatal (indicato con "Errore: ...")
+
+Il risulato delle validazioni può essere anche letto dai file di output generati sotto:
+
+\output
+	syntax_report.txt  (output validazione strutturale)
+
+	semantic_report.html  (output validazione semantica)
+
+
+*** Artefatti di validazione ***
+
+§ Validazione Strutturale §
+
+\xsd		(Schemi XML W3C di UBL 2.1)
+
+
+§ Validazione Semantica §
+
+\xsl\PEPPOL	(Stylesheet XSLT di validazione sintetizzzati dalle regole di business ISO Schematron)
+

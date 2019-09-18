@@ -1,0 +1,12 @@
+= Glossario PEPPOL BIS 3.0
+PEPPOL
+:doctype: book
+:encoding: utf-8
+:lang: it
+:toc: left
+:toclevels: 2
+:numbered:
+
+
+
+include::1_Glossario.adoc[]
